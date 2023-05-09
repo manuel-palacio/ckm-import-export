@@ -1,0 +1,706 @@
+{
+  "id": "Generate_svf_hf_result_panel.v1",
+  "concept": "gt0001",
+  "gdl_version": "2.0",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2020-11-25",
+      "name": "Cambio CDS"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "sv": {
+        "id": "sv",
+        "keywords": [
+          "hjärtsvikt",
+          "remiss"
+        ]
+      },
+      "en": {
+        "id": "en",
+        "keywords": [
+          "heart failure",
+          "referral"
+        ]
+      }
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt1000": {
+        "id": "gt1000",
+        "model_id": "openEHR-EHR-EVALUATION.svf_heart_failure_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.svf_heart_failure_assessment.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt1001": {
+            "id": "gt1001",
+            "path": "/data[at0001]/items[at0012]/items[at0013]"
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
+      },
+      "gt1010": {
+        "id": "gt1010",
+        "model_id": "openEHR-EHR-EVALUATION.referral_decision_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.referral_decision_review.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt1003": {
+            "id": "gt1003",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "path": "/data[at0001]/items[at0006]"
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "path": "/data[at0001]/items[at0010]"
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "path": "/data[at0001]/items[at0016]"
+          }
+        }
+      }
+    },
+    "templates": {
+      "gt2000": {
+        "id": "gt2000",
+        "model_id": "generic_template",
+        "name": "resultDisplay",
+        "object": {
+          "uiResourceType": "Group",
+          "resources": [
+            {
+              "id": "recommendationsList",
+              "text": "{$gt1001.term}",
+              "uiResourceType": "Group",
+              "resources": [
+                {
+                  "id": "recommendation",
+                  "text": "{$gt1001}",
+                  "uiResourceType": "Display"
+                },
+                {
+                  "id": "reference",
+                  "text": "{$gt2042}",
+                  "uiResourceType": "Display"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "gt2004": {
+        "id": "gt2004",
+        "model_id": "generic_template",
+        "name": "svf-hf-referral-decision-questionnaire",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "svf-hf-referral-decision-questionnaire",
+          "text": "{$gt2019.term}",
+          "resources": [
+            {
+              "uiResourceType": "InputSelect",
+              "name": "doYouWantToSendAReferralToACardiologist",
+              "id": "doYouWantToSendAReferralToACardiologist",
+              "required": true,
+              "text": "{$gt1003.term}",
+              "information": "{$gt2026.term}",
+              "options": [
+                {
+                  "value": "local::at0003|Ja|",
+                  "text": "{$gt2007.term}"
+                },
+                {
+                  "value": "local::at0004|Nej|",
+                  "text": "{$gt2008.term}"
+                },
+                {
+                  "value": "local::at0005|Skjut upp beslutet|",
+                  "text": "{$gt2018.term}"
+                }
+              ]
+            },
+            "{$gt2032}",
+            "{$gt2033}",
+            "{$gt2034}",
+            "{$gt2035}",
+            "{$gt2036}",
+            "{$gt2037}"
+          ]
+        }
+      },
+      "gt2032": {
+        "id": "gt2032",
+        "model_id": "generic_template",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "interpreterNeeded",
+          "resources": [
+            {
+              "uiResourceType": "InputSelect",
+              "name": "isInterpreterNeeded",
+              "id": "isInterpreterNeeded",
+              "required": true,
+              "text": "{$gt1008.term}",
+              "options": [
+                {
+                  "value": "local::at0003|Ja|",
+                  "text": "{$gt2029.term}"
+                },
+                {
+                  "value": "local::at0004|Nej|",
+                  "text": "{$gt2030.term}"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "gt2033": {
+        "id": "gt2033",
+        "model_id": "generic_template",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "preferredLanguage",
+          "resources": [
+            {
+              "uiResourceType": "InputText",
+              "name": "language",
+              "id": "language",
+              "required": true,
+              "text": "{$gt1009.term}"
+            }
+          ]
+        }
+      },
+      "gt2034": {
+        "id": "gt2034",
+        "model_id": "generic_template",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "decisionPostponedFor",
+          "resources": [
+            {
+              "uiResourceType": "InputSelect",
+              "name": "postponeDecisionFor",
+              "id": "postponeDecisionFor",
+              "required": true,
+              "display": "dropdown",
+              "text": "{$gt1004.term}",
+              "options": [
+                {
+                  "value": "local::at0007|1 dag|",
+                  "text": "{$gt2010.term}"
+                },
+                {
+                  "value": "local::at0008|7 dagar|",
+                  "text": "{$gt2011.term}"
+                },
+                {
+                  "value": "local::at0009|30 dagar|",
+                  "text": "{$gt2012.term}"
+                }
+              ]
+            },
+            {
+              "id": "reminderInfo",
+              "name": "reminderInfo",
+              "text": "{$gt2025.term}",
+              "uiResourceType": "Display"
+            }
+          ]
+        }
+      },
+      "gt2036": {
+        "id": "gt2036",
+        "model_id": "generic_template",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "postponedReason",
+          "resources": [
+            {
+              "uiResourceType": "InputSelect",
+              "name": "reasonForDecisionPostponed",
+              "id": "reasonForDecisionPostponed",
+              "required": true,
+              "text": "{$gt1005.term}",
+              "options": [
+                {
+                  "value": "local::at0011|Patientrelaterat|",
+                  "text": "{$gt2014.term}"
+                },
+                {
+                  "value": "local::at0012|Undersökning behövs|",
+                  "text": "{$gt2015.term}"
+                },
+                {
+                  "value": "local::at0013|Remiss till annan vårdenhet|",
+                  "text": "{$gt2016.term}"
+                },
+                {
+                  "value": "local::at0014|Annan orsak|",
+                  "text": "{$gt2017.term}"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "gt2037": {
+        "id": "gt2037",
+        "model_id": "generic_template",
+        "object": {
+          "uiResourceType": "InputText",
+          "name": "specifyReason",
+          "id": "specifyReason",
+          "required": true,
+          "text": "{$gt1006.term}"
+        }
+      },
+      "gt2021": {
+        "id": "gt2021",
+        "model_id": "generic_template",
+        "name": "additionalComment",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "additionalComment",
+          "resources": [
+            {
+              "id": "comments",
+              "name": "comments",
+              "text": "{$gt1007.term}",
+              "uiResourceType": "InputText"
+            }
+          ]
+        }
+      },
+      "gt2038": {
+        "id": "gt2038",
+        "model_id": "generic_template",
+        "name": "noRecommendationPalliativePatient",
+        "object": {
+          "id": "noRecommendation",
+          "text": "{$gt2039.term}",
+          "uiResourceType": "Display"
+        }
+      }
+    },
+    "pre_conditions": [
+      "$gt1002!=null"
+    ],
+    "rules": {
+      "gt3000": {
+        "id": "gt3000",
+        "priority": 6,
+        "when": [
+          "$gt1002|Does the patient have heart failure in palliative care?|.code=='at0003'"
+        ],
+        "then": [
+          "use_template($gt2038)"
+        ]
+      },
+      "gt3001": {
+        "id": "gt3001",
+        "priority": 5,
+        "when": [
+          "$gt1002|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt1003|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'"
+        ],
+        "then": [
+          "use_template($gt2032)"
+        ]
+      },
+      "gt3002": {
+        "id": "gt3002",
+        "priority": 4,
+        "when": [
+          "$gt1002|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt1003|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt1008|Is interpreter needed|.code=='at0003'"
+        ],
+        "then": [
+          "use_template($gt2033)"
+        ]
+      },
+      "gt3003": {
+        "id": "gt3003",
+        "priority": 3,
+        "when": [
+          "$gt1002|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt1003|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0005'"
+        ],
+        "then": [
+          "use_template($gt2034)",
+          "use_template($gt2036)"
+        ]
+      },
+      "gt3004": {
+        "id": "gt3004",
+        "priority": 2,
+        "when": [
+          "$gt1002|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt1003|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0005'",
+          "$gt1004|Postpone decision for|!=null",
+          "$gt1005|Reason for postponed decision|.code=='at0014'"
+        ],
+        "then": [
+          "use_template($gt2037)"
+        ]
+      },
+      "gt3005": {
+        "id": "gt3005",
+        "priority": 1,
+        "when": [
+          "$gt1001!=null",
+          "$gt1001!=''",
+          "$gt1002|Does the patient have heart failure in palliative care?|.code=='at0004'"
+        ],
+        "then": [
+          "$gt2042|Reference|=$gt2041.term + $gt2040.term + $gt2024.term",
+          "use_template($gt2000)",
+          "use_template($gt2004)",
+          "use_template($gt2021)"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generate result panel",
+            "description": ""
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Recommendation",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Does the patient have heart failure in palliative care?",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "Postpone decision for:",
+            "description": ""
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "Reason for postponed decision:",
+            "description": ""
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "Please specify the reason (saved to journal entry):",
+            "description": ""
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "Supplementary information for journal entry and possible referral:",
+            "description": ""
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "Is interpreter needed?",
+            "description": ""
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "Language:",
+            "description": ""
+          },
+          "gt2001": {
+            "id": "gt2001",
+            "text": "Result",
+            "description": ""
+          },
+          "gt2007": {
+            "id": "gt2007",
+            "text": "Yes",
+            "description": ""
+          },
+          "gt2008": {
+            "id": "gt2008",
+            "text": "No",
+            "description": ""
+          },
+          "gt2010": {
+            "id": "gt2010",
+            "text": "1 day",
+            "description": ""
+          },
+          "gt2011": {
+            "id": "gt2011",
+            "text": "7 days",
+            "description": ""
+          },
+          "gt2012": {
+            "id": "gt2012",
+            "text": "30 days",
+            "description": ""
+          },
+          "gt2014": {
+            "id": "gt2014",
+            "text": "Patient related",
+            "description": ""
+          },
+          "gt2015": {
+            "id": "gt2015",
+            "text": "Needs additional investigation",
+            "description": ""
+          },
+          "gt2016": {
+            "id": "gt2016",
+            "text": "Referral to another care unit",
+            "description": ""
+          },
+          "gt2017": {
+            "id": "gt2017",
+            "text": "Other reasons",
+            "description": ""
+          },
+          "gt2018": {
+            "id": "gt2018",
+            "text": "Postpone the decision",
+            "description": ""
+          },
+          "gt2019": {
+            "id": "gt2019",
+            "text": "Referral decision",
+            "description": ""
+          },
+          "gt2024": {
+            "id": "gt2024",
+            "text": "\n[Personcentrerade sammanhållna vårdförlopp](https://d2flujgsl7escs.cloudfront.net/external/210224_V%C3%A5rdf%C3%B6rlopp_hj%C3%A4rtsvikt_publ.pdf)\n",
+            "description": ""
+          },
+          "gt2025": {
+            "id": "gt2025",
+            "text": "Note: Manual follow-up required. No reminders shall be sent.",
+            "description": ""
+          },
+          "gt2026": {
+            "id": "gt2026",
+            "text": "If no referral is sent, the decision support will be activated again after 6 months for a new assessment. If the decision is postponed, the decision support will be activated again after the selected period has expired.",
+            "description": ""
+          },
+          "gt2029": {
+            "id": "gt2029",
+            "text": "Yes",
+            "description": ""
+          },
+          "gt2030": {
+            "id": "gt2030",
+            "text": "No",
+            "description": ""
+          },
+          "gt2039": {
+            "id": "gt2039",
+            "text": "The patient does not qualify for further heart failure treatment.",
+            "description": ""
+          },
+          "gt2040": {
+            "id": "gt2040",
+            "text": "\n[ESC guidelines on acute and chronic heart failure](https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehab368/6358045)\n",
+            "description": ""
+          },
+          "gt2041": {
+            "id": "gt2041",
+            "text": "References:  ",
+            "description": ""
+          },
+          "gt2042": {
+            "id": "gt2042",
+            "text": "Local variable: Reference",
+            "description": ""
+          }
+        }
+      },
+      "sv": {
+        "id": "sv",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generera resultatformulär",
+            "description": ""
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Rekommendation",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Har patienten hjärtsvikt i palliativt skede?",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "Vill du skicka en remiss till hjärtsviktsmottagning för bedömning om lämplig behandling?",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "Skjut upp beslutet i:",
+            "description": ""
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "Orsak till uppskjutet beslut:",
+            "description": ""
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "Specificera orsak (sparas till journalanteckning):",
+            "description": ""
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "Kompletterande information till journalanteckning och eventuell remiss:",
+            "description": ""
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "Tolkbehov?",
+            "description": ""
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "Språk:",
+            "description": ""
+          },
+          "gt2001": {
+            "id": "gt2001",
+            "text": "Resultat",
+            "description": ""
+          },
+          "gt2002": {
+            "id": "gt2002",
+            "text": "Rekommendation",
+            "description": ""
+          },
+          "gt2007": {
+            "id": "gt2007",
+            "text": "Ja",
+            "description": ""
+          },
+          "gt2008": {
+            "id": "gt2008",
+            "text": "Nej",
+            "description": ""
+          },
+          "gt2010": {
+            "id": "gt2010",
+            "text": "1 dag",
+            "description": ""
+          },
+          "gt2011": {
+            "id": "gt2011",
+            "text": "7 dagar",
+            "description": ""
+          },
+          "gt2012": {
+            "id": "gt2012",
+            "text": "30 dagar",
+            "description": ""
+          },
+          "gt2014": {
+            "id": "gt2014",
+            "text": "Patientrelaterat",
+            "description": ""
+          },
+          "gt2015": {
+            "id": "gt2015",
+            "text": "Undersökning behövs",
+            "description": ""
+          },
+          "gt2016": {
+            "id": "gt2016",
+            "text": "Remiss till annan vårdenhet",
+            "description": ""
+          },
+          "gt2017": {
+            "id": "gt2017",
+            "text": "Annan orsak",
+            "description": ""
+          },
+          "gt2018": {
+            "id": "gt2018",
+            "text": "Skjut upp beslutet",
+            "description": ""
+          },
+          "gt2019": {
+            "id": "gt2019",
+            "text": "Beslut om remiss",
+            "description": ""
+          },
+          "gt2024": {
+            "id": "gt2024",
+            "text": "\n[Personcentrerade sammanhållna vårdförlopp](https://d2flujgsl7escs.cloudfront.net/external/210224_V%C3%A5rdf%C3%B6rlopp_hj%C3%A4rtsvikt_publ.pdf)",
+            "description": ""
+          },
+          "gt2025": {
+            "id": "gt2025",
+            "text": "OBS: Manuell uppföljning krävs. Påminnelse från detta system skickas ej.",
+            "description": ""
+          },
+          "gt2026": {
+            "id": "gt2026",
+            "text": "Om ingen remiss skickas kommer beslutsstödet att aktiveras igen efter 6 månader för ny bedömning. Om beslutet skjuts upp kommer beslutsstödet att aktiveras igen efter att den valda perioden löpt ut.",
+            "description": ""
+          },
+          "gt2029": {
+            "id": "gt2029",
+            "text": "Ja",
+            "description": ""
+          },
+          "gt2030": {
+            "id": "gt2030",
+            "text": "Nej",
+            "description": ""
+          },
+          "gt2039": {
+            "id": "gt2039",
+            "text": "Patienten är inte aktuell för ytterligare hjärtsviktsbehandling.",
+            "description": ""
+          },
+          "gt2040": {
+            "id": "gt2040",
+            "text": "[ESC-riktlinjer för akut och kronisk hjärtsvikt](https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehab368/6358045)\n",
+            "description": ""
+          },
+          "gt2041": {
+            "id": "gt2041",
+            "text": "Referenser:  \n",
+            "description": ""
+          },
+          "gt2042": {
+            "id": "gt2042",
+            "text": "Lokal variable: Referens",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

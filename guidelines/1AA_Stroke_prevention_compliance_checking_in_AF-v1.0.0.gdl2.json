@@ -1,0 +1,239 @@
+{
+  "id": "1AA_Stroke_prevention_compliance_checking_in_AF.v1.0.0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2013-12-19",
+      "name": "Rong Chen",
+      "organisation": "Cambio Healthcare Systems",
+      "email": "rong.chen@cambio.se"
+    },
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "Estimates the compliance to the ESC guidelines for stroke prevention in patients with atrial fibrillation.",
+        "keywords": [
+          "atrial fibrillation",
+          "stroke",
+          "CHA2DS2-VASc"
+        ],
+        "use": "Use to assess if a treatment is compliant to the ESC guidelines in patients with atrial fribrillation.",
+        "misuse": "Do not use in patients with no diagnosis of atrial fibrillation.\r\nDo not use in cases where anticoagulation treatment is contraindicated.",
+        "copyright": "Cambio Healthcare Systems"
+      }
+    },
+    "other_details": {
+      "references": "1. Lip GY, Nieuwlaat R, Pisters R, Lane DA, Crijns HJ. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation using a novel risk factor-based approach: the euro heart survey on atrial fibrillation. Chest. 2010 Feb;137(2):263-72.\r\n2. Camm a J, Kirchhof P, Lip GYH, Schotten U, Savelieva I, Ernst S, et al. Guidelines for the management of atrial fibrillation: the Task Force for the Management of Atrial Fibrillation of the European Society of Cardiology (ESC). Eur Heart J. 2010 Oct;31(19):2369–429.\r\n3. Lip GY, Frison L, Halperin JL, Lane DA. Identifying patients at high risk for stroke despite anticoagulation: a comparison of contemporary stroke risk stratification schemes in an anticoagulated atrial fibrillation cohort. Stroke. 2010 Dec;41(12):2731-8.\r\n4. John Camm, A., Lip, G. Y. H., De Caterina, R., Savelieva, I., Atar, D., Hohnloser, S. H., et al. (2012). 2012 focused update of the ESC Guidelines for the management of atrial fibrillation. European Heart Journal, 33(21), 2719–2747\r\n5. Kirchhof P, Benussi S, Kotecha D, Ahlsson A, Atar D, Casadei B, et al. 2016 ESC Guidelines for the management of atrial fibrillation developed in collaboration with EACTS. Eur Heart J [Internet]. 2016;37(38):2893"
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-EVALUATION.stroke_prevention_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.stroke_prevention_review.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/items[at0006]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/items[at0003]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/data[at0001]/items[at0039]"
+          }
+        }
+      },
+      "gt0006": {
+        "id": "gt0006",
+        "model_id": "openEHR-EHR-OBSERVATION.chadsvasc_score.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.chadsvasc_score.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0007": {
+            "id": "gt0007",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0019]"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0016]"
+          }
+        }
+      },
+      "gt0009": {
+        "id": "gt0009",
+        "model_id": "openEHR-EHR-OBSERVATION.chadsvasc_diagnosis_review.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.chadsvasc_diagnosis_review.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0010": {
+            "id": "gt0010",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0005]"
+          }
+        }
+      },
+      "gt0011": {
+        "id": "gt0011",
+        "model_id": "openEHR-EHR-INSTRUCTION.medication_order.v2",
+        "template_id": "openEHR-EHR-INSTRUCTION.medication_order.v2",
+        "type": "INPUT",
+        "elements": {
+          "gt0012": {
+            "id": "gt0012",
+            "path": "/activities[at0001]/description[at0002]/items[at0070]"
+          }
+        },
+        "predicates": [
+          "/activities[at0001]/description[at0002]/items[at0070] is_a local::gt0015|Oral anticoagulant|"
+        ]
+      }
+    },
+    "pre_conditions": [
+      "$gt0010|Atrial fibrillation|==1|local::at0012|Present|"
+    ],
+    "default_actions": [
+      "$gt0004|Anticoagulant medication|=local::at0004|Absent|",
+      "$gt0005|Review date|=$currentDateTime"
+    ],
+    "rules": {
+      "gt0016": {
+        "id": "gt0016",
+        "priority": 4,
+        "when": [
+          "$gt0012|Anti-coagulation medication|!=null"
+        ],
+        "then": [
+          "$gt0004|Anticoagulant medication|=local::at0005|Present|"
+        ]
+      },
+      "gt0018": {
+        "id": "gt0018",
+        "priority": 3,
+        "when": [
+          "$gt0007|Total score|>=1",
+          "$gt0008|Gender|==0|local::at0017|Male|",
+          "$gt0004|Anticoagulant medication|==local::at0004|Absent|"
+        ],
+        "then": [
+          "$gt0003|Treatment compliance|=local::at0008|Non compliant|"
+        ]
+      },
+      "gt0019": {
+        "id": "gt0019",
+        "priority": 2,
+        "when": [
+          "$gt0007|Total score|>=2",
+          "$gt0008|Gender|==1|local::at0018|Female|",
+          "$gt0004|Anticoagulant medication|==local::at0004|Absent|"
+        ],
+        "then": [
+          "$gt0003|Treatment compliance|=local::at0008|Non compliant|"
+        ]
+      },
+      "gt0020": {
+        "id": "gt0020",
+        "priority": 1,
+        "when": [
+          "$gt0003|Treatment compliance|==null",
+          "($gt0004|Anticoagulant medication|==local::at0005|Present|)||(($gt0007|Total score|==0)||(($gt0007|Total score|==1)&&($gt0008|Gender|==1|local::at0018|Female|)))"
+        ],
+        "then": [
+          "$gt0003|Treatment compliance|=local::at0007|Compliant|"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "CHA2DS2-VASc Score compliance",
+            "description": "Compliance to the ESC guidelines for stroke prevention in patients with atrial fibrillation."
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Treatment compliance",
+            "description": "Study criteria: Atrial Fibrillation = Present"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Anticoagulant medication",
+            "description": "Study criteria: Atrial Fibrillation = Present"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Review date",
+            "description": ""
+          },
+          "gt0007": {
+            "id": "gt0006",
+            "text": "Total score",
+            "description": "*"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Gender",
+            "description": "Gender"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "Atrial fibrillation"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Anti-coagulation medication",
+            "description": ""
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Oral anticoagulant"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Anti-coagulation medication present"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "NON compliant with ESC guidelines"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "NON compliant with ESC guidelines"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "Compliant with ESC guidelines"
+          }
+        }
+      }
+    },
+    "term_bindings": {
+      "ATC": {
+        "id": "ATC",
+        "bindings": {
+          "gt0015": {
+            "codes": [
+              "ATC::B01AA03",
+              "ATC::B01AE07",
+              "ATC::B01AF01",
+              "ATC::B01AF02",
+              "ATC::B01AF03"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

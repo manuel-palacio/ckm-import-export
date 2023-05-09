@@ -1,0 +1,3542 @@
+{
+  "id": "Belfast_100k_genomics_phenotypes.v0.15.0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2022-03-22",
+      "name": "Rashmi Damodaran"
+    },
+    "lifecycle_state": "Not set",
+    "details": {
+      "en": {
+        "id": "en"
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0200": {
+        "id": "gt0200",
+        "model_id": "openEHR-EHR-OBSERVATION.belfast_100k_genomes_project.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.belfast_100k_genomes_project.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0201": {
+            "id": "gt0201",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0005]/items[at0007]"
+          },
+          "gt0202": {
+            "id": "gt0202",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0010]/items[at0020]"
+          },
+          "gt0203": {
+            "id": "gt0203",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0012]/items[at0040]"
+          },
+          "gt0204": {
+            "id": "gt0204",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0014]/items[at0026]"
+          },
+          "gt0205": {
+            "id": "gt0205",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0015]/items[at0029]"
+          },
+          "gt0206": {
+            "id": "gt0206",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0016]/items[at0032]"
+          },
+          "gt0207": {
+            "id": "gt0207",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0017]/items[at0035]"
+          },
+          "gt0208": {
+            "id": "gt0208",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0018]/items[at0038]"
+          }
+        }
+      },
+      "gt0400": {
+        "id": "gt0400",
+        "model_id": "openEHR-EHR-OBSERVATION.belfast_100k_genomes_project.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.belfast_100k_genomes_project.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0401": {
+            "id": "gt0401",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0005]/items[at0006]"
+          },
+          "gt0402": {
+            "id": "gt0402",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0005]/items[at0007]"
+          },
+          "gt0403": {
+            "id": "gt0403",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0005]/items[at0008]"
+          },
+          "gt0404": {
+            "id": "gt0404",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0010]/items[at0019]"
+          },
+          "gt0405": {
+            "id": "gt0405",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0010]/items[at0020]"
+          },
+          "gt0406": {
+            "id": "gt0406",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0010]/items[at0021]"
+          },
+          "gt0407": {
+            "id": "gt0407",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0012]/items[at0022]"
+          },
+          "gt0408": {
+            "id": "gt0408",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0012]/items[at0024]"
+          },
+          "gt0409": {
+            "id": "gt0409",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0012]/items[at0040]"
+          },
+          "gt0410": {
+            "id": "gt0410",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0014]/items[at0025]"
+          },
+          "gt0411": {
+            "id": "gt0411",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0014]/items[at0026]"
+          },
+          "gt0412": {
+            "id": "gt0412",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0014]/items[at0027]"
+          },
+          "gt0413": {
+            "id": "gt0413",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0015]/items[at0028]"
+          },
+          "gt0414": {
+            "id": "gt0414",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0015]/items[at0029]"
+          },
+          "gt0415": {
+            "id": "gt0415",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0015]/items[at0030]"
+          },
+          "gt0416": {
+            "id": "gt0416",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0016]/items[at0031]"
+          },
+          "gt0417": {
+            "id": "gt0417",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0016]/items[at0032]"
+          },
+          "gt0418": {
+            "id": "gt0418",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0016]/items[at0033]"
+          },
+          "gt0419": {
+            "id": "gt0419",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0017]/items[at0034]"
+          },
+          "gt0420": {
+            "id": "gt0420",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0017]/items[at0035]"
+          },
+          "gt0421": {
+            "id": "gt0421",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0017]/items[at0036]"
+          },
+          "gt0422": {
+            "id": "gt0422",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0018]/items[at0037]"
+          },
+          "gt0423": {
+            "id": "gt0423",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0018]/items[at0038]"
+          },
+          "gt0424": {
+            "id": "gt0424",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0068]/items[at0018]/items[at0039]"
+          }
+        }
+      },
+      "gt2409": {
+        "id": "gt2409",
+        "model_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+        "template_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt2410": {
+            "id": "gt2410",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
+      }
+    },
+    "rules": {
+      "gt2202": {
+        "id": "gt2202",
+        "priority": 1,
+        "when": [
+          "$gt2410|Problem/Diagnosis name|==local::at0079|Familial hypercholesterolemia|",
+          "$gt0201|formInput-Hyperlipidemia|!=null"
+        ],
+        "then": [
+          "$gt0402|Hyperlipidemia|=$gt0201|formInput-Hyperlipidemia|",
+          "$gt0401|Hyperlipidemia code|='HP:0003077'",
+          "$gt0403|Hyperlipidemia text|='Hyperlipidemia'"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "100k Genomes phenotypes"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Hyperlipidemia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Hyperlipidemia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Hyperlipidemia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Hypercholesterolemia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Hypercholesterolemia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "Hypercholesterolemia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Hyperbetalipoproteinemia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Hyperbetalipoproteinemia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Hyperbetalipoproteinemia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Hyperlipoproteinemia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Hyperlipoproteinemia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Hyperlipoproteinemia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "Myocardial infarction identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "Myocardial infarction present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "Myocardial infarction description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Hypertriglyceridemia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Hypertriglyceridemia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Hypertriglyceridemia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Tendon xanthomatosis identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Tendon xanthomatosis present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "Tendon xanthomatosis description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "Corneal arcus identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Corneal arcus present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Corneal arcus description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Delayed gross motor development identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Delayed gross motor development present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Delayed gross motor development description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Delayed fine motor development identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Delayed fine motor development present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "Delayed fine motor development description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "Delayed speech and language development identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "Delayed speech and language development present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "Delayed speech and language development description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "Global developmental delay identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "Global developmental delay present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "Global developmental delay description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "Intellectual disability identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Intellectual disability present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "Intellectual disability description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0055": {
+            "id": "gt0055",
+            "text": "Microcephaly identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0056": {
+            "id": "gt0056",
+            "text": "Microcephaly present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "Microcephaly description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "text": "Macrocephaly identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Macrocephaly present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "Macrocephaly description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "Generalized hypotonia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Generalized hypotonia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "Generalized hypotonia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Ataxia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "Ataxia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "Ataxia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "Molar tooth sign on MRI identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Molar tooth sign on MRI present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "Molar tooth sign on MRI description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "Cerebellar vermis hypoplasia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "Cerebellar vermis hypoplasia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "Cerebellar vermis hypoplasia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "text": "Occipital encephalocele identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0080": {
+            "id": "gt0080",
+            "text": "Occipital encephalocele present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0081": {
+            "id": "gt0081",
+            "text": "Occipital encephalocele description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0083": {
+            "id": "gt0083",
+            "text": "Polymicrogyria identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0084": {
+            "id": "gt0084",
+            "text": "Polymicrogyria present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0085": {
+            "id": "gt0085",
+            "text": "Polymicrogyria description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0087": {
+            "id": "gt0087",
+            "text": "Neonatal breathing dysregulation identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0088": {
+            "id": "gt0088",
+            "text": "Neonatal breathing dysregulation present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0089": {
+            "id": "gt0089",
+            "text": "Neonatal breathing dysregulation description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0091": {
+            "id": "gt0091",
+            "text": "Oculomotor apraxia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0092": {
+            "id": "gt0092",
+            "text": "Oculomotor apraxia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0093": {
+            "id": "gt0093",
+            "text": "Oculomotor apraxia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0095": {
+            "id": "gt0095",
+            "text": "Coloboma identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0096": {
+            "id": "gt0096",
+            "text": "Coloboma present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0097": {
+            "id": "gt0097",
+            "text": "Coloboma description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0099": {
+            "id": "gt0099",
+            "text": "Retinal dystrophy identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0100": {
+            "id": "gt0100",
+            "text": "Retinal dystrophy present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0101": {
+            "id": "gt0101",
+            "text": "Retinal dystrophy description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0103": {
+            "id": "gt0103",
+            "text": "Abnormal facial shape identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0104": {
+            "id": "gt0104",
+            "text": "Abnormal facial shape present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "text": "Abnormal facial shape description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "Accessory oral frenulum identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "Accessory oral frenulum present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "text": "Accessory oral frenulum description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0111": {
+            "id": "gt0111",
+            "text": "Hamartoma of tongue identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0112": {
+            "id": "gt0112",
+            "text": "Hamartoma of tongue present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0113": {
+            "id": "gt0113",
+            "text": "Hamartoma of tongue description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0115": {
+            "id": "gt0115",
+            "text": "Cleft palate identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0116": {
+            "id": "gt0116",
+            "text": "Cleft palate present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0118": {
+            "id": "gt0118",
+            "text": "Cleft palate description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0120": {
+            "id": "gt0120",
+            "text": "Abnormality of cardiovascular system morphology identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0121": {
+            "id": "gt0121",
+            "text": "Abnormality of cardiovascular system morphology present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0122": {
+            "id": "gt0122",
+            "text": "Abnormality of cardiovascular system morphology description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0124": {
+            "id": "gt0124",
+            "text": "Hyperechogenic kidneys identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0125": {
+            "id": "gt0125",
+            "text": "Hyperechogenic kidneys present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0126": {
+            "id": "gt0126",
+            "text": "Hyperechogenic kidneys description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0129": {
+            "id": "gt0129",
+            "text": "Multiple renal cysts identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0130": {
+            "id": "gt0130",
+            "text": "Multiple renal cysts present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0131": {
+            "id": "gt0131",
+            "text": "Multiple renal cysts description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0133": {
+            "id": "gt0133",
+            "text": "Hypertension identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0134": {
+            "id": "gt0134",
+            "text": "Hypertension present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0135": {
+            "id": "gt0135",
+            "text": "Hypertension description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0137": {
+            "id": "gt0137",
+            "text": "Chronic kidney disease identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0138": {
+            "id": "gt0138",
+            "text": "Chronic kidney disease present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0139": {
+            "id": "gt0139",
+            "text": "Chronic kidney disease description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0141": {
+            "id": "gt0141",
+            "text": "Hepatic fibrosis identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0142": {
+            "id": "gt0142",
+            "text": "Hepatic fibrosis present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0143": {
+            "id": "gt0143",
+            "text": "Hepatic fibrosis description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0145": {
+            "id": "gt0145",
+            "text": "Elevated hepatic transaminases identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0146": {
+            "id": "gt0146",
+            "text": "Elevated hepatic transaminases present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0147": {
+            "id": "gt0147",
+            "text": "Elevated hepatic transaminases description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0149": {
+            "id": "gt0149",
+            "text": "Preaxial hand polydactyly identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0150": {
+            "id": "gt0150",
+            "text": "Preaxial hand polydactyly present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0151": {
+            "id": "gt0151",
+            "text": "Preaxial hand polydactyly description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0153": {
+            "id": "gt0153",
+            "text": "Postaxial hand polydactyly identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0154": {
+            "id": "gt0154",
+            "text": "Postaxial hand polydactyly present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0155": {
+            "id": "gt0155",
+            "text": "Postaxial hand polydactyly description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0157": {
+            "id": "gt0157",
+            "text": "Mesoaxial hand polydactyly identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0158": {
+            "id": "gt0158",
+            "text": "Mesoaxial hand polydactyly present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0159": {
+            "id": "gt0159",
+            "text": "Mesoaxial hand polydactyly description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0161": {
+            "id": "gt0161",
+            "text": "Preaxial foot polydactyly identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0162": {
+            "id": "gt0162",
+            "text": "Preaxial foot polydactyly present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0163": {
+            "id": "gt0163",
+            "text": "Preaxial foot polydactyly description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0165": {
+            "id": "gt0165",
+            "text": "Postaxial foot polydactyly identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0166": {
+            "id": "gt0166",
+            "text": "Postaxial foot polydactyly present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0167": {
+            "id": "gt0167",
+            "text": "Postaxial foot polydactyly description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0169": {
+            "id": "gt0169",
+            "text": "Mesoaxial foot polydactyly identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0170": {
+            "id": "gt0170",
+            "text": "Mesoaxial foot polydactyly present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0171": {
+            "id": "gt0171",
+            "text": "Mesoaxial foot polydactyly description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0173": {
+            "id": "gt0173",
+            "text": "Short stature identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0174": {
+            "id": "gt0174",
+            "text": "Short stature present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0175": {
+            "id": "gt0175",
+            "text": "Short stature description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0177": {
+            "id": "gt0177",
+            "text": "Obesity identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0178": {
+            "id": "gt0178",
+            "text": "Obesity present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0179": {
+            "id": "gt0179",
+            "text": "Obesity description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0181": {
+            "id": "gt0181",
+            "text": "Skeletal dysplasia",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0182": {
+            "id": "gt0182",
+            "text": "Skeletal dysplasia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0183": {
+            "id": "gt0183",
+            "text": "Skeletal dysplasia description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0185": {
+            "id": "gt0185",
+            "text": "Short stature R104 identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0186": {
+            "id": "gt0186",
+            "text": "Short stature R104 present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0187": {
+            "id": "gt0187",
+            "text": "Short stature R104 description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0189": {
+            "id": "gt0189",
+            "text": "Intellectual disability R104 identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0190": {
+            "id": "gt0190",
+            "text": "Intellectual disability R104 present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0191": {
+            "id": "gt0191",
+            "text": "Intellectual disability R104 description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0193": {
+            "id": "gt0193",
+            "text": "Abnormal facial shape R104 identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0194": {
+            "id": "gt0194",
+            "text": "Abnormal facial shape R104 present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0195": {
+            "id": "gt0195",
+            "text": "Abnormal facial shape R104 description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0197": {
+            "id": "gt0197",
+            "text": "Global developmental delay identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt0198": {
+            "id": "gt0198",
+            "text": "Global developmental delay present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt0199": {
+            "id": "gt0199",
+            "text": "Global developmental delay description",
+            "description": "Human Phenotype Ontology description of the specified phenotypic abnormality."
+          },
+          "gt0201": {
+            "id": "gt0201",
+            "text": "formInput-Hyperlipidemia",
+            "description": ""
+          },
+          "gt0202": {
+            "id": "gt0202",
+            "text": "formInput-Hypercholesterolemia",
+            "description": ""
+          },
+          "gt0203": {
+            "id": "gt0203",
+            "text": "formInput-Hyperbetalipoproteinemia",
+            "description": ""
+          },
+          "gt0204": {
+            "id": "gt0204",
+            "text": "formInput-Hyperlipoproteinemia",
+            "description": ""
+          },
+          "gt0205": {
+            "id": "gt0205",
+            "text": "formInput-Myocardial infarction",
+            "description": ""
+          },
+          "gt0206": {
+            "id": "gt0206",
+            "text": "formInput-Hypertriglyceridemia",
+            "description": ""
+          },
+          "gt0207": {
+            "id": "gt0207",
+            "text": "formInput-Tendon xanthomatosis",
+            "description": ""
+          },
+          "gt0208": {
+            "id": "gt0208",
+            "text": "formInput-Corneal arcus",
+            "description": ""
+          },
+          "gt0209": {
+            "id": "gt0209",
+            "text": "formInput-Delayed gross motor development",
+            "description": ""
+          },
+          "gt0210": {
+            "id": "gt0210",
+            "text": "formInput-Delayed fine motor development",
+            "description": ""
+          },
+          "gt0211": {
+            "id": "gt0211",
+            "text": "formInput-Delayed speech and language development",
+            "description": ""
+          },
+          "gt0212": {
+            "id": "gt0212",
+            "text": "formInput-Global developmental delay",
+            "description": ""
+          },
+          "gt0213": {
+            "id": "gt0213",
+            "text": "formInput-Intellectual disability",
+            "description": ""
+          },
+          "gt0214": {
+            "id": "gt0214",
+            "text": "formInput-Microcephaly",
+            "description": ""
+          },
+          "gt0215": {
+            "id": "gt0215",
+            "text": "formInput-Macrocephaly",
+            "description": ""
+          },
+          "gt0216": {
+            "id": "gt0216",
+            "text": "formInput-Generalized hypotonia",
+            "description": ""
+          },
+          "gt0217": {
+            "id": "gt0217",
+            "text": "formInput-Ataxia",
+            "description": ""
+          },
+          "gt0218": {
+            "id": "gt0218",
+            "text": "formInput-Molar tooth sign on MRI",
+            "description": ""
+          },
+          "gt0219": {
+            "id": "gt0219",
+            "text": "formInput-Cerebellar vermis hypoplasia",
+            "description": ""
+          },
+          "gt0220": {
+            "id": "gt0220",
+            "text": "formInput-Occipital encephalocele",
+            "description": ""
+          },
+          "gt0221": {
+            "id": "gt0221",
+            "text": "formInput-Polymicrogyria",
+            "description": ""
+          },
+          "gt0222": {
+            "id": "gt0222",
+            "text": "formInput-Neonatal breathing dysregulation",
+            "description": ""
+          },
+          "gt0223": {
+            "id": "gt0223",
+            "text": "formInput-Oculomotor apraxia",
+            "description": ""
+          },
+          "gt0224": {
+            "id": "gt0224",
+            "text": "formInput-Coloboma",
+            "description": ""
+          },
+          "gt0225": {
+            "id": "gt0225",
+            "text": "formInput-Retinal dystrophy",
+            "description": ""
+          },
+          "gt0226": {
+            "id": "gt0226",
+            "text": "formInput-Abnormal facial shape",
+            "description": ""
+          },
+          "gt0228": {
+            "id": "gt0228",
+            "text": "formInput-Accessory oral frenulum",
+            "description": ""
+          },
+          "gt0229": {
+            "id": "gt0229",
+            "text": "formInput-Hamartoma of tongue",
+            "description": ""
+          },
+          "gt0230": {
+            "id": "gt0230",
+            "text": "formInput-Cleft palate",
+            "description": ""
+          },
+          "gt0231": {
+            "id": "gt0231",
+            "text": "formInput-Abnormality of cardiovascular system morphology",
+            "description": ""
+          },
+          "gt0232": {
+            "id": "gt0232",
+            "text": "formInput-Hyperechogenic kidneys",
+            "description": ""
+          },
+          "gt0233": {
+            "id": "gt0233",
+            "text": "formInput-Multiple renal cysts",
+            "description": ""
+          },
+          "gt0234": {
+            "id": "gt0234",
+            "text": "formInput-Hypertension",
+            "description": ""
+          },
+          "gt0235": {
+            "id": "gt0235",
+            "text": "formInput-Chronic kidney disease",
+            "description": ""
+          },
+          "gt0236": {
+            "id": "gt0236",
+            "text": "formInput-Hepatic fibrosis",
+            "description": ""
+          },
+          "gt0237": {
+            "id": "gt0237",
+            "text": "formInput-Elevated hepatic transaminases",
+            "description": ""
+          },
+          "gt0238": {
+            "id": "gt0238",
+            "text": "formInput-Preaxial hand polydactyly",
+            "description": ""
+          },
+          "gt0239": {
+            "id": "gt0239",
+            "text": "formInput-Postaxial hand polydactyly",
+            "description": ""
+          },
+          "gt0240": {
+            "id": "gt0240",
+            "text": "formInput-Mesoaxial hand polydactyly",
+            "description": ""
+          },
+          "gt0241": {
+            "id": "gt0241",
+            "text": "formInput-Preaxial foot polydactyly",
+            "description": ""
+          },
+          "gt0242": {
+            "id": "gt0242",
+            "text": "formInput-Postaxial foot polydactyly",
+            "description": ""
+          },
+          "gt0243": {
+            "id": "gt0243",
+            "text": "formInput-Mesoaxial foot polydactyly",
+            "description": ""
+          },
+          "gt0244": {
+            "id": "gt0244",
+            "text": "formInput-Short stature",
+            "description": ""
+          },
+          "gt0245": {
+            "id": "gt0245",
+            "text": "formInput-Obesity",
+            "description": ""
+          },
+          "gt0246": {
+            "id": "gt0246",
+            "text": "formInput-Skeletal dysplasia",
+            "description": ""
+          },
+          "gt0247": {
+            "id": "gt0247",
+            "text": "formInput-Short stature R104",
+            "description": ""
+          },
+          "gt0248": {
+            "id": "gt0248",
+            "text": "formInput-Intellectual disability R104",
+            "description": ""
+          },
+          "gt0249": {
+            "id": "gt0249",
+            "text": "formInput-Abnormal facial shape R104",
+            "description": ""
+          },
+          "gt0250": {
+            "id": "gt0250",
+            "text": "formInput-Global developmental delay R104",
+            "description": ""
+          },
+          "gt0251": {
+            "id": "gt0251",
+            "text": "formInput-Generalized seizures",
+            "description": ""
+          },
+          "gt0252": {
+            "id": "gt0252",
+            "text": "formInput-Focal seizures",
+            "description": ""
+          },
+          "gt0253": {
+            "id": "gt0253",
+            "text": "formInput-Epileptic spasms",
+            "description": ""
+          },
+          "gt0254": {
+            "id": "gt0254",
+            "text": "formInput-Infantile encephalopathy",
+            "description": ""
+          },
+          "gt0255": {
+            "id": "gt0255",
+            "text": "formInput-Intellectual disability GMSR59",
+            "description": ""
+          },
+          "gt0256": {
+            "id": "gt0256",
+            "text": "formInput-Abnormal facial shape GMSR59",
+            "description": ""
+          },
+          "gt0257": {
+            "id": "gt0257",
+            "text": "formInput-Global developmental delay GMSR59",
+            "description": ""
+          },
+          "gt0258": {
+            "id": "gt0258",
+            "text": "formInput-Increased nuchal translucency",
+            "description": ""
+          },
+          "gt0259": {
+            "id": "gt0259",
+            "text": "formInput-Nonimmune hydrops fetalis",
+            "description": ""
+          },
+          "gt0260": {
+            "id": "gt0260",
+            "text": "formInput-Polyhydramnios",
+            "description": ""
+          },
+          "gt0261": {
+            "id": "gt0261",
+            "text": "formInput-Failure to thrive in infancy",
+            "description": ""
+          },
+          "gt0262": {
+            "id": "gt0262",
+            "text": "formInput-Feeding difficulties",
+            "description": ""
+          },
+          "gt0263": {
+            "id": "gt0263",
+            "text": "formInput-Pulmonic stenosis",
+            "description": ""
+          },
+          "gt0264": {
+            "id": "gt0264",
+            "text": "formInput-Hypertrophic cardiomyopathy",
+            "description": ""
+          },
+          "gt0265": {
+            "id": "gt0265",
+            "text": "formInput-Abnormality of the atrioventricular valves",
+            "description": ""
+          },
+          "gt0266": {
+            "id": "gt0266",
+            "text": "formInput-Atrial septal defect",
+            "description": ""
+          },
+          "gt0267": {
+            "id": "gt0267",
+            "text": "formInput-Ventricular septal defect",
+            "description": ""
+          },
+          "gt0268": {
+            "id": "gt0268",
+            "text": "formInput-Arrhythmia",
+            "description": ""
+          },
+          "gt0269": {
+            "id": "gt0269",
+            "text": "formInput-Lymphedema",
+            "description": ""
+          },
+          "gt0270": {
+            "id": "gt0270",
+            "text": "formInput-Pleural effusion",
+            "description": ""
+          },
+          "gt0271": {
+            "id": "gt0271",
+            "text": "formInput-Intellectual disability NS",
+            "description": ""
+          },
+          "gt0272": {
+            "id": "gt0272",
+            "text": "formInput-Specific learning disability",
+            "description": ""
+          },
+          "gt0273": {
+            "id": "gt0273",
+            "text": "formInput-Delayed gross motor development NS",
+            "description": ""
+          },
+          "gt0274": {
+            "id": "gt0274",
+            "text": "formInput-Delayed speech and language development NS",
+            "description": ""
+          },
+          "gt0275": {
+            "id": "gt0275",
+            "text": "formInput-Abnormality of the kidney",
+            "description": ""
+          },
+          "gt0276": {
+            "id": "gt0276",
+            "text": "formInput-Delayed puberty",
+            "description": ""
+          },
+          "gt0277": {
+            "id": "gt0277",
+            "text": "formInput-Cryptorchidism",
+            "description": ""
+          },
+          "gt0278": {
+            "id": "gt0278",
+            "text": "formInput-Decreased fertility",
+            "description": ""
+          },
+          "gt0279": {
+            "id": "gt0279",
+            "text": "formInput-Abnormality of hair texture",
+            "description": ""
+          },
+          "gt0280": {
+            "id": "gt0280",
+            "text": "formInput-Follicular hyperkeratosis",
+            "description": ""
+          },
+          "gt0281": {
+            "id": "gt0281",
+            "text": "formInput-Cafe-au-lait spot",
+            "description": ""
+          },
+          "gt0282": {
+            "id": "gt0282",
+            "text": "formInput-Multiple lentigines",
+            "description": ""
+          },
+          "gt0283": {
+            "id": "gt0283",
+            "text": "formInput-Hemangioma",
+            "description": ""
+          },
+          "gt0284": {
+            "id": "gt0284",
+            "text": "formInput-Papilloma",
+            "description": ""
+          },
+          "gt0285": {
+            "id": "gt0285",
+            "text": "formInput-Pectus carinatum",
+            "description": ""
+          },
+          "gt0286": {
+            "id": "gt0286",
+            "text": "formInput-Pectus excavatum",
+            "description": ""
+          },
+          "gt0287": {
+            "id": "gt0287",
+            "text": "formInput-Wide intermamillary distance",
+            "description": ""
+          },
+          "gt0288": {
+            "id": "gt0288",
+            "text": "formInput-Webbed neck",
+            "description": ""
+          },
+          "gt0289": {
+            "id": "gt0289",
+            "text": "formInput-Abnormality of the coagulation cascade",
+            "description": ""
+          },
+          "gt0290": {
+            "id": "gt0290",
+            "text": "formInput-Abnormality of thrombocytes",
+            "description": ""
+          },
+          "gt0291": {
+            "id": "gt0291",
+            "text": "formInput-Neoplasm",
+            "description": ""
+          },
+          "gt0292": {
+            "id": "gt0292",
+            "text": "formInput-Immunodeficiency",
+            "description": ""
+          },
+          "gt0293": {
+            "id": "gt0293",
+            "text": "formInput-Autoimmunity",
+            "description": ""
+          },
+          "gt0294": {
+            "id": "gt0294",
+            "text": "formInput-Abnormality of brain morphology",
+            "description": ""
+          },
+          "gt0295": {
+            "id": "gt0295",
+            "text": "formInput-Seizures",
+            "description": ""
+          },
+          "gt0296": {
+            "id": "gt0296",
+            "text": "formInput-Autism",
+            "description": ""
+          },
+          "gt0297": {
+            "id": "gt0297",
+            "text": "formInput-Depression",
+            "description": ""
+          },
+          "gt0298": {
+            "id": "gt0298",
+            "text": "formInput-Schizophrenia",
+            "description": ""
+          },
+          "gt0299": {
+            "id": "gt0299",
+            "text": "formInput-Ptosis",
+            "description": ""
+          },
+          "gt0300": {
+            "id": "gt0300",
+            "text": "formInput-Abnormality of refraction",
+            "description": ""
+          },
+          "gt0301": {
+            "id": "gt0301",
+            "text": "formInput-Strabismus",
+            "description": ""
+          },
+          "gt0302": {
+            "id": "gt0302",
+            "text": "formInput-Hearing abnormality",
+            "description": ""
+          },
+          "gt0401": {
+            "id": "gt0401",
+            "text": "Hyperlipidemia code",
+            "description": ""
+          },
+          "gt0402": {
+            "id": "gt0402",
+            "text": "Hyperlipidemia",
+            "description": ""
+          },
+          "gt0403": {
+            "id": "gt0403",
+            "text": "Hyperlipidemia text",
+            "description": ""
+          },
+          "gt0404": {
+            "id": "gt0404",
+            "text": "Hypercholesterolemia code",
+            "description": ""
+          },
+          "gt0405": {
+            "id": "gt0405",
+            "text": "Hypercholesterolemia",
+            "description": ""
+          },
+          "gt0406": {
+            "id": "gt0406",
+            "text": "Hypercholesterolemia text",
+            "description": ""
+          },
+          "gt0407": {
+            "id": "gt0407",
+            "text": "Hyperbetalipoproteinemia code",
+            "description": ""
+          },
+          "gt0408": {
+            "id": "gt0408",
+            "text": "Hyperbetalipoproteinemia",
+            "description": ""
+          },
+          "gt0409": {
+            "id": "gt0409",
+            "text": "Hyperbetalipoproteinemia text",
+            "description": ""
+          },
+          "gt0410": {
+            "id": "gt0410",
+            "text": "Hyperlipoproteinemia code",
+            "description": ""
+          },
+          "gt0411": {
+            "id": "gt0411",
+            "text": "Hyperlipoproteinemia",
+            "description": ""
+          },
+          "gt0412": {
+            "id": "gt0412",
+            "text": "Hyperlipoproteinemia text",
+            "description": ""
+          },
+          "gt0413": {
+            "id": "gt0413",
+            "text": "Myocardial infarction code",
+            "description": ""
+          },
+          "gt0414": {
+            "id": "gt0414",
+            "text": "Myocardial infarction",
+            "description": ""
+          },
+          "gt0415": {
+            "id": "gt0415",
+            "text": "Myocardial infarction text",
+            "description": ""
+          },
+          "gt0416": {
+            "id": "gt0416",
+            "text": "Hypertriglyceridemia code",
+            "description": ""
+          },
+          "gt0417": {
+            "id": "gt0417",
+            "text": "Hypertriglyceridemia",
+            "description": ""
+          },
+          "gt0418": {
+            "id": "gt0418",
+            "text": "Hypertriglyceridemia text",
+            "description": ""
+          },
+          "gt0419": {
+            "id": "gt0419",
+            "text": "Tendon xanthomatosis code",
+            "description": ""
+          },
+          "gt0420": {
+            "id": "gt0420",
+            "text": "Tendon xanthomatosis",
+            "description": ""
+          },
+          "gt0421": {
+            "id": "gt0421",
+            "text": "Tendon xanthomatosis text",
+            "description": ""
+          },
+          "gt0422": {
+            "id": "gt0422",
+            "text": "Corneal arcus code",
+            "description": ""
+          },
+          "gt0423": {
+            "id": "gt0423",
+            "text": "Corneal arcus",
+            "description": ""
+          },
+          "gt0424": {
+            "id": "gt0424",
+            "text": "Corneal arcus text",
+            "description": ""
+          },
+          "gt0428": {
+            "id": "gt0428",
+            "text": "Accessory oral frenulum",
+            "description": ""
+          },
+          "gt0429": {
+            "id": "gt0429",
+            "text": "Hamartoma of tongue",
+            "description": ""
+          },
+          "gt0430": {
+            "id": "gt0430",
+            "text": "Cleft palate",
+            "description": ""
+          },
+          "gt0431": {
+            "id": "gt0431",
+            "text": "Abnormality of cardiovascular system morphology",
+            "description": ""
+          },
+          "gt0432": {
+            "id": "gt0432",
+            "text": "Hyperechogenic kidneys",
+            "description": ""
+          },
+          "gt0433": {
+            "id": "gt0433",
+            "text": "Multiple renal cysts",
+            "description": ""
+          },
+          "gt0434": {
+            "id": "gt0434",
+            "text": "Hypertension",
+            "description": ""
+          },
+          "gt0435": {
+            "id": "gt0435",
+            "text": "Chronic kidney disease",
+            "description": ""
+          },
+          "gt0436": {
+            "id": "gt0436",
+            "text": "Hepatic fibrosis",
+            "description": ""
+          },
+          "gt0437": {
+            "id": "gt0437",
+            "text": "Elevated hepatic transaminases",
+            "description": ""
+          },
+          "gt0438": {
+            "id": "gt0438",
+            "text": "Preaxial hand polydactyly",
+            "description": ""
+          },
+          "gt0439": {
+            "id": "gt0439",
+            "text": "Postaxial hand polydactyly",
+            "description": ""
+          },
+          "gt0440": {
+            "id": "gt0440",
+            "text": "Mesoaxial hand polydactyly",
+            "description": ""
+          },
+          "gt0441": {
+            "id": "gt0441",
+            "text": "Preaxial foot polydactyly",
+            "description": ""
+          },
+          "gt0442": {
+            "id": "gt0442",
+            "text": "Postaxial foot polydactyly",
+            "description": ""
+          },
+          "gt0443": {
+            "id": "gt0443",
+            "text": "Mesoaxial foot polydactyly",
+            "description": ""
+          },
+          "gt0444": {
+            "id": "gt0444",
+            "text": "Short stature",
+            "description": ""
+          },
+          "gt0445": {
+            "id": "gt0445",
+            "text": "Obesity",
+            "description": ""
+          },
+          "gt0446": {
+            "id": "gt0446",
+            "text": "Skeletal dysplasia",
+            "description": ""
+          },
+          "gt0447": {
+            "id": "gt0447",
+            "text": "Short stature R104",
+            "description": ""
+          },
+          "gt0448": {
+            "id": "gt0448",
+            "text": "Intellectual disability R104",
+            "description": ""
+          },
+          "gt0449": {
+            "id": "gt0449",
+            "text": "Abnormal facial shape R104",
+            "description": ""
+          },
+          "gt0450": {
+            "id": "gt0450",
+            "text": "Global developmental delay R104",
+            "description": ""
+          },
+          "gt0451": {
+            "id": "gt0451",
+            "text": "Generalized seizures",
+            "description": ""
+          },
+          "gt0452": {
+            "id": "gt0452",
+            "text": "Focal seizures",
+            "description": ""
+          },
+          "gt0453": {
+            "id": "gt0453",
+            "text": "Epileptic spasms",
+            "description": ""
+          },
+          "gt0454": {
+            "id": "gt0454",
+            "text": "Infantile encephalopathy",
+            "description": ""
+          },
+          "gt0455": {
+            "id": "gt0455",
+            "text": "Intellectual disability GMSR59",
+            "description": ""
+          },
+          "gt0456": {
+            "id": "gt0456",
+            "text": "Abnormal facial shape GMSR59",
+            "description": ""
+          },
+          "gt0457": {
+            "id": "gt0457",
+            "text": "Global developmental delay GMSR59",
+            "description": ""
+          },
+          "gt0458": {
+            "id": "gt0458",
+            "text": "Increased nuchal translucency",
+            "description": ""
+          },
+          "gt0459": {
+            "id": "gt0459",
+            "text": "Nonimmune hydrops fetalis",
+            "description": ""
+          },
+          "gt0460": {
+            "id": "gt0460",
+            "text": "Polyhydramnios",
+            "description": ""
+          },
+          "gt0461": {
+            "id": "gt0461",
+            "text": "Failure to thrive in infancy",
+            "description": ""
+          },
+          "gt0462": {
+            "id": "gt0462",
+            "text": "Feeding difficulties",
+            "description": ""
+          },
+          "gt0463": {
+            "id": "gt0463",
+            "text": "Pulmonic stenosis",
+            "description": ""
+          },
+          "gt0464": {
+            "id": "gt0464",
+            "text": "Hypertrophic cardiomyopathy",
+            "description": ""
+          },
+          "gt0465": {
+            "id": "gt0465",
+            "text": "Abnormality of the atrioventricular valves",
+            "description": ""
+          },
+          "gt0466": {
+            "id": "gt0466",
+            "text": "Atrial septal defect",
+            "description": ""
+          },
+          "gt0467": {
+            "id": "gt0467",
+            "text": "Ventricular septal defect",
+            "description": ""
+          },
+          "gt0468": {
+            "id": "gt0468",
+            "text": "Arrhythmia",
+            "description": ""
+          },
+          "gt0469": {
+            "id": "gt0469",
+            "text": "Lymphedema",
+            "description": ""
+          },
+          "gt0470": {
+            "id": "gt0470",
+            "text": "Pleural effusion",
+            "description": ""
+          },
+          "gt0471": {
+            "id": "gt0471",
+            "text": "Intellectual disability NS",
+            "description": ""
+          },
+          "gt0472": {
+            "id": "gt0472",
+            "text": "Specific learning disability",
+            "description": ""
+          },
+          "gt0473": {
+            "id": "gt0473",
+            "text": "Delayed gross motor development NS",
+            "description": ""
+          },
+          "gt0474": {
+            "id": "gt0474",
+            "text": "Delayed speech and language development NS ",
+            "description": ""
+          },
+          "gt0475": {
+            "id": "gt0475",
+            "text": "Abnormality of the kidney",
+            "description": ""
+          },
+          "gt0476": {
+            "id": "gt0476",
+            "text": "Delayed puberty",
+            "description": ""
+          },
+          "gt0477": {
+            "id": "gt0477",
+            "text": "Cryptorchidism",
+            "description": ""
+          },
+          "gt0478": {
+            "id": "gt0478",
+            "text": "Decreased fertility",
+            "description": ""
+          },
+          "gt0479": {
+            "id": "gt0479",
+            "text": "Abnormality of hair texture",
+            "description": ""
+          },
+          "gt0480": {
+            "id": "gt0480",
+            "text": "Follicular hyperkeratosis",
+            "description": ""
+          },
+          "gt0481": {
+            "id": "gt0481",
+            "text": "Cafe-au-lait spot",
+            "description": ""
+          },
+          "gt0482": {
+            "id": "gt0482",
+            "text": "Multiple lentigines",
+            "description": ""
+          },
+          "gt0483": {
+            "id": "gt0483",
+            "text": "Hemangioma",
+            "description": ""
+          },
+          "gt0484": {
+            "id": "gt0484",
+            "text": "Papilloma",
+            "description": ""
+          },
+          "gt0485": {
+            "id": "gt0485",
+            "text": "Pectus carinatum",
+            "description": ""
+          },
+          "gt0486": {
+            "id": "gt0486",
+            "text": "Pectus excavatum",
+            "description": ""
+          },
+          "gt0487": {
+            "id": "gt0487",
+            "text": "Wide intermamillary distance",
+            "description": ""
+          },
+          "gt0488": {
+            "id": "gt0488",
+            "text": "Webbed neck",
+            "description": ""
+          },
+          "gt0489": {
+            "id": "gt0489",
+            "text": "Abnormality of the coagulation cascade",
+            "description": ""
+          },
+          "gt0490": {
+            "id": "gt0490",
+            "text": "Abnormality of thrombocytes",
+            "description": ""
+          },
+          "gt0491": {
+            "id": "gt0491",
+            "text": "Neoplasm",
+            "description": ""
+          },
+          "gt0492": {
+            "id": "gt0492",
+            "text": "Immunodeficiency",
+            "description": ""
+          },
+          "gt0493": {
+            "id": "gt0493",
+            "text": "Autoimmunity",
+            "description": ""
+          },
+          "gt0494": {
+            "id": "gt0494",
+            "text": "Abnormality of brain morphology",
+            "description": ""
+          },
+          "gt0495": {
+            "id": "gt0495",
+            "text": "Seizures",
+            "description": ""
+          },
+          "gt0496": {
+            "id": "gt0496",
+            "text": "Autism",
+            "description": ""
+          },
+          "gt0497": {
+            "id": "gt0497",
+            "text": "Depression",
+            "description": ""
+          },
+          "gt0498": {
+            "id": "gt0498",
+            "text": "Schizophrenia",
+            "description": ""
+          },
+          "gt0499": {
+            "id": "gt0499",
+            "text": "Ptosis",
+            "description": ""
+          },
+          "gt0500": {
+            "id": "gt0500",
+            "text": "Abnormality of refraction",
+            "description": ""
+          },
+          "gt0501": {
+            "id": "gt0501",
+            "text": "Strabismus",
+            "description": ""
+          },
+          "gt0502": {
+            "id": "gt0502",
+            "text": "Hearing abnormality",
+            "description": ""
+          },
+          "gt1201": {
+            "id": "gt1201",
+            "text": "Generalized seizures identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1202": {
+            "id": "gt1202",
+            "text": "Generalized seizures present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1203": {
+            "id": "gt1203",
+            "text": "Generalized seizures description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1205": {
+            "id": "gt1205",
+            "text": "Focal seizures identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1206": {
+            "id": "gt1206",
+            "text": "Focal seizures present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1207": {
+            "id": "gt1207",
+            "text": "Focal seizures description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1209": {
+            "id": "gt1209",
+            "text": "Epileptic spasms identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1210": {
+            "id": "gt1210",
+            "text": "Epileptic spasms present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1211": {
+            "id": "gt1211",
+            "text": "Epileptic spasms description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1213": {
+            "id": "gt1213",
+            "text": "Infantile encephalopathy identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1214": {
+            "id": "gt1214",
+            "text": "Infantile encephalopathy present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1215": {
+            "id": "gt1215",
+            "text": "Infantile encephalopathy description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1217": {
+            "id": "gt1217",
+            "text": "Intellectual disability GMSR59 identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1218": {
+            "id": "gt1218",
+            "text": "Intellectual disability GMSR59 present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1219": {
+            "id": "gt1219",
+            "text": "Intellectual disability GMSR59 description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1221": {
+            "id": "gt1221",
+            "text": "Abnormal facial shape GMSR59 identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1222": {
+            "id": "gt1222",
+            "text": "Abnormal facial shape GMSR59 present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1223": {
+            "id": "gt1223",
+            "text": "Abnormal facial shape GMSR59 description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1225": {
+            "id": "gt1225",
+            "text": "Global developmental delay GMSR59 identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1226": {
+            "id": "gt1226",
+            "text": "Global developmental delay GMSR59 present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1227": {
+            "id": "gt1227",
+            "text": "Global developmental delay GMSR59 description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1229": {
+            "id": "gt1229",
+            "text": "Increased nuchal translucency identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1230": {
+            "id": "gt1230",
+            "text": "Increased nuchal translucency present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1231": {
+            "id": "gt1231",
+            "text": "Increased nuchal translucency description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1233": {
+            "id": "gt1233",
+            "text": "Nonimmune hydrops fetalis identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1234": {
+            "id": "gt1234",
+            "text": "Nonimmune hydrops fetalis present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1235": {
+            "id": "gt1235",
+            "text": "Nonimmune hydrops fetalis description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1238": {
+            "id": "gt1238",
+            "text": "Polyhydramnios identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1239": {
+            "id": "gt1239",
+            "text": "Polyhydramnios present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1240": {
+            "id": "gt1240",
+            "text": "Polyhydramnios description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1242": {
+            "id": "gt1242",
+            "text": "Failure to thrive in infancy identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1243": {
+            "id": "gt1243",
+            "text": "Failure to thrive in infancy present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1244": {
+            "id": "gt1244",
+            "text": "Failure to thrive in infancy description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1246": {
+            "id": "gt1246",
+            "text": "Feeding difficulties identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1247": {
+            "id": "gt1247",
+            "text": "Feeding difficulties present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1248": {
+            "id": "gt1248",
+            "text": "Feeding difficulties description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1250": {
+            "id": "gt1250",
+            "text": "Pulmonic stenosis identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1251": {
+            "id": "gt1251",
+            "text": "Pulmonic stenosis present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1252": {
+            "id": "gt1252",
+            "text": "Pulmonic stenosis description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1254": {
+            "id": "gt1254",
+            "text": "Hypertrophic cardiomyopathy identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1255": {
+            "id": "gt1255",
+            "text": "Hypertrophic cardiomyopathy present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1256": {
+            "id": "gt1256",
+            "text": "Hypertrophic cardiomyopathy description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1258": {
+            "id": "gt1258",
+            "text": "Abnormality of the atrioventricular valves identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1259": {
+            "id": "gt1259",
+            "text": "Abnormality of the atrioventricular valves present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1260": {
+            "id": "gt1260",
+            "text": "Abnormality of the atrioventricular valves description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1262": {
+            "id": "gt1262",
+            "text": "Atrial septal defect identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1263": {
+            "id": "gt1263",
+            "text": "Atrial septal defect present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1264": {
+            "id": "gt1264",
+            "text": "Atrial septal defect description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1266": {
+            "id": "gt1266",
+            "text": "Ventricular septal defect identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1267": {
+            "id": "gt1267",
+            "text": "Ventricular septal defect present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1268": {
+            "id": "gt1268",
+            "text": "Ventricular septal defect description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1270": {
+            "id": "gt1270",
+            "text": "Arrhythmia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1271": {
+            "id": "gt1271",
+            "text": "Arrhythmia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1272": {
+            "id": "gt1272",
+            "text": "Arrhythmia description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1274": {
+            "id": "gt1274",
+            "text": "Lymphedema identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1275": {
+            "id": "gt1275",
+            "text": "Lymphedema present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1276": {
+            "id": "gt1276",
+            "text": "Lymphedema description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1278": {
+            "id": "gt1278",
+            "text": "Pleural effusion identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1279": {
+            "id": "gt1279",
+            "text": "Pleural effusion present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1280": {
+            "id": "gt1280",
+            "text": "Pleural effusion description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1282": {
+            "id": "gt1282",
+            "text": "Intellectual disability NS identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1283": {
+            "id": "gt1283",
+            "text": "Intellectual disability NS present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1284": {
+            "id": "gt1284",
+            "text": "Intellectual disability NS description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1286": {
+            "id": "gt1286",
+            "text": "Specific learning disability identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1287": {
+            "id": "gt1287",
+            "text": "Specific learning disability present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1288": {
+            "id": "gt1288",
+            "text": "Specific learning disability description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1290": {
+            "id": "gt1290",
+            "text": "Delayed gross motor development NS identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1291": {
+            "id": "gt1291",
+            "text": "Delayed gross motor development NS present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1292": {
+            "id": "gt1292",
+            "text": "Delayed gross motor development NS description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1294": {
+            "id": "gt1294",
+            "text": "Delayed speech and language development NS identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1295": {
+            "id": "gt1295",
+            "text": "Delayed speech and language development NSpresent",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1296": {
+            "id": "gt1296",
+            "text": "Delayed speech and language development NSdescription",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1298": {
+            "id": "gt1298",
+            "text": "Abnormality of the kidney identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1299": {
+            "id": "gt1299",
+            "text": "Abnormality of the kidney present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1300": {
+            "id": "gt1300",
+            "text": "Abnormality of the kidney description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1302": {
+            "id": "gt1302",
+            "text": "Delayed puberty identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1303": {
+            "id": "gt1303",
+            "text": "Delayed puberty present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1304": {
+            "id": "gt1304",
+            "text": "Delayed puberty description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1306": {
+            "id": "gt1306",
+            "text": "Cryptorchidism identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1307": {
+            "id": "gt1307",
+            "text": "Cryptorchidism present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1308": {
+            "id": "gt1308",
+            "text": "Cryptorchidism description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1310": {
+            "id": "gt1310",
+            "text": "Decreased fertility identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1311": {
+            "id": "gt1311",
+            "text": "Decreased fertility present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1312": {
+            "id": "gt1312",
+            "text": "Decreased fertility description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1314": {
+            "id": "gt1314",
+            "text": "Abnormality of hair texture identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1315": {
+            "id": "gt1315",
+            "text": "Abnormality of hair texture present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1316": {
+            "id": "gt1316",
+            "text": "Abnormality of hair texture description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1318": {
+            "id": "gt1318",
+            "text": "Follicular hyperkeratosis identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1319": {
+            "id": "gt1319",
+            "text": "Follicular hyperkeratosis present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1320": {
+            "id": "gt1320",
+            "text": "Follicular hyperkeratosis description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1322": {
+            "id": "gt1322",
+            "text": "Cafe-au-lait spot identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1323": {
+            "id": "gt1323",
+            "text": "Cafe-au-lait spot present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1324": {
+            "id": "gt1324",
+            "text": "Cafe-au-lait spot description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1326": {
+            "id": "gt1326",
+            "text": "Multiple lentigines identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1327": {
+            "id": "gt1327",
+            "text": "Multiple lentigines present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1328": {
+            "id": "gt1328",
+            "text": "Multiple lentigines description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1330": {
+            "id": "gt1330",
+            "text": "Hemangioma identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1331": {
+            "id": "gt1331",
+            "text": "Hemangioma present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1332": {
+            "id": "gt1332",
+            "text": "Hemangioma description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1334": {
+            "id": "gt1334",
+            "text": "Papilloma identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1335": {
+            "id": "gt1335",
+            "text": "Papilloma present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1336": {
+            "id": "gt1336",
+            "text": "Papilloma description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1338": {
+            "id": "gt1338",
+            "text": "Pectus carinatum identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1339": {
+            "id": "gt1339",
+            "text": "Pectus carinatum present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1340": {
+            "id": "gt1340",
+            "text": "Pectus carinatum description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1342": {
+            "id": "gt1342",
+            "text": "Pectus excavatum identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1343": {
+            "id": "gt1343",
+            "text": "Pectus excavatum present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1344": {
+            "id": "gt1344",
+            "text": "Pectus excavatum description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1346": {
+            "id": "gt1346",
+            "text": "Wide intermamillary distance identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1347": {
+            "id": "gt1347",
+            "text": "Wide intermamillary distance present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1348": {
+            "id": "gt1348",
+            "text": "Wide intermamillary distance description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1350": {
+            "id": "gt1350",
+            "text": "Webbed neck identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1351": {
+            "id": "gt1351",
+            "text": "Webbed neck present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1352": {
+            "id": "gt1352",
+            "text": "Webbed neck description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1354": {
+            "id": "gt1354",
+            "text": "Abnormality of the coagulation cascade identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1355": {
+            "id": "gt1355",
+            "text": "Abnormality of the coagulation cascade present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1356": {
+            "id": "gt1356",
+            "text": "Abnormality of the coagulation cascade description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1358": {
+            "id": "gt1358",
+            "text": "Abnormality of thrombocytes identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1359": {
+            "id": "gt1359",
+            "text": "Abnormality of thrombocytes present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1360": {
+            "id": "gt1360",
+            "text": "Abnormality of thrombocytes description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1362": {
+            "id": "gt1362",
+            "text": "Neoplasm identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1363": {
+            "id": "gt1363",
+            "text": "Neoplasm present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1364": {
+            "id": "gt1364",
+            "text": "Neoplasm description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1366": {
+            "id": "gt1366",
+            "text": "Immunodeficiency identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1367": {
+            "id": "gt1367",
+            "text": "Immunodeficiency present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1368": {
+            "id": "gt1368",
+            "text": "Immunodeficiency description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1370": {
+            "id": "gt1370",
+            "text": "Autoimmunity identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1371": {
+            "id": "gt1371",
+            "text": "Autoimmunity present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1372": {
+            "id": "gt1372",
+            "text": "Autoimmunitydescription",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1374": {
+            "id": "gt1374",
+            "text": "Abnormality of brain morphology identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1375": {
+            "id": "gt1375",
+            "text": "Abnormality of brain morphology present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1376": {
+            "id": "gt1376",
+            "text": "Abnormality of brain morphology description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1378": {
+            "id": "gt1378",
+            "text": "Seizures identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1379": {
+            "id": "gt1379",
+            "text": "Seizures present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1380": {
+            "id": "gt1380",
+            "text": "Seizures description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1382": {
+            "id": "gt1382",
+            "text": "Autism identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1383": {
+            "id": "gt1383",
+            "text": "Autism present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1384": {
+            "id": "gt1384",
+            "text": "Autism description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1386": {
+            "id": "gt1386",
+            "text": "Depression identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1387": {
+            "id": "gt1387",
+            "text": "Depression present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1388": {
+            "id": "gt1388",
+            "text": "Depression description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1390": {
+            "id": "gt1390",
+            "text": "Schizophrenia identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1391": {
+            "id": "gt1391",
+            "text": "Schizophrenia present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1392": {
+            "id": "gt1392",
+            "text": "Schizophrenia description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1394": {
+            "id": "gt1394",
+            "text": "Ptosis identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1395": {
+            "id": "gt1395",
+            "text": "Ptosis present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1396": {
+            "id": "gt1396",
+            "text": "Ptosis description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1398": {
+            "id": "gt1398",
+            "text": "Abnormality of refraction identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1399": {
+            "id": "gt1399",
+            "text": "Abnormality of refraction present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1400": {
+            "id": "gt1400",
+            "text": "Abnormality of refraction description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1402": {
+            "id": "gt1402",
+            "text": "Strabismus identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1403": {
+            "id": "gt1403",
+            "text": "Strabismus present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1404": {
+            "id": "gt1404",
+            "text": "Strabismus description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1406": {
+            "id": "gt1406",
+            "text": "Hearing abnormality identifier",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt1407": {
+            "id": "gt1407",
+            "text": "Hearing abnormality present",
+            "description": "Statement about the presence of the specified phenotypic abnormality."
+          },
+          "gt1408": {
+            "id": "gt1408",
+            "text": "Hearing abnormality description",
+            "description": "The identity of the statement in the Human Phenotype Ontology."
+          },
+          "gt2201": {
+            "id": "gt2201",
+            "text": "Set Hyperlipidemia to yes,no,unknown"
+          },
+          "gt2202": {
+            "id": "gt2202",
+            "text": "Set formInput-Hyperlipdemia exist"
+          },
+          "gt2203": {
+            "id": "gt2203",
+            "text": "Set Hypercholesterolemia to yes,no,unknown"
+          },
+          "gt2204": {
+            "id": "gt2204",
+            "text": "Set formInput-Hyperlipoproteinemia exist"
+          },
+          "gt2205": {
+            "id": "gt2205",
+            "text": "Set Hyperlipoproteinemia to yes,no,unknown"
+          },
+          "gt2206": {
+            "id": "gt2206",
+            "text": "Set Hyperbetalipoproteinemia to yes,no,unknown"
+          },
+          "gt2207": {
+            "id": "gt2207",
+            "text": "Set formInput-Hyperbetalipoproteinemia exist"
+          },
+          "gt2208": {
+            "id": "gt2208",
+            "text": "Set formInput-Hypercholesterolemia exist"
+          },
+          "gt2209": {
+            "id": "gt2209",
+            "text": "Set Myocardial infarction to yes,no,unknown"
+          },
+          "gt2210": {
+            "id": "gt2210",
+            "text": "Set formInput-Myocardial infarction exist"
+          },
+          "gt2211": {
+            "id": "gt2211",
+            "text": "Set Hypertriglyceridemia to yes,no,unknown"
+          },
+          "gt2212": {
+            "id": "gt2212",
+            "text": "Set formInput-Hypertriglyceridemia exist"
+          },
+          "gt2213": {
+            "id": "gt2213",
+            "text": "Set Tendon xanthomatosis to yes,no,unknown"
+          },
+          "gt2214": {
+            "id": "gt2214",
+            "text": "Set formInput-Tendon xanthomatosis exist"
+          },
+          "gt2215": {
+            "id": "gt2215",
+            "text": "Set Corneal arcus to yes,no,unknown"
+          },
+          "gt2216": {
+            "id": "gt2216",
+            "text": "Set formInput-Corneal arcus exist"
+          },
+          "gt2217": {
+            "id": "gt2217",
+            "text": "Set Delayed gross motor development to yes,no,unknown"
+          },
+          "gt2218": {
+            "id": "gt2218",
+            "text": "Set formInput-Delayed gross motor development exist"
+          },
+          "gt2219": {
+            "id": "gt2219",
+            "text": "Set Delayed fine motor development to yes,no,unknown"
+          },
+          "gt2220": {
+            "id": "gt2220",
+            "text": "Set formInput-Delayed fine motor development exist"
+          },
+          "gt2221": {
+            "id": "gt2221",
+            "text": "Set Delayed speech and language development to yes,no,unknown"
+          },
+          "gt2222": {
+            "id": "gt2222",
+            "text": "Set formInput-Delayed speech and language development exist"
+          },
+          "gt2223": {
+            "id": "gt2223",
+            "text": "Set Global developmental delay to yes,no,unknown"
+          },
+          "gt2225": {
+            "id": "gt2225",
+            "text": "Set formInput-Global developmental delay exist"
+          },
+          "gt2226": {
+            "id": "gt2226",
+            "text": "Set Intellectual disability to yes,no,unknown"
+          },
+          "gt2227": {
+            "id": "gt2227",
+            "text": "Set formInput-Intellectual disability exist"
+          },
+          "gt2228": {
+            "id": "gt2228",
+            "text": "Set Microcephaly to yes,no,unknown"
+          },
+          "gt2229": {
+            "id": "gt2229",
+            "text": "Set formInput-Microcephaly exist"
+          },
+          "gt2230": {
+            "id": "gt2230",
+            "text": "Set Macrocephaly to yes,no,unknown"
+          },
+          "gt2231": {
+            "id": "gt2231",
+            "text": "Set formInput-Macrocephaly exist"
+          },
+          "gt2232": {
+            "id": "gt2232",
+            "text": "Set Generalized hypotonia to yes,no,unknown"
+          },
+          "gt2233": {
+            "id": "gt2233",
+            "text": "Set formInput-Generalized hypotonia exist"
+          },
+          "gt2234": {
+            "id": "gt2234",
+            "text": "Set Ataxia to yes,no,unknown"
+          },
+          "gt2236": {
+            "id": "gt2236",
+            "text": "Set formInput-Ataxia exist"
+          },
+          "gt2237": {
+            "id": "gt2237",
+            "text": "Set Molar tooth sign on MRI to yes,no,unknown"
+          },
+          "gt2238": {
+            "id": "gt2238",
+            "text": "Set formInput-Molar tooth sign on MRI exist"
+          },
+          "gt2239": {
+            "id": "gt2239",
+            "text": "Set Cerebellar vermis hypoplasia to yes,no,unknown"
+          },
+          "gt2240": {
+            "id": "gt2240",
+            "text": "Set formInput-Occipital encephalocele exist"
+          },
+          "gt2241": {
+            "id": "gt2241",
+            "text": "Set Occipital encephalocele to yes,no,unknown"
+          },
+          "gt2242": {
+            "id": "gt2242",
+            "text": "Set Polymicrogyria to yes,no,unknown"
+          },
+          "gt2243": {
+            "id": "gt2243",
+            "text": "Set Neonatal breathing dysregulation to yes,no,unknown"
+          },
+          "gt2244": {
+            "id": "gt2244",
+            "text": "Set formInput-Polymicrogyria exist"
+          },
+          "gt2245": {
+            "id": "gt2245",
+            "text": "Set formInput-Neonatal breathing dysregulation exist"
+          },
+          "gt2246": {
+            "id": "gt2246",
+            "text": "Set Oculomotor apraxia to yes,no,unknown"
+          },
+          "gt2247": {
+            "id": "gt2247",
+            "text": "Set formInput-Oculomotor apraxia exist"
+          },
+          "gt2248": {
+            "id": "gt2248",
+            "text": "Set Coloboma to yes,no,unknown"
+          },
+          "gt2249": {
+            "id": "gt2249",
+            "text": "Set formInput-Coloboma exist"
+          },
+          "gt2250": {
+            "id": "gt2250",
+            "text": "Set Retinal dystrophy to yes,no,unknown"
+          },
+          "gt2251": {
+            "id": "gt2251",
+            "text": "Set Abnormal facial shape to yes,no,unknown"
+          },
+          "gt2252": {
+            "id": "gt2252",
+            "text": "Set formInput-Retinal dystrophy exist"
+          },
+          "gt2253": {
+            "id": "gt2253",
+            "text": "Set formInput-Abnormal facial shape exist"
+          },
+          "gt2254": {
+            "id": "gt2254",
+            "text": "Set Accessory oral frenulum to yes,no,unknown"
+          },
+          "gt2255": {
+            "id": "gt2255",
+            "text": "Set formInput-Accessory oral frenulum exist"
+          },
+          "gt2256": {
+            "id": "gt2256",
+            "text": "Set Hamartoma of tongue to yes,no,unknown"
+          },
+          "gt2257": {
+            "id": "gt2257",
+            "text": "Set formInput-Hamartoma of tongue exist"
+          },
+          "gt2258": {
+            "id": "gt2258",
+            "text": "Set Cleft palate to yes,no,unknown"
+          },
+          "gt2259": {
+            "id": "gt2259",
+            "text": "Set formInput-Cleft palate exist"
+          },
+          "gt2260": {
+            "id": "gt2260",
+            "text": "Set Abnormality of cardiovascular system morphologyto yes,no,unknown"
+          },
+          "gt2261": {
+            "id": "gt2261",
+            "text": "Set formInput-Abnormality of cardiovascular system morphology exist"
+          },
+          "gt2262": {
+            "id": "gt2262",
+            "text": "Set Hyperechogenic kidneys to yes,no,unknown"
+          },
+          "gt2263": {
+            "id": "gt2263",
+            "text": "Set formInput-Hyperechogenic kidneys exist"
+          },
+          "gt2264": {
+            "id": "gt2264",
+            "text": "Set Multiple renal cysts to yes,no,unknown"
+          },
+          "gt2265": {
+            "id": "gt2265",
+            "text": "Set formInput-Multiple renal cysts exist"
+          },
+          "gt2266": {
+            "id": "gt2266",
+            "text": "Set Hypertension to yes,no,unknown"
+          },
+          "gt2267": {
+            "id": "gt2267",
+            "text": "Set Chronic kidney disease to yes,no,unknown"
+          },
+          "gt2268": {
+            "id": "gt2268",
+            "text": "Set formInput-Hypertension exist"
+          },
+          "gt2269": {
+            "id": "gt2269",
+            "text": "Set formInput-Chronic kidney disease exist"
+          },
+          "gt2270": {
+            "id": "gt2270",
+            "text": "Set Hepatic fibrosis to yes,no,unknown"
+          },
+          "gt2271": {
+            "id": "gt2271",
+            "text": "Set Elevated hepatic transaminases to yes,no,unknown"
+          },
+          "gt2272": {
+            "id": "gt2272",
+            "text": "Set Preaxial hand polydactyly to yes,no,unknown"
+          },
+          "gt2273": {
+            "id": "gt2273",
+            "text": "Set Postaxial hand polydactyly to yes,no,unknown"
+          },
+          "gt2274": {
+            "id": "gt2274",
+            "text": "Set Mesoaxial hand polydactyly to yes,no,unknown"
+          },
+          "gt2275": {
+            "id": "gt2275",
+            "text": "Set Preaxial foot polydactyly to yes,no,unknown"
+          },
+          "gt2276": {
+            "id": "gt2276",
+            "text": "Set Postaxial foot polydactyly to yes,no,unknown"
+          },
+          "gt2277": {
+            "id": "gt2277",
+            "text": "Set Mesoaxial foot polydactyly to yes,no,unknown"
+          },
+          "gt2278": {
+            "id": "gt2278",
+            "text": "Set Short stature to yes,no,unknown"
+          },
+          "gt2279": {
+            "id": "gt2279",
+            "text": "Set Obesity to yes,no,unknown"
+          },
+          "gt2280": {
+            "id": "gt2280",
+            "text": "Set Skeletal dysplasia to yes,no,unknown"
+          },
+          "gt2281": {
+            "id": "gt2281",
+            "text": "Set Short stature R104 to yes,no,unknown"
+          },
+          "gt2282": {
+            "id": "gt2282",
+            "text": "Set Intellectual disability R104 to yes,no,unknown"
+          },
+          "gt2283": {
+            "id": "gt2283",
+            "text": "Set Abnormal facial shape R104 to yes,no,unknown"
+          },
+          "gt2284": {
+            "id": "gt2284",
+            "text": "Set Global developmental delay to yes,no,unknown"
+          },
+          "gt2285": {
+            "id": "gt2285",
+            "text": "Set Generalized seizures to yes,no,unknown"
+          },
+          "gt2286": {
+            "id": "gt2286",
+            "text": "Set Focal seizures to yes,no,unknown"
+          },
+          "gt2287": {
+            "id": "gt2287",
+            "text": "Set Epileptic spasms to yes,no,unknown"
+          },
+          "gt2288": {
+            "id": "gt2288",
+            "text": "Set Infantile encephalopathy to yes,no,unknown"
+          },
+          "gt2289": {
+            "id": "gt2289",
+            "text": "Set Intellectual disability GMSR59 to yes,no,unknown"
+          },
+          "gt2290": {
+            "id": "gt2290",
+            "text": "Set Abnormal facial shape GMSR59 to yes,no,unknown"
+          },
+          "gt2291": {
+            "id": "gt2291",
+            "text": "Set Global developmental delay GMSR59 to yes,no,unknown"
+          },
+          "gt2292": {
+            "id": "gt2292",
+            "text": "Set Increased nuchal translucency to yes,no,unknown"
+          },
+          "gt2293": {
+            "id": "gt2293",
+            "text": "Set Nonimmune hydrops fetalis to yes,no,unknown"
+          },
+          "gt2294": {
+            "id": "gt2294",
+            "text": "Set Polyhydramnios to yes,no,unknown"
+          },
+          "gt2295": {
+            "id": "gt2295",
+            "text": "Set Failure to thrive in infancy to yes,no,unknown"
+          },
+          "gt2296": {
+            "id": "gt2296",
+            "text": "Set Feeding difficulties GMSR59 to yes,no,unknown"
+          },
+          "gt2297": {
+            "id": "gt2297",
+            "text": "Set Pulmonic stenosis to yes,no,unknown"
+          },
+          "gt2298": {
+            "id": "gt2298",
+            "text": "Set Hypertrophic cardiomyopathy to yes,no,unknown"
+          },
+          "gt2299": {
+            "id": "gt2299",
+            "text": "Set Abnormality of the atrioventricular valves to yes,no,unknown"
+          },
+          "gt2300": {
+            "id": "gt2300",
+            "text": "Set Atrial septal defect to yes,no,unknown"
+          },
+          "gt2301": {
+            "id": "gt2301",
+            "text": "Set Ventricular septal defect to yes,no,unknown"
+          },
+          "gt2302": {
+            "id": "gt2302",
+            "text": "Set Arrhythmia to yes,no,unknown"
+          },
+          "gt2303": {
+            "id": "gt2303",
+            "text": "Set Lymphedema to yes,no,unknown"
+          },
+          "gt2304": {
+            "id": "gt2304",
+            "text": "Set Pleural effusion to yes,no,unknown"
+          },
+          "gt2305": {
+            "id": "gt2305",
+            "text": "Set Intellectual disability NS to yes,no,unknown"
+          },
+          "gt2306": {
+            "id": "gt2306",
+            "text": "Set Specific learning disability to yes,no,unknown"
+          },
+          "gt2307": {
+            "id": "gt2307",
+            "text": "Set Delayed gross motor development NS to yes,no,unknown"
+          },
+          "gt2308": {
+            "id": "gt2308",
+            "text": "Set Delayed speech and language development NS to yes,no,unknown"
+          },
+          "gt2309": {
+            "id": "gt2309",
+            "text": "Set Abnormality of the kidneyto yes,no,unknown"
+          },
+          "gt2310": {
+            "id": "gt2310",
+            "text": "Set Delayed puberty to yes,no,unknown"
+          },
+          "gt2311": {
+            "id": "gt2311",
+            "text": "Set Cryptorchidism to yes,no,unknown"
+          },
+          "gt2312": {
+            "id": "gt2312",
+            "text": "Set Decreased fertility to yes,no,unknown"
+          },
+          "gt2313": {
+            "id": "gt2313",
+            "text": "Set Abnormality of hair texture to yes,no,unknown"
+          },
+          "gt2314": {
+            "id": "gt2314",
+            "text": "Set Follicular hyperkeratosis to yes,no,unknown"
+          },
+          "gt2315": {
+            "id": "gt2315",
+            "text": "Set Cafe-au-lait to yes,no,unknown"
+          },
+          "gt2316": {
+            "id": "gt2316",
+            "text": "Set Multiple lentigines to yes,no,unknown"
+          },
+          "gt2317": {
+            "id": "gt2317",
+            "text": "Set Hemangioma to yes,no,unknown"
+          },
+          "gt2318": {
+            "id": "gt2318",
+            "text": "Set Papilloma to yes,no,unknown"
+          },
+          "gt2319": {
+            "id": "gt2319",
+            "text": "Set Pectus carinatum to yes,no,unknown"
+          },
+          "gt2320": {
+            "id": "gt2320",
+            "text": "Set Pectus excavatum to yes,no,unknown"
+          },
+          "gt2321": {
+            "id": "gt2321",
+            "text": "Set Wide intermamillary distance to yes,no,unknown"
+          },
+          "gt2322": {
+            "id": "gt2322",
+            "text": "Set Webbed neck to yes,no,unknown"
+          },
+          "gt2323": {
+            "id": "gt2323",
+            "text": "Set Abnormality of the coagulation cascade to yes,no,unknown"
+          },
+          "gt2324": {
+            "id": "gt2324",
+            "text": "Set Abnormality of thrombocytes to yes,no,unknown"
+          },
+          "gt2325": {
+            "id": "gt2325",
+            "text": "Set Neoplasm to yes,no,unknown"
+          },
+          "gt2326": {
+            "id": "gt2326",
+            "text": "Set Immunodeficiency to yes,no,unknown"
+          },
+          "gt2327": {
+            "id": "gt2327",
+            "text": "Set Autoimmunity to yes,no,unknown"
+          },
+          "gt2328": {
+            "id": "gt2328",
+            "text": "Set Abnormality of brain morphology to yes,no,unknown"
+          },
+          "gt2329": {
+            "id": "gt2329",
+            "text": "Set Seizures to yes,no,unknown"
+          },
+          "gt2330": {
+            "id": "gt2330",
+            "text": "Set Autism to yes,no,unknown"
+          },
+          "gt2331": {
+            "id": "gt2331",
+            "text": "Set Depression to yes,no,unknown"
+          },
+          "gt2332": {
+            "id": "gt2332",
+            "text": "Set Schizophrenia to yes,no,unknown"
+          },
+          "gt2333": {
+            "id": "gt2333",
+            "text": "Set Ptosis to yes,no,unknown"
+          },
+          "gt2334": {
+            "id": "gt2334",
+            "text": "Set Abnormality of refraction to yes,no,unknown"
+          },
+          "gt2335": {
+            "id": "gt2335",
+            "text": "Set Strabismus to yes,no,unknown"
+          },
+          "gt2336": {
+            "id": "gt2336",
+            "text": "Set Hearing abnormality to yes,no,unknown"
+          },
+          "gt2340": {
+            "id": "gt2340",
+            "text": "Set formInput-Hepatic fibrosis exist"
+          },
+          "gt2341": {
+            "id": "gt2341",
+            "text": "Set formInput-Elevated hepatic transaminases exist"
+          },
+          "gt2342": {
+            "id": "gt2342",
+            "text": "Set formInput-Preaxial hand polydactyly exist"
+          },
+          "gt2343": {
+            "id": "gt2343",
+            "text": "Set formInput-Postaxial hand polydactyly exist"
+          },
+          "gt2344": {
+            "id": "gt2344",
+            "text": "Set formInput-Mesoaxial hand polydactyly exist"
+          },
+          "gt2345": {
+            "id": "gt2345",
+            "text": "Set formInput-Preaxial foot polydactyly exist"
+          },
+          "gt2346": {
+            "id": "gt2346",
+            "text": "Set formInput-Postaxial foot polydactyly exist"
+          },
+          "gt2347": {
+            "id": "gt2347",
+            "text": "Set formInput-Mesoaxial foot polydactyly exist"
+          },
+          "gt2348": {
+            "id": "gt2348",
+            "text": "Set formInput-Short stature exist"
+          },
+          "gt2349": {
+            "id": "gt2349",
+            "text": "Set formInput-Obesity exist"
+          },
+          "gt2350": {
+            "id": "gt2350",
+            "text": "Set formInput-Skeletal dysplasia exist"
+          },
+          "gt2351": {
+            "id": "gt2351",
+            "text": "Set formInput-Short stature R104 exist"
+          },
+          "gt2352": {
+            "id": "gt2352",
+            "text": "Set formInput-Intellectual disability R104 exist"
+          },
+          "gt2353": {
+            "id": "gt2353",
+            "text": "Set formInput-Abnormal facial shape R104 exist"
+          },
+          "gt2354": {
+            "id": "gt2354",
+            "text": "Set formInput-Global developmental delay exist"
+          },
+          "gt2355": {
+            "id": "gt2355",
+            "text": "Set formInput-Generalized seizures exist"
+          },
+          "gt2356": {
+            "id": "gt2356",
+            "text": "Set formInput-Focal seizures exist"
+          },
+          "gt2357": {
+            "id": "gt2357",
+            "text": "Set formInput-Epileptic spasms exist"
+          },
+          "gt2358": {
+            "id": "gt2358",
+            "text": "Set formInput-Infantile encephalopathy exist"
+          },
+          "gt2359": {
+            "id": "gt2359",
+            "text": "Set formInput-Intellectual disability GMSR59 exist"
+          },
+          "gt2360": {
+            "id": "gt2360",
+            "text": "Set formInput-Abnormal facial shape GMSR59 exist"
+          },
+          "gt2361": {
+            "id": "gt2361",
+            "text": "Set formInput-Global developmental delay GMSR59 exist"
+          },
+          "gt2362": {
+            "id": "gt2362",
+            "text": "Set formInput-Increased nuchal translucency exist"
+          },
+          "gt2363": {
+            "id": "gt2363",
+            "text": "Set formInput-Nonimmune hydrops fetalis exist"
+          },
+          "gt2364": {
+            "id": "gt2364",
+            "text": "Set formInput-Polyhydramnios exist"
+          },
+          "gt2365": {
+            "id": "gt2365",
+            "text": "Set formInput-Failure to thrive in infancy exist"
+          },
+          "gt2366": {
+            "id": "gt2366",
+            "text": "Set formInput-Feeding difficulties exist"
+          },
+          "gt2367": {
+            "id": "gt2367",
+            "text": "Set formInput-Pulmonic stenosis exist"
+          },
+          "gt2368": {
+            "id": "gt2368",
+            "text": "Set formInput-Hypertrophic cardiomyopathy exist"
+          },
+          "gt2369": {
+            "id": "gt2369",
+            "text": "Set formInput-Abnormality of the atrioventricular valves exist"
+          },
+          "gt2370": {
+            "id": "gt2370",
+            "text": "Set formInput-Atrial septal defect exist"
+          },
+          "gt2372": {
+            "id": "gt2372",
+            "text": "Set formInput-Ventricular septal defect exist"
+          },
+          "gt2373": {
+            "id": "gt2373",
+            "text": "Set formInput-Arrhythmia exist"
+          },
+          "gt2374": {
+            "id": "gt2374",
+            "text": "Set formInput-Lymphedema exist"
+          },
+          "gt2375": {
+            "id": "gt2375",
+            "text": "Set formInput-Pleural effusion exist"
+          },
+          "gt2376": {
+            "id": "gt2376",
+            "text": "Set formInput-Intellectual disability NS exist"
+          },
+          "gt2377": {
+            "id": "gt2377",
+            "text": "Set formInput-Specific learning disability exist"
+          },
+          "gt2378": {
+            "id": "gt2378",
+            "text": "Set formInput-Delayed gross motor development NS exist"
+          },
+          "gt2379": {
+            "id": "gt2379",
+            "text": "Set formInput-Delayed speech and language development NS exist"
+          },
+          "gt2380": {
+            "id": "gt2380",
+            "text": "Set formInput-Abnormality of the kidney exist"
+          },
+          "gt2381": {
+            "id": "gt2381",
+            "text": "Set formInput-Delayed puberty exist"
+          },
+          "gt2382": {
+            "id": "gt2382",
+            "text": "Set formInput-Cryptorchidism exist"
+          },
+          "gt2383": {
+            "id": "gt2383",
+            "text": "Set formInput-Decreased fertility exist"
+          },
+          "gt2384": {
+            "id": "gt2384",
+            "text": "Set formInput-Abnormality of hair texture exist"
+          },
+          "gt2385": {
+            "id": "gt2385",
+            "text": "Set formInput-Follicular hyperkeratosis exist"
+          },
+          "gt2386": {
+            "id": "gt2386",
+            "text": "Set formInput-Cafe-au-lait spot exist"
+          },
+          "gt2387": {
+            "id": "gt2387",
+            "text": "Set formInput-Multiple lentigines exist"
+          },
+          "gt2388": {
+            "id": "gt2388",
+            "text": "Set formInput-Hemangioma exist"
+          },
+          "gt2389": {
+            "id": "gt2389",
+            "text": "Set formInput-Papilloma exist"
+          },
+          "gt2390": {
+            "id": "gt2390",
+            "text": "Set formInput-Pectus carinatum exist"
+          },
+          "gt2391": {
+            "id": "gt2391",
+            "text": "Set formInput-Pectus excavatum exist"
+          },
+          "gt2392": {
+            "id": "gt2392",
+            "text": "Set formInput-Wide intermamillary distance exist"
+          },
+          "gt2393": {
+            "id": "gt2393",
+            "text": "Set formInput-Webbed neck exist"
+          },
+          "gt2394": {
+            "id": "gt2394",
+            "text": "Set formInput-Abnormality of the coagulation cascade exist"
+          },
+          "gt2395": {
+            "id": "gt2395",
+            "text": "Set formInput-Abnormality of thrombocytes exist"
+          },
+          "gt2396": {
+            "id": "gt2396",
+            "text": "Set formInput-Neoplasm exist"
+          },
+          "gt2397": {
+            "id": "gt2397",
+            "text": "Set formInput-Immunodeficiency exist"
+          },
+          "gt2398": {
+            "id": "gt2398",
+            "text": "Set formInput-Autoimmunity exist"
+          },
+          "gt2399": {
+            "id": "gt2399",
+            "text": "Set formInput-Abnormality of brain morphology exist"
+          },
+          "gt2400": {
+            "id": "gt2400",
+            "text": "Set formInput-Seizures exist"
+          },
+          "gt2401": {
+            "id": "gt2401",
+            "text": "Set formInput-Autism exist"
+          },
+          "gt2402": {
+            "id": "gt2402",
+            "text": "Set formInput-Depression exist"
+          },
+          "gt2403": {
+            "id": "gt2403",
+            "text": "Set formInput-Schizophrenia exist"
+          },
+          "gt2404": {
+            "id": "gt2404",
+            "text": "Set formInput-Ptosis exist"
+          },
+          "gt2405": {
+            "id": "gt2405",
+            "text": "Set formInput-Abnormality of refraction exist"
+          },
+          "gt2406": {
+            "id": "gt2406",
+            "text": "Set formInput-Strabismus exist"
+          },
+          "gt2407": {
+            "id": "gt2407",
+            "text": "Set formInput-Hearing abnormality exist"
+          },
+          "gt2408": {
+            "id": "gt2408",
+            "text": "Set formInput-Cerebellar vermis hypoplasia exist"
+          },
+          "gt2410": {
+            "id": "gt2410",
+            "text": "Problem/Diagnosis name",
+            "description": "Identification of the problem or diagnosis, by name."
+          },
+          "gt0503": {
+            "id": "gt0503",
+            "text": "Hyperlipidemia code",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
