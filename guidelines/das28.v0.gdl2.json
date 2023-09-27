@@ -1,0 +1,139 @@
+{
+  "id": "das28.v0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2023-02-03",
+      "name": "Konstantinos Kalliamvakos",
+      "organisation": "Cambio CDS",
+      "email": "konstantinos.kalliamvakos@cambio.se"
+    },
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "To calculate the DAS28",
+        "copyright": "Cambio CDS"
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0003": {
+        "id": "gt0003",
+        "model_id": "openEHR-EHR-OBSERVATION.das28_esr.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.das28_esr.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0006]"
+          }
+        },
+        "predicates": [
+          "/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0006]==local::at0008|Yes|"
+        ]
+      },
+      "gt0005": {
+        "id": "gt0005",
+        "model_id": "openEHR-EHR-OBSERVATION.das28_esr.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.das28_esr.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0006": {
+            "id": "gt0006",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0009]"
+          }
+        },
+        "predicates": [
+          "/data[at0001]/events[at0002]/data[at0003]/items[at0004]/items[at0009]==local::at0008|Yes|"
+        ]
+      },
+      "gt0007": {
+        "id": "gt0007",
+        "model_id": "openEHR-EHR-OBSERVATION.das28_esr.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.das28_esr.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0010]"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0011]"
+          }
+        }
+      }
+    },
+    "rules": {
+      "gt0010": {
+        "id": "gt0010",
+        "priority": 2,
+        "when": [
+          "$gt0004|Tender|!=null"
+        ],
+        "then": [
+          "$gt0008|Tender joints|.magnitude=$gt0004.count"
+        ]
+      },
+      "gt0011": {
+        "id": "gt0011",
+        "priority": 1,
+        "when": [
+          "$gt0006|Swollen|!=null"
+        ],
+        "then": [
+          "$gt0009|Swollen joints|.magnitude=$gt0006.count"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "DAS28 calculation",
+            "description": "DAS28 Calculation"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Tender",
+            "description": ""
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Swollen",
+            "description": ""
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Tender joints",
+            "description": ""
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "Swollen joints",
+            "description": ""
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "Count tender joints"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Count swollen joints"
+          }
+        }
+      }
+    }
+  }
+}

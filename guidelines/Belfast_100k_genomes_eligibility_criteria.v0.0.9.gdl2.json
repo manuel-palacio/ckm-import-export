@@ -1,0 +1,945 @@
+{
+    "id": "Belfast_100k_genomes_eligibility_criteria.v0.0.9",
+    "gdl_version": "2.0",
+    "concept": "gt0001",
+    "language": {
+      "original_language": "ISO_639-1::en"
+    },
+    "description": {
+      "original_author": {
+        "date": "2022-05-31",
+        "name": "Rashmi Damodaran",
+        "organisation": "Cambio CDS",
+        "email": "rashmi.damodaran@cambio.se"
+      },
+      "lifecycle_state": "Initial",
+      "details": {
+        "en": {
+          "id": "en"
+        }
+      },
+      "other_details": {}
+    },
+    "definition": {
+      "data_bindings": {
+        "gt0002": {
+          "id": "gt0002",
+          "model_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+          "template_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+          "type": "INPUT",
+          "elements": {
+            "gt0003": {
+              "id": "gt0003",
+              "path": "/data[at0001]/items[at0002]"
+            }
+          }
+        },
+        "gt0004": {
+          "id": "gt0004",
+          "model_id": "openEHR-EHR-OBSERVATION.belfast_100k_genomics.v0",
+          "template_id": "openEHR-EHR-OBSERVATION.belfast_100k_genomics.v0",
+          "type": "INPUT",
+          "elements": {
+            "gt0005": {
+              "id": "gt0005",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0070]"
+            },
+            "gt0006": {
+              "id": "gt0006",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0071]"
+            },
+            "gt0007": {
+              "id": "gt0007",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0072]"
+            },
+            "gt0008": {
+              "id": "gt0008",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0073]"
+            },
+            "gt0009": {
+              "id": "gt0009",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0074]"
+            },
+            "gt0010": {
+              "id": "gt0010",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0075]"
+            },
+            "gt0011": {
+              "id": "gt0011",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0076]"
+            },
+            "gt0012": {
+              "id": "gt0012",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0077]"
+            },
+            "gt0013": {
+              "id": "gt0013",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0078]"
+            },
+            "gt0014": {
+              "id": "gt0014",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0079]"
+            },
+            "gt0015": {
+              "id": "gt0015",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0069]/items[at0080]"
+            },
+            "gt0016": {
+              "id": "gt0016",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0315]/items[at0344]"
+            },
+            "gt0017": {
+              "id": "gt0017",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0315]/items[at0345]"
+            },
+            "gt0018": {
+              "id": "gt0018",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0315]/items[at0346]"
+            },
+            "gt0019": {
+              "id": "gt0019",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0315]/items[at0347]"
+            },
+            "gt0020": {
+              "id": "gt0020",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0315]/items[at0348]"
+            },
+            "gt0021": {
+              "id": "gt0021",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0315]/items[at0349]"
+            },
+            "gt0022": {
+              "id": "gt0022",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0315]/items[at0350]"
+            },
+            "gt0026": {
+              "id": "gt0026",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0312]/items[at0313]"
+            },
+            "gt0030": {
+              "id": "gt0030",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0352]/items[at0401]"
+            },
+            "gt0031": {
+              "id": "gt0031",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0352]/items[at0402]"
+            },
+            "gt0032": {
+              "id": "gt0032",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0352]/items[at0403]"
+            },
+            "gt0033": {
+              "id": "gt0033",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0352]/items[at0404]"
+            },
+            "gt0034": {
+              "id": "gt0034",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0352]/items[at0405]"
+            },
+            "gt0035": {
+              "id": "gt0035",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0352]/items[at0406]"
+            },
+            "gt0036": {
+              "id": "gt0036",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0352]/items[at0407]"
+            },
+            "gt0037": {
+              "id": "gt0037",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0352]/items[at0408]"
+            },
+            "gt0038": {
+              "id": "gt0038",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0352]/items[at0409]"
+            },
+            "gt0039": {
+              "id": "gt0039",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0083]/items[at0296]"
+            },
+            "gt0040": {
+              "id": "gt0040",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0083]/items[at0297]"
+            },
+            "gt0041": {
+              "id": "gt0041",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0083]/items[at0298]"
+            },
+            "gt0042": {
+              "id": "gt0042",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0083]/items[at0299]"
+            },
+            "gt0043": {
+              "id": "gt0043",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0083]/items[at0300]"
+            },
+            "gt0044": {
+              "id": "gt0044",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0083]/items[at0301]"
+            },
+            "gt0045": {
+              "id": "gt0045",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0083]/items[at0302]"
+            },
+            "gt0046": {
+              "id": "gt0046",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0083]/items[at0303]"
+            },
+            "gt0047": {
+              "id": "gt0047",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0083]/items[at0304]"
+            }
+          }
+        },
+        "gt0048": {
+          "id": "gt0048",
+          "model_id": "openEHR-EHR-OBSERVATION.belfast_100k_genomics.v0",
+          "template_id": "openEHR-EHR-OBSERVATION.belfast_100k_genomics.v0",
+          "type": "OUTPUT",
+          "elements": {
+            "gt0092": {
+              "id": "gt0092",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0065]"
+            },
+            "gt0140": {
+              "id": "gt0140",
+              "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0066]"
+            }
+          }
+        }
+      },
+      "pre_conditions": [
+        "$gt0003|Problem/Diagnosis name|!=null"
+      ],
+      "default_actions": [
+        "$gt0092|Assessment|=$gt0139.term + ' ' + $gt0003.value"
+      ],
+      "rules": {
+        "gt0131": {
+          "id": "gt0131",
+          "priority": 10,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0079|Familial hypercholesterolemia|",
+            "$gt0015|formInput-Polygenic risk 12-SNP gene score in the bottom two quartiles|==local::at0008|Yes|",
+            "(((($gt0005|formInput-Total cholesterol > 6.7 mmol/l (260 mg/dl) in a child < 16 years|==local::at0008|Yes|)||($gt0006|formInput-LDL cholesterol above 4.0 mmol/l in a child < 16 years|==local::at0008|Yes|))||(($gt0007|formInput-Total cholesterol >7.5 mmol/l (290 mg/dl) in an adult|==local::at0008|Yes|)||($gt0008|formInput-LDL cholesterol above 4.9 mmol/l (190 mg/dl) in an adult|==local::at0008|Yes|)))&&(($gt0009|formInput-Tendon xanthomas (TX) in patient|==local::at0008|Yes|)||($gt0010|formInput-Tendon xanthomas (TX) in 1st degree relative (parent, sibling, child) or in 2nd degree relative (grandparent, uncle, aunt)|==local::at0008|Yes|)))||(((($gt0005|formInput-Total cholesterol > 6.7 mmol/l (260 mg/dl) in a child < 16 years|==local::at0008|Yes|)||($gt0006|formInput-LDL cholesterol above 4.0 mmol/l in a child < 16 years|==local::at0008|Yes|))||(($gt0011|formInput-Total cholesterol >8.5 mmol/l in an adult|==local::at0008|Yes|)||($gt0012|formInput-LDL cholesterol above 5.5 mmol/l in an adult|==local::at0008|Yes|)))&&(($gt0013|formInput-Family history of myocardial infarction below age of 50 in 2nd degree relative or below age 60 in 1st degree relative|==local::at0008|Yes|)||($gt0014|formInput-Family history of raised cholesterol >7.5 mmol/l in adult 1st or 2nd degree relative or > 6.7 mmol/l in child or sibling under 16|==local::at0008|Yes|)))"
+          ],
+          "then": [
+            "$gt0092|Assessment|=$gt0137.term + ' ' + $gt0003.value",
+            "$gt0140|Considerations prior to recruitment|=$gt0138.term"
+          ]
+        },
+        "gt0132": {
+          "id": "gt0132",
+          "priority": 9,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0079|Familial hypercholesterolemia|",
+            "!fired($gt0131)"
+          ],
+          "then": [
+            "$gt0140|Considerations prior to recruitment|=$gt0145.term"
+          ]
+        },
+        "gt0133": {
+          "id": "gt0133",
+          "priority": 8,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0083|GMS R59 Early onset or syndromic epilepsy|",
+            "($gt0016|formInput-Unexplained epilepsy with clinical suspicion of a monogenic cause|==local::at0008|Yes|)||(((((($gt0017|formInput-Onset under 2 years|==local::at0008|Yes|)&&($gt0018|formInput-Clinical features suggestive of specific genetic epilepsy, for example Dravet syndrome|==local::at0008|Yes|))&&($gt0019|formInput-Intellectual disability|==local::at0008|Yes|))&&($gt0020|formInput-Autism spectrum disorder|==local::at0008|Yes|))&&($gt0021|formInput-Structural abnormality (e.g. dysmorphism, congenital malformation)|==local::at0008|Yes|))&&($gt0022|formInput-Unexplained cognitive/memory decline|==local::at0008|Yes|))"
+          ],
+          "then": [
+            "$gt0092|Assessment|=$gt0137.term + ' ' + $gt0003.value",
+            "$gt0140|Considerations prior to recruitment|=$gt0141.term"
+          ]
+        },
+        "gt0134": {
+          "id": "gt0134",
+          "priority": 7,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0083|GMS R59 Early onset or syndromic epilepsy|",
+            "!fired($gt0133)"
+          ],
+          "then": [
+            "$gt0140|Considerations prior to recruitment|=$gt0146.term"
+          ]
+        },
+        "gt0135": {
+          "id": "gt0135",
+          "priority": 6,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0082|GMS R104 Skeletal dysplasia|",
+            "$gt0026|formInput-Clinical features indicative of a likely monogenic skeletal dysplasia|==local::at0008|Yes|"
+          ],
+          "then": [
+            "$gt0092|Assessment|=$gt0137.term + ' ' + $gt0003.value",
+            "$gt0140|Considerations prior to recruitment|=$gt0142.term"
+          ]
+        },
+        "gt0136": {
+          "id": "gt0136",
+          "priority": 5,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0082|GMS R104 Skeletal dysplasia|",
+            "!fired($gt0135)"
+          ],
+          "then": [
+            "$gt0140|Considerations prior to recruitment|=$gt0146.term"
+          ]
+        },
+        "gt0137": {
+          "id": "gt0137",
+          "priority": 4,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0081|Noonan syndrome|",
+            "(((($gt0030|formInput-Early feeding difficulty/ failure to thrive|==local::at0008|Yes|)&&($gt0031|formInput-Relative macrocephaly|==local::at0008|Yes|))||(($gt0030|formInput-Early feeding difficulty/ failure to thrive|==local::at0008|Yes|)&&($gt0032|formInput-Short stature|==local::at0008|Yes|)))||((($gt0030|formInput-Early feeding difficulty/ failure to thrive|==local::at0008|Yes|)&&($gt0033|formInput-Developmental disability|==local::at0008|Yes|))||(($gt0031|formInput-Relative macrocephaly|==local::at0008|Yes|)&&($gt0032|formInput-Short stature|==local::at0008|Yes|))))||((($gt0031|formInput-Relative macrocephaly|==local::at0008|Yes|)&&($gt0033|formInput-Developmental disability|==local::at0008|Yes|))||(($gt0032|formInput-Short stature|==local::at0008|Yes|)&&($gt0033|formInput-Developmental disability|==local::at0008|Yes|)))",
+            "(($gt0034|formInput-Cardiomyopathy|==local::at0008|Yes|)||($gt0035|formInput-Congenital heart disease|==local::at0008|Yes|))||(($gt0036|formInput-Arrhythmia|==local::at0008|Yes|)||(($gt0037|formInput-Suggestive malignancy ( bladder carcinoma, Rhabdomyosarcoma, Leukaemia, phaeochromocytoma)|==local::at0008|Yes|)||($gt0038|formInput-Skin abnormalities (hyperkeratosis, cafe au lait patches, ulerythema oophorogenes, keratosis pilaris, excess palmar skin)|==local::at0008|Yes|)))"
+          ],
+          "then": [
+            "$gt0092|Assessment|=$gt0137.term + ' ' + $gt0003.value",
+            "$gt0140|Considerations prior to recruitment|=$gt0143.term"
+          ]
+        },
+        "gt0149": {
+          "id": "gt0149",
+          "priority": 3,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0081|Noonan syndrome|",
+            "!fired($gt0137)"
+          ],
+          "then": [
+            "$gt0140|Considerations prior to recruitment|=$gt0147.term"
+          ]
+        },
+        "gt0150": {
+          "id": "gt0150",
+          "priority": 2,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0080|Rare multisystem ciliopathy disorders|",
+            "(($gt0039|formInput-Clinical diagnosis of oral-facial-digital syndromes|==local::at0008|Yes|)||($gt0040|formInput-Clinical diagnosis of cranioectodermal dysplasia|==local::at0008|Yes|)||($gt0041|formInput-Clinical diagnosis of a rare multisystem ciliopathy|==local::at0008|Yes|))||((($gt0042|formInput-Renal dysplasia, polycystic or ‘bright’ kidneys|==local::at0008|Yes|)&&($gt0043|formInput-Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant|==local::at0008|Yes|))||(($gt0042|formInput-Renal dysplasia, polycystic or ‘bright’ kidneys|==local::at0008|Yes|)&&($gt0044|formInput-Polydactyly|==local::at0008|Yes|))||(($gt0042|formInput-Renal dysplasia, polycystic or ‘bright’ kidneys|==local::at0008|Yes|)&&($gt0045|formInput-Short limbs and/or short ribs|==local::at0008|Yes|))||(($gt0042|formInput-Renal dysplasia, polycystic or ‘bright’ kidneys|==local::at0008|Yes|)&&($gt0046|formInput-Occipital encephalocele|==local::at0008|Yes|))||(($gt0042|formInput-Renal dysplasia, polycystic or ‘bright’ kidneys|==local::at0008|Yes|)&&($gt0047|formInput-Retinal dystrophy|==local::at0008|Yes|))||(($gt0043|formInput-Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant|==local::at0008|Yes|)&&($gt0044|formInput-Polydactyly|==local::at0008|Yes|))||(($gt0043|formInput-Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant|==local::at0008|Yes|)&&($gt0045|formInput-Short limbs and/or short ribs|==local::at0008|Yes|))||(($gt0043|formInput-Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant|==local::at0008|Yes|)&&($gt0046|formInput-Occipital encephalocele|==local::at0008|Yes|))||(($gt0043|formInput-Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant|==local::at0008|Yes|)&&($gt0047|formInput-Retinal dystrophy|==local::at0008|Yes|))||(($gt0044|formInput-Polydactyly|==local::at0008|Yes|)&&($gt0045|formInput-Short limbs and/or short ribs|==local::at0008|Yes|))||(($gt0044|formInput-Polydactyly|==local::at0008|Yes|)&&($gt0046|formInput-Occipital encephalocele|==local::at0008|Yes|))||(($gt0044|formInput-Polydactyly|==local::at0008|Yes|)&&($gt0047|formInput-Retinal dystrophy|==local::at0008|Yes|))||(($gt0045|formInput-Short limbs and/or short ribs|==local::at0008|Yes|)&&($gt0046|formInput-Occipital encephalocele|==local::at0008|Yes|))||(($gt0045|formInput-Short limbs and/or short ribs|==local::at0008|Yes|)&&($gt0047|formInput-Retinal dystrophy|==local::at0008|Yes|))||(($gt0046|formInput-Occipital encephalocele|==local::at0008|Yes|)&&($gt0047|formInput-Retinal dystrophy|==local::at0008|Yes|)))"
+          ],
+          "then": [
+            "$gt0092|Assessment|=$gt0137.term + ' ' + $gt0003.value",
+            "$gt0140|Considerations prior to recruitment|=$gt0144.term"
+          ]
+        },
+        "gt0151": {
+          "id": "gt0151",
+          "priority": 1,
+          "when": [
+            "$gt0003|Problem/Diagnosis name|==local::at0080|Rare multisystem ciliopathy disorders|",
+            "!fired($gt0150)"
+          ],
+          "then": [
+            "$gt0140|Considerations prior to recruitment|=$gt0148.term"
+          ]
+        }
+      }
+    },
+    "ontology": {
+      "term_definitions": {
+        "en": {
+          "id": "en",
+          "terms": {
+            "gt0001": {
+              "id": "gt0001",
+              "text": "100k_genomes_eligibility_criteria"
+            },
+            "gt0003": {
+              "id": "gt0003",
+              "text": "Problem/Diagnosis name",
+              "description": "Identification of the problem or diagnosis, by name."
+            },
+            "gt0005": {
+              "id": "gt0005",
+              "text": "formInput-Total cholesterol > 6.7 mmol/l (260 mg/dl) in a child < 16 years",
+              "description": ""
+            },
+            "gt0006": {
+              "id": "gt0006",
+              "text": "formInput-LDL cholesterol above 4.0 mmol/l in a child < 16 years",
+              "description": ""
+            },
+            "gt0007": {
+              "id": "gt0007",
+              "text": "formInput-Total cholesterol >7.5 mmol/l (290 mg/dl) in an adult",
+              "description": ""
+            },
+            "gt0008": {
+              "id": "gt0008",
+              "text": "formInput-LDL cholesterol above 4.9 mmol/l (190 mg/dl) in an adult",
+              "description": ""
+            },
+            "gt0009": {
+              "id": "gt0009",
+              "text": "formInput-Tendon xanthomas (TX) in patient",
+              "description": ""
+            },
+            "gt0010": {
+              "id": "gt0010",
+              "text": "formInput-Tendon xanthomas (TX) in 1st degree relative (parent, sibling, child) or in 2nd degree relative (grandparent, uncle, aunt)",
+              "description": ""
+            },
+            "gt0011": {
+              "id": "gt0011",
+              "text": "formInput-Total cholesterol >8.5 mmol/l in an adult",
+              "description": ""
+            },
+            "gt0012": {
+              "id": "gt0012",
+              "text": "formInput-LDL cholesterol above 5.5 mmol/l in an adult",
+              "description": ""
+            },
+            "gt0013": {
+              "id": "gt0013",
+              "text": "formInput-Family history of myocardial infarction below age of 50 in 2nd degree relative or below age 60 in 1st degree relative",
+              "description": ""
+            },
+            "gt0014": {
+              "id": "gt0014",
+              "text": "formInput-Family history of raised cholesterol: >7.5 mmol/l in adult 1st or 2nd degree relative or > 6.7 mmol/l in child or sibling under 16",
+              "description": ""
+            },
+            "gt0015": {
+              "id": "gt0015",
+              "text": "formInput-Polygenic risk 12-SNP gene score in the bottom two quartiles",
+              "description": ""
+            },
+            "gt0016": {
+              "id": "gt0016",
+              "text": "formInput-Unexplained epilepsy with clinical suspicion of a monogenic cause",
+              "description": "*"
+            },
+            "gt0017": {
+              "id": "gt0017",
+              "text": "formInput-Onset under 2 years",
+              "description": "*"
+            },
+            "gt0018": {
+              "id": "gt0018",
+              "text": "formInput-Clinical features suggestive of specific genetic epilepsy, for example Dravet syndrome",
+              "description": "*"
+            },
+            "gt0019": {
+              "id": "gt0019",
+              "text": "formInput-Intellectual disability",
+              "description": "*"
+            },
+            "gt0020": {
+              "id": "gt0020",
+              "text": "formInput-Autism spectrum disorder",
+              "description": "*"
+            },
+            "gt0021": {
+              "id": "gt0021",
+              "text": "formInput-Structural abnormality (e.g. dysmorphism, congenital malformation)",
+              "description": "*"
+            },
+            "gt0022": {
+              "id": "gt0022",
+              "text": "formInput-Unexplained cognitive/memory decline",
+              "description": "*"
+            },
+            "gt0026": {
+              "id": "gt0026",
+              "text": "formInput-Clinical features indicative of a likely monogenic skeletal dysplasia",
+              "description": "*"
+            },
+            "gt0030": {
+              "id": "gt0030",
+              "text": "formInput-Early feeding difficulty/ failure to thrive",
+              "description": "*"
+            },
+            "gt0031": {
+              "id": "gt0031",
+              "text": "formInput-Relative macrocephaly",
+              "description": "*"
+            },
+            "gt0032": {
+              "id": "gt0032",
+              "text": "formInput-Short stature",
+              "description": "*"
+            },
+            "gt0033": {
+              "id": "gt0033",
+              "text": "formInput-Developmental disability",
+              "description": "*"
+            },
+            "gt0034": {
+              "id": "gt0034",
+              "text": "formInput-Cardiomyopathy",
+              "description": "*"
+            },
+            "gt0035": {
+              "id": "gt0035",
+              "text": "formInput-Congenital heart disease",
+              "description": "*"
+            },
+            "gt0036": {
+              "id": "gt0036",
+              "text": "formInput-Arrhythmia",
+              "description": "*"
+            },
+            "gt0037": {
+              "id": "gt0037",
+              "text": "formInput-Suggestive malignancy ( bladder carcinoma, Rhabdomyosarcoma, Leukaemia, phaeochromocytoma)",
+              "description": "*"
+            },
+            "gt0038": {
+              "id": "gt0038",
+              "text": "formInput-Skin abnormalities (hyperkeratosis, cafe au lait patches, ulerythema oophorogenes, keratosis pilaris, excess palmar skin)",
+              "description": "*"
+            },
+            "gt0039": {
+              "id": "gt0039",
+              "text": "formInput-Clinical diagnosis of oral-facial-digital syndromes",
+              "description": "*"
+            },
+            "gt0040": {
+              "id": "gt0040",
+              "text": "formInput-Clinical diagnosis of cranioectodermal dysplasia",
+              "description": "*"
+            },
+            "gt0041": {
+              "id": "gt0041",
+              "text": "formInput-Clinical diagnosis of a rare multisystem ciliopathy",
+              "description": "*"
+            },
+            "gt0042": {
+              "id": "gt0042",
+              "text": "formInput-Renal dysplasia, polycystic or ‘bright’ kidneys",
+              "description": "*"
+            },
+            "gt0043": {
+              "id": "gt0043",
+              "text": "formInput-Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant",
+              "description": "*"
+            },
+            "gt0044": {
+              "id": "gt0044",
+              "text": "formInput-Polydactyly",
+              "description": "*"
+            },
+            "gt0045": {
+              "id": "gt0045",
+              "text": "formInput-Short limbs and/or short ribs",
+              "description": "*"
+            },
+            "gt0046": {
+              "id": "gt0046",
+              "text": "formInput-Occipital encephalocele",
+              "description": "*"
+            },
+            "gt0047": {
+              "id": "gt0047",
+              "text": "formInput-Retinal dystrophy",
+              "description": "*"
+            },
+            "gt0049": {
+              "id": "gt0049",
+              "text": "Total cholesterol > 6.7 mmol/l (260 mg/dl) in a child < 16 years",
+              "description": ""
+            },
+            "gt0050": {
+              "id": "gt0050",
+              "text": "LDL cholesterol above 4.0 mmol/l in a child < 16 years",
+              "description": ""
+            },
+            "gt0051": {
+              "id": "gt0051",
+              "text": "Total cholesterol >7.5 mmol/l (290 mg/dl) in an adult",
+              "description": ""
+            },
+            "gt0052": {
+              "id": "gt0052",
+              "text": "LDL cholesterol above 4.9 mmol/l (190 mg/dl) in an adult",
+              "description": ""
+            },
+            "gt0053": {
+              "id": "gt0053",
+              "text": "Tendon xanthomas (TX) in patient",
+              "description": ""
+            },
+            "gt0054": {
+              "id": "gt0054",
+              "text": "Tendon xanthomas (TX) in 1st degree relative (parent, sibling, child) or in 2nd degree relative (grandparent, uncle, aunt)",
+              "description": ""
+            },
+            "gt0055": {
+              "id": "gt0055",
+              "text": "Total cholesterol >8.5 mmol/l in an adult",
+              "description": ""
+            },
+            "gt0056": {
+              "id": "gt0056",
+              "text": "LDL cholesterol above 5.5 mmol/l in an adult",
+              "description": ""
+            },
+            "gt0057": {
+              "id": "gt0057",
+              "text": "Family history of myocardial infarction below age of 50 in 2nd degree relative or below age 60 in 1st degree relative",
+              "description": ""
+            },
+            "gt0058": {
+              "id": "gt0058",
+              "text": "Family history of raised cholesterol >7.5 mmol/l in adult 1st or 2nd degree relative or > 6.7 mmol/l in child or sibling under 16",
+              "description": ""
+            },
+            "gt0059": {
+              "id": "gt0059",
+              "text": "Polygenic risk 12-SNP gene score in the bottom two quartiles",
+              "description": ""
+            },
+            "gt0060": {
+              "id": "gt0060",
+              "text": "Unexplained epilepsy with clinical suspicion of a monogenic cause",
+              "description": "*"
+            },
+            "gt0061": {
+              "id": "gt0061",
+              "text": "Onset under 2 years",
+              "description": "*"
+            },
+            "gt0062": {
+              "id": "gt0062",
+              "text": "Clinical features suggestive of specific genetic epilepsy, for example Dravet syndrome",
+              "description": "*"
+            },
+            "gt0063": {
+              "id": "gt0063",
+              "text": "Intellectual disability",
+              "description": "*"
+            },
+            "gt0064": {
+              "id": "gt0064",
+              "text": "Autism spectrum disorder",
+              "description": "*"
+            },
+            "gt0065": {
+              "id": "gt0065",
+              "text": "Structural abnormality (e.g. dysmorphism, congenital malformation)",
+              "description": "*"
+            },
+            "gt0066": {
+              "id": "gt0066",
+              "text": "Unexplained cognitive/memory decline",
+              "description": "*"
+            },
+            "gt0070": {
+              "id": "gt0070",
+              "text": "Clinical features indicative of a likely monogenic skeletal dysplasia",
+              "description": "*"
+            },
+            "gt0074": {
+              "id": "gt0074",
+              "text": "Early feeding difficulty/ failure to thrive",
+              "description": "*"
+            },
+            "gt0075": {
+              "id": "gt0075",
+              "text": "Relative macrocephaly",
+              "description": "*"
+            },
+            "gt0076": {
+              "id": "gt0076",
+              "text": "Short stature",
+              "description": "*"
+            },
+            "gt0077": {
+              "id": "gt0077",
+              "text": "Developmental disability",
+              "description": "*"
+            },
+            "gt0078": {
+              "id": "gt0078",
+              "text": "Cardiomyopathy",
+              "description": "*"
+            },
+            "gt0079": {
+              "id": "gt0079",
+              "text": "Congenital heart disease",
+              "description": "*"
+            },
+            "gt0080": {
+              "id": "gt0080",
+              "text": "Arrhythmia",
+              "description": "*"
+            },
+            "gt0081": {
+              "id": "gt0081",
+              "text": "Suggestive malignancy ( bladder carcinoma, Rhabdomyosarcoma, Leukaemia, phaeochromocytoma)",
+              "description": "*"
+            },
+            "gt0082": {
+              "id": "gt0082",
+              "text": "Skin abnormalities (hyperkeratosis, cafe au lait patches, ulerythema oophorogenes, keratosis pilaris, excess palmar skin)",
+              "description": "*"
+            },
+            "gt0083": {
+              "id": "gt0083",
+              "text": "Clinical diagnosis of oral-facial-digital syndromes",
+              "description": "*"
+            },
+            "gt0084": {
+              "id": "gt0084",
+              "text": "Clinical diagnosis of cranioectodermal dysplasia",
+              "description": "*"
+            },
+            "gt0085": {
+              "id": "gt0085",
+              "text": "diagnosis of a rare multisystem ciliopathy",
+              "description": "*"
+            },
+            "gt0086": {
+              "id": "gt0086",
+              "text": "Renal dysplasia, polycystic or ‘bright’ kidneys",
+              "description": "*"
+            },
+            "gt0087": {
+              "id": "gt0087",
+              "text": "Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant",
+              "description": "*"
+            },
+            "gt0088": {
+              "id": "gt0088",
+              "text": "Polydactyly",
+              "description": "*"
+            },
+            "gt0089": {
+              "id": "gt0089",
+              "text": "Short limbs and/or short ribs",
+              "description": "*"
+            },
+            "gt0090": {
+              "id": "gt0090",
+              "text": "Occipital encephalocele",
+              "description": "*"
+            },
+            "gt0091": {
+              "id": "gt0091",
+              "text": "Retinal dystrophy",
+              "description": "*"
+            },
+            "gt0092": {
+              "id": "gt0092",
+              "text": "Assessment",
+              "description": "*"
+            },
+            "gt0093": {
+              "id": "gt0093",
+              "text": "Set Total cholesterol > 6.7 mmol/l (260 mg/dl) in a child < 16 years response"
+            },
+            "gt0094": {
+              "id": "gt0094",
+              "text": "Set LDL cholesterol above 4.0 mmol/l in a child < 16 years response"
+            },
+            "gt0095": {
+              "id": "gt0095",
+              "text": "Set Total cholesterol >7.5 mmol/l (290 mg/dl) in an adult response"
+            },
+            "gt0096": {
+              "id": "gt0096",
+              "text": "Set LDL cholesterol above 4.9 mmol/l (190 mg/dl) in an adult response"
+            },
+            "gt0097": {
+              "id": "gt0097",
+              "text": "Set Tendon xanthomas (TX) in patient response"
+            },
+            "gt0098": {
+              "id": "gt0098",
+              "text": "Set Tendon xanthomas (TX) in 1st degree relative response"
+            },
+            "gt0099": {
+              "id": "gt0099",
+              "text": "Set Total cholesterol >8.5 mmol/l in an adult response"
+            },
+            "gt0100": {
+              "id": "gt0100",
+              "text": "Set LDL cholesterol above 5.5 mmol/l in an adult response"
+            },
+            "gt0101": {
+              "id": "gt0101",
+              "text": "Set Family history of myocardial infarction response"
+            },
+            "gt0102": {
+              "id": "gt0102",
+              "text": "Set Family history of raised cholesterol response"
+            },
+            "gt0103": {
+              "id": "gt0103",
+              "text": "Set Polygenic risk 12-SNP gene score in the bottom two quartiles response"
+            },
+            "gt0104": {
+              "id": "gt0104",
+              "text": "Set Unexplained epilepsy response"
+            },
+            "gt0105": {
+              "id": "gt0105",
+              "text": "Set Onset under 2 years response"
+            },
+            "gt0106": {
+              "id": "gt0106",
+              "text": "Set Clinical features suggestive of specific genetic epilepsy response"
+            },
+            "gt0107": {
+              "id": "gt0107",
+              "text": "Set Intellectual disability response"
+            },
+            "gt0108": {
+              "id": "gt0108",
+              "text": "Set Autism spectrum disorder response"
+            },
+            "gt0109": {
+              "id": "gt0109",
+              "text": "Set Structural abnormality response"
+            },
+            "gt0110": {
+              "id": "gt0110",
+              "text": "Set Unexplained cognitive/memory decline response"
+            },
+            "gt0111": {
+              "id": "gt0111",
+              "text": "Set Clinical features indicative of a likely monogenic skeletal dysplasia response"
+            },
+            "gt0112": {
+              "id": "gt0112",
+              "text": "Set Early feeding difficulty respons"
+            },
+            "gt0113": {
+              "id": "gt0113",
+              "text": "Set Relative macrocephaly response"
+            },
+            "gt0114": {
+              "id": "gt0114",
+              "text": "Set Short stature response"
+            },
+            "gt0115": {
+              "id": "gt0115",
+              "text": "Set Developmental disability response"
+            },
+            "gt0116": {
+              "id": "gt0116",
+              "text": "Set cardiomyopathy response"
+            },
+            "gt0117": {
+              "id": "gt0117",
+              "text": "Set Congenital heart disease response"
+            },
+            "gt0118": {
+              "id": "gt0118",
+              "text": "Set Arrhythmia response"
+            },
+            "gt0119": {
+              "id": "gt0119",
+              "text": "Set Suggestive malignancy response"
+            },
+            "gt0120": {
+              "id": "gt0120",
+              "text": "Set Skin abnormalities response"
+            },
+            "gt0121": {
+              "id": "gt0121",
+              "text": "Set Clinical diagnosis of oral-facial-digital syndromes response"
+            },
+            "gt0122": {
+              "id": "gt0122",
+              "text": "Set Clinical diagnosis of cranioectodermal dysplasia response"
+            },
+            "gt0123": {
+              "id": "gt0123",
+              "text": "Set Clinical diagnosis of a rare multisystem ciliopathy response"
+            },
+            "gt0124": {
+              "id": "gt0124",
+              "text": "Set Renal dysplasia, polycystic or ‘bright’ kidneys response"
+            },
+            "gt0125": {
+              "id": "gt0125",
+              "text": "Set Cerebellar hypoplasia response"
+            },
+            "gt0126": {
+              "id": "gt0126",
+              "text": "Set Polydactyly response"
+            },
+            "gt0127": {
+              "id": "gt0127",
+              "text": "Set Short limbs and/or short ribs response"
+            },
+            "gt0128": {
+              "id": "gt0128",
+              "text": "Set Occipital encephalocele response"
+            },
+            "gt0129": {
+              "id": "gt0129",
+              "text": "Set Retinal dystrophy response"
+            },
+            "gt0131": {
+              "id": "gt0131",
+              "text": "Set FH eligibility true"
+            },
+            "gt0132": {
+              "id": "gt0132",
+              "text": "Set GMS R59 eligibility true"
+            },
+            "gt0133": {
+              "id": "gt0133",
+              "text": "Set GMS R104 eligibility true"
+            },
+            "gt0134": {
+              "id": "gt0134",
+              "text": "Set Noonan syndrome eligibility true"
+            },
+            "gt0135": {
+              "id": "gt0135",
+              "text": "Set RMCD eligibility true"
+            },
+            "gt0137": {
+              "id": "gt0137",
+              "text": "Meets the criteria for"
+            },
+            "gt0138": {
+              "id": "gt0138",
+              "text": "Patients with any of the following should be excluded from recruitment:\n\nSecondary causes of elevated LDL-C\nRecessive inheritance\nTriglyceride level of over 2.5mmol/l\nMolecular diagnosis based on prior genetic testing\n\nTesting notes:\nIndividuals with severe or syndromic disease should be recruited according to standard guidance, typically as trios. Disease status of apparently unaffected participants should be determined according to standard clinical practice to detect cryptic disease.\nIn other cases, unaffected individuals should not be recruited. Recruitment in such families should favour multiplex families over single isolated cases. These singleton recruits will not contribute to the overall singleton monitoring metrics applied to GMCs.\n\nTest for the following genes:\n\nLDLR, APOB and PCSK9\nPolygenic risk 12-SNP gene score"
+            },
+            "gt0139": {
+              "id": "gt0139",
+              "text": "Insufficient criteria for"
+            },
+            "gt0140": {
+              "id": "gt0140",
+              "text": "Considerations prior to recruitment"
+            },
+            "gt0141": {
+              "id": "gt0141",
+              "text": "Testing notes:\n\nOptimal family structure: Trio.\nCriteria are present at the time of presentation.\nMolecular diagnosis will guide management or alter advice."
+            },
+            "gt0142": {
+              "id": "gt0142",
+              "text": "Testing notes:\n\nOptimal famility structure: Trio.\nCriteria are present at the time of review of clinical features and x-rays by a Clinical Geneticists or Radiologist expert in skeletal dysplasias.\nMolecular diagnosis will guide management or alter advice."
+            },
+            "gt0143": {
+              "id": "gt0143",
+              "text": "Patients with any of the following should be excluded from recruitment:\n\nLow birth weight for gestation\n\nTest for the following genes:\n\nPTPN11\nRAF1\nBRAF\nSOS1\nKRAS\nHRAS\nNRAS\nSHOC2\nCBL\nSPRED1\nMAP2K1\nMAP2K2"
+            },
+            "gt0144": {
+              "id": "gt0144",
+              "text": "Patients with any of the following should be excluded from recruitment:\n\nKnown genetic cause\nSpecific diagnosis of Bardet-Biedl syndrome or other ciliopathy with specific recruitment criteria within the 100,000 Genomes project\n\nTest for the following genes:\n\nOFD1"
+            },
+            "gt0145": {
+              "id": "gt0145",
+              "text": "Perform the following clinical tests:\n\nLipids"
+            },
+            "gt0146": {
+              "id": "gt0146",
+              "text": "No additional considerations."
+            },
+            "gt0147": {
+              "id": "gt0147",
+              "text": "Perform the following clinical tests:\n\nIntelligence Quotient Assessment\nAdditional body measurements\nGeneral Imaging Diagnostics"
+            },
+            "gt0148": {
+              "id": "gt0148",
+              "text": "Perform the following clinical tests:\n\nGeneral Imaging Diagnostics"
+            }
+          }
+        }
+      }
+    }
+  }
