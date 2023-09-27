@@ -1,0 +1,331 @@
+{
+  "id": "Calculate_mna.v1.0.0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2021-07-23",
+      "name": "Konstantinos Kalliamvakos",
+      "organisation": "Cambio CDS",
+      "email": "konstantinos.kalliamvakos@cambio.se"
+    },
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "To calculate the Mini Nutritional Assessment total score.",
+        "keywords": [
+          "MNA",
+          "mini",
+          "nutritional",
+          "assessment",
+          "elderly",
+          "nutrition",
+          "malnutrition"
+        ],
+        "copyright": "Cambio CDS"
+      }
+    },
+    "other_details": {
+      "references": "1. Vellas B, Villars H, Abellan G, et al. Overview of the MNA® - Its History and Challenges. J Nutr Health Aging 2006;10:456-465.\n2. Rubenstein LZ, Harker JO, Salva A, Guigoz Y, Vellas B. Screening for Undernutrition in Geriatric Practice: Developing the Short-Form Mini Nutritional Assessment (MNA-SF). J. Geront 2001;56A: M366-377.\n3. Guigoz Y. The Mini-Nutritional Assessment (MNA®) Review of the Literature - What does it tell us? J Nutr Health Aging 2006; 10:466-487.\n4. Kaiser MJ, Bauer JM, Ramsch C, et al.  Validation of the Mini Nutritional Assessment Short-Form (MNA®-SF): A practical tool for identification  of nutritional status.  J Nutr Health Aging 2009; 13:782-788."
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.mna.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.mna.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0005]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0009]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0014]"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0018]"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0021]"
+          }
+        }
+      },
+      "gt0008": {
+        "id": "gt0008",
+        "model_id": "openEHR-EHR-OBSERVATION.body_mass_index.v2",
+        "template_id": "openEHR-EHR-OBSERVATION.body_mass_index.v2",
+        "type": "INPUT",
+        "elements": {
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          }
+        }
+      },
+      "gt0010": {
+        "id": "gt0010",
+        "model_id": "openEHR-EHR-OBSERVATION.mna.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.mna.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0011": {
+            "id": "gt0011",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0025]"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0030]"
+          }
+        }
+      },
+      "gt0013": {
+        "id": "gt0013",
+        "model_id": "openEHR-EHR-EVALUATION.health_risk_mna.v1",
+        "template_id": "openEHR-EHR-EVALUATION.health_risk_mna.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/data[at0001]/items[at0003]"
+          }
+        }
+      }
+    },
+    "rules": {
+      "gt0019": {
+        "id": "gt0019",
+        "priority": 9,
+        "when": [
+          "$gt0009|BMI-value|<19,kg/m2"
+        ],
+        "then": [
+          "$gt0011|BMI|=0|local::at0026|BMI Less than 19|"
+        ]
+      },
+      "gt0020": {
+        "id": "gt0020",
+        "priority": 8,
+        "when": [
+          "$gt0009|BMI-value|>=19,kg/m2",
+          "$gt0009|BMI-value|<21,kg/m2"
+        ],
+        "then": [
+          "$gt0011|BMI|=1|local::at0027|BMI 19 to less than 21|"
+        ]
+      },
+      "gt0021": {
+        "id": "gt0021",
+        "priority": 7,
+        "when": [
+          "$gt0009|BMI-value|>=21,kg/m2",
+          "$gt0009|BMI-value|<23,kg/m2"
+        ],
+        "then": [
+          "$gt0011|BMI|=2|local::at0028|BMI 21 to less than 23|"
+        ]
+      },
+      "gt0022": {
+        "id": "gt0022",
+        "priority": 6,
+        "when": [
+          "$gt0009|BMI-value|>=23,kg/m2"
+        ],
+        "then": [
+          "$gt0011|BMI|=3|local::at0029|BMI 23 or greater|"
+        ]
+      },
+      "gt0023": {
+        "id": "gt0023",
+        "priority": 5,
+        "when": [
+          "$gt0003|Food intake|!=null",
+          "$gt0004|Weight loss|!=null",
+          "$gt0005|Mobility|!=null",
+          "$gt0006|Psychological stress or acute disease|!=null",
+          "$gt0007|Neuropsychological problems|!=null",
+          "$gt0011|BMI|!=null"
+        ],
+        "then": [
+          "$gt0012|Total score|.magnitude=$gt0003.value + $gt0004.value + $gt0005.value + $gt0006.value + $gt0007.value + $gt0011.value"
+        ]
+      },
+      "gt0024": {
+        "id": "gt0024",
+        "priority": 4,
+        "when": [
+          "$gt0012|Total score|<=7"
+        ],
+        "then": [
+          "$gt0018|Local variable: Risk assessment text|=$gt0015.term + '. ' + $gt0012.term + ': ' + $gt0012 + '.'"
+        ]
+      },
+      "gt0025": {
+        "id": "gt0025",
+        "priority": 3,
+        "when": [
+          "$gt0012|Total score|>=8",
+          "$gt0012|Total score|<=11"
+        ],
+        "then": [
+          "$gt0018|Local variable: Risk assessment text|=$gt0016.term + '. ' + $gt0012.term + ': ' + $gt0012 + '.'"
+        ]
+      },
+      "gt0026": {
+        "id": "gt0026",
+        "priority": 2,
+        "when": [
+          "$gt0012|Total score|>12"
+        ],
+        "then": [
+          "$gt0018|Local variable: Risk assessment text|=$gt0017.term + '. ' + $gt0012.term + ': ' + $gt0012 + '.'"
+        ]
+      },
+      "gt0027": {
+        "id": "gt0027",
+        "priority": 1,
+        "when": [
+          "$gt0018|Local variable: Risk assessment text|!=null"
+        ],
+        "then": [
+          "$gt0014|Risk assessment|=$gt0018"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Calculate mini nutritional assessment score"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Food intake",
+            "description": ""
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Weight loss",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Mobility",
+            "description": ""
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Psychological stress or acute disease",
+            "description": ""
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Neuropsychological problems",
+            "description": ""
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "BMI-value",
+            "description": ""
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "BMI",
+            "description": ""
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Total score",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Risk assessment",
+            "description": ""
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Malnourished",
+            "description": ""
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "At risk of malnutrition",
+            "description": ""
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Normal nutritional status",
+            "description": ""
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Local variable: Risk assessment text",
+            "description": ""
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "Set BMI to less than 19",
+            "description": ""
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "Set BMI to 19 to less than 21",
+            "description": ""
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "Set BMI to 21 to less than 23",
+            "description": ""
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "text": "Set BMI to 23 or more",
+            "description": ""
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Calculate MNA score",
+            "description": ""
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Set Local variable: Risk assessment text to malnourished",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Set Local variable: Risk assessment text to risk for malnutrition",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Set Local variable: Risk assessment text to normal nutritional status",
+            "description": ""
+          },
+          "gt0027": {
+            "id": "gt0027",
+            "text": "Set Risk assessment",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

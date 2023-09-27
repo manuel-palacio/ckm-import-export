@@ -1,0 +1,301 @@
+{
+  "id": "Glucose_management_result_display.v0.0.3",
+  "concept": "gt0001",
+  "gdl_version": "2.0",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2022-10-21",
+      "name": "Konstantinos Kalliamvakos",
+      "organisation": "Cambio CDS",
+      "email": "konstantinos.kalliamvakos@cambio.se"
+    },
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "copyright": "Cambio CDS",
+        "keywords": []
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0028]"
+          }
+        }
+      },
+      "gt0010": {
+        "id": "gt0010",
+        "model_id": "openEHR-EHR-OBSERVATION.estimated_glomerular_filtration_rate.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.estimated_glomerular_filtration_rate.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0011": {
+            "id": "gt0011",
+            "path": "/items[openEHR-EHR-OBSERVATION.estimated_glomerular_filtration_rate.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          }
+        }
+      },
+      "gt0020": {
+        "id": "gt0020",
+        "model_id": "openEHR-EHR-OBSERVATION.glucose_management_observations.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.glucose_management_observations.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0021": {
+            "id": "gt0021",
+            "path": "/items[openEHR-EHR-OBSERVATION.glucose_management_observations.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "path": "/items[openEHR-EHR-OBSERVATION.glucose_management_observations.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0005]"
+          }
+        }
+      },
+      "gt0030": {
+        "id": "gt0030",
+        "model_id": "openEHR-EHR-OBSERVATION.height.v2",
+        "template_id": "openEHR-EHR-OBSERVATION.height.v2",
+        "type": "INPUT",
+        "elements": {
+          "gt0031": {
+            "id": "gt0031",
+            "path": "/items[openEHR-EHR-OBSERVATION.height.v2]/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          }
+        }
+      },
+      "gt0040": {
+        "id": "gt0040",
+        "model_id": "openEHR-EHR-OBSERVATION.body_weight.v2",
+        "template_id": "openEHR-EHR-OBSERVATION.body_weight.v2",
+        "type": "INPUT",
+        "elements": {
+          "gt0041": {
+            "id": "gt0041",
+            "path": "/items[openEHR-EHR-OBSERVATION.body_weight.v2]/data[at0002]/events[at0003]/data[at0001]/items[at0004]"
+          }
+        }
+      },
+      "gt0050": {
+        "id": "gt0050",
+        "model_id": "openEHR-EHR-OBSERVATION.body_mass_index.v2",
+        "template_id": "openEHR-EHR-OBSERVATION.body_mass_index.v2",
+        "type": "INPUT",
+        "elements": {
+          "gt0051": {
+            "id": "gt0051",
+            "path": "/items[openEHR-EHR-OBSERVATION.body_mass_index.v2]/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          }
+        }
+      },
+      "gt0060": {
+        "id": "gt0060",
+        "model_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0061": {
+            "id": "gt0061",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0023]"
+          }
+        }
+      }
+    },
+    "pre_conditions": [
+      "$gt0011|eGFR|!=null",
+      "$gt0021|ACR|!=null",
+      "$gt0022|HbA1c|!=null",
+      "$gt0031|Height|!=null",
+      "$gt0041|Weight|!=null"
+    ],
+    "default_actions": [],
+    "rules": {
+      "gt2000": {
+        "id": "gt2000",
+        "priority": 25,
+        "when": [
+          "$gt0061|HbA1c target|==null"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0029|HbA1c target was not detected.|"
+        ]
+      },
+      "gt2001": {
+        "id": "gt2001",
+        "priority": 24,
+        "when": [
+          "$gt0022|HbA1c|>=48,mmol/mol",
+          "$gt0061|HbA1c target|.code=='at0024'"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0030|HbA1c is greater than the target upper limit.|"
+        ]
+      },
+      "gt2002": {
+        "id": "gt2002",
+        "priority": 23,
+        "when": [
+          "$gt0022|HbA1c|>=53,mmol/mol",
+          "$gt0061|HbA1c target|.code=='at0025'"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0030|HbA1c is greater than the target upper limit.|"
+        ]
+      },
+      "gt2003": {
+        "id": "gt2003",
+        "priority": 24,
+        "when": [
+          "$gt0022|HbA1c|>=58,mmol/mol",
+          "$gt0061|HbA1c target|.code=='at0026'"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0030|HbA1c is greater than the target upper limit.|"
+        ]
+      },
+      "gt2004": {
+        "id": "gt2004",
+        "priority": 23,
+        "when": [
+          "$gt0022|HbA1c|>=75,mmol/mol",
+          "$gt0061|HbA1c target|.code=='at0027'"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0030|HbA1c is greater than the target upper limit.|"
+        ]
+      },
+      "gt2005": {
+        "id": "gt2005",
+        "priority": 22,
+        "when": [
+          "$gt0022|HbA1c|<48,mmol/mol",
+          "$gt0061|HbA1c target|.code=='at0024'"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0031|HbA1c is lower than the target upper limit.|"
+        ]
+      },
+      "gt2006": {
+        "id": "gt2006",
+        "priority": 23,
+        "when": [
+          "$gt0022|HbA1c|<53,mmol/mol",
+          "$gt0061|HbA1c target|.code=='at0025'"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0031|HbA1c is lower than the target upper limit.|"
+        ]
+      },
+      "gt2007": {
+        "id": "gt2007",
+        "priority": 24,
+        "when": [
+          "$gt0022|HbA1c|<58,mmol/mol",
+          "$gt0061|HbA1c target|.code=='at0026'"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0031|HbA1c is lower than the target upper limit.|"
+        ]
+      },
+      "gt2008": {
+        "id": "gt2008",
+        "priority": 23,
+        "when": [
+          "$gt0022|HbA1c|>=58,mmol/mol",
+          "$gt0022|HbA1c|<=75,mmol/mol",
+          "$gt0061|HbA1c target|.code=='at0027'"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0031|HbA1c is lower than the target upper limit.|"
+        ]
+      },
+      "gt2009": {
+        "id": "gt2009",
+        "priority": 22,
+        "when": [
+          "$gt0022|HbA1c|<58,mmol/mol",
+          "$gt0061|HbA1c target|.code=='at0027'"
+        ],
+        "then": [
+          "$gt0003|Assesment|=local::at0032|HbA1c is lower than the target lower limit.|"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Glucose management result display",
+            "description": ""
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Assessment",
+            "description": ""
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "eGFR",
+            "description": ""
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "ACR",
+            "description": ""
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "text": "HbA1c",
+            "description": ""
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "Height",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0051",
+            "text": "Weight",
+            "description": ""
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "BMI",
+            "description": ""
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "HbA1c target",
+            "description": ""
+          },
+          "gt1000": {
+            "id": "gt1000",
+            "text": "Local variable: All observations",
+            "description": ""
+          },
+          "gt2000": {
+            "id": "gt2000",
+            "text": "",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
