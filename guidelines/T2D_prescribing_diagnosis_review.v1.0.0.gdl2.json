@@ -1,0 +1,926 @@
+{
+  "id": "T2D_prescribing_diagnosis_review.v1.0.0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2019-10-16",
+      "name": "Eneimi Allwell-Brown",
+      "organisation": "Cambio Healthcare Systems",
+      "email": "eneimi.allwell-brown@cambio.se"
+    },
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "misuse": "Not for making a diagnosis of type 2 diabetes."
+      }
+    },
+    "other_details": {
+      "references": "Snorgaard OD, Drivsholm TO, Breum L. Farmakologisk behandling af type 2 diabetes—mål og algoritmer—2018.\n\nSnorgaard O, Mølsted S, Dolsø M, Poulsen GM, Drivsholm TB, Glenner M, Lose H, Schack-Nielsen L. Forløbsprogram for Type 2 Diabetes: Hospitaler, almen praksis og kommunerne i Region Hoevdstaden."
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0019": {
+        "id": "gt0019",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0020": {
+            "id": "gt0020",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0051]"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0052]"
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0102]"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0053]"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0054]"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0055]"
+          },
+          "gt0163": {
+            "id": "gt0163",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0037]"
+          },
+          "gt0164": {
+            "id": "gt0164",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0004]"
+          },
+          "gt0165": {
+            "id": "gt0165",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0104]"
+          },
+          "gt0166": {
+            "id": "gt0166",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0103]"
+          },
+          "gt0167": {
+            "id": "gt0167",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0005]"
+          }
+        }
+      },
+      "gt0039": {
+        "id": "gt0039",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0040": {
+            "id": "gt0040",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0051]"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0052]"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0102]"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0053]"
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0054]"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0055]"
+          },
+          "gt0124": {
+            "id": "gt0124",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0037]"
+          },
+          "gt0125": {
+            "id": "gt0125",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0004]"
+          },
+          "gt0126": {
+            "id": "gt0126",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0103]"
+          },
+          "gt0127": {
+            "id": "gt0127",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0104]"
+          },
+          "gt0128": {
+            "id": "gt0128",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0012]"
+          },
+          "gt0129": {
+            "id": "gt0129",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0013]"
+          },
+          "gt0130": {
+            "id": "gt0130",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0016]"
+          },
+          "gt0131": {
+            "id": "gt0131",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0005]"
+          }
+        }
+      }
+    },
+    "default_actions": [
+      "$gt0128|Steroid-induced diabetes|=false",
+      "$gt0129|LADA|=false",
+      "$gt0130|Pancreatitis-induced diabetes|=false"
+    ],
+    "rules": {
+      "gt1001": {
+        "id": "gt1001",
+        "priority": 24,
+        "when": [
+          "$gt0163|t2d|==local::at0122|Type-2 diabetes|"
+        ],
+        "then": [
+          "$gt0124|Type-2 diabetes|=true"
+        ]
+      },
+      "gt1002": {
+        "id": "gt1002",
+        "priority": 23,
+        "when": [
+          "$gt0163|t2d|==local::at0119|Steroid-induced diabetes|"
+        ],
+        "then": [
+          "$gt0128|Steroid-induced diabetes|=true",
+          "$gt0124|Type-2 diabetes|=false"
+        ]
+      },
+      "gt1003": {
+        "id": "gt1003",
+        "priority": 22,
+        "when": [
+          "$gt0163|t2d|==local::at0120|LADA|"
+        ],
+        "then": [
+          "$gt0129|LADA|=true",
+          "$gt0124|Type-2 diabetes|=false"
+        ]
+      },
+      "gt1004": {
+        "id": "gt1004",
+        "priority": 21,
+        "when": [
+          "$gt0163|t2d|==local::at0121|Pancreatitis-induced diabetes|"
+        ],
+        "then": [
+          "$gt0130|Pancreatitis-induced diabetes|=true",
+          "$gt0124|Type-2 diabetes|=false"
+        ]
+      },
+      "gt1005": {
+        "id": "gt1005",
+        "priority": 20,
+        "when": [
+          "$gt0164|hf|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0125|Heart failure|=true",
+          "$gt0131|Cardiovascular disease|=true"
+        ]
+      },
+      "gt1006": {
+        "id": "gt1006",
+        "priority":19,
+        "when": [
+          "$gt0164|hf|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0125|Heart failure|=false"
+        ]
+      },
+      "gt1007": {
+        "id": "gt1007",
+        "priority":18,
+        "when": [
+          "$gt0166|previous-mi|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0126|Previous MI|=true",
+          "$gt0131|Cardiovascular disease|=true"
+        ]
+      },
+      "gt1008": {
+        "id": "gt1008",
+        "priority":17,
+        "when": [
+          "$gt0166|previous-mi|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0126|Previous MI|=false"
+        ]
+      },
+      "gt1009": {
+        "id": "gt1009",
+        "priority": 16,
+        "when": [
+          "$gt0020|angina|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0040|Angina pectoris|=true",
+          "$gt0131|Cardiovascular disease|=true"
+        ]
+      },
+      "gt1010": {
+        "id": "gt1010",
+        "priority": 15,
+        "when": [
+          "$gt0020|angina|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0040|Angina pectoris|=false"
+        ]
+      },
+      "gt1011": {
+        "id": "gt1011",
+        "priority": 14,
+        "when": [
+          "$gt0021|af|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0041|Atrial fibrillation|=true",
+          "$gt0131|Cardiovascular disease|=true"
+        ]
+      },
+      "gt1012": {
+        "id": "gt1012",
+        "priority": 13,
+        "when": [
+          "$gt0021|af|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0041|Atrial fibrillation|=false"
+        ]
+      },
+      "gt1013": {
+        "id": "gt1013",
+        "priority": 12,
+        "when": [
+          "$gt0022|nephropathy|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0042|Nephropathy|=true"
+        ]
+      },
+      "gt1014": {
+        "id": "gt1014",
+        "priority": 11,
+        "when": [
+          "$gt0022|nephropathy|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0042|Nephropathy|=false"
+        ]
+      },
+      "gt1015": {
+        "id": "gt1015",
+        "priority": 10,
+        "when": [
+          "$gt0062|pad|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0023|Peripheral artery disease|=true"
+        ]
+      },
+      "gt1016": {
+        "id": "gt1016",
+        "priority": 9,
+        "when": [
+          "$gt0062|pad|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0023|Peripheral artery disease|=false"
+        ]
+      },
+      "gt1017": {
+        "id": "gt1017",
+        "priority": 8,
+        "when": [
+          "$gt0165|previous-stroke|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0127|Previous stroke|=true",
+          "$gt0131|Cardiovascular disease|=true"
+        ]
+      },
+      "gt1018": {
+        "id": "gt1018",
+        "priority": 7,
+        "when": [
+          "$gt0165|previous-stroke|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0127|Previous stroke|=false"
+        ]
+      },
+      "gt1019": {
+        "id": "gt1019",
+        "priority": 6,
+        "when": [
+          "$gt0063|raynaud|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0024|Raynaud phenomenon|=true"
+        ]
+      },
+      "gt1020": {
+        "id": "gt1020",
+        "priority": 5,
+        "when": [
+          "$gt0063|raynaud|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0024|Raynaud phenomenon|=false"
+        ]
+      },
+      "gt1021": {
+        "id": "gt1021",
+        "priority": 4,
+        "when": [
+          "$gt0064|tachycardia|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0025|Sinus tachycardia|=true"
+        ]
+      },
+      "gt1022": {
+        "id": "gt1022",
+        "priority": 3,
+        "when": [
+          "$gt0064|tachycardia|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0025|Sinus tachycardia|=false"
+        ]
+      },
+      "gt1023": {
+        "id": "gt1023",
+        "priority": 2,
+        "when": [
+          "$gt0167|cardiovascular-disease|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0131|Cardiovascular disease|=true"
+        ]
+      },
+      "gt1024": {
+        "id": "gt1024",
+        "priority": 1,
+        "when": [
+          "$gt0167|cardiovascular-disease|==local::at0116|No|",
+          "$gt0164|hf|==local::at0116|No|",
+          "$gt0166|previous-mi|==local::at0116|No|",
+          "$gt0020|angina|==local::at0116|No|",
+          "$gt0021|af|==local::at0116|No|",
+          "$gt0165|previous-stroke|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0131|Cardiovascular disease|=false"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "T2D_prescribing_diagnosis_review.v1.0.0"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "angina-pectoris-userInput",
+            "description": ""
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "atrial-fibrillation-userInput",
+            "description": ""
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "text": "nephropathy-userInput",
+            "description": ""
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "pad",
+            "description": ""
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "raynaud",
+            "description": "description gt0024"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "sinus tachycardia",
+            "description": ""
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "angina",
+            "description": "Does patient have heart failure (LVEF <45%)?"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "atrial fibrillation",
+            "description": "Does patient have cardiovascular disease?"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "nephropathy",
+            "description": ""
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "set heart failure exists"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "set cvd exists"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "pad-userInput",
+            "description": "description gt0062"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "raynaud-phenomenon-userInput",
+            "description": "description gt0063"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "sinus-tachycardia-userInput",
+            "description": "description gt0064"
+          },
+          "gt0124": {
+            "id": "gt0124",
+            "text": "type2diabetes",
+            "description": "description gt0124"
+          },
+          "gt0125": {
+            "id": "gt0125",
+            "text": "heart failure",
+            "description": "description gt0125"
+          },
+          "gt0126": {
+            "id": "gt0126",
+            "text": "previous mi",
+            "description": "description gt0126"
+          },
+          "gt0127": {
+            "id": "gt0127",
+            "text": "previous stroke",
+            "description": "description gt0127"
+          },
+          "gt0128": {
+            "id": "gt0128",
+            "text": "steroid-induced diabetes",
+            "description": "description gt0128"
+          },
+          "gt0129": {
+            "id": "gt0129",
+            "text": "LADA",
+            "description": "description gt0129"
+          },
+          "gt0130": {
+            "id": "gt0130",
+            "text": "pancreatitis-induced diabetes",
+            "description": "description gt0130"
+          },
+          "gt0131": {
+            "id": "gt0131",
+            "text": "cardiovascular disease",
+            "description": "description gt0131"
+          },
+          "gt0163": {
+            "id": "gt0163",
+            "text": "type2diabetes-userInput",
+            "description": "description gt0163"
+          },
+          "gt0164": {
+            "id": "gt0164",
+            "text": "heart-failure-userInput",
+            "description": "description gt0164"
+          },
+          "gt0165": {
+            "id": "gt0165",
+            "text": "previous-stroke-userInput",
+            "description": "description gt0165"
+          },
+          "gt0166": {
+            "id": "gt0166",
+            "text": "previous-mi-userInput",
+            "description": "description gt0166"
+          },
+          "gt0167": {
+            "id": "gt0167",
+            "text": "cardiovascular-disease-userInput",
+            "description": "description gt0167"
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "term gt1001",
+            "description": "description gt1001"
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "term gt1002",
+            "description": "description gt1002"
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "term gt1003",
+            "description": "description gt1003"
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "term gt1004",
+            "description": "description gt1004"
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "term gt1005",
+            "description": "description gt1005"
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "term gt1006",
+            "description": "description gt1006"
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "term gt1007",
+            "description": "description gt1007"
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "term gt1008",
+            "description": "description gt1008"
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "term gt1009",
+            "description": "description gt1009"
+          },
+          "gt1010": {
+            "id": "gt1010",
+            "text": "term gt1010",
+            "description": "description gt1010"
+          },
+          "gt1011": {
+            "id": "gt1011",
+            "text": "term gt1011",
+            "description": "description gt1011"
+          },
+          "gt1012": {
+            "id": "gt1012",
+            "text": "term gt1012",
+            "description": "description gt1012"
+          },
+          "gt1013": {
+            "id": "gt1013",
+            "text": "term gt1013",
+            "description": "description gt1013"
+          },
+          "gt1014": {
+            "id": "gt1014",
+            "text": "term gt1014",
+            "description": "description gt1014"
+          },
+          "gt1015": {
+            "id": "gt1015",
+            "text": "term gt1015",
+            "description": "description gt1015"
+          },
+          "gt1016": {
+            "id": "gt1016",
+            "text": "term gt1016",
+            "description": "description gt1016"
+          },
+          "gt1017": {
+            "id": "gt1017",
+            "text": "term gt1017",
+            "description": "description gt1017"
+          },
+          "gt1018": {
+            "id": "gt1018",
+            "text": "term gt1018",
+            "description": "description gt1018"
+          },
+          "gt1019": {
+            "id": "gt1019",
+            "text": "term gt1019",
+            "description": "description gt1019"
+          },
+          "gt1020": {
+            "id": "gt1020",
+            "text": "term gt1020",
+            "description": "description gt1020"
+          },
+          "gt1021": {
+            "id": "gt1021",
+            "text": "term gt1021",
+            "description": "description gt1021"
+          },
+          "gt1022": {
+            "id": "gt1022",
+            "text": "term gt1022",
+            "description": "description gt1022"
+          },
+          "gt1023": {
+            "id": "gt1023",
+            "text": "term gt1023",
+            "description": "description gt1023"
+          },
+          "gt1024": {
+            "id": "gt1024",
+            "text": "term gt1024",
+            "description": "description gt1024"
+          }
+        }
+      },
+      "da": {
+        "id": "da",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "T2D_prescribing_diagnosis_review.v1.0.0"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "term gt0020",
+            "description": "description gt0020"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "term gt0021",
+            "description": "description gt0021"
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "text": "term gt0022",
+            "description": "description gt0022"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "term gt0023",
+            "description": "description gt0023"
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "term gt0024",
+            "description": "description gt0024"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "term gt0025",
+            "description": "description gt0025"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "term gt0040",
+            "description": "description gt0040"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "term gt0041",
+            "description": "description gt0041"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "term gt0042",
+            "description": "description gt0042"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "term gt0062",
+            "description": "description gt0062"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "term gt0063",
+            "description": "description gt0063"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "term gt0064",
+            "description": "description gt0064"
+          },
+          "gt0124": {
+            "id": "gt0124",
+            "text": "term gt0124",
+            "description": "description gt0124"
+          },
+          "gt0125": {
+            "id": "gt0125",
+            "text": "term gt0125",
+            "description": "description gt0125"
+          },
+          "gt0126": {
+            "id": "gt0126",
+            "text": "term gt0126",
+            "description": "description gt0126"
+          },
+          "gt0127": {
+            "id": "gt0127",
+            "text": "term gt0127",
+            "description": "description gt0127"
+          },
+          "gt0128": {
+            "id": "gt0128",
+            "text": "term gt0128",
+            "description": "description gt0128"
+          },
+          "gt0129": {
+            "id": "gt0129",
+            "text": "term gt0129",
+            "description": "description gt0129"
+          },
+          "gt0130": {
+            "id": "gt0130",
+            "text": "term gt0130",
+            "description": "description gt0130"
+          },
+          "gt0131": {
+            "id": "gt0131",
+            "text": "term gt0131",
+            "description": "description gt0131"
+          },
+          "gt0163": {
+            "id": "gt0163",
+            "text": "term gt0163",
+            "description": "description gt0163"
+          },
+          "gt0164": {
+            "id": "gt0164",
+            "text": "term gt0164",
+            "description": "description gt0164"
+          },
+          "gt0165": {
+            "id": "gt0165",
+            "text": "term gt0165",
+            "description": "description gt0165"
+          },
+          "gt0166": {
+            "id": "gt0166",
+            "text": "term gt0166",
+            "description": "description gt0166"
+          },
+          "gt0167": {
+            "id": "gt0167",
+            "text": "term gt0167",
+            "description": "description gt0167"
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "term gt1001",
+            "description": "description gt1001"
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "term gt1002",
+            "description": "description gt1002"
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "term gt1003",
+            "description": "description gt1003"
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "term gt1004",
+            "description": "description gt1004"
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "term gt1005",
+            "description": "description gt1005"
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "term gt1006",
+            "description": "description gt1006"
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "term gt1007",
+            "description": "description gt1007"
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "term gt1008",
+            "description": "description gt1008"
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "term gt1009",
+            "description": "description gt1009"
+          },
+          "gt1010": {
+            "id": "gt1010",
+            "text": "term gt1010",
+            "description": "description gt1010"
+          },
+          "gt1011": {
+            "id": "gt1011",
+            "text": "term gt1011",
+            "description": "description gt1011"
+          },
+          "gt1012": {
+            "id": "gt1012",
+            "text": "term gt1012",
+            "description": "description gt1012"
+          },
+          "gt1013": {
+            "id": "gt1013",
+            "text": "term gt1013",
+            "description": "description gt1013"
+          },
+          "gt1014": {
+            "id": "gt1014",
+            "text": "term gt1014",
+            "description": "description gt1014"
+          },
+          "gt1015": {
+            "id": "gt1015",
+            "text": "term gt1015",
+            "description": "description gt1015"
+          },
+          "gt1016": {
+            "id": "gt1016",
+            "text": "term gt1016",
+            "description": "description gt1016"
+          },
+          "gt1017": {
+            "id": "gt1017",
+            "text": "term gt1017",
+            "description": "description gt1017"
+          },
+          "gt1018": {
+            "id": "gt1018",
+            "text": "term gt1018",
+            "description": "description gt1018"
+          },
+          "gt1019": {
+            "id": "gt1019",
+            "text": "term gt1019",
+            "description": "description gt1019"
+          },
+          "gt1020": {
+            "id": "gt1020",
+            "text": "term gt1020",
+            "description": "description gt1020"
+          },
+          "gt1021": {
+            "id": "gt1021",
+            "text": "term gt1021",
+            "description": "description gt1021"
+          },
+          "gt1022": {
+            "id": "gt1022",
+            "text": "term gt1022",
+            "description": "description gt1022"
+          },
+          "gt1023": {
+            "id": "gt1023",
+            "text": "term gt1023",
+            "description": "description gt1023"
+          },
+          "gt1024": {
+            "id": "gt1024",
+            "text": "term gt1024",
+            "description": "description gt1024"
+          }
+        }
+      }
+    }
+  }
+}

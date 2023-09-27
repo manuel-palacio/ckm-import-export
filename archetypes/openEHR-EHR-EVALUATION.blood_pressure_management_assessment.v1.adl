@@ -1,0 +1,212 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.blood_pressure_management_assessment.v1
+
+concept
+	[at0000]	-- Blood pressure management assessment
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Eneimi Allwell-Brown">
+		["email"] = <"models@cambiocds.com">
+		["organisation"] = <"Cambio Healthcare Systems">
+		["date"] = <"2019-11-10">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To evaluate whether a BP target has been set and if a previously set target has been attained.">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"054D5B7B3B3256E94BCD33D80FB0C4C7">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Blood pressure management assessment
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- BP target assessment
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003, 	-- BP target was not detected.
+									at0004, 	-- BP is greater than the target upper limit.
+									at0005, 	-- BP is lower than the target upper limit.
+									at0006]	-- BP is lower than the target lower limit.
+								}
+							}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Follow recommendation
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0008, 	-- Yes
+									at0009]	-- No
+								}
+							}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Reason for deviating
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- Suppress recommendation
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0008, 	-- Yes
+									at0009]	-- No
+								}
+							}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {	-- First medication
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0013, 	-- Beta receptor blocker
+									at0014, 	-- ACE-I/ARB
+									at0015]	-- Calcium channel blocker
+								}
+							}
+						}
+					}
+					ELEMENT[at0016] occurrences matches {0..1} matches {	-- Other medications
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0017, 	-- Angiotensin II receptor blocker
+									at0018, 	-- ACE inhibitor
+									at0015, 	-- Calcium channel blocker
+									at0019, 	-- Thiazide diuretic
+									at0020, 	-- Spironolactone
+									at0021, 	-- Alpha receptor antagonist
+									at0022, 	-- Moxonidine
+									at0013, 	-- Beta receptor blocker
+									at0023]	-- Furosemide
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Blood pressure management assessment">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"BP target assessment">
+					description = <"Assessment of whether a BP target has been set and whether the target has been attained.">
+				>
+				["at0003"] = <
+					text = <"BP target was not detected.">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"BP is greater than the target upper limit.">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"BP is lower than the target upper limit.">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"BP is lower than the target lower limit.">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Follow recommendation">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Reason for deviating">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Suppress recommendation">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"First medication">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Beta receptor blocker">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"ACE-I/ARB">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Calcium channel blocker">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Other medications">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Angiotensin II receptor blocker">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"ACE inhibitor">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Thiazide diuretic">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Spironolactone">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Alpha receptor antagonist">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Moxonidine">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Furosemide">
+					description = <"*">
+				>
+			>
+		>
+	>

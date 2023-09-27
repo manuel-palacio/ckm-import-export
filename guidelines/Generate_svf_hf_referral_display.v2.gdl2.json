@@ -1,0 +1,1587 @@
+{
+  "id": "Generate_svf_hf_referral_display.v2",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2020-12-01",
+      "name": "Rashmi Damodaran",
+      "organisation": "Cambio CDS",
+      "email": "rashmi.damodaran@cambio.se"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "en": {
+        "id": "en",
+        "copyright": "Cambio CDS",
+        "keywords": [
+          "heart failure",
+          "referral"
+        ]
+      },
+      "sv": {
+        "id": "sv",
+        "copyright": "Cambio CDS",
+        "keywords": [
+          "hjärtsvikt",
+          "remiss"
+        ]
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-INSTRUCTION.service_request.v1",
+        "template_id": "openEHR-EHR-INSTRUCTION.service_request.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/activities[at0001]/description[at0009]/items[at0062]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/activities[at0001]/description[at0009]/items[at0064]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/activities[at0001]/description[at0009]/items[at0152]"
+          }
+        }
+      },
+      "gt0006": {
+        "id": "gt0006",
+        "model_id": "openEHR-EHR-EVALUATION.svf_heart_failure_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.svf_heart_failure_assessment.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/items[at0005]/items[at0007]"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "path": "/data[at0001]/items[at0005]/items[at0008]"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "path": "/data[at0001]/items[at0005]/items[at0009]"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "path": "/data[at0001]/items[at0005]/items[at0010]"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "path": "/data[at0001]/items[at0005]/items[at0011]"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
+      },
+      "gt0020": {
+        "id": "gt0020",
+        "model_id": "openEHR-EHR-EVALUATION.referral_decision_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.referral_decision_review.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "path": "/data[at0001]/items[at0016]"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "path": "/data[at0001]/items[at0018]"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "path": "/data[at0001]/items[at0020]"
+          }
+        }
+      },
+      "gt0031": {
+        "id": "gt0031",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0032": {
+            "id": "gt0032",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "path": "/effectivePeriod/start"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0034|Beta blocking agents, selective code|",
+          "min(/effectivePeriod/start)",
+          "/status=='active'"
+        ]
+      },
+      "gt0035": {
+        "id": "gt0035",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0036": {
+            "id": "gt0036",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "path": "/effectivePeriod/start"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0038|Carvedilol code|",
+          "max(/effectivePeriod/start)",
+          "/status=='active'"
+        ]
+      },
+      "gt0039": {
+        "id": "gt0039",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0040": {
+            "id": "gt0040",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "path": "/effectivePeriod/start"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0042|ACE inhibitors, plain code|",
+          "min(/effectivePeriod/start)",
+          "/status=='active'"
+        ]
+      },
+      "gt0043": {
+        "id": "gt0043",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0044": {
+            "id": "gt0044",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "path": "/effectivePeriod/start"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0046|ACE inhibitors, combinations code|",
+          "min(/effectivePeriod/start)",
+          "/status=='active'"
+        ]
+      },
+      "gt0047": {
+        "id": "gt0047",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0048": {
+            "id": "gt0048",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "path": "/effectivePeriod/start"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0050|Angiotensin receptor blockers (ARBs), plain code|",
+          "min(/effectivePeriod/start)",
+          "/status=='active'"
+        ]
+      },
+      "gt0051": {
+        "id": "gt0051",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0052": {
+            "id": "gt0052",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "path": "/effectivePeriod/start"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0054|Angiotensin receptor blockers (ARBs), combinations code|",
+          "min(/effectivePeriod/start)",
+          "/status=='active'"
+        ]
+      },
+      "gt0055": {
+        "id": "gt0055",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0056": {
+            "id": "gt0056",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "path": "/effectivePeriod/start"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0058|Other agents acting on Renin angiotensin system code|",
+          "min(/effectivePeriod/start)",
+          "/status=='active'"
+        ]
+      }
+    },
+    "templates": {
+      "gt0063": {
+        "id": "gt0063",
+        "model_id": "generic_template",
+        "name": "referralDisplay",
+        "object": {
+          "uiResourceType": "Group",
+          "resources": [
+            {
+              "id": "svfReferralText",
+              "text": "{$gt0064.term}",
+              "uiResourceType": "Group",
+              "resources": [
+                "{$gt0065}",
+                "{$gt0067}",
+                "{$gt0068}",
+                "{$gt0069}"
+              ]
+            }
+          ]
+        }
+      },
+      "gt0065": {
+        "id": "gt0065",
+        "model_id": "generic_template",
+        "object": {
+          "id": "referralNotAvailable",
+          "text": "{$gt0066.term}",
+          "uiResourceType": "Display"
+        }
+      },
+      "gt0067": {
+        "id": "gt0067",
+        "model_id": "generic_template",
+        "object": {
+          "id": "referralDiagnosisHeader",
+          "text": "{$gt0005.term}",
+          "uiResourceType": "Group",
+          "resources": [
+            {
+              "id": "referralDiagnosis",
+              "text": "{$gt0005}",
+              "uiResourceType": "Display"
+            }
+          ]
+        }
+      },
+      "gt0068": {
+        "id": "gt0068",
+        "model_id": "generic_template",
+        "object": {
+          "id": "referralReasonHeader",
+          "text": "{$gt0003.term}",
+          "uiResourceType": "Group",
+          "resources": [
+            {
+              "id": "referralReason",
+              "text": "{$gt0003}",
+              "uiResourceType": "Display"
+            }
+          ]
+        }
+      },
+      "gt0069": {
+        "id": "gt0069",
+        "model_id": "generic_template",
+        "object": {
+          "id": "referralAnamnesisHeader",
+          "text": "{$gt0004.term}",
+          "uiResourceType": "Group",
+          "resources": [
+            {
+              "id": "referralAnamnesis",
+              "text": "{$gt0004}",
+              "uiResourceType": "Display"
+            }
+          ]
+        }
+      },
+      "gt0138": {
+        "id": "gt0138",
+        "model_id": "generic_template",
+        "name": "noReferralPalliativePatient",
+        "object": {
+          "id": "noReferral",
+          "text": "{$gt0139.term}",
+          "uiResourceType": "Display"
+        }
+      }
+    },
+    "pre_conditions": [
+      "$gt0018!=null"
+    ],
+    "rules": {
+      "gt0103": {
+        "id": "gt0103",
+        "priority": 25,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0003'"
+        ],
+        "then": [
+          "use_template($gt0138)"
+        ]
+      },
+      "gt0104": {
+        "id": "gt0104",
+        "priority": 24,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|!=null",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code!='at0003'"
+        ],
+        "then": [
+          "use_template($gt0065)"
+        ]
+      },
+      "gt0105": {
+        "id": "gt0105",
+        "priority": 23,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'"
+        ],
+        "then": [
+          "$gt0003|Referral purpose|=$gt0070.term",
+          "$gt0004|Anamnesis|=$gt0071.term",
+          "$gt0005|Diagnosis|=$gt0072.term"
+        ]
+      },
+      "gt0106": {
+        "id": "gt0106",
+        "priority": 22,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0008|Ejection Fraction (EF) % < 40|.code=='at0003'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis|+ '\n' + $gt0077.term"
+        ]
+      },
+      "gt0107": {
+        "id": "gt0107",
+        "priority": 21,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0008|Ejection Fraction (EF) % < 40|.code=='at0004'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis| + '\n' + $gt0079.term"
+        ]
+      },
+      "gt0108": {
+        "id": "gt0108",
+        "priority": 20,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0010|NYHA class II-IV|.code=='at0003'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis| + '\n' + $gt0080.term"
+        ]
+      },
+      "gt0109": {
+        "id": "gt0109",
+        "priority": 19,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0010|NYHA class II-IV|.code=='at0004'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis| + '\n' + $gt0081.term"
+        ]
+      },
+      "gt0110": {
+        "id": "gt0110",
+        "priority": 18,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0011|Sinus rythm|.code=='at0003'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis| + '\n' + $gt0082.term"
+        ]
+      },
+      "gt0111": {
+        "id": "gt0111",
+        "priority": 17,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0011|Sinus rythm|.code=='at0004'",
+          "$gt0012|Atrial fibrillation|.code=='at0003'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis| + '\n' + $gt0083.term"
+        ]
+      },
+      "gt0112": {
+        "id": "gt0112",
+        "priority": 16,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0011|Sinus rythm|.code=='at0004'",
+          "$gt0012|Atrial fibrillation|.code=='at0004'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis| + '\n' + $gt0084.term"
+        ]
+      },
+      "gt0113": {
+        "id": "gt0113",
+        "priority": 15,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0008|Ejection Fraction (EF) % < 40|.code=='at0003'",
+          "$gt0013|QRS width >130 ms|.code=='at0003'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis| + '\n' + $gt0085.term"
+        ]
+      },
+      "gt0114": {
+        "id": "gt0114",
+        "priority": 14,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0008|Ejection Fraction (EF) % < 40|.code=='at0003'",
+          "$gt0013|QRS width >130 ms|.code=='at0004'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis| + '\n' + $gt0086.term"
+        ]
+      },
+      "gt0125": {
+        "id": "gt0125",
+        "priority": 13,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0032|Beta blocking agents, selective|!=null||$gt0036|Carvedilol|!=null||$gt0040|ACE inhibitors, plain|!=null||$gt0044|ACE inhibitors, combinations|!=null||$gt0048|Angiotensin receptor blockers (ARBs), plain|!=null||$gt0052|Angiotensin receptor blockers (ARBs), combinations|!=null||$gt0056|Other agents acting on Renin angiotensin system|!=null||$gt0060|Valsartan and sacubitril (ARBs)|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=$gt0004|Anamnesis| + $gt0097.term"
+        ]
+      },
+      "gt0126": {
+        "id": "gt0126",
+        "priority": 12,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0032|Beta blocking agents, selective|!=null",
+          "$gt0033|Beta blocking agents, selective date and time|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0032|Beta blocking agents, selective|.term + ' (' + $gt0098.term + $gt0033|Beta blocking agents, selective date and time|.year + ')  \n')"
+        ]
+      },
+      "gt0127": {
+        "id": "gt0127",
+        "priority": 11,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0036|Carvedilol|!=null",
+          "$gt0037|Carvedilol date and time|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0036|Carvedilol|.term + ' (' + $gt0098.term + $gt0037|Carvedilol date and time|.year + ')  \n')"
+        ]
+      },
+      "gt0128": {
+        "id": "gt0128",
+        "priority": 10,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0040|ACE inhibitors, plain|!=null",
+          "$gt0041|ACE inhibitors, plain date and time|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0040|ACE inhibitors, plain|.term + ' (' + $gt0098.term + $gt0041|ACE inhibitors, plain date and time|.year + ')  \n')"
+        ]
+      },
+      "gt0129": {
+        "id": "gt0129",
+        "priority": 9,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0044|ACE inhibitors, combinations|!=null",
+          "$gt0045|ACE inhibitors, combinations date and time|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0044|ACE inhibitors, combinations|.term + ' (' + $gt0098.term + $gt0045|ACE inhibitors, combinations date and time|.year + ')  \n')"
+        ]
+      },
+      "gt0130": {
+        "id": "gt0130",
+        "priority": 8,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0048|Angiotensin receptor blockers (ARBs), plain|!=null",
+          "$gt0049|Angiotensin receptor blockers (ARBs), plain date and time|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0048|Angiotensin receptor blockers (ARBs), plain|.term + ' (' + $gt0098.term + $gt0049|Angiotensin receptor blockers (ARBs), plain date and time|.year + ')  \n')"
+        ]
+      },
+       "gt0131": {
+        "id": "gt0131",
+        "priority": 7,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0052|Angiotensin II receptor blockers (ARBs), combinations|!=null",
+          "$gt0053|Angiotensin II receptor blockers (ARBs), combinations date and time|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0052|Angiotensin II receptor blockers (ARBs), combinations|.term + ' (' + $gt0098.term + $gt0053|Angiotensin II receptor blockers (ARBs), combinations date and time|.year + ')  \n')"
+        ]
+      },
+      "gt0132": {
+        "id": "gt0132",
+        "priority": 6,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0056|Other agents acting on Renin angiotensin system|!=null",
+          "$gt0057|Other agents acting on Renin angiotensin system date and time|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0056|Other agents acting on Renin angiotensin system|.term + ' (' + $gt0098.term + $gt0057|Other agents acting on Renin angiotensin system date and time|.year + ')  \n')"
+        ]
+      },
+      "gt0133": {
+        "id": "gt0133",
+        "priority": 5,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0015|Is interpreter needed?|.code=='at0003'",
+          "$gt0016|Language|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0073.term + $gt0016|language| + '\n')"
+        ]
+      },
+      "gt0134": {
+        "id": "gt0134",
+        "priority": 4,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0015|Is interpreter needed?|.code=='at0004'"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0075.term + '\n')"
+        ]
+      },
+      "gt0135": {
+        "id": "gt0135",
+        "priority": 3,
+        "when": [
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0017|Additional information|!=null"
+        ],
+        "then": [
+          "$gt0004|Anamnesis|=($gt0004|Anamnesis| + $gt0076.term + $gt0017|Comments|)"
+        ]
+      },
+      "gt0136": {
+        "id": "gt0136",
+        "priority": 2,
+        "when": [
+          "$gt0014|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|.code=='at0003'",
+          "$gt0018|Does the patient have heart failure in palliative care?|.code=='at0004'"
+        ],
+        "then": [
+          "use_template($gt0067)",
+          "use_template($gt0068)",
+          "use_template($gt0069)"
+        ]
+      },
+      "gt0137": {
+        "id": "gt0137",
+        "priority": 1,
+        "when": [],
+        "then": [
+          "use_template($gt0063)"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Heart failure referral display",
+            "description": "Generate the referral template display for the heart failure."
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Referral purpose",
+            "description": ""
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Anamnesis",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Diagnosis",
+            "description": ""
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Ejection Fraction (EF) % < 40",
+            "description": ""
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "NYHA class II-IV",
+            "description": ""
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Sinus Rythm",
+            "description": ""
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Atrial Fibrillation",
+            "description": ""
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "QRS width >= 130 ms",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?",
+            "description": ""
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Is interpreter needed?",
+            "description": ""
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Language",
+            "description": ""
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Additional information",
+            "description": ""
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Does the patient have heart failure in palliative care?",
+            "description": ""
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Beta blocking agents, selective",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Beta blocking agents, selective date and time",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Beta blocking agents, selective code",
+            "description": ""
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Carvedilol",
+            "description": ""
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Carvedilol date and time",
+            "description": ""
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Carvedilol code",
+            "description": ""
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "ACE inhibitors, plain",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "ACE inhibitors, plain date and time",
+            "description": ""
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "ACE inhibitors, plain code",
+            "description": ""
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "ACE inhibitors, combinations",
+            "description": ""
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "ACE inhibitors, combinations date and time",
+            "description": ""
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "ACE inhibitors, combinations code",
+            "description": ""
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "Angiotensin II receptor blockers (ARBs), plain",
+            "description": ""
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "Angiotensin II receptor blockers (ARBs), plain date and time",
+            "description": ""
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Angiotensin II receptor blockers (ARBs), plain code",
+            "description": ""
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Angiotensin II receptor blockers (ARBs), combinations",
+            "description": ""
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "Angiotensin II receptor blockers (ARBs), combinations date and time",
+            "description": ""
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "Angiotensin II receptor blockers (ARBs), combinations code",
+            "description": ""
+          },
+          "gt0056": {
+            "id": "gt0056",
+            "text": "Other agents acting on Renin angiotensin system",
+            "description": ""
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "Other agents acting on Renin angiotensin system date and time",
+            "description": ""
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "Other agents acting on Renin angiotensin system code",
+            "description": ""
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "generic_template",
+            "description": ""
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Referral text",
+            "description": ""
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "",
+            "description": ""
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "Heart failure referral is created when you decide to refer the patient for further heart failure treatment.",
+            "description": ""
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "",
+            "description": ""
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "",
+            "description": ""
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "To assess if the patient is suitable for further heart failure treatment.",
+            "description": ""
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "The referral has been created from a clinical decision support (CDS), please see current notes in the patient's medical record.  \nThe patient is on basic treatment for heart failure.\n",
+            "description": ""
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Heart failure",
+            "description": ""
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "\nThe patient needs an interpreter. Language: ",
+            "description": ""
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "language",
+            "description": ""
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "\nNo interpreter needed.",
+            "description": ""
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "\nAdditional information: ",
+            "description": ""
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "Ejection Fraction (EF) < 40 %",
+            "description": ""
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "text": "Ejection Fraction (EF) >= 40%",
+            "description": ""
+          },
+          "gt0080": {
+            "id": "gt0080",
+            "text": "NYHA class is II-IV.",
+            "description": ""
+          },
+          "gt0081": {
+            "id": "gt0081",
+            "text": "NYHA class is I.",
+            "description": ""
+          },
+          "gt0082": {
+            "id": "gt0082",
+            "text": "The patient has sinus rythm.",
+            "description": ""
+          },
+          "gt0083": {
+            "id": "gt0083",
+            "text": "The patient has atrial fibrillation.",
+            "description": ""
+          },
+          "gt0084": {
+            "id": "gt0084",
+            "text": "The patient has irregular sinus rythm but no atrial fibrillation.",
+            "description": ""
+          },
+          "gt0085": {
+            "id": "gt0085",
+            "text": "QRS width >= 130 ms.",
+            "description": ""
+          },
+          "gt0086": {
+            "id": "gt0086",
+            "text": "QRS width < 130 ms.",
+            "description": ""
+          },
+          "gt0097": {
+            "id": "gt0097",
+            "text": "\n\nMedications:\n",
+            "description": ""
+          },
+          "gt0098": {
+            "id": "gt0098",
+            "text": "from ",
+            "description": ""
+          },
+          "gt0103": {
+            "id": "gt0103",
+            "text": "Generate display when referral is not needed for palliative patient",
+            "description": ""
+          },
+          "gt0100": {
+            "id": "gt0104",
+            "text": "Generate display when referral is not needed",
+            "description": ""
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "text": "Set referral text for reason for request, reason description and clinical indication",
+            "description": ""
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "text": "Set referral text for Ejection Fraction (EF) % < 40",
+            "description": ""
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "Set referral text for Ejection Fraction (EF) >= 40%",
+            "description": ""
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "Set referral text for NYHA class II-IV",
+            "description": ""
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "text": "Set referral text for NYHA class is I",
+            "description": ""
+          },
+          "gt0110": {
+            "id": "gt0110",
+            "text": "Set referral text for regular sinus rythm",
+            "description": ""
+          },
+          "gt0111": {
+            "id": "gt0111",
+            "text": "Set referral text for irregular sinus rythm with atrial fibrillation",
+            "description": ""
+          },
+          "gt0112": {
+            "id": "gt0112",
+            "text": "Set referral text for irregular sinus rythm but no atrial fibrillation",
+            "description": ""
+          },
+          "gt0113": {
+            "id": "gt0113",
+            "text": "Set referral text for QRS width >130 ms",
+            "description": ""
+          },
+          "gt0114": {
+            "id": "gt0114",
+            "text": "Set referral text QRS width <=130 ms",
+            "description": ""
+          },
+          "gt0125": {
+            "id": "gt0125",
+            "text": "Set default referral text for medications",
+            "description": ""
+          },
+          "gt0126": {
+            "id": "gt0126",
+            "text": "Set referral text for Beta blocking agents, selective medication",
+            "description": ""
+          },
+          "gt0127": {
+            "id": "gt0127",
+            "text": "Set referral text for Carvedilol medication",
+            "description": ""
+          },
+          "gt0128": {
+            "id": "gt0128",
+            "text": "Set referral text for ACE inhibitors, plain medication",
+            "description": ""
+          },
+          "gt0129": {
+            "id": "gt0129",
+            "text": "Set referral text for ACE inhibitors, combinations medication",
+            "description": ""
+          },
+          "gt0130": {
+            "id": "gt0130",
+            "text": "Set referral text for Angiotensin receptor blockers (ARBs), plain medication",
+            "description": ""
+          },
+          "gt0131": {
+            "id": "gt0131",
+            "text": "Set referral text for ACE inhibitors, combinations medication",
+            "description": ""
+          },
+          "gt0132": {
+            "id": "gt0132",
+            "text": "Set referral text for Other agents acting on Renin angiotensin system medication",
+            "description": ""
+          },
+          "gt0133": {
+            "id": "gt0133",
+            "text": "Set referral text for Interpreter needed",
+            "description": ""
+          },
+          "gt0134": {
+            "id": "gt0134",
+            "text": "Set referral text for Interpreter not needed",
+            "description": ""
+          },
+          "gt0135": {
+            "id": "gt0135",
+            "text": "Set referral text for comments",
+            "description": ""
+          },
+          "gt0136": {
+            "id": "gt0136",
+            "text": "Generate display objects",
+            "description": ""
+          },
+          "gt0137": {
+            "id": "gt0137",
+            "text": "Generate referral display template",
+            "description": ""
+          },
+          "gt0139": {
+            "id": "gt0139",
+            "text": "No referral is created.",
+            "description": ""
+          }
+        }
+      },
+      "sv": {
+        "id": "sv",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generera remiss display",
+            "description": "Generera remissmallen för hjärtsvikt."
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Frågeställning",
+            "description": ""
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Anamnes",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Diagnos",
+            "description": ""
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Ejektionsfraktion (EF) <40 %",
+            "description": ""
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "NYHA klass II-IV",
+            "description": ""
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Sinusrytm",
+            "description": ""
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Förmaksflimmer",
+            "description": ""
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "QRS bredd >= 130 ms",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Vill du skicka en remiss till hjärtsviktsmottagning för bedömning om lämplig behandling?",
+            "description": ""
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Tolkbehövs?",
+            "description": ""
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Språk",
+            "description": ""
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Kompletterande information",
+            "description": ""
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Har patienten hjärtsvikt i palliativt skede?",
+            "description": ""
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Selektiva Beta-receptorblockerare",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Selektiva Beta-receptorblockerare datum och tid",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Selektiva Beta-receptorblockerare kod",
+            "description": ""
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Karvedilol",
+            "description": ""
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Karvedilol datum och tid",
+            "description": ""
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Karvedilol kod",
+            "description": ""
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "ACE-hämmare",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "ACE-hämmare datum och tid",
+            "description": ""
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "ACE-hämmare kod",
+            "description": ""
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "ACE-hämmare, kombinationer",
+            "description": ""
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "ACE-hämmare, kombinationer datum och tid",
+            "description": ""
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "ACE-hämmare, kombinationer kod",
+            "description": ""
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "Angiotensin II receptorblockerare (ARBs)",
+            "description": ""
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "Angiotensin II receptorblockerare (ARBs) datum och tid",
+            "description": ""
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Angiotensin II receptorblockerare (ARBs) kod",
+            "description": ""
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Angiotensin II receptorblockerare (ARBs), kombinationer",
+            "description": ""
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "Angiotensin II receptorblockerare (ARBs), kombinationer datum och tid",
+            "description": ""
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "Angiotensin II receptorblockerare (ARBs), kombinationer kod",
+            "description": ""
+          },
+          "gt0056": {
+            "id": "gt0056",
+            "text": "Övriga medel som påverkar renin-angiotensin-sytemet",
+            "description": ""
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "Övriga medel som påverkar renin-angiotensin-sytemet datum och tid",
+            "description": ""
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "Övriga medel som påverkar renin-angiotensin-sytemet kod",
+            "description": ""
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "generic_template",
+            "description": ""
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Remisstext",
+            "description": ""
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "",
+            "description": ""
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "Remiss skapas när du beslutar att hänvisa patienten för ytterligare behandling av hjärtsvikt.",
+            "description": ""
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "",
+            "description": ""
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "",
+            "description": ""
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "Bedömning om patienten är lämplig för ytterligare hjärtsviktsbehandling.",
+            "description": ""
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "Remissen har skapats från ett kliniskt beslutsstöd (CDS), var god se aktuella anteckningar i patientens journal.  \nPatienten är på basbehandling för hjärtsvikt.\n",
+            "description": ""
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Hjärtsvikt",
+            "description": ""
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "\nPatienten har tolkbehov. Språk: ",
+            "description": ""
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "språket",
+            "description": ""
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "\nIngen tolk behövs.",
+            "description": ""
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "\nKompletterande information: ",
+            "description": ""
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "Ejektionsfraktion (EF) < 40 %.",
+            "description": ""
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "text": "Ejektionsfraktion (EF) >= 40 %.",
+            "description": ""
+          },
+          "gt0080": {
+            "id": "gt0080",
+            "text": "NYHA klass II-IV.",
+            "description": ""
+          },
+          "gt0081": {
+            "id": "gt0081",
+            "text": "NYHA klass I.",
+            "description": ""
+          },
+          "gt0082": {
+            "id": "gt0082",
+            "text": "Patienten har sinusrytm.",
+            "description": ""
+          },
+          "gt0083": {
+            "id": "gt0083",
+            "text": "Patienten har förmaksflimmer.",
+            "description": ""
+          },
+          "gt0084": {
+            "id": "gt0084",
+            "text": "Patienten har inte sinusrytm och inget förmaksflimmer.",
+            "description": ""
+          },
+          "gt0085": {
+            "id": "gt0085",
+            "text": "QRS-bredd >= 130 ms.",
+            "description": ""
+          },
+          "gt0086": {
+            "id": "gt0086",
+            "text": "QRS-bredd < 130 ms.",
+            "description": ""
+          },
+          "gt0097": {
+            "id": "gt0097",
+            "text": "\n\nLäkemedel:  \n",
+            "description": ""
+          },
+          "gt0098": {
+            "id": "gt0098",
+            "text": "från ",
+            "description": ""
+          },
+          "gt0099": {
+            "id": "gt0099",
+            "text": "Generera display när remiss inte behövs för palliativ patient",
+            "description": ""
+          },
+          "gt0100": {
+            "id": "gt0100",
+            "text": "Generera display när remiss inte behövs",
+            "description": ""
+          },
+          "gt0101": {
+            "id": "gt0101",
+            "text": "Ange remisstext för diagnos, önsakad undersökning och anamnes",
+            "description": ""
+          },
+          "gt0102": {
+            "id": "gt0102",
+            "text": "Ange remisstext för tolkbehövs",
+            "description": ""
+          },
+          "gt0103": {
+            "id": "gt0103",
+            "text": "Ange remisstext för ingen tolkbehövs",
+            "description": ""
+          },
+          "gt0104": {
+            "id": "gt0104",
+            "text": "Ange remisstext för kommentar",
+            "description": ""
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "text": "Ange remisstext för Ejektionsfraktion (EF) < 40 %",
+            "description": ""
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "Ange remisstext för Ejektionsfraktion (EF) >= 40 %",
+            "description": ""
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "Ange remisstext för NYHA klass II-IV",
+            "description": ""
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "text": "Ange remisstext för NYHA klass I",
+            "description": ""
+          },
+          "gt0110": {
+            "id": "gt0110",
+            "text": "Ange remisstext för regelbunden sinusrytm",
+            "description": ""
+          },
+          "gt0111": {
+            "id": "gt0111",
+            "text": "Ange remisstext för oregelbunden sinusrytm och förmaksflimmer",
+            "description": ""
+          },
+          "gt0112": {
+            "id": "gt0112",
+            "text": "Ange remisstext för oregelbunden sinusrytm men inget förmaksflimmer",
+            "description": ""
+          },
+          "gt0113": {
+            "id": "gt0113",
+            "text": "Ange remisstext när QRS bredd >= 130 ms",
+            "description": ""
+          },
+          "gt0114": {
+            "id": "gt0114",
+            "text": "Ange remisstext när QRS bredd < 130 ms",
+            "description": ""
+          },
+          "gt0125": {
+            "id": "gt0125",
+            "text": "Ange default remisstext för läkemedel",
+            "description": ""
+          },
+          "gt0126": {
+            "id": "gt0126",
+            "text": "Ange remisstext för Selektiva Beta-receptorblockerare läkemedel",
+            "description": ""
+          },
+          "gt0127": {
+            "id": "gt0127",
+            "text": "Ange remisstext för Karvedilol läkemedel",
+            "description": ""
+          },
+          "gt0128": {
+            "id": "gt0128",
+            "text": "Ange remisstext för ACE-hämmare läkemedel",
+            "description": ""
+          },
+          "gt0129": {
+            "id": "gt0129",
+            "text": "Ange remisstext för ACE-hämmare, kombinationer läkemedel",
+            "description": ""
+          },
+          "gt0130": {
+            "id": "gt0130",
+            "text": "Ange remisstext för Angiotensin II receptorblockerare (ARBs) läkemedel",
+            "description": ""
+          },
+          "gt0131": {
+            "id": "gt0131",
+            "text": "Ange remisstext för Angiotensin II receptorblockerare (ARBs), kombinationer läkemedel",
+            "description": ""
+          },
+          "gt0132": {
+            "id": "gt0132",
+            "text": "Ange remisstext för Övriga medel som påverkar renin-angiotensin-sytemet läkemedel",
+            "description": ""
+          },
+          "gt0133": {
+            "id": "gt0133",
+            "text": "Ange remisstext för Valsartan and sakubitril läkemedel",
+            "description": ""
+          },
+          "gt0136": {
+            "id": "gt0136",
+            "text": "Generera display objekt",
+            "description": ""
+          },
+          "gt0137": {
+            "id": "gt0137",
+            "text": "Generera remiss display mallen",
+            "description": ""
+          },
+          "gt0139": {
+            "id": "gt0139",
+            "text": "Ingen remiss skapas.",
+            "description": ""
+          }
+        }
+      }
+    },
+    "term_bindings": {
+      "ATC": {
+        "id": "ATC",
+        "bindings": {
+          "gt0034": {
+            "codes": [
+              "ATC::C07AB"
+            ]
+          },
+          "gt0038": {
+            "codes": [
+              "ATC::C07AG02"
+            ]
+          },
+          "gt0042": {
+            "codes": [
+              "ATC::C09A"
+            ]
+          },
+          "gt0046": {
+            "codes": [
+              "ATC::C09B"
+            ]
+          },
+          "gt0050": {
+            "codes": [
+              "ATC::C09C"
+            ]
+          },
+          "gt0054": {
+            "codes": [
+              "ATC::C09D"
+            ]
+          },
+          "gt0058": {
+            "codes": [
+              "ATC::C09X"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

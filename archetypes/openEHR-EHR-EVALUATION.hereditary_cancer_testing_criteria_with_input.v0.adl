@@ -1,0 +1,350 @@
+archetype (adl_version=1.4; uid=c3805086-2062-4b00-ad52-ebfee9a3e576)
+	openEHR-EHR-EVALUATION.hereditary_cancer_testing_criteria_with_input.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Rong Chen">
+		["organisation"] = <"Cambio CDS">
+		["date"] = <"2010-12-15">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"6b9d76302a85bbcc35db68e9b82b0b60">
+		["build_uid"] = <"76f37183-9667-37ec-8da7-d1f1566a6eb9">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Hereditary cancer testing criteria
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					CLUSTER[at0002] occurrences matches {0..1} matches {    -- By Age at Diagnosis and Family History
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0003] occurrences matches {0..1} matches {    -- Age group
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0004,    -- ≤ 45 y
+											at0005,    -- 46-50 y
+											at0006]    -- ≥ 51 y
+										}
+									}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {    -- 46-50 y with ANY
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0008,    -- Unknown or limited family history
+											at0009,    -- Multiple primary breast cancers (synchronous or metachronous)
+											at0010]    -- ≥1 close blood relative with breast, ovarian, pancreatic or prostate cancer at any age
+										}
+									}
+								}
+							}
+							CLUSTER[at0028] occurrences matches {0..1} matches {    -- ≥51 y
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- ≥51 y with ≥1 close blood relative with ANY
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0012,    -- Breast cancer at age ≤50 y or male breast cancer at any age
+													at0013,    -- Ovarian cancer any age
+													at0014,    -- Pancreatic cancer any age
+													at0015]    -- Metastatic, intraductal/cribriform histology, or high- or very-high risk group
+												}
+											}
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {    -- ≥51 y with ≥3 total diagnoses of breast cancer in patient and/ or close blood relatives
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {    -- ≥51 y with ≥2 close blood relatives with either breast or prostate cancer at any age
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+								}
+							}
+							ELEMENT[at0017] occurrences matches {0..1} matches {    -- Any age
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0018,    -- To aid in systemic treatment decisions using PARP inhibitors for breast cancer in the metastatic setting
+											at0019,    -- To aid in adjuvant treatment decisions with olaparib for high-risk, HER-2 negative breast cancer
+											at0020,    -- Triple-negative breast cancer
+											at0021,    -- Lobular breast cancer with personal or family history of diffuse gastric cancer
+											at0022,    -- Male breast cancer
+											at0023]    -- ≥ close blood relative with male breast cancer
+										}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0024] occurrences matches {0..1} matches {    -- By Ancestry
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0025] occurrences matches {0..1} matches {    -- Ashkenazi Jewish ancestry
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0029] occurrences matches {0..1} matches {    -- Recommendation
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0030] occurrences matches {0..1} matches {    -- Hereditary Cancer Testing is Clinically Indicated
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0031] occurrences matches {0..1} matches {    -- Gathered input
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0032] occurrences matches {0..1} matches {    -- birthdate
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0033] occurrences matches {0..1} matches {    -- Date of diagnosis
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0034] occurrences matches {0..1} matches {    -- Count of breast cancers in patient
+								value matches {
+									DV_COUNT matches {*}
+								}
+							}
+							ELEMENT[at0035] occurrences matches {0..1} matches {    -- Count of breast cancer in close blood relatives
+								value matches {
+									DV_COUNT matches {*}
+								}
+							}
+							ELEMENT[at0036] occurrences matches {0..1} matches {    -- Count of prostate cancer in close blood relatives
+								value matches {
+									DV_COUNT matches {*}
+								}
+							}
+							ELEMENT[at0037] occurrences matches {0..1} matches {    -- Count of ovarian cancer in close blood relatives
+								value matches {
+									DV_COUNT matches {*}
+								}
+							}
+							ELEMENT[at0038] occurrences matches {0..1} matches {    -- Count of pancreatic cancer in close blood relatives
+								value matches {
+									DV_COUNT matches {*}
+								}
+							}
+							ELEMENT[at0039] occurrences matches {0..1} matches {    -- Age at diagnosis
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::128]>
+										list = <
+											["1"] = <
+												units = <"a">
+											>
+										>
+									>
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0040] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Hereditary cancer testing criteria">
+					description = <"Hereditary cancer testing criteria">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"By Age at Diagnosis and Family History">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Age group">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"≤ 45 y">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"46-50 y">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"≥ 51 y">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"46-50 y with ANY">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Unknown or limited family history">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Multiple primary breast cancers (synchronous or metachronous)">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"≥1 close blood relative with breast, ovarian, pancreatic or prostate cancer at any age">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"≥51 y with ≥1 close blood relative with ANY">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Breast cancer at age ≤50 y or male breast cancer at any age">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Ovarian cancer any age">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Pancreatic cancer any age">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Metastatic, intraductal/cribriform histology, or high- or very-high risk group">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Any age">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"To aid in systemic treatment decisions using PARP inhibitors for breast cancer in the metastatic setting">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"To aid in adjuvant treatment decisions with olaparib for high-risk, HER-2 negative breast cancer">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Triple-negative breast cancer">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Lobular breast cancer with personal or family history of diffuse gastric cancer">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Male breast cancer">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"≥ close blood relative with male breast cancer">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"By Ancestry">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Ashkenazi Jewish ancestry">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"≥51 y with ≥3 total diagnoses of breast cancer in patient and/ or close blood relatives">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"≥51 y with ≥2 close blood relatives with either breast or prostate cancer at any age">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"≥51 y">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Recommendation">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Hereditary Cancer Testing is Clinically Indicated">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Gathered input">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"birthdate">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Date of diagnosis">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Count of breast cancers in patient">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Count of breast cancer in close blood relatives">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Count of prostate cancer in close blood relatives">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Count of ovarian cancer in close blood relatives">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Count of pancreatic cancer in close blood relatives">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Age at diagnosis">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

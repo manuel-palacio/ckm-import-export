@@ -1,0 +1,1682 @@
+{
+  "id": "Glucose_management_prescription_questionnaire.v0.0.4",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2022-10-26",
+      "name": "Konstantinos Kalliamvakos",
+      "organisation": "Cambio CDS",
+      "email": "konstantinos.kalliamvakos@cambio.se"
+    },
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "",
+        "keywords": [],
+        "copyright": "Cambio CDS"
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0002]/items[at0009]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0002]/items[at0003]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0002]/items[at0008]"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0017]/items[at0020]"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0017]/items[at0019]"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0017]/items[at0018]"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0010]/items[at0013]"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0010]/items[at0012]"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0028]"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0023]"
+          }
+        }
+      },
+      "gt2000": {
+        "id": "gt2000",
+        "model_id": "openEHR-EHR-OBSERVATION.body_mass_index.v2",
+        "template_id": "openEHR-EHR-OBSERVATION.body_mass_index.v2",
+        "type": "INPUT",
+        "elements": {
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/items[openEHR-EHR-OBSERVATION.body_mass_index.v2]/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          }
+        }
+      },
+      "gt2001": {
+        "id": "gt2001",
+        "model_id": "openEHR-EHR-OBSERVATION.estimated_glomerular_filtration_rate.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.estimated_glomerular_filtration_rate.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0010": {
+            "id": "gt0010",
+            "path": "/items[openEHR-EHR-OBSERVATION.estimated_glomerular_filtration_rate.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          }
+        }
+      },
+      "gt2002": {
+        "id": "gt2002",
+        "model_id": "openEHR-EHR-OBSERVATION.glucose_management_observations.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.glucose_management_observations.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0021": {
+            "id": "gt0021",
+            "path": "/items[openEHR-EHR-OBSERVATION.glucose_management_observations.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          }
+        }
+      },
+      "gt2003": {
+        "id": "gt2003",
+        "model_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt2101": {
+            "id": "gt2101",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0033]"
+          }
+        }
+      }
+    },
+    "pre_conditions": [
+      "$gt0004|Type of diabetes type 2|.code=='at0005'||$gt0004|Type of diabetes type 2|.code=='at0007'||$gt0004|Type of diabetes type 2|.code=='at0004'||$gt0004|Type of diabetes type 2|.code=='at0006'",
+      "$gt0063|hba1c-target|!=null",
+      "$gt0051|hba1c-assessment|!=null",
+      "$gt0051|hba1c-assessment|.code!='at0031'",
+      "$gt0051|hba1c-assessment|.code!='at0032'"
+    ],
+    "default_actions": [
+      "$gt2101|recommendation-notes display|=''",
+      "$gt3000|Local variable: Albuminuria|=false"
+    ],
+    "rules": {
+      "gt0087": {
+        "id": "gt0087",
+        "priority": 166,
+        "when": [
+          "$gt0011|Latest ACR|>=30,mg/g"
+        ],
+        "then": [
+          "$gt3000|Local variable: Albuminuria|=true"
+        ]
+      },
+      "gt0088": {
+        "id": "gt0088",
+        "priority": 165,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0005'",
+          "$gt0009|BMI <25|>=25,kg/m2",
+          "$gt0014|Insulin|==local::at0021|Yes|",
+          "$gt0018|Metformin|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2276.term"
+        ]
+      },
+      "gt0089": {
+        "id": "gt0089",
+        "priority": 164,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0005'",
+          "$gt0009|BMI <25|>=25,kg/m2",
+          "$gt0014|Insulin|==local::at0022|No|",
+          "$gt0018|Metformin|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2274.term"
+        ]
+      },
+      "gt0090": {
+        "id": "gt0090",
+        "priority": 163,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0005'",
+          "$gt0009|BMI <25|>=25,kg/m2",
+          "$gt0014|Insulin|==local::at0021|Yes|",
+          "$gt0018|Metformin|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2272.term"
+        ]
+      },
+      "gt0091": {
+        "id": "gt0091",
+        "priority": 162,
+        "when": [
+          "($gt0004|Type of diabetes type 2|.code=='at0005'&&$gt0009|BMI <25|<25,kg/m2)||$gt0004|Type of diabetes type 2|.code=='at0007'",
+          "$gt0014|Insulin|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2265.term"
+        ]
+      },
+      "gt0092": {
+        "id": "gt0092",
+        "priority": 161,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0006'",
+          "$gt0014|Insulin|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2266.term"
+        ]
+      },
+      "gt0096": {
+        "id": "gt0096",
+        "priority": 157,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0005'",
+          "$gt0009|BMI <25|>=25,kg/m2",
+          "$gt0014|Insulin|==local::at0022|No|",
+          "$gt0018|Metformin|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2278.term"
+        ]
+      },
+      "gt0097": {
+        "id": "gt0097",
+        "priority": 156,
+        "when": [
+          "$gt0014|Insulin|==local::at0022|No|",
+          "($gt0004|Type of diabetes type 2|.code=='at0005'&&$gt0009|BMI <25|<25,kg/m2)||$gt0004|Type of diabetes type 2|.code=='at0007'"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2213.term"
+        ]
+      },
+      "gt0098": {
+        "id": "gt0098",
+        "priority": 155,
+        "when": [
+          "$gt0014|Insulin|==local::at0022|No|",
+          "$gt0004|Type of diabetes type 2|.code=='at0006'"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2214.term"
+        ]
+      },
+      "gt0099": {
+        "id": "gt0099",
+        "priority": 154,
+        "when": [
+          "$gt0018|Metformin|==local::at0022|No|",
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2})"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2215.term"
+        ]
+      },
+      "gt6001": {
+        "id": "gt6001",
+        "priority": 84,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|<15,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6002": {
+        "id": "gt6002",
+        "priority": 83,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|<15,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6003": {
+        "id": "gt6003",
+        "priority": 82,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|<15,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6004": {
+        "id": "gt6004",
+        "priority": 81,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|<15,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6005": {
+        "id": "gt6005",
+        "priority": 80,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|<15,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6006": {
+        "id": "gt6006",
+        "priority": 79,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|<15,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6007": {
+        "id": "gt6007",
+        "priority": 78,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|<15,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2264.term + $gt2220.term"
+        ]
+      },
+      "gt6008": {
+        "id": "gt6008",
+        "priority": 77,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=15,mL/min/{1.73_m2}",
+          "$gt0010|eGFR|<30,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6009": {
+        "id": "gt6009",
+        "priority": 76,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=15,mL/min/{1.73_m2}",
+          "$gt0010|eGFR|<30,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6010": {
+        "id": "gt6010",
+        "priority": 75,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=15,mL/min/{1.73_m2}",
+          "$gt0010|eGFR|<30,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6011": {
+        "id": "gt6011",
+        "priority": 74,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=15,mL/min/{1.73_m2}",
+          "$gt0010|eGFR|<30,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6012": {
+        "id": "gt6012",
+        "priority": 73,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=15,mL/min/{1.73_m2}",
+          "$gt0010|eGFR|<30,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6013": {
+        "id": "gt6013",
+        "priority": 72,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=15,mL/min/{1.73_m2}",
+          "$gt0010|eGFR|<30,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2264.term + $gt2220.term"
+        ]
+      },
+      "gt6014": {
+        "id": "gt6014",
+        "priority": 71,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=15,mL/min/{1.73_m2}",
+          "$gt0010|eGFR|<30,mL/min/{1.73_m2}",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term"
+        ]
+      },
+      "gt6015": {
+        "id": "gt6015",
+        "priority": 70,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2223.term"
+        ]
+      },
+      "gt6016": {
+        "id": "gt6016",
+        "priority": 69,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2223.term"
+        ]
+      },
+      "gt6017": {
+        "id": "gt6017",
+        "priority": 68,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2229.term"
+        ]
+      },
+      "gt6018": {
+        "id": "gt6018",
+        "priority": 67,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2223.term"
+        ]
+      },
+      "gt6019": {
+        "id": "gt6019",
+        "priority": 66,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2223.term"
+        ]
+      },
+      "gt6020": {
+        "id": "gt6020",
+        "priority": 65,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2229.term"
+        ]
+      },
+      "gt6021": {
+        "id": "gt6021",
+        "priority": 64,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term"
+        ]
+      },
+      "gt6022": {
+        "id": "gt6022",
+        "priority": 63,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0012|Promote weight loss|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term"
+        ]
+      },
+      "gt6023": {
+        "id": "gt6023",
+        "priority": 62,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2226.term"
+        ]
+      },
+      "gt6024": {
+        "id": "gt6024",
+        "priority": 61,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2230.term"
+        ]
+      },
+      "gt6025": {
+        "id": "gt6025",
+        "priority": 60,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=30,mL/min/{1.73_m2}&&$gt0010|eGFR|<60,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2231.term"
+        ]
+      },
+      "gt6026": {
+        "id": "gt6026",
+        "priority": 59,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2226.term"
+        ]
+      },
+      "gt6027": {
+        "id": "gt6027",
+        "priority": 58,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2228.term"
+        ]
+      },
+      "gt6028": {
+        "id": "gt6028",
+        "priority": 57,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term"
+        ]
+      },
+      "gt6029": {
+        "id": "gt6029",
+        "priority": 56,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2231.term"
+        ]
+      },
+      "gt6030": {
+        "id": "gt6030",
+        "priority": 55,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2229.term"
+        ]
+      },
+      "gt6031": {
+        "id": "gt6031",
+        "priority": 54,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2237.term"
+        ]
+      },
+      "gt6032": {
+        "id": "gt6032",
+        "priority": 53,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2238.term"
+        ]
+      },
+      "gt6033": {
+        "id": "gt6033",
+        "priority": 52,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term"
+        ]
+      },
+      "gt6034": {
+        "id": "gt6034",
+        "priority": 51,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2247.term"
+        ]
+      },
+      "gt6035": {
+        "id": "gt6035",
+        "priority": 50,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2279.term"
+        ]
+      },
+      "gt6036": {
+        "id": "gt6036",
+        "priority": 49,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2226.term"
+        ]
+      },
+      "gt6037": {
+        "id": "gt6037",
+        "priority": 48,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0012|Promote weight loss|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2243.term"
+        ]
+      },
+      "gt6038": {
+        "id": "gt6038",
+        "priority": 47,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2244.term"
+        ]
+      },
+      "gt6039": {
+        "id": "gt6039",
+        "priority": 46,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2245.term"
+        ]
+      },
+      "gt6040": {
+        "id": "gt6040",
+        "priority": 45,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2246.term"
+        ]
+      },
+      "gt6041": {
+        "id": "gt6041",
+        "priority": 44,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2269.term"
+        ]
+      },
+      "gt6042": {
+        "id": "gt6042",
+        "priority": 43,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2270.term"
+        ]
+      },
+      "gt6043": {
+        "id": "gt6043",
+        "priority": 42,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "($gt0010|eGFR|>=60,mL/min/{1.73_m2}&&$gt0010|eGFR|<90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==false)||($gt0010|eGFR|>=90,mL/min/{1.73_m2}&&$gt3000|Local variable: Albuminuria|==true)",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2269.term"
+        ]
+      },
+      "gt6044": {
+        "id": "gt6044",
+        "priority": 41,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2247.term"
+        ]
+      },
+      "gt6045": {
+        "id": "gt6045",
+        "priority": 40,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2248.term"
+        ]
+      },
+      "gt6046": {
+        "id": "gt6046",
+        "priority": 39,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2249.term"
+        ]
+      },
+      "gt6047": {
+        "id": "gt6047",
+        "priority": 38,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2250.term"
+        ]
+      },
+      "gt6048": {
+        "id": "gt6048",
+        "priority": 37,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2251.term"
+        ]
+      },
+      "gt6049": {
+        "id": "gt6049",
+        "priority": 36,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2252.term"
+        ]
+      },
+      "gt6050": {
+        "id": "gt6050",
+        "priority": 35,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0021|Yes|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2253.term"
+        ]
+      },
+      "gt6051": {
+        "id": "gt6051",
+        "priority": 34,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term"
+        ]
+      },
+      "gt6052": {
+        "id": "gt6052",
+        "priority": 33,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2226.term"
+        ]
+      },
+      "gt6053": {
+        "id": "gt6053",
+        "priority": 32,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0021|Yes|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2279.term"
+        ]
+      },
+      "gt6054": {
+        "id": "gt6054",
+        "priority": 31,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0012|Promote weight loss|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2257.term"
+        ]
+      },
+      "gt6055": {
+        "id": "gt6055",
+        "priority": 30,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2258.term"
+        ]
+      },
+      "gt6056": {
+        "id": "gt6056",
+        "priority": 29,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2259.term"
+        ]
+      },
+      "gt6057": {
+        "id": "gt6057",
+        "priority": 28,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0022|No|",
+          "$gt0012|Promote weight loss|==local::at0022|No|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2260.term"
+        ]
+      },
+      "gt6058": {
+        "id": "gt6058",
+        "priority": 27,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0021|Yes|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2267.term"
+        ]
+      },
+      "gt6059": {
+        "id": "gt6059",
+        "priority": 26,
+        "when": [
+          "$gt0004|Type of diabetes type 2|.code=='at0004'",
+          "$gt0010|eGFR|>=90,mL/min/{1.73_m2}",
+          "$gt3000|Local variable: Albuminuria|=false",
+          "$gt0005|Heart failure|==local::at0022|No|",
+          "$gt0003|Cardiovascular disease|==local::at0022|No|",
+          "$gt0013|Avoid hypoglycemia|==local::at0021|Yes|",
+          "$gt0012|Promote weight loss|==local::at0021|Yes|",
+          "$gt0011|Prescribe low cost|==local::at0022|No|"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2268.term"
+        ]
+      },
+      "gt0149": {
+        "id": "gt0149",
+        "priority": 6,
+        "when": [
+          "$gt2101|recommendation-notes display|==''"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2218.term"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Cardiovascular disease",
+            "description": "Does patient have cardiovascular disease?"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Type of diabetes type 2",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Heart failure",
+            "description": "Does patient have heart failure (LVEF <45%)?"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "LADA",
+            "description": "Does patient have latent autoimmune diabetes of adults (LADA)?"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Steroid-induced diabetes",
+            "description": "Does patient have steroid-induced diabetes?"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Type-2 diabetes",
+            "description": "Does patient have type-2 diabetes?"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "BMI <25 kg/m2",
+            "description": "Is the patient's BMI less than 25 kg/m2?"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "eGFR category",
+            "description": "Select the patients renal function category based on eGFR (mL/min/1.73m2) and presence or absence of albuminuria."
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Prescribe low cost",
+            "description": "Is prescribing low cost medication a priority?"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Promote weight loss",
+            "description": "Is promoting weight loss a priority?"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Avoid hypoglycemia",
+            "description": "Is avoiding hypoglycemia a priority?"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Insulin",
+            "description": "*"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "SGLT2-inhibitor",
+            "description": "*"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Sulfonylurea",
+            "description": "*"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "GLP1-RA",
+            "description": "*"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Metformin",
+            "description": "*"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "DPP4-inhibitor",
+            "description": "*"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "medication-recommendation-template"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "ACR"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "hba1c-assessment"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "hba1c-target"
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Action",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Follow recommendation",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "Reason for deviating",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "Suppress this recommendation for the next 6 months",
+            "description": ""
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "Yes",
+            "description": ""
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "No",
+            "description": ""
+          },
+          "gt2201": {
+            "id": "gt2201",
+            "text": "Single drug therapy",
+            "description": "*"
+          },
+          "gt2202": {
+            "id": "gt2202",
+            "text": "Single drug therapy is recommended for newly diagnosed diabetes.\n\nThe listed medication is the guideline mandated first choice.\n\nConsider multi-drug therapy only after 2-3 months of 'failed' monotherapy.",
+            "description": "*"
+          },
+          "gt2203": {
+            "id": "gt2203",
+            "text": "Select 1st choice medication",
+            "description": "*"
+          },
+          "gt2204": {
+            "id": "gt2204",
+            "text": "1. Insulin (long-acting)",
+            "description": "*"
+          },
+          "gt2205": {
+            "id": "gt2205",
+            "text": "1. Insulin (rapid-acting)",
+            "description": "*"
+          },
+          "gt2206": {
+            "id": "gt2206",
+            "text": "1. Insulin (combined long-acting and rapid-acting)"
+          },
+          "gt2207": {
+            "id": "gt2207",
+            "text": "Multi-drug therapy",
+            "description": "*"
+          },
+          "gt2208": {
+            "id": "gt2208",
+            "text": "Dual therapy is recommended after 2-3 months of single drug therapy and persistently high HbA1c.\n\nTriple therapy is recommended after 2-3 months of dual therapy and persistently high HbA1c.\n\nQuad therapy may be considered after 2-3 months of 'failed' triple therapy.\n\nSee **Guidance** section below for medication alternatives.",
+            "description": "*"
+          },
+          "gt2209": {
+            "id": "gt2209",
+            "text": "Select a supplementary medication",
+            "description": "*"
+          },
+          "gt2210": {
+            "id": "gt2210",
+            "text": "Guidance"
+          },
+          "gt2211": {
+            "id": "gt2211",
+            "text": "**Single therapy:** Insulin is preferred 1st choice.\n\n*An active prescription for Insulin medication was detected.*",
+            "description": "*"
+          },
+          "gt2212": {
+            "id": "gt2212",
+            "text": "* **Single therapy:** Metformin is preferred 1st choice.\n* ***In case of severe hypoglycaemia with symptoms and / or acute conditions Insulin treatment is started primarily.** Switch to or supplement with Metformin when conditions have stabilized.*\n\n*An active prescription for Metformin medication was detected.*",
+            "description": "*"
+          },
+          "gt2213": {
+            "id": "gt2213",
+            "text": "* **Single therapy:** Long-acting (basal) insulin is preferred 1st choice.\n* **Double therapy:** Fast-acting insulin may be added.\n"
+          },
+          "gt2214": {
+            "id": "gt2214",
+            "text": "* **Single therapy:** Rapid-acting (mealtime) insulin is preferred 1st choice.\n* **Double therapy:** Metformin may be added.\n* **Triple therapy:** Long-acting insulin may be added.\n",
+            "description": "*"
+          },
+          "gt2215": {
+            "id": "gt2215",
+            "text": "* **Single therapy:** Metformin is preferred 1st choice.\n* ***In case of severe hypoglycaemia with symptoms and / or acute conditions Insulin treatment is started primarily.** Switch to or supplement with Metformin when conditions have stabilized.*\n",
+            "description": "*"
+          },
+          "gt2216": {
+            "id": "gt2216",
+            "text": "*An active prescription for ",
+            "description": "*"
+          },
+          "gt2217": {
+            "id": "gt2217",
+            "text": " medication was detected.*\n\n"
+          },
+          "gt2218": {
+            "id": "gt2218",
+            "text": "No recommendation",
+            "description": "*"
+          },
+          "gt2219": {
+            "id": "gt2219",
+            "text": "* DPP-4 inhibitor is an alternative to GLP-1 analogue.\n* **Double therapy:** Insulin may be added.\n* **WARNING:** DPP4 inhibitor must not be used together with GLP-1 analogue treatment.\n",
+            "description": "*"
+          },
+          "gt2220": {
+            "id": "gt2220",
+            "text": "* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* **Double therapy:** Insulin may be added.\n* **WARNING:** GLP-1 analogue must not be used together with DPP4-inhibitor treatment.\n"
+          },
+          "gt2221": {
+            "id": "gt2221",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* DPP-4 inhibitor is an alternative to GLP-1 analogue.\n* **Triple therapy:** Insulin may be added.\n",
+            "description": "*"
+          },
+          "gt2222": {
+            "id": "gt2222",
+            "text": "* **Double therapy:** DPP-4 inhibitor may be added.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* **Triple therapy:** Insulin may be added.\n",
+            "description": "*"
+          },
+          "gt2223": {
+            "id": "gt2223",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2224": {
+            "id": "gt2224",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2225": {
+            "id": "gt2225",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2226": {
+            "id": "gt2226",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2227": {
+            "id": "gt2227",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2228": {
+            "id": "gt2228",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* DPP-4 inhibitor is an alternative to GLP-1 analogue.\n* Insulin can be used as a 4th choice alternative.\n"
+          },
+          "gt2229": {
+            "id": "gt2229",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2230": {
+            "id": "gt2230",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2231": {
+            "id": "gt2231",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2232": {
+            "id": "gt2232",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n"
+          },
+          "gt2233": {
+            "id": "gt2233",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* DPP-4 inhibitor is an alternative to GLP-1 analogue.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2234": {
+            "id": "gt2234",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2235": {
+            "id": "gt2235",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* Insulin can be used as a 4th choice alternative.\n"
+          },
+          "gt2236": {
+            "id": "gt2236",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2237": {
+            "id": "gt2237",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2238": {
+            "id": "gt2238",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2239": {
+            "id": "gt2239",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n"
+          },
+          "gt2240": {
+            "id": "gt2240",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2241": {
+            "id": "gt2241",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* SGLT2 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2242": {
+            "id": "gt2242",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n"
+          },
+          "gt2243": {
+            "id": "gt2243",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2244": {
+            "id": "gt2244",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2245": {
+            "id": "gt2245",
+            "text": "* **Double therapy:** Sulfonylurea may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n"
+          },
+          "gt2246": {
+            "id": "gt2246",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2247": {
+            "id": "gt2247",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2248": {
+            "id": "gt2248",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2249": {
+            "id": "gt2249",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n"
+          },
+          "gt2250": {
+            "id": "gt2250",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2251": {
+            "id": "gt2251",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2252": {
+            "id": "gt2252",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n"
+          },
+          "gt2253": {
+            "id": "gt2253",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2254": {
+            "id": "gt2254",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2255": {
+            "id": "gt2255",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n"
+          },
+          "gt2256": {
+            "id": "gt2256",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* SGLT2 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2257": {
+            "id": "gt2257",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2258": {
+            "id": "gt2258",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n"
+          },
+          "gt2259": {
+            "id": "gt2259",
+            "text": "* **Double therapy:** Sulfonylurea may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2260": {
+            "id": "gt2260",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n",
+            "description": "*"
+          },
+          "gt2261": {
+            "id": "gt2261",
+            "text": "* **Single therapy:** GLP-1 analogue is preferred 1st choice.\n\n*An active prescription for GLP-1 analogue medication was detected.*",
+            "description": "*"
+          },
+          "gt2262": {
+            "id": "gt2262",
+            "text": "* **Single therapy:** DPP-4 inhibitor is preferred 1st choice.\n\n*An active prescription for DPP-4 inhibitor medication was detected.*",
+            "description": "*"
+          },
+          "gt2263": {
+            "id": "gt2263",
+            "text": "* **Single therapy:** GLP-1 analogue is preferred 1st choice.\n"
+          },
+          "gt2264": {
+            "id": "gt2264",
+            "text": "* **Single therapy:** DPP-4 inhibitor is preferred 1st choice.\n",
+            "description": "*"
+          },
+          "gt2265": {
+            "id": "gt2265",
+            "text": "* **Double therapy:** Fast-acting insulin may be added.\n"
+          },
+          "gt2266": {
+            "id": "gt2266",
+            "text": "* **Double therapy:** Metformin may be added.\n* **Triple therapy:** Long-acting insulin may be added.\n",
+            "description": "*"
+          },
+          "gt2267": {
+            "id": "gt2267",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2268": {
+            "id": "gt2268",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2269": {
+            "id": "gt2269",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n",
+            "description": "*"
+          },
+          "gt2270": {
+            "id": "gt2270",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n",
+            "description": "*"
+          },
+          "gt2271": {
+            "id": "gt2271",
+            "text": "Insulin + Metformin is the preferred choice for LADA with BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2272": {
+            "id": "gt2272",
+            "text": "* Metformin should be added.\n"
+          },
+          "gt2273": {
+            "id": "gt2273",
+            "text": "Insulin + Metformin is the preferred choice for LADA with BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2274": {
+            "id": "gt2274",
+            "text": "* Insulin should be added.\n"
+          },
+          "gt2275": {
+            "id": "gt2275",
+            "text": "Insulin + Metformin is the preferred choice for LADA with BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2276": {
+            "id": "gt2276",
+            "text": "No additional recommendation.",
+            "description": "*"
+          },
+          "gt2278": {
+            "id": "gt2278",
+            "text": "Insulin + Metformin is the preferred choice for LADA with BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2279": {
+            "id": "gt2279",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* GLP-1 analogue can be used as a 4th choice alternative.\n",
+            "description": "*"
+          }
+        }
+      }
+    }
+  }
+}

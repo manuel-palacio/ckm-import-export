@@ -1,0 +1,2690 @@
+archetype (adl_version=1.4; uid=7fc644aa-07b0-3b6d-ac93-8aecb2489729)
+	openEHR-EHR-OBSERVATION.belfast_genomics.v0
+
+concept
+	[at0000]	-- Belfast Genomics
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"???">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["build_uid"] = <"309bb7c8-0b65-39f9-a522-d7a8108992ea">
+		["MD5-CAM-1.0.1"] = <"32D1DB0BA21BB09E4420D7CE2EBE81E9">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Belfast Genomics
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0055] occurrences matches {0..1} matches {	-- Assessment
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0056, 	-- Criteria met for whole genome sequencing
+													at0057]	-- Insufficient criteria for whole genome sequencing
+												}
+											}
+										}
+									}
+									ELEMENT[at0058] occurrences matches {0..1} matches {	-- Comments
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0249] occurrences matches {0..1} matches {	-- Test for the following genes
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0250] occurrences matches {0..1} matches {	-- Perform the following clinical tests
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									CLUSTER[at0198] occurrences matches {0..1} matches {	-- Rare multisystem ciliopathy disorders
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0084] occurrences matches {0..1} matches {	-- Phenotypes
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0085] occurrences matches {0..1} matches {	-- Delayed gross motor development
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0086] occurrences matches {0..1} matches {	-- Delayed fine motor development
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0087] occurrences matches {0..1} matches {	-- Delayed speech and language development
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0088] occurrences matches {0..1} matches {	-- Global developmental delay
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0089] occurrences matches {0..1} matches {	-- Intellectual disability
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0090] occurrences matches {0..1} matches {	-- Microcephaly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0091] occurrences matches {0..1} matches {	-- Macrocephaly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0092] occurrences matches {0..1} matches {	-- Generalized hypotonia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0093] occurrences matches {0..1} matches {	-- Ataxia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0094] occurrences matches {0..1} matches {	-- Molar tooth sign on MRI
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0095] occurrences matches {0..1} matches {	-- Cerebellar vermis hypoplasia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0096] occurrences matches {0..1} matches {	-- Occipital encephalocele
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0097] occurrences matches {0..1} matches {	-- Polymicrogyria
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0098] occurrences matches {0..1} matches {	-- Neonatal breathing dysregulation
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0099] occurrences matches {0..1} matches {	-- Oculomotor apraxia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0100] occurrences matches {0..1} matches {	-- Coloboma
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0101] occurrences matches {0..1} matches {	-- Retinal dystrophy
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0102] occurrences matches {0..1} matches {	-- Abnormal facial shape
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0103] occurrences matches {0..1} matches {	-- Accessory oral frenulum
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0104] occurrences matches {0..1} matches {	-- Hamartoma of tongue
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0105] occurrences matches {0..1} matches {	-- Cleft palate
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0106] occurrences matches {0..1} matches {	-- Abnormality of cardiovascular system morphology
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0107] occurrences matches {0..1} matches {	-- Hyperechogenic kidneys
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0108] occurrences matches {0..1} matches {	-- Multiple renal cysts
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0109] occurrences matches {0..1} matches {	-- Hypertension
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0110] occurrences matches {0..1} matches {	-- Chronic kidney disease
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0111] occurrences matches {0..1} matches {	-- Hepatic fibrosis
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0112] occurrences matches {0..1} matches {	-- Elevated hepatic transaminases
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0113] occurrences matches {0..1} matches {	-- Preaxial hand polydactyly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0114] occurrences matches {0..1} matches {	-- Postaxial hand polydactyly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0115] occurrences matches {0..1} matches {	-- Mesoaxial hand polydactyly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0116] occurrences matches {0..1} matches {	-- Preaxial foot polydactyly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0117] occurrences matches {0..1} matches {	-- Postaxial foot polydactyly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0118] occurrences matches {0..1} matches {	-- Mesoaxial foot polydactyly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0119] occurrences matches {0..1} matches {	-- Short stature
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0120] occurrences matches {0..1} matches {	-- Obesity
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0199] occurrences matches {0..1} matches {	-- Inclusion
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0223] occurrences matches {0..1} matches {	-- Clinical diagnosis of oral-facial-digital syndromes
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0224] occurrences matches {0..1} matches {	-- Clinical diagnosis of cranioectodermal dysplasia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0225] occurrences matches {0..1} matches {	-- Clinical diagnosis of a rare multisystem ciliopathy
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0226] occurrences matches {0..1} matches {	-- Renal dysplasia, polycystic or ‘bright’ kidneys
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0227] occurrences matches {0..1} matches {	-- Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0228] occurrences matches {0..1} matches {	-- Polydactyly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0229] occurrences matches {0..1} matches {	-- Short limbs and/or short ribs
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0230] occurrences matches {0..1} matches {	-- Occipital encephalocele
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0231] occurrences matches {0..1} matches {	-- Retinal dystrophy
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0201] occurrences matches {0..1} matches {	-- Exclusion
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0232] occurrences matches {0..1} matches {	-- Known genetic cause
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0233] occurrences matches {0..1} matches {	-- Specific diagnosis of Bardet-Biedl syndrome or other ciliopathy with specific recruitment criteria within the 100,000 Genomes project
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0197] occurrences matches {0..1} matches {	-- Noonan syndrome
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0083] occurrences matches {0..1} matches {	-- Phenotypes
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0150] occurrences matches {0..1} matches {	-- Increased nuchal translucency
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0151] occurrences matches {0..1} matches {	-- Nonimmune hydrops fetalis
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0152] occurrences matches {0..1} matches {	-- Polyhydramnios
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0153] occurrences matches {0..1} matches {	-- Failure to thrive in infancy
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0154] occurrences matches {0..1} matches {	-- Feeding difficulties
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0155] occurrences matches {0..1} matches {	-- Pulmonic stenosis
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0156] occurrences matches {0..1} matches {	-- Hypertrophic cardiomyopathy
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0157] occurrences matches {0..1} matches {	-- Abnormality of the atrioventricular valves
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0158] occurrences matches {0..1} matches {	-- Atrial septal defect
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0159] occurrences matches {0..1} matches {	-- Ventricular septal defect
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0160] occurrences matches {0..1} matches {	-- Arrhythmia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0161] occurrences matches {0..1} matches {	-- Lymphedema
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0162] occurrences matches {0..1} matches {	-- Pleural effusion
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0163] occurrences matches {0..1} matches {	-- Intellectual disability
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0164] occurrences matches {0..1} matches {	-- Specific learning disability
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0165] occurrences matches {0..1} matches {	-- Delayed gross motor development
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0166] occurrences matches {0..1} matches {	-- Delayed speech and language development
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0167] occurrences matches {0..1} matches {	-- Abnormality of the kidney
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0168] occurrences matches {0..1} matches {	-- Delayed puberty
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0169] occurrences matches {0..1} matches {	-- Cryptorchidism
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0170] occurrences matches {0..1} matches {	-- Decreased fertility
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0171] occurrences matches {0..1} matches {	-- Abnormality of hair texture
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0172] occurrences matches {0..1} matches {	-- Follicular hyperkeratosis
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0173] occurrences matches {0..1} matches {	-- Cafe-au-lait spot
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0174] occurrences matches {0..1} matches {	-- Multiple lentigines
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0175] occurrences matches {0..1} matches {	-- Hemangioma
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0176] occurrences matches {0..1} matches {	-- Papilloma
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0177] occurrences matches {0..1} matches {	-- Pectus carinatum
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0178] occurrences matches {0..1} matches {	-- Pectus excavatum
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0179] occurrences matches {0..1} matches {	-- Wide intermamillary distance
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0180] occurrences matches {0..1} matches {	-- Webbed neck
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0181] occurrences matches {0..1} matches {	-- Abnormality of the coagulation cascade
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0182] occurrences matches {0..1} matches {	-- Abnormality of thrombocytes
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0183] occurrences matches {0..1} matches {	-- Neoplasm
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0184] occurrences matches {0..1} matches {	-- Immunodeficiency
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0185] occurrences matches {0..1} matches {	-- Autoimmunity
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0186] occurrences matches {0..1} matches {	-- Abnormality of brain morphology
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0187] occurrences matches {0..1} matches {	-- Seizures
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0188] occurrences matches {0..1} matches {	-- Autism
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0189] occurrences matches {0..1} matches {	-- Depression
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0190] occurrences matches {0..1} matches {	-- Schizophrenia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0191] occurrences matches {0..1} matches {	-- Ptosis
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0192] occurrences matches {0..1} matches {	-- Abnormality of refraction
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0193] occurrences matches {0..1} matches {	-- Strabismus
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0194] occurrences matches {0..1} matches {	-- Hearing abnormality
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0205] occurrences matches {0..1} matches {	-- Inclusion
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0212] occurrences matches {0..1} matches {	-- Early feeding difficulty/ failure to thrive
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0213] occurrences matches {0..1} matches {	-- Relative macrocephaly
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0214] occurrences matches {0..1} matches {	-- Short stature
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0215] occurrences matches {0..1} matches {	-- Developmental disability
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0216] occurrences matches {0..1} matches {	-- Cardiomyopathy
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0217] occurrences matches {0..1} matches {	-- Congenital heart disease
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0218] occurrences matches {0..1} matches {	-- Arrhythmia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0219] occurrences matches {0..1} matches {	-- Suggestive malignancy ( bladder carcinoma, Rhabdomyosarcoma, Leukaemia, phaeochromocytoma)
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0220] occurrences matches {0..1} matches {	-- Skin abnormalities (hyperkeratosis, cafe au lait patches, ulerythema oophorogenes, keratosis pilaris, excess palmar skin)
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0204] occurrences matches {0..1} matches {	-- Exclusion
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0221] occurrences matches {0..1} matches {	-- Low birth weight for gestation
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0196] occurrences matches {0..1} matches {	-- GMS R104 Skeletal dysplasia
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0082] occurrences matches {0..1} matches {	-- Phenotypes
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0134] occurrences matches {0..1} matches {	-- Skeletal dysplasia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0135] occurrences matches {0..1} matches {	-- Short stature
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0136] occurrences matches {0..1} matches {	-- Intellectual disability
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0137] occurrences matches {0..1} matches {	-- Abnormal facial shape
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0138] occurrences matches {0..1} matches {	-- Global developmental delay
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0208] occurrences matches {0..1} matches {	-- Inclusion
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0235] occurrences matches {0..1} matches {	-- Clinical features indicative of a likely monogenic skeletal dysplasia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0236] occurrences matches {0..1} matches {	-- Criteria are present at time of review of clincial features and x-rays by a Clinical Geneticist or Radiologist expert in skeletal dysplasias
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0237] occurrences matches {0..1} matches {	-- Molecular diagnosis will guide management or alter advice
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0238] occurrences matches {0..1} matches {	-- Optimal family structure: Trio
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0195] occurrences matches {0..1} matches {	-- GMS R59 Early onset or syndromic epilepsy
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0081] occurrences matches {0..1} matches {	-- Phenotypes
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0139] occurrences matches {0..1} matches {	-- Generalized seizures
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0140] occurrences matches {0..1} matches {	-- Focal seizures
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0141] occurrences matches {0..1} matches {	-- Epileptic spasms
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0142] occurrences matches {0..1} matches {	-- Infantile encephalopathy
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0143] occurrences matches {0..1} matches {	-- Intellectual disability
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0144] occurrences matches {0..1} matches {	-- Abnormal facial shape
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0145] occurrences matches {0..1} matches {	-- Global developmental delay
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0211] occurrences matches {0..1} matches {	-- Inclusion
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0239] occurrences matches {0..1} matches {	-- Unexplained epilepsy with clinical suspicion of a monogenic cause
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0240] occurrences matches {0..1} matches {	-- Onset under 2 years
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0241] occurrences matches {0..1} matches {	-- Clinical features suggestive of specific genetic epilepsy, for example Dravet syndrome
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0242] occurrences matches {0..1} matches {	-- Intellectual disability
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0243] occurrences matches {0..1} matches {	-- Autism spectrum disorder
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0244] occurrences matches {0..1} matches {	-- Structural abnormality (e.g. dysmorphism, congenital malformation)
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0245] occurrences matches {0..1} matches {	-- Unexplained cognitive/memory decline
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0246] occurrences matches {0..1} matches {	-- Optimal family structure: Trio
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0247] occurrences matches {0..1} matches {	-- Molecular diagnosis will guide management or alter advice
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0248] occurrences matches {0..1} matches {	-- Criteria are present at time of presentation
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0034] occurrences matches {0..1} matches {	-- Familial hypercholesterolemia
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0030] occurrences matches {0..1} matches {	-- Phenotypes
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0017] occurrences matches {0..1} matches {	-- Hyperlipidemia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0018] occurrences matches {0..1} matches {	-- Hypercholesterolemia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0019] occurrences matches {0..1} matches {	-- Hyperbetalipoproteinemia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0020] occurrences matches {0..1} matches {	-- Hyperlipoproteinemia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0021] occurrences matches {0..1} matches {	-- Myocardial infarction
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0022] occurrences matches {0..1} matches {	-- Hypertriglyceridemia
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0023] occurrences matches {0..1} matches {	-- Tendon xanthomatosis
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0024] occurrences matches {0..1} matches {	-- Corneal arcus
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0033] occurrences matches {0..1} matches {	-- Inclusion
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0035] occurrences matches {0..1} matches {	-- Total cholesterol > 6.7 mmol/l (260 mg/dl) in a child < 16 years
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0036] occurrences matches {0..1} matches {	-- LDL cholesterol above 4.0 mmol/l in a child < 16 years
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0037] occurrences matches {0..1} matches {	-- Total cholesterol >7.5 mmol/l (290 mg/dl) in an adult
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0038] occurrences matches {0..1} matches {	-- LDL cholesterol above 4.9 mmol/l (190 mg/dl) in an adult
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0039] occurrences matches {0..1} matches {	-- Tendon xanthomas (TX) in patient
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0040] occurrences matches {0..1} matches {	-- Tendon xanthomas (TX) in 1st degree relative (parent, sibling, child) or in 2nd degree relative (grandparent, uncle, aunt)
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0041] occurrences matches {0..1} matches {	-- Total cholesterol >8.5 mmol/l in an adult
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0042] occurrences matches {0..1} matches {	-- LDL cholesterol above 5.5 mmol/l in an adult
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0043] occurrences matches {0..1} matches {	-- Family history of myocardial infarction below age of 50 in 2nd degree relative or below age 60 in 1st degree relative
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0044] occurrences matches {0..1} matches {	-- Family history of raised cholesterol: >7.5 mmol/l in adult 1st or 2nd degree relative or > 6.7 mmol/l in child or sibling under 16
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0045] occurrences matches {0..1} matches {	-- Polygenic risk 12-SNP gene score in the bottom two quartiles
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0046] occurrences matches {0..1} matches {	-- Exclusion
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0047] occurrences matches {0..1} matches {	-- Secondary causes of elevated LDL-C
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0048] occurrences matches {0..1} matches {	-- Recessive inheritance
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0049] occurrences matches {0..1} matches {	-- Triglyceride level of over 2.5 mmol/l
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0050] occurrences matches {0..1} matches {	-- Molecular diagnosis based on prior genetic testing
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008, 	-- Yes
+																	at0009, 	-- No
+																	at0010]	-- Unknown
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Belfast Genomics">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0008"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Unknown">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Hyperlipidemia">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Hypercholesterolemia">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Hyperbetalipoproteinemia">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Hyperlipoproteinemia">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Myocardial infarction">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Hypertriglyceridemia">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Tendon xanthomatosis">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Corneal arcus">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Phenotypes">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Inclusion">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Familial hypercholesterolemia">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Total cholesterol > 6.7 mmol/l (260 mg/dl) in a child < 16 years">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"LDL cholesterol above 4.0 mmol/l in a child < 16 years">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Total cholesterol >7.5 mmol/l (290 mg/dl) in an adult">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"LDL cholesterol above 4.9 mmol/l (190 mg/dl) in an adult">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Tendon xanthomas (TX) in patient">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Tendon xanthomas (TX) in 1st degree relative (parent, sibling, child) or in 2nd degree relative (grandparent, uncle, aunt)">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Total cholesterol >8.5 mmol/l in an adult">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"LDL cholesterol above 5.5 mmol/l in an adult">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Family history of myocardial infarction below age of 50 in 2nd degree relative or below age 60 in 1st degree relative">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Family history of raised cholesterol: >7.5 mmol/l in adult 1st or 2nd degree relative or > 6.7 mmol/l in child or sibling under 16">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Polygenic risk 12-SNP gene score in the bottom two quartiles">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Exclusion">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Secondary causes of elevated LDL-C">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Recessive inheritance">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Triglyceride level of over 2.5 mmol/l">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Molecular diagnosis based on prior genetic testing">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Assessment">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Criteria met for whole genome sequencing">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Insufficient criteria for whole genome sequencing">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Comments">
+					description = <"*">
+				>
+				["at0081"] = <
+					text = <"Phenotypes">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"Phenotypes">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Phenotypes">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Phenotypes">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"Delayed gross motor development">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"Delayed fine motor development">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Delayed speech and language development">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Global developmental delay">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Intellectual disability">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Microcephaly">
+					description = <"*">
+				>
+				["at0091"] = <
+					text = <"Macrocephaly">
+					description = <"*">
+				>
+				["at0092"] = <
+					text = <"Generalized hypotonia">
+					description = <"*">
+				>
+				["at0093"] = <
+					text = <"Ataxia">
+					description = <"*">
+				>
+				["at0094"] = <
+					text = <"Molar tooth sign on MRI">
+					description = <"*">
+				>
+				["at0095"] = <
+					text = <"Cerebellar vermis hypoplasia">
+					description = <"*">
+				>
+				["at0096"] = <
+					text = <"Occipital encephalocele">
+					description = <"*">
+				>
+				["at0097"] = <
+					text = <"Polymicrogyria">
+					description = <"*">
+				>
+				["at0098"] = <
+					text = <"Neonatal breathing dysregulation">
+					description = <"*">
+				>
+				["at0099"] = <
+					text = <"Oculomotor apraxia">
+					description = <"*">
+				>
+				["at0100"] = <
+					text = <"Coloboma">
+					description = <"*">
+				>
+				["at0101"] = <
+					text = <"Retinal dystrophy">
+					description = <"*">
+				>
+				["at0102"] = <
+					text = <"Abnormal facial shape">
+					description = <"*">
+				>
+				["at0103"] = <
+					text = <"Accessory oral frenulum">
+					description = <"*">
+				>
+				["at0104"] = <
+					text = <"Hamartoma of tongue">
+					description = <"*">
+				>
+				["at0105"] = <
+					text = <"Cleft palate">
+					description = <"*">
+				>
+				["at0106"] = <
+					text = <"Abnormality of cardiovascular system morphology">
+					description = <"*">
+				>
+				["at0107"] = <
+					text = <"Hyperechogenic kidneys">
+					description = <"*">
+				>
+				["at0108"] = <
+					text = <"Multiple renal cysts">
+					description = <"*">
+				>
+				["at0109"] = <
+					text = <"Hypertension">
+					description = <"*">
+				>
+				["at0110"] = <
+					text = <"Chronic kidney disease">
+					description = <"*">
+				>
+				["at0111"] = <
+					text = <"Hepatic fibrosis">
+					description = <"*">
+				>
+				["at0112"] = <
+					text = <"Elevated hepatic transaminases">
+					description = <"*">
+				>
+				["at0113"] = <
+					text = <"Preaxial hand polydactyly">
+					description = <"*">
+				>
+				["at0114"] = <
+					text = <"Postaxial hand polydactyly">
+					description = <"*">
+				>
+				["at0115"] = <
+					text = <"Mesoaxial hand polydactyly">
+					description = <"*">
+				>
+				["at0116"] = <
+					text = <"Preaxial foot polydactyly">
+					description = <"*">
+				>
+				["at0117"] = <
+					text = <"Postaxial foot polydactyly">
+					description = <"*">
+				>
+				["at0118"] = <
+					text = <"Mesoaxial foot polydactyly">
+					description = <"*">
+				>
+				["at0119"] = <
+					text = <"Short stature">
+					description = <"*">
+				>
+				["at0120"] = <
+					text = <"Obesity">
+					description = <"*">
+				>
+				["at0134"] = <
+					text = <"Skeletal dysplasia">
+					description = <"*">
+				>
+				["at0135"] = <
+					text = <"Short stature">
+					description = <"*">
+				>
+				["at0136"] = <
+					text = <"Intellectual disability">
+					description = <"*">
+				>
+				["at0137"] = <
+					text = <"Abnormal facial shape">
+					description = <"*">
+				>
+				["at0138"] = <
+					text = <"Global developmental delay">
+					description = <"*">
+				>
+				["at0139"] = <
+					text = <"Generalized seizures">
+					description = <"*">
+				>
+				["at0140"] = <
+					text = <"Focal seizures">
+					description = <"*">
+				>
+				["at0141"] = <
+					text = <"Epileptic spasms">
+					description = <"*">
+				>
+				["at0142"] = <
+					text = <"Infantile encephalopathy">
+					description = <"*">
+				>
+				["at0143"] = <
+					text = <"Intellectual disability">
+					description = <"*">
+				>
+				["at0144"] = <
+					text = <"Abnormal facial shape">
+					description = <"*">
+				>
+				["at0145"] = <
+					text = <"Global developmental delay">
+					description = <"*">
+				>
+				["at0150"] = <
+					text = <"Increased nuchal translucency">
+					description = <"*">
+				>
+				["at0151"] = <
+					text = <"Nonimmune hydrops fetalis">
+					description = <"*">
+				>
+				["at0152"] = <
+					text = <"Polyhydramnios">
+					description = <"*">
+				>
+				["at0153"] = <
+					text = <"Failure to thrive in infancy">
+					description = <"*">
+				>
+				["at0154"] = <
+					text = <"Feeding difficulties">
+					description = <"*">
+				>
+				["at0155"] = <
+					text = <"Pulmonic stenosis">
+					description = <"*">
+				>
+				["at0156"] = <
+					text = <"Hypertrophic cardiomyopathy">
+					description = <"*">
+				>
+				["at0157"] = <
+					text = <"Abnormality of the atrioventricular valves">
+					description = <"*">
+				>
+				["at0158"] = <
+					text = <"Atrial septal defect">
+					description = <"*">
+				>
+				["at0159"] = <
+					text = <"Ventricular septal defect">
+					description = <"*">
+				>
+				["at0160"] = <
+					text = <"Arrhythmia">
+					description = <"*">
+				>
+				["at0161"] = <
+					text = <"Lymphedema">
+					description = <"*">
+				>
+				["at0162"] = <
+					text = <"Pleural effusion">
+					description = <"*">
+				>
+				["at0163"] = <
+					text = <"Intellectual disability">
+					description = <"*">
+				>
+				["at0164"] = <
+					text = <"Specific learning disability">
+					description = <"*">
+				>
+				["at0165"] = <
+					text = <"Delayed gross motor development">
+					description = <"*">
+				>
+				["at0166"] = <
+					text = <"Delayed speech and language development">
+					description = <"*">
+				>
+				["at0167"] = <
+					text = <"Abnormality of the kidney">
+					description = <"*">
+				>
+				["at0168"] = <
+					text = <"Delayed puberty">
+					description = <"*">
+				>
+				["at0169"] = <
+					text = <"Cryptorchidism">
+					description = <"*">
+				>
+				["at0170"] = <
+					text = <"Decreased fertility">
+					description = <"*">
+				>
+				["at0171"] = <
+					text = <"Abnormality of hair texture">
+					description = <"*">
+				>
+				["at0172"] = <
+					text = <"Follicular hyperkeratosis">
+					description = <"*">
+				>
+				["at0173"] = <
+					text = <"Cafe-au-lait spot">
+					description = <"*">
+				>
+				["at0174"] = <
+					text = <"Multiple lentigines">
+					description = <"*">
+				>
+				["at0175"] = <
+					text = <"Hemangioma">
+					description = <"*">
+				>
+				["at0176"] = <
+					text = <"Papilloma">
+					description = <"*">
+				>
+				["at0177"] = <
+					text = <"Pectus carinatum">
+					description = <"*">
+				>
+				["at0178"] = <
+					text = <"Pectus excavatum">
+					description = <"*">
+				>
+				["at0179"] = <
+					text = <"Wide intermamillary distance">
+					description = <"*">
+				>
+				["at0180"] = <
+					text = <"Webbed neck">
+					description = <"*">
+				>
+				["at0181"] = <
+					text = <"Abnormality of the coagulation cascade">
+					description = <"*">
+				>
+				["at0182"] = <
+					text = <"Abnormality of thrombocytes">
+					description = <"*">
+				>
+				["at0183"] = <
+					text = <"Neoplasm">
+					description = <"*">
+				>
+				["at0184"] = <
+					text = <"Immunodeficiency">
+					description = <"*">
+				>
+				["at0185"] = <
+					text = <"Autoimmunity">
+					description = <"*">
+				>
+				["at0186"] = <
+					text = <"Abnormality of brain morphology">
+					description = <"*">
+				>
+				["at0187"] = <
+					text = <"Seizures">
+					description = <"*">
+				>
+				["at0188"] = <
+					text = <"Autism">
+					description = <"*">
+				>
+				["at0189"] = <
+					text = <"Depression">
+					description = <"*">
+				>
+				["at0190"] = <
+					text = <"Schizophrenia">
+					description = <"*">
+				>
+				["at0191"] = <
+					text = <"Ptosis">
+					description = <"*">
+				>
+				["at0192"] = <
+					text = <"Abnormality of refraction">
+					description = <"*">
+				>
+				["at0193"] = <
+					text = <"Strabismus">
+					description = <"*">
+				>
+				["at0194"] = <
+					text = <"Hearing abnormality">
+					description = <"*">
+				>
+				["at0195"] = <
+					text = <"GMS R59 Early onset or syndromic epilepsy">
+					description = <"*">
+				>
+				["at0196"] = <
+					text = <"GMS R104 Skeletal dysplasia">
+					description = <"*">
+				>
+				["at0197"] = <
+					text = <"Noonan syndrome">
+					description = <"*">
+				>
+				["at0198"] = <
+					text = <"Rare multisystem ciliopathy disorders">
+					description = <"*">
+				>
+				["at0199"] = <
+					text = <"Inclusion">
+					description = <"*">
+				>
+				["at0201"] = <
+					text = <"Exclusion">
+					description = <"*">
+				>
+				["at0204"] = <
+					text = <"Exclusion">
+					description = <"*">
+				>
+				["at0205"] = <
+					text = <"Inclusion">
+					description = <"*">
+				>
+				["at0208"] = <
+					text = <"Inclusion">
+					description = <"*">
+				>
+				["at0211"] = <
+					text = <"Inclusion">
+					description = <"*">
+				>
+				["at0212"] = <
+					text = <"Early feeding difficulty/ failure to thrive">
+					description = <"*">
+				>
+				["at0213"] = <
+					text = <"Relative macrocephaly">
+					description = <"*">
+				>
+				["at0214"] = <
+					text = <"Short stature">
+					description = <"*">
+				>
+				["at0215"] = <
+					text = <"Developmental disability">
+					description = <"*">
+				>
+				["at0216"] = <
+					text = <"Cardiomyopathy">
+					description = <"*">
+				>
+				["at0217"] = <
+					text = <"Congenital heart disease">
+					description = <"*">
+				>
+				["at0218"] = <
+					text = <"Arrhythmia">
+					description = <"*">
+				>
+				["at0219"] = <
+					text = <"Suggestive malignancy ( bladder carcinoma, Rhabdomyosarcoma, Leukaemia, phaeochromocytoma)">
+					description = <"*">
+				>
+				["at0220"] = <
+					text = <"Skin abnormalities (hyperkeratosis, cafe au lait patches, ulerythema oophorogenes, keratosis pilaris, excess palmar skin)">
+					description = <"*">
+				>
+				["at0221"] = <
+					text = <"Low birth weight for gestation">
+					description = <"*">
+				>
+				["at0223"] = <
+					text = <"Clinical diagnosis of oral-facial-digital syndromes">
+					description = <"*">
+				>
+				["at0224"] = <
+					text = <"Clinical diagnosis of cranioectodermal dysplasia">
+					description = <"*">
+				>
+				["at0225"] = <
+					text = <"Clinical diagnosis of a rare multisystem ciliopathy">
+					description = <"*">
+				>
+				["at0226"] = <
+					text = <"Renal dysplasia, polycystic or ‘bright’ kidneys">
+					description = <"*">
+				>
+				["at0227"] = <
+					text = <"Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant">
+					description = <"*">
+				>
+				["at0228"] = <
+					text = <"Polydactyly">
+					description = <"*">
+				>
+				["at0229"] = <
+					text = <"Short limbs and/or short ribs">
+					description = <"*">
+				>
+				["at0230"] = <
+					text = <"Occipital encephalocele">
+					description = <"*">
+				>
+				["at0231"] = <
+					text = <"Retinal dystrophy">
+					description = <"*">
+				>
+				["at0232"] = <
+					text = <"Known genetic cause">
+					description = <"*">
+				>
+				["at0233"] = <
+					text = <"Specific diagnosis of Bardet-Biedl syndrome or other ciliopathy with specific recruitment criteria within the 100,000 Genomes project">
+					description = <"*">
+				>
+				["at0235"] = <
+					text = <"Clinical features indicative of a likely monogenic skeletal dysplasia">
+					description = <"*">
+				>
+				["at0236"] = <
+					text = <"Criteria are present at time of review of clincial features and x-rays by a Clinical Geneticist or Radiologist expert in skeletal dysplasias">
+					description = <"*">
+				>
+				["at0237"] = <
+					text = <"Molecular diagnosis will guide management or alter advice">
+					description = <"*">
+				>
+				["at0238"] = <
+					text = <"Optimal family structure: Trio">
+					description = <"*">
+				>
+				["at0239"] = <
+					text = <"Unexplained epilepsy with clinical suspicion of a monogenic cause">
+					description = <"*">
+				>
+				["at0240"] = <
+					text = <"Onset under 2 years">
+					description = <"*">
+				>
+				["at0241"] = <
+					text = <"Clinical features suggestive of specific genetic epilepsy, for example Dravet syndrome">
+					description = <"*">
+				>
+				["at0242"] = <
+					text = <"Intellectual disability">
+					description = <"*">
+				>
+				["at0243"] = <
+					text = <"Autism spectrum disorder">
+					description = <"*">
+				>
+				["at0244"] = <
+					text = <"Structural abnormality (e.g. dysmorphism, congenital malformation)">
+					description = <"*">
+				>
+				["at0245"] = <
+					text = <"Unexplained cognitive/memory decline">
+					description = <"*">
+				>
+				["at0246"] = <
+					text = <"Optimal family structure: Trio">
+					description = <"*">
+				>
+				["at0247"] = <
+					text = <"Molecular diagnosis will guide management or alter advice">
+					description = <"*">
+				>
+				["at0248"] = <
+					text = <"Criteria are present at time of presentation">
+					description = <"*">
+				>
+				["at0249"] = <
+					text = <"Test for the following genes">
+					description = <"*">
+				>
+				["at0250"] = <
+					text = <"Perform the following clinical tests">
+					description = <"*">
+				>
+			>
+		>
+	>

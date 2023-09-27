@@ -1,0 +1,109 @@
+archetype (adl_version=1.4; uid=0a5d7d6f-ef72-4298-b32e-0a9e2fe7683a)
+	openEHR-EHR-EVALUATION.stroke_prevention_compliance.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2022-09-14">
+		["name"] = <"Konstantinos Kalliamvakos">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"konstantinos.kalliamvakos@cambio.se">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record information about the treatment compliance for stroke prevention according to the ESC guidelines.">
+			keywords = <"CHA2DS2-VASc","compliance","treatment","stroke","prevention","anticoagulant">
+			copyright = <"© Cambio CDS">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["references"] = <"Lip GY, Nieuwlaat R, Pisters R, Lane DA, Crijns HJ. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation using a novel risk factor-based approach: the euro heart survey on atrial fibrillation. Chest. 2010 Feb;137(2):263-72.
+Camm a J, Kirchhof P, Lip GYH, Schotten U, Savelieva I, Ernst S, et al. Guidelines for the management of atrial fibrillation: the Task Force for the Management of Atrial Fibrillation of the European Society of Cardiology (ESC). Eur Heart J. 2010 Oct;31(19):2369–429.
+Lip GY, Frison L, Halperin JL, Lane DA. Identifying patients at high risk for stroke despite anticoagulation: a comparison of contemporary stroke risk stratification schemes in an anticoagulated atrial fibrillation cohort. Stroke. 2010 Dec;41(12):2731-8.
+John Camm, A., Lip, G. Y. H., De Caterina, R., Savelieva, I., Atar, D., Hohnloser, S. H., et al. (2012). 2012 focused update of the ESC Guidelines for the management of atrial fibrillation. European Heart Journal, 33(21), 2719–2747.">
+		["build_uid"] = <"3c34ed2f-8d30-35b9-a2fa-f615e3b380ce">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Stroke prevention compliance
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Stroke prevention treatment compliance
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Non compliant
+									at0004]    -- Compliant
+								}
+							}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Anti-coagulant medication
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0006,    -- Absent
+									at0007]    -- Present
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Stroke prevention compliance">
+					description = <"Atrial fibrillation treatment compliance based on the guidelines of the European Society of Cardiology (ESC).">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Stroke prevention treatment compliance">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Non compliant">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Compliant">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Anti-coagulant medication">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Present">
+					description = <"">
+				>
+			>
+		>
+	>

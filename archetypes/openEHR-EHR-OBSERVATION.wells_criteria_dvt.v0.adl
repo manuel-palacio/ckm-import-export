@@ -1,0 +1,475 @@
+archetype (adl_version=1.4; uid=da463002-0add-3dde-a665-6a8c29961883)
+	openEHR-EHR-OBSERVATION.wells_criteria_dvt.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"Dennis Forslund">
+				["organisation"] = <"Cambio Healthcare Systems">
+				["email"] = <"models@cambiocds.com">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2021-08-19">
+		["name"] = <"Oskar Nielsen">
+		["organisation"] = <"Cambio Healthcare Systems">
+		["email"] = <"models@cambiocds.com">
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Dennis Forslund, Cambio Healthcare Systems","Mouna Ghannam, Cambio CDS">
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"Att baserat på klinisk undersökning förutsäga sannolikhet för djup ventrombos (DVT), och därigenom minska överflödig vidare utredning.">
+			use = <"Wells DVT kriterier kan användas såväl inom öppenvården som på akutmottagningar. De bör endast appliceras efter noggrann anamnes och fysisk undersökning som resulterat i misstanke om djup ventrombos (DVT). 
+
+En poäng om under 2 tillsammans med negativ d-dimer indikerar låg sannolikhet för DVT.
+
+Poängen baseras på sju viktade kriterier:
+
+- Aktiv cancer
+- Förlamning, pares, eller nyligen orörlig i benen p.g.a. gips
+- Sängliggande nyligen i ≥3 dagar eller större operation inom 12 veckor
+- Lokaliserad ömhet längs det djupa vensystemet
+- Hela benet svullet
+- Svullen vad >3 cm jämfört med det andra benet
+- Pittingödem
+- Kollaterala ytliga vener (utan varicer)
+- Alternativ diagnos till DVT minst lika sannolikt
+
+Maximal poäng uppgår till 8p och en poäng om 2p eller mer indikerar hög sannolikhet för DVT.">
+			misuse = <"Får inte användas med någon annan formel eller andra kriterier för riskstratifiering av DVT.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the results for each component parameter and their total sum for the Wells' score.">
+			keywords = <"DVT","Wells","criteria">
+			copyright = <"©CDS Cambio">
+			use = <"Use to record the results for each component parameter and their total sum for the Wells' score.
+
+The Wells’ DVT criteria can be used in outpatient as well as emergency department settings. They are only to be applied after a thorough history and physical examination resulting in a suspicion of DVT. ">
+			misuse = <"Not to be used with any other formula or criteria for DVT risk stratification.">
+		>
+	>
+	other_details = <
+		["references"] = <"Tovey C, Wyatt S. Diagnosis, investigation, and management of deep vein thrombosis. BMJ. 2003 May 31;326(7400):1180-4. doi: 10.1136/bmj.326.7400.1180. PMID: 12775619; PMCID: PMC1126050.
+
+Wells PS, Anderson DR, Rodger M, Forgie M, Kearon C, Dreyer J, Kovacs G, Mitchell M, Lewandowski B, Kovacs MJ. Evaluation of D-dimer in the diagnosis of suspected deep-vein thrombosis. N Engl J Med. 2003 Sep 25;349(13):1227-35. doi: 10.1056/NEJMoa023153. PMID: 14507948.">
+		["MD5-CAM-1.0.1"] = <"62b5fc980819f96abba5914c3ba96580">
+		["build_uid"] = <"c4eab0e9-9e64-33aa-b5ab-451c7d29b49b">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Wells’ criteria for DVT
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any Event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Active cancer
+										value matches {
+											0|[local::at0005],
+											1|[local::at0006]
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {    -- Calf swelling >3 cm compared to the other leg
+										value matches {
+											0|[local::at0020],
+											1|[local::at0021]
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Collateral (nonvaricose) superficial veins
+										value matches {
+											0|[local::at0026],
+											1|[local::at0027]
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Entire leg swollen
+										value matches {
+											0|[local::at0017],
+											1|[local::at0018]
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Localized tenderness along the deep venous system
+										value matches {
+											0|[local::at0014],
+											1|[local::at0015]
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Pitting oedema
+										value matches {
+											0|[local::at0023],
+											1|[local::at0024]
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Paralysis, paresis, or recent plaster immobilisation of the legs
+										value matches {
+											0|[local::at0008],
+											1|[local::at0009]
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Bedridden recently ≥3 days or major surgery within 12 weeks
+										value matches {
+											0|[local::at0011],
+											1|[local::at0012]
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Previously documented DVT
+										value matches {
+											0|[local::at0035],
+											1|[local::at0036]
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Alternative diagnosis to DVT at least as likely
+										value matches {
+											-2|[local::at0031],
+											0|[local::at0030]
+										}
+									}
+									ELEMENT[at0029] occurrences matches {0..1} matches {    -- Total score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|-2..9|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0032] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0033] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Wells’ criteria for DVT(en)">
+					description = <"*An assessment score used  to calculate risk of DVT based on clinical criteria.(en)">
+					comment = <"*Original version, c 2003.(en)">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"*Any Event(en)">
+					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)">
+				>
+				["at0003"] = <
+					text = <"Träd">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Aktiv cancer">
+					description = <"Behandling inklusive palliativ vård aktiv pågående eller inom  senaste sex månaderna.">
+				>
+				["at0005"] = <
+					text = <"*Absent(en)">
+					description = <"*(en)">
+				>
+				["at0006"] = <
+					text = <"*Present(en)">
+					description = <"*(en)">
+				>
+				["at0007"] = <
+					text = <"*Paralysis, paresis, or recent plaster immobilisation of the legs(en)">
+					description = <"*(en)">
+				>
+				["at0008"] = <
+					text = <"*Absent(en)">
+					description = <"*(en)">
+				>
+				["at0009"] = <
+					text = <"*Present(en)">
+					description = <"*(en)">
+				>
+				["at0010"] = <
+					text = <"*Bedridden recently ≥3 days or major surgery within 12 weeks(en)">
+					description = <"*(en)">
+				>
+				["at0011"] = <
+					text = <"*Absent(en)">
+					description = <"*(en)">
+				>
+				["at0012"] = <
+					text = <"*Present(en)">
+					description = <"*(en)">
+				>
+				["at0013"] = <
+					text = <"*Localized tenderness along the deep venous system(en)">
+					description = <"*(en)">
+				>
+				["at0014"] = <
+					text = <"*Absent(en)">
+					description = <"*(en)">
+				>
+				["at0015"] = <
+					text = <"*Present(en)">
+					description = <"*(en)">
+				>
+				["at0016"] = <
+					text = <"*Entire leg swollen(en)">
+					description = <"*(en)">
+				>
+				["at0017"] = <
+					text = <"*Absent(en)">
+					description = <"*(en)">
+				>
+				["at0018"] = <
+					text = <"*Present(en)">
+					description = <"*(en)">
+				>
+				["at0019"] = <
+					text = <"Svullen vad >3 cm jämfört med det andra benet">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"*Absent(en)">
+					description = <"*(en)">
+				>
+				["at0021"] = <
+					text = <"*Present(en)">
+					description = <"*(en)">
+				>
+				["at0022"] = <
+					text = <"Pittingödem">
+					description = <"Större i det symptomatiska benet.">
+				>
+				["at0023"] = <
+					text = <"*Absent(en)">
+					description = <"*(en)">
+				>
+				["at0024"] = <
+					text = <"*Present(en)">
+					description = <"*(en)">
+				>
+				["at0025"] = <
+					text = <"*Collateral (nonvaricose) superficial veins(en)">
+					description = <"*(en)">
+				>
+				["at0026"] = <
+					text = <"*Absent(en)">
+					description = <"*(en)">
+				>
+				["at0027"] = <
+					text = <"*Present(en)">
+					description = <"*(en)">
+				>
+				["at0028"] = <
+					text = <"*Alternative diagnosis to DVT at least as likely(en)">
+					description = <"*(en)">
+				>
+				["at0029"] = <
+					text = <"Total poäng">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"*Absent(en)">
+					description = <"*(en)">
+				>
+				["at0031"] = <
+					text = <"*Present(en)">
+					description = <"*(en)">
+				>
+				["at0032"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0033"] = <
+					text = <"*Cluster(en)">
+					description = <"**(en)">
+				>
+				["at0034"] = <
+					text = <"*Previously documented DVT (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*No (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Yes (en)">
+					description = <"">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Wells’ criteria for DVT">
+					description = <"An assessment score used  to calculate risk of DVT based on clinical criteria.">
+					comment = <"Original version, c 2003.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any Event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Active cancer">
+					description = <"Treatment or palliation within 6 months.">
+				>
+				["at0005"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Present">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Paralysis, paresis, or recent plaster immobilisation of the legs">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Present">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Bedridden recently ≥3 days or major surgery within 12 weeks">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Present">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Localized tenderness along the deep venous system">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Present">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Entire leg swollen">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Present">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Calf swelling >3 cm compared to the other leg">
+					description = <"Measured 10 cm below the tibial tuberosity.">
+				>
+				["at0020"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Present">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Pitting oedema">
+					description = <"Greater in the symptomatic leg.">
+				>
+				["at0023"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Present">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Collateral (nonvaricose) superficial veins">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Present">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Alternative diagnosis to DVT at least as likely">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Total score">
+					description = <"Sum of all factors.">
+				>
+				["at0030"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Present">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0033"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
+				>
+				["at0034"] = <
+					text = <"Previously documented DVT">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Absent">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Present">
+					description = <"">
+				>
+			>
+		>
+	>

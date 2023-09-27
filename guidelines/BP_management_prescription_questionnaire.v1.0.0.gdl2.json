@@ -1,0 +1,1686 @@
+{
+  "id": "BP_management_prescription_questionnaire.v1.0.0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2019-11-29",
+      "name": "Eneimi Allwell-Brown",
+      "organisation": "Cambio CDS",
+      "email": "eneim.allwell-brown@cambio.se"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "en": {
+        "id": "en",
+        "copyright": "Cambio CDS"
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0051]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0052]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0103]"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0004]"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0104]"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0054]"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0055]"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0037]"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0102]"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0053]"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0073]"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0074]"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0075]"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0077]"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0078]"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0080]"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0081]"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0082]"
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0083]"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0084]"
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0085]"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0086]"
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0087]"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0079]"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0064]"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0088]"
+          }
+        }
+      },
+      "gt0027": {
+        "id": "gt0027",
+        "model_id": "openEHR-EHR-OBSERVATION.basic_demographic.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.basic_demographic.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0028": {
+            "id": "gt0028",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0013]"
+          }
+        }
+      },
+      "gt0050": {
+        "id": "gt0050",
+        "model_id": "openEHR-EHR-EVALUATION.blood_pressure_management_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.blood_pressure_management_assessment.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0051": {
+            "id": "gt0051",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
+      },
+      "gt0062": {
+        "id": "gt0062",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0063": {
+            "id": "gt0063",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0128]"
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0133]"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0134]"
+          }
+        }
+      }
+    },
+    "templates": {
+      "gt1000": {
+        "id": "gt1000",
+        "name": "bp-firstMedication",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "bp-firstMedication",
+          "text": "{$gt0200.term}",
+          "information": "{$gt0201.term}",
+          "resources": [
+            "{$gt1010}",
+            "{$gt1100}"
+          ]
+        }
+      },
+      "gt1010": {
+        "id": "gt1010",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "InputSelect",
+          "name": "bp-first-choice",
+          "text": "{$gt0205.term}",
+          "required": false,
+          "display": "dropdown",
+          "options": [
+            "{$gt1011.all}"
+          ],
+          "initialValue": "{$gt1012}"
+        }
+      },
+      "gt1011": {
+        "id": "gt1011",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "value": "{$gt1013}",
+          "text": "{$gt1014}"
+        }
+      },
+      "gt1100": {
+        "id": "gt1100",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Display",
+          "id": "bp-firstChoiceDrug",
+          "text": "{$gt1101}"
+        }
+      },
+      "gt2000": {
+        "id": "gt2000",
+        "name": "bp-otherMedications",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "bp-otherMedications",
+          "text": "{$gt0210.term}",
+          "information": "{$gt0211.term}",
+          "resources": [
+            "{$gt2010}",
+            "{$gt2900}"
+          ]
+        }
+      },
+      "gt2010": {
+        "id": "gt2010",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "InputSelect",
+          "name": "bp-other-choice",
+          "text": "{$gt0212.term}",
+          "required": "{$gt2001}",
+          "display": "dropdown",
+          "options": [
+            "{$gt2011.all}"
+          ]
+        }
+      },
+      "gt2011": {
+        "id": "gt2011",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "value": "{$gt2013}",
+          "text": "{$gt2014}"
+        }
+      },
+      "gt2900": {
+        "id": "gt2900",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Display",
+          "id": "bp-otherDrugs",
+          "text": "{$gt2901}"
+        }
+      },
+      "gt3000": {
+        "id": "gt3000",
+        "name": "bp-recommendationNotes",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "bp-recommendationNotes",
+          "text": "{$gt0250.term}",
+          "resources": [
+            {
+              "uiResourceType": "Display",
+              "id": "bp-recommendation-notes",
+              "text": "{$gt3001}"
+            }
+          ]
+        }
+      },
+      "gt7000": {
+        "id": "gt7000",
+        "name": "bpFollowRecommendation",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "bpFollowRecommendation",
+          "text": "{$gt1001.term}",
+          "resources": [
+            {
+              "id": "bp-follow-recommendation",
+              "name": "bp-follow-recommendation",
+              "text": "{$gt1002.term}",
+              "uiResourceType": "InputSelect",
+              "required": true,
+              "display": "button",
+              "options": [
+                {
+                  "value": "local::at0008|Yes|",
+                  "text": "{$gt1005.term}"
+                },
+                {
+                  "value": "local::at0009|No|",
+                  "text": "{$gt1006.term}"
+                }
+              ],
+              "initialValue": "local::at0008|Yes|"
+            },
+            {
+              "id": "bp-reason-for-deviating",
+              "name": "bp-reason-for-deviating",
+              "text": "{$gt1003.term}",
+              "uiResourceType": "InputText",
+              "required": true,
+              "showWhen": [
+                {
+                  "path": "uiInput.formResponses.bpFollowRecommendation.values.bp-follow-recommendation",
+                  "has": {
+                    "value": "local::at0009|No|"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "bp-suppress-recommendation",
+              "name": "bp-suppress-recommendation",
+              "text": "{$gt1004.term}",
+              "uiResourceType": "InputSelect",
+              "display": "button",
+              "required": true,
+              "showWhen": [
+                {
+                  "path": "uiInput.formResponses.bpFollowRecommendation.values.bp-follow-recommendation",
+                  "has": {
+                    "value": "local::at0009|No|"
+                  }
+                }
+              ],
+              "options": [
+                {
+                  "value": "local::at0008|Yes|",
+                  "text": "{$gt1005.term}"
+                },
+                {
+                  "value": "local::at0009|No|",
+                  "text": "{$gt1006.term}"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "pre_conditions": [
+      "$gt0011|Type-2 diabetes|==true",
+      "$gt0051|bp-target-assessment|!=null",
+      "$gt0051|bp-target-assessment|.code!='at0005'",
+      "$gt0051|bp-target-assessment|.code!='at0006'",
+      "$gt0063|bp-target|!=null",
+      "$gt0063|bp-target|.code!='at0132'||($gt0065|sbp-target|!=null&&$gt0066|dbp-target|!=null)"
+    ],
+    "default_actions": [
+      "$gt2001|bp-otherMedications-required-property|=false",
+      "$gt3001|recommendation-notes display|=''",
+      "$gt2901|otherDrugs display|=''"
+    ],
+    "rules": {
+      "gt0093": {
+        "id": "gt0093",
+        "priority": 32,
+        "when": [
+          "$gt0024|beta-blocker|==true",
+          "$gt0003|angina-pectoris|==true||($gt0004|atrial-fibrillation|==true&&($gt0014|heart-rate-above-100|==true||$gt0010|sinus-tachycardia|==true))||($gt0014|heart-rate-above-100|==true||$gt0010|sinus-tachycardia|==true)"
+        ],
+        "then": [
+          "$gt1101|first-choice-medication-name display|=$gt0202.term",
+          "$gt2001|bp-otherMedications-required-property|=true"
+        ]
+      },
+      "gt0094": {
+        "id": "gt0094",
+        "priority": 31,
+        "when": [
+          "$gt0003|angina-pectoris|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0019|ace-inhibitor-arb|==true",
+          "$gt0005|previous-mi|==true||$gt0006|chronic-heart-failure|==true||($gt0004|atrial-fibrillation|==true&&($gt0014|heart-rate-above-100|==false||$gt0010|sinus-tachycardia|==false))||$gt0015|egfr-under-45|==true||$gt0012|nephropathy|==true||$gt0013|peripheral-artery-disease|==true||$gt0008|previous-stroke|==true"
+        ],
+        "then": [
+          "$gt1101|first-choice-medication-name display|=$gt0203.term",
+          "$gt2001|bp-otherMedications-required-property|=true"
+        ]
+      },
+      "gt0095": {
+        "id": "gt0095",
+        "priority": 30,
+        "when": [
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0015|egfr-under-45|==false",
+          "$gt0012|nephropathy|==false",
+          "$gt0013|peripheral-artery-disease|==false",
+          "$gt0008|previous-stroke|==false",
+          "$gt0021|calcium-channel-blocker|==true",
+          "($gt0009|raynaud-phenomenon|==true||$gt0017|black-race|==true)"
+        ],
+        "then": [
+          "$gt1101|first-choice-medication-name display|=$gt0204.term",
+          "$gt2001|bp-otherMedications-required-property|=true"
+        ]
+      },
+      "gt0096": {
+        "id": "gt0096",
+        "priority": 29,
+        "when": [
+          "$gt0019|ace-inhibitor-arb|==true",
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0015|egfr-under-45|==false",
+          "$gt0012|nephropathy|==false",
+          "$gt0013|peripheral-artery-disease|==false",
+          "$gt0008|previous-stroke|==false",
+          "$gt0009|raynaud-phenomenon|==false",
+          "$gt0017|black-race|==false"
+        ],
+        "then": [
+          "$gt1101|first-choice-medication-name display|=$gt0203.term",
+          "$gt2001|bp-otherMedications-required-property|=true"
+        ]
+      },
+      "gt0097": {
+        "id": "gt0097",
+        "priority": 28,
+        "when": [
+          "$gt0024|beta-blocker|==false",
+          "$gt0003|angina-pectoris|==true||($gt0004|atrial-fibrillation|==true&&($gt0014|heart-rate-above-100|==true||$gt0010|sinus-tachycardia|==true))||($gt0014|heart-rate-above-100|==true||$gt0010|sinus-tachycardia|==true)"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt0239.term",
+          "$gt1012|initialValue-first-choice-medication|='ATC::C07A|Beta receptor blocker|'",
+          "use_template($gt1011($gt1013='ATC::C07A|Beta receptor blocker|';$gt1014=$gt0206.term))"
+        ]
+      },
+      "gt0098": {
+        "id": "gt0098",
+        "priority": 27,
+        "when": [
+          "$gt0003|angina-pectoris|==false",
+          "$gt0019|ace-inhibitor-arb|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0005|previous-mi|==true||$gt0006|chronic-heart-failure|==true||($gt0004|atrial-fibrillation|==true&&($gt0014|heart-rate-above-100|==false||$gt0010|sinus-tachycardia|==false))||$gt0015|egfr-under-45|==true||$gt0012|nephropathy|==true||$gt0013|peripheral-artery-disease|==true||$gt0008|previous-stroke|==true"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt0240.term",
+          "$gt1012|initialValue-first-choice-medication|='ATC::C09C|Angiotensin II receptor blocker|'",
+          "use_template($gt1011($gt1013='ATC::C09C|Angiotensin II receptor blocker|';$gt1014=$gt0208.term))"
+        ]
+      },
+      "gt0099": {
+        "id": "gt0099",
+        "priority": 26,
+        "when": [
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0015|egfr-under-45|==false||$gt0015|egfr-under-45|==null",
+          "$gt0012|nephropathy|==false",
+          "$gt0013|peripheral-artery-disease|==false",
+          "$gt0008|previous-stroke|==false",
+          "$gt0021|calcium-channel-blocker|==false",
+          "($gt0009|raynaud-phenomenon|==true||$gt0017|black-race|==true)"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt0241.term",
+          "$gt1012|initialValue-first-choice-medication|='ATC::C08|Calcium channel blocker|'",
+          "use_template($gt1011($gt1013='ATC::C08|Calcium channel blocker|';$gt1014=$gt0209.term))"
+        ]
+      },
+      "gt0100": {
+        "id": "gt0100",
+        "priority": 25,
+        "when": [
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0015|egfr-under-45|==false||$gt0015|egfr-under-45|==null",
+          "$gt0012|nephropathy|==false",
+          "$gt0013|peripheral-artery-disease|==false",
+          "$gt0008|previous-stroke|==false",
+          "$gt0009|raynaud-phenomenon|==false",
+          "$gt0017|black-race|==false",
+          "$gt0019|ace-inhibitor-arb|==false"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0240.term",
+          "$gt1012|initialValue-first-choice-medication|='ATC::C09C|Angiotensin II receptor blocker|'",
+          "use_template($gt1011($gt1013='ATC::C09C|Angiotensin II receptor blocker|';$gt1014=$gt0208.term))"
+        ]
+      },
+      "gt0101": {
+        "id": "gt0101",
+        "priority": 24,
+        "when": [
+          "$gt0003|angina-pectoris|==true||($gt0004|atrial-fibrillation|==true&&($gt0014|heart-rate-above-100|==true||$gt0010|sinus-tachycardia|==true))||($gt0014|heart-rate-above-100|==true||$gt0010|sinus-tachycardia|==true)"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0242.term + $gt0243.term + $gt0244.term + $gt0245.term",
+          "use_template($gt2011($gt2013='ATC::C09C|Angiotensin II receptor blocker|';$gt2014=$gt0214.term))",
+          "use_template($gt2011($gt2013='ATC::C09A|ACE inhibitor|';$gt2014=$gt0213.term))",
+          "use_template($gt2011($gt2013='ATC::C08|Calcium channel blocker|';$gt2014=$gt0215.term))",
+          "use_template($gt2011($gt2013='ATC::C03AA|Thiazide diuretic|';$gt2014=$gt0216.term))",
+          "use_template($gt2011($gt2013='ATC::C03DA01|Spironolactone|';$gt2014=$gt0217.term))",
+          "use_template($gt2011($gt2013='ATC::C02CA|Alpha receptor antagonist|';$gt2014=$gt0218.term))",
+          "use_template($gt2011($gt2013='ATC::C02AC05|Moxonidine|';$gt2014=$gt0219.term))"
+        ]
+      },
+      "gt0102": {
+        "id": "gt0102",
+        "priority": 23,
+        "when": [
+          "!fired($gt0101)",
+          "$gt0005|previous-mi|==true||$gt0006|chronic-heart-failure|==true||($gt0004|atrial-fibrillation|==true&&($gt0014|heart-rate-above-100|==false||$gt0010|sinus-tachycardia|==false))"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0242.term + $gt0243.term + $gt0244.term + $gt0245.term",
+          "use_template($gt2011($gt2013='ATC::C03AA|Thiazide diuretic|';$gt2014=$gt0220.term))",
+          "use_template($gt2011($gt2013='ATC::C07A|Beta receptor blocker|';$gt2014=$gt0221.term))",
+          "use_template($gt2011($gt2013='ATC::C03DA01|Spironolactone|';$gt2014=$gt0222.term))",
+          "use_template($gt2011($gt2013='ATC::C08|Calcium channel blocker|';$gt2014=$gt0223.term))",
+          "use_template($gt2011($gt2013='ATC::C02CA|Alpha receptor antagonist|';$gt2014=$gt0218.term))",
+          "use_template($gt2011($gt2013='ATC::C02AC05|Moxonidine|';$gt2014=$gt0219.term))"
+        ]
+      },
+      "gt0103": {
+        "id": "gt0103",
+        "priority": 22,
+        "when": [
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0016|egfr-above-30-under-45|==true"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0242.term + $gt0243.term + $gt0244.term + $gt0245.term",
+          "use_template($gt2011($gt2013='ATC::C03CA01|Furosemide|';$gt2014=$gt0224.term))",
+          "use_template($gt2011($gt2013='ATC::C08|Calcium channel blocker|';$gt2014=$gt0215.term))",
+          "use_template($gt2011($gt2013='ATC::C03DA01|Spironolactone|';$gt2014=$gt0222.term))",
+          "use_template($gt2011($gt2013='ATC::C07A|Beta receptor blocker|';$gt2014=$gt0225.term))",
+          "use_template($gt2011($gt2013='ATC::C02CA|Alpha receptor antagonist|';$gt2014=$gt0218.term))",
+          "use_template($gt2011($gt2013='ATC::C02AC05|Moxonidine|';$gt2014=$gt0219.term))"
+        ]
+      },
+      "gt0104": {
+        "id": "gt0104",
+        "priority": 21,
+        "when": [
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "($gt0015|egfr-under-45|==true||$gt0012|nephropathy|==true)&&$gt0016|egfr-above-30-under-45|==false"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0242.term + $gt0243.term + $gt0244.term + $gt0245.term + $gt0246.term",
+          "use_template($gt2011($gt2013='ATC::C03CA01|Furosemide|';$gt2014=$gt0224.term))",
+          "use_template($gt2011($gt2013='ATC::C08|Calcium channel blocker|';$gt2014=$gt0215.term))",
+          "use_template($gt2011($gt2013='ATC::C07A|Beta receptor blocker|';$gt2014=$gt0226.term))",
+          "use_template($gt2011($gt2013='ATC::C02CA|Alpha receptor antagonist|';$gt2014=$gt0227.term))",
+          "use_template($gt2011($gt2013='ATC::C02AC05|Moxonidine|';$gt2014=$gt0228.term))"
+        ]
+      },
+      "gt0105": {
+        "id": "gt0105",
+        "priority": 20,
+        "when": [
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0015|egfr-under-45|==false||$gt0015|egfr-under-45|==null",
+          "$gt0012|nephropathy|==false",
+          "$gt0016|egfr-above-30-under-45|==false||$gt0016|egfr-above-30-under-45|==null",
+          "$gt0013|peripheral-artery-disease|==true||$gt0008|previous-stroke|==true)"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0242.term + $gt0243.term + $gt0244.term + $gt0245.term",
+          "use_template($gt2011($gt2013='ATC::C08|Calcium channel blocker|';$gt2014=$gt0229.term))",
+          "use_template($gt2011($gt2013='ATC::C03AA|Thiazide diuretic|';$gt2014=$gt0230.term))",
+          "use_template($gt2011($gt2013='ATC::C03DA01|Spironolactone|';$gt2014=$gt0222.term))",
+          "use_template($gt2011($gt2013='ATC::C07A|Beta receptor blocker|';$gt2014=$gt0225.term))",
+          "use_template($gt2011($gt2013='ATC::C02CA|Alpha receptor antagonist|';$gt2014=$gt0218.term))",
+          "use_template($gt2011($gt2013='ATC::C02AC05|Moxonidine|';$gt2014=$gt0219.term))"
+        ]
+      },
+      "gt0106": {
+        "id": "gt0106",
+        "priority": 19,
+        "when": [
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0015|egfr-under-45|==false||$gt0015|egfr-under-45|==null",
+          "$gt0012|nephropathy|==false",
+          "$gt0016|egfr-above-30-under-45|==false||$gt0016|egfr-above-30-under-45|==null",
+          "$gt0013|peripheral-artery-disease|==false",
+          "$gt0008|previous-stroke|==false",
+          "$gt0009|raynaud-phenomenon|==true"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0242.term + $gt0243.term + $gt0244.term + $gt0245.term",
+          "use_template($gt2011($gt2013='ATC::C09C|Angiotensin II receptor blocker|';$gt2014=$gt0214.term))",
+          "use_template($gt2011($gt2013='ATC::C09A|ACE inhibitor|';$gt2014=$gt0213.term))",
+          "use_template($gt2011($gt2013='ATC::C03AA|Thiazide diuretic|';$gt2014=$gt0230.term))",
+          "use_template($gt2011($gt2013='ATC::C03DA01|Spironolactone|';$gt2014=$gt0222.term))",
+          "use_template($gt2011($gt2013='ATC::C02CA|Alpha receptor antagonist|';$gt2014=$gt0227.term))",
+          "use_template($gt2011($gt2013='ATC::C02AC05|Moxonidine|';$gt2014=$gt0228.term))",
+          "use_template($gt2011($gt2013='ATC::C07A|Beta receptor blocker|';$gt2014=$gt0231.term))"
+        ]
+      },
+      "gt0107": {
+        "id": "gt0107",
+        "priority": 18,
+        "when": [
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0015|egfr-under-45|==false||$gt0015|egfr-under-45|==null",
+          "$gt0012|nephropathy|==false",
+          "$gt0016|egfr-above-30-under-45|==false||$gt0016|egfr-above-30-under-45|==null",
+          "$gt0013|peripheral-artery-disease|==false",
+          "$gt0008|previous-stroke|==false",
+          "$gt0009|raynaud-phenomenon|==false",
+          "$gt0017|black-race|==true"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0242.term + $gt0243.term + $gt0244.term + $gt0245.term",
+          "use_template($gt2011($gt2013='ATC::C03AA|Thiazide diuretic|';$gt2014=$gt0220.term))",
+          "use_template($gt2011($gt2013='ATC::C09C|Angiotensin II receptor blocker|';$gt2014=$gt0233.term))",
+          "use_template($gt2011($gt2013='ATC::C09A|ACE inhibitor|';$gt2014=$gt0232.term))",
+          "use_template($gt2011($gt2013='ATC::C07A|Beta receptor blocker|';$gt2014=$gt0226.term))",
+          "use_template($gt2011($gt2013='ATC::C03DA01|Spironolactone|';$gt2014=$gt0217.term))",
+          "use_template($gt2011($gt2013='ATC::C02CA|Alpha receptor antagonist|';$gt2014=$gt0218.term))",
+          "use_template($gt2011($gt2013='ATC::C02AC05|Moxonidine|';$gt2014=$gt0219.term))"
+        ]
+      },
+      "gt0108": {
+        "id": "gt0108",
+        "priority": 17,
+        "when": [
+          "$gt0005|previous-mi|==false",
+          "$gt0003|angina-pectoris|==false",
+          "$gt0014|heart-rate-above-100|==false",
+          "$gt0010|sinus-tachycardia|==false",
+          "$gt0006|chronic-heart-failure|==false",
+          "$gt0004|atrial-fibrillation|==false",
+          "$gt0015|egfr-under-45|==false||$gt0015|egfr-under-45|==null",
+          "$gt0012|nephropathy|==false",
+          "$gt0016|egfr-above-30-under-45|==false||$gt0016|egfr-above-30-under-45|==null",
+          "$gt0013|peripheral-artery-disease|==false",
+          "$gt0008|previous-stroke|==false",
+          "$gt0009|raynaud-phenomenon|==false",
+          "$gt0017|black-race|==false"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0242.term + $gt0243.term + $gt0244.term + $gt0245.term",
+          "use_template($gt2011($gt2013='ATC::C08|Calcium channel blocker|';$gt2014=$gt0229.term))",
+          "use_template($gt2011($gt2013='ATC::C03AA|Thiazide diuretic|';$gt2014=$gt0230.term))",
+          "use_template($gt2011($gt2013='ATC::C03DA01|Spironolactone|';$gt2014=$gt0222.term))",
+          "use_template($gt2011($gt2013='ATC::C07A|Beta receptor blocker|';$gt2014=$gt0225.term))",
+          "use_template($gt2011($gt2013='ATC::C02CA|Alpha receptor antagonist|';$gt2014=$gt0218.term))",
+          "use_template($gt2011($gt2013='ATC::C02AC05|Moxonidine|';$gt2014=$gt0219.term))"
+        ]
+      },
+      "gt0109": {
+        "id": "gt0109",
+        "priority": 16,
+        "when": [
+          "$gt0018|sbp>160|==true||$gt0029|dbp>100|==true",
+          "$gt0028|patient-age|<80,a"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0247.term"
+        ]
+      },
+      "gt0110": {
+        "id": "gt0110",
+        "priority": 15,
+        "when": [
+          "$gt0024|beta-blocker|==true",
+          "!fired($gt0093)"
+        ],
+        "then": [
+          "$gt2901|otherDrugs display|=$gt2901 + $gt0251.term"
+        ]
+      },
+      "gt0111": {
+        "id": "gt0111",
+        "priority": 14,
+        "when": [
+          "$gt0019|ace-inhibitor-arb|==true",
+          "!fired($gt0094)",
+          "!fired($gt0096)"
+        ],
+        "then": [
+          "$gt2901|otherDrugs display|=$gt2901 + $gt0252.term"
+        ]
+      },
+      "gt0112": {
+        "id": "gt0112",
+        "priority": 13,
+        "when": [
+          "$gt0021|calcium-channel-blocker|==true",
+          "!fired($gt0095)"
+        ],
+        "then": [
+          "$gt2901|otherDrugs display|=$gt2901 + $gt0253.term"
+        ]
+      },
+      "gt0113": {
+        "id": "gt0113",
+        "priority": 12,
+        "when": [
+          "$gt0020|furosemide|==true"
+        ],
+        "then": [
+          "$gt2901|otherDrugs display|=$gt2901 + $gt0234.term"
+        ]
+      },
+      "gt0114": {
+        "id": "gt0114",
+        "priority": 11,
+        "when": [
+          "$gt0022|thiazide-diuretic|==true"
+        ],
+        "then": [
+          "$gt2901|otherDrugs display|=$gt2901 + $gt0235.term"
+        ]
+      },
+      "gt0115": {
+        "id": "gt0115",
+        "priority": 10,
+        "when": [
+          "$gt0023|spironolactone|==true"
+        ],
+        "then": [
+          "$gt2901|otherDrugs display|=$gt2901 + $gt0236.term"
+        ]
+      },
+      "gt0116": {
+        "id": "gt0116",
+        "priority": 9,
+        "when": [
+          "$gt0025|alpha-blocker|==true"
+        ],
+        "then": [
+          "$gt2901|otherDrugs display|=$gt2901 + $gt0237.term"
+        ]
+      },
+      "gt0117": {
+        "id": "gt0117",
+        "priority": 8,
+        "when": [
+          "$gt0026|moxonidine|==true"
+        ],
+        "then": [
+          "$gt2901|otherDrugs display|=$gt2901 + $gt0238.term"
+        ]
+      },
+      "gt0118": {
+        "id": "gt0118",
+        "priority": 7,
+        "when": [
+          "$gt2901|otherDrugs display|!=''"
+        ],
+        "then": [
+          "use_template($gt2900|bp-otherDrugs|)"
+        ]
+      },
+      "gt0119": {
+        "id": "gt0119",
+        "priority": 6,
+        "when": [
+          "$gt2011|bp-other-choice options|!=null"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt3001 + $gt0248.term",
+          "use_template($gt2010|bp-other-choice|)"
+        ]
+      },
+      "gt0120": {
+        "id": "gt0120",
+        "priority": 5,
+        "when": [
+          "$gt3001|recommendation-notes display|==''"
+        ],
+        "then": [
+          "$gt3001|recommendation-notes display|=$gt0249.term"
+        ]
+      },
+      "gt0121": {
+        "id": "gt0121",
+        "priority": 4,
+        "when": [
+          "$gt1101|first-choice-medication-name display|!=null"
+        ],
+        "then": [
+          "use_template($gt1100|bp-firstChoiceDrug|)"
+        ]
+      },
+      "gt0122": {
+        "id": "gt0122",
+        "priority": 4,
+        "when": [
+          "$gt1011|bp-first-choice options|!=null"
+        ],
+        "then": [
+          "use_template($gt1010|bp-first-choice|)"
+        ]
+      },
+      "gt0123": {
+        "id": "gt0123",
+        "priority": 3,
+        "when": [
+          "$gt1100|bp-firstChoiceDrug|!=null||$gt1010|bp-first-choice|!=null",
+          "$gt0018|sbp>160|!=null||$gt0029|dbp>100|!=null",
+          "($gt0014|heart-rate-above-100|!=null||$gt0010|sinus-tachycardia|!=null)"
+        ],
+        "then": [
+          "use_template($gt1000|bp-firstMedication|)"
+        ]
+      },
+      "gt0124": {
+        "id": "gt0124",
+        "priority": 2,
+        "when": [
+          "$gt0018|sbp>160|!=null||$gt0029|dbp>100|!=null",
+          "($gt0014|heart-rate-above-100|!=null||$gt0010|sinus-tachycardia|!=null)"
+        ],
+        "then": [
+          "use_template($gt2000|bp-otherMedications|)"
+        ]
+      },
+      "gt0125": {
+        "id": "gt0125",
+        "priority": 1,
+        "when": [
+          "$gt3001|recommendation-notes display|!=null",
+          "$gt0018|sbp>160|!=null||$gt0029|dbp>100|!=null",
+          "($gt0014|heart-rate-above-100|!=null||$gt0010|sinus-tachycardia|!=null)"
+        ],
+        "then": [
+          "use_template($gt3000|bp-recommendationNotes|)"
+        ]
+      },
+      "gt0126": {
+        "id": "gt0126",
+        "priority": 1,
+        "when": [
+          "$gt0011|type2-diabetes|==true",
+          "$gt0030|sbp-valueQuantity|!=null",
+          "$gt0031|dbp-valueQuantity|!=null",
+          "$gt0063|bp-target|.code!=null",
+          "$gt0063|bp-target|.code!='at0132'||($gt0063|bp-target|.code=='at0132'&&$gt0065|sbp-target|!=null&&$gt0066|dbp-target|!=null)",
+          "$gt0051|bp-target-assessment|!=local::at0005|Blood pressure is lower than the target upper limit.|",
+          "$gt0051|bp-target-assessment|!=local::at0006|Blood pressure is lower than the target lower limit.|"
+        ],
+        "then": [
+          "use_template($gt7000|bpFollowRecommendation|)"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "angina-pectoris",
+            "description": "*"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "atrial-fibrillation",
+            "description": "*"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "previous-mi",
+            "description": "*"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "chronic-heart-failure",
+            "description": "*"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "previous-stroke",
+            "description": "*"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "raynaud-phenomenon",
+            "description": "*"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "sinus-tachycardia",
+            "description": "*"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Type-2 diabetes",
+            "description": "*"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "nephropathy",
+            "description": "*"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "peripheral-artery-disease",
+            "description": "*"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "heart-rate-above-100",
+            "description": "*"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "egfr-under-45",
+            "description": "*"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "egfr-above-30-under-45",
+            "description": "*"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "black-race",
+            "description": "*"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "bp-above-or-equals-160-100",
+            "description": "*"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "ace-inhibitor-arb",
+            "description": "*"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "furosemide",
+            "description": "*"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "calcium-channel-blocker",
+            "description": "*"
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "text": "thiazide-diuretic",
+            "description": "*"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "spironolactone",
+            "description": "*"
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "beta-blocker",
+            "description": "*"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "alpha-blocker",
+            "description": "*"
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "moxonidine",
+            "description": "*"
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "patient-age",
+            "description": "*"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "bp-target-assessment",
+            "description": "*"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "bp-targets",
+            "description": "*"
+          },
+          "gt0065": {
+            "id": "gt0014",
+            "text": "systolic-blood-pressure",
+            "description": "*"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "diastolic-blood-pressure",
+            "description": "*"
+          },
+          "gt0200": {
+            "id": "gt0200",
+            "text": "Single drug therapy",
+            "description": ""
+          },
+          "gt0201": {
+            "id": "gt0201",
+            "text": "* Single drug therapy is recommended for newly diagnosed diabetes with elevated blood pressure.\n* The listed medication is the guideline mandated first choice.\n* Consider multi-drug therapy after 1-3 months of BP persistently more than 10 mmHg above the set target.",
+            "description": ""
+          },
+          "gt0202": {
+            "id": "gt0202",
+            "text": "* Beta receptor blocker is preferred 1st choice.\n\n*An active prescription for a Beta receptor blocker was detected.*",
+            "description": ""
+          },
+          "gt0203": {
+            "id": "gt0203",
+            "text": "* Angiotension II receptor blocker (ARB) / ACE inhibitor is preferred 1st choice.\n\n*An active prescription for an ARB / ACE inhibitor was detected.*",
+            "description": ""
+          },
+          "gt0204": {
+            "id": "gt0204",
+            "text": "* Calcium channel blocker is preferred 1st choice.\n\n*An active prescription for a Calcium channel blocker was detected.*",
+            "description": ""
+          },
+          "gt0205": {
+            "id": "gt0205",
+            "text": "Select 1st choice medication",
+            "description": ""
+          },
+          "gt0206": {
+            "id": "gt0206",
+            "text": "1. Beta receptor blocker",
+            "description": ""
+          },
+          "gt0207": {
+            "id": "gt0207",
+            "text": "1. ACE inhibitor",
+            "description": ""
+          },
+          "gt0208": {
+            "id": "gt0208",
+            "text": "1. Angiotensin II receptor blocker or ACE inhibitor",
+            "description": ""
+          },
+          "gt0209": {
+            "id": "gt0209",
+            "text": "1. Calcium channel blocker",
+            "description": ""
+          },
+          "gt0210": {
+            "id": "gt0210",
+            "text": "Multi-drug therapy",
+            "description": ""
+          },
+          "gt0211": {
+            "id": "gt0211",
+            "text": "Multi-drug therapy should be considered after 1-3 months of BP persistently more than 10 mmHg above the set target while on monotherapy with the guideline mandated first choice medication.",
+            "description": ""
+          },
+          "gt0212": {
+            "id": "gt0212",
+            "text": "Select a supplementary medication",
+            "description": ""
+          },
+          "gt0213": {
+            "id": "gt0213",
+            "text": "2. ACE inhibitor",
+            "description": ""
+          },
+          "gt0214": {
+            "id": "gt0214",
+            "text": "2. Angiotensin II receptor blocker",
+            "description": ""
+          },
+          "gt0215": {
+            "id": "gt0215",
+            "text": "3. Calcium channel blocker",
+            "description": ""
+          },
+          "gt0216": {
+            "id": "gt0216",
+            "text": "4. Thiazide diuretic",
+            "description": ""
+          },
+          "gt0217": {
+            "id": "gt0217",
+            "text": "5. Spironolactone",
+            "description": ""
+          },
+          "gt0218": {
+            "id": "gt0218",
+            "text": "6. Alpha receptor antagonist",
+            "description": ""
+          },
+          "gt0219": {
+            "id": "gt0219",
+            "text": "7. Moxonidine",
+            "description": ""
+          },
+          "gt0220": {
+            "id": "gt0220",
+            "text": "2. Thiazide diuretic",
+            "description": ""
+          },
+          "gt0221": {
+            "id": "gt0221",
+            "text": "3. Beta receptor blocker",
+            "description": ""
+          },
+          "gt0222": {
+            "id": "gt0222",
+            "text": "4. Spironolactone",
+            "description": ""
+          },
+          "gt0223": {
+            "id": "gt0223",
+            "text": "5. Calcium channel blocker",
+            "description": ""
+          },
+          "gt0224": {
+            "id": "gt0224",
+            "text": "2. Furosemide",
+            "description": ""
+          },
+          "gt0225": {
+            "id": "gt0225",
+            "text": "5. Beta receptor blocker",
+            "description": ""
+          },
+          "gt0226": {
+            "id": "gt0226",
+            "text": "4. Beta receptor blocker",
+            "description": ""
+          },
+          "gt0227": {
+            "id": "gt0227",
+            "text": "5. Alpha receptor antagonist",
+            "description": ""
+          },
+          "gt0228": {
+            "id": "gt0228",
+            "text": "6. Moxonidine",
+            "description": ""
+          },
+          "gt0229": {
+            "id": "gt0229",
+            "text": "2. Calcium channel blocker",
+            "description": ""
+          },
+          "gt0230": {
+            "id": "gt0230",
+            "text": "3. Thiazide diuretic",
+            "description": ""
+          },
+          "gt0231": {
+            "id": "gt0231",
+            "text": "7. Beta receptor blocker",
+            "description": ""
+          },
+          "gt0232": {
+            "id": "gt0232",
+            "text": "3. ACE inhibitor",
+            "description": ""
+          },
+          "gt0233": {
+            "id": "gt0233",
+            "text": "3. Angiotensin II receptor blocker",
+            "description": ""
+          },
+          "gt0234": {
+            "id": "gt0234",
+            "text": "*An active prescription for Furosemide was detected.*\n",
+            "description": ""
+          },
+          "gt0235": {
+            "id": "gt0235",
+            "text": "*An active prescription for a Thiazide/thiazide-related diuretic was detected.*\n",
+            "description": ""
+          },
+          "gt0236": {
+            "id": "gt0236",
+            "text": "*An active prescription for Spironolactone was detected.*\n",
+            "description": ""
+          },
+          "gt0237": {
+            "id": "gt0237",
+            "text": "*An active prescription for an Alpha receptor blocker was detected.*\n",
+            "description": ""
+          },
+          "gt0238": {
+            "id": "gt0238",
+            "text": "*An active prescription for Moxonidine was detected.*\n",
+            "description": ""
+          },
+          "gt0239": {
+            "id": "gt0239",
+            "text": "* Beta receptor blocker is preferred 1st choice.\n",
+            "description": ""
+          },
+          "gt0240": {
+            "id": "gt0240",
+            "text": "* Angiotension II receptor blocker (ARB) / ACE inhibitor is preferred 1st choice.\n",
+            "description": ""
+          },
+          "gt0241": {
+            "id": "gt0241",
+            "text": "* Calcium channel blocker is preferred 1st choice.\n",
+            "description": ""
+          },
+          "gt0242": {
+            "id": "gt0242",
+            "text": "* Supplementary medications 2 - 7 are listed in descending order of priority.\n",
+            "description": ""
+          },
+          "gt0243": {
+            "id": "gt0243",
+            "text": "* The next supplementary medication should be added after 1-3 months of BP persistently more than 10 mmHg above the set target.\n",
+            "description": ""
+          },
+          "gt0244": {
+            "id": "gt0244",
+            "text": "* Introduce supplementary medications while at 50% of maximal dose of the current drug to reduce the risk of side effects.\n",
+            "description": ""
+          },
+          "gt0245": {
+            "id": "gt0245",
+            "text": "* Medications 1 - 4 should be up-titrated to maximal doses before commencing options 5 - 7.\n",
+            "description": ""
+          },
+          "gt0246": {
+            "id": "gt0246",
+            "text": "* **WARNING:** Spironolactone is not recommended because eGFR <30 mL/min.\n",
+            "description": ""
+          },
+          "gt0247": {
+            "id": "gt0247",
+            "text": "* With blood pressure >= 160/100 mmHg, if the patient is fit you may start with two different antihypertensive medications.\n",
+            "description": ""
+          },
+          "gt0248": {
+            "id": "gt0248",
+            "text": "* **WARNING:** ACE inhibitor not to be used simultaneously with ARB medication.\n",
+            "description": ""
+          },
+          "gt0249": {
+            "id": "gt0249",
+            "text": "No recommendation",
+            "description": ""
+          },
+          "gt0250": {
+            "id": "gt0250",
+            "text": "Guidance",
+            "description": ""
+          },
+          "gt0251": {
+            "id": "gt0251",
+            "text": "*An active prescription for a Beta receptor blocker was detected.*\n",
+            "description": ""
+          },
+          "gt0252": {
+            "id": "gt0252",
+            "text": "*An active prescription for an ARB / ACE inhibitor was detected.*\n",
+            "description": ""
+          },
+          "gt0253": {
+            "id": "gt0253",
+            "text": "*An active prescription for a Calcium channel blocker was detected.*\n",
+            "description": ""
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Action",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Follow recommendation",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "Reason for deviating",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "Suppress this recommendation for the next 6 months",
+            "description": ""
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "Yes",
+            "description": ""
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "No",
+            "description": ""
+          }
+        }
+      },
+      "da": {
+        "id": "da",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "description": ""
+          },
+          "gt0200": {
+            "id": "gt0200",
+            "text": "1-stof behandling",
+            "description": ""
+          },
+          "gt0201": {
+            "id": "gt0201",
+            "text": "* Start med enkelt blodtrykssænkende præparat behandling (50% af maksimal døgndosis) er anbefalet til patienter med nydiagnostiseret diabetes og forhøjet blodtryk.\n* Det angivne præparat er anbefalet førstevalg.\n* Hvis blodtryk fortsat er forhøjet efter 1-3 måneder, anbefales dosisøgning til 100% af maksimal døgndosis, hvis aktuelle blodtryk < 10 mmHg over blodtryksmål, og tillægning af nyt præparat, hvis aktuelle blodtryk >= 10 mmHg over blodtryksmål.",
+            "description": ""
+          },
+          "gt0202": {
+            "id": "gt0202",
+            "text": "* Beta-blokker er anbefalet første valg.\n\n*En aktiv recept for Beta-blokker blev fundet.*",
+            "description": ""
+          },
+          "gt0203": {
+            "id": "gt0203",
+            "text": "* Angiotensin II-receptorblokkere (ARB) / ACE inhibitor er anbefalet første valg.\n\n*En aktiv recept for ARB / ACE inhibitor blev fundet.*",
+            "description": ""
+          },
+          "gt0204": {
+            "id": "gt0204",
+            "text": "* Calciumkanal-blokker er anbefalet første valg.\n\n*En aktiv recept for Calciumkanal-blokker blev fundet.*",
+            "description": ""
+          },
+          "gt0205": {
+            "id": "gt0205",
+            "text": "Vælg førstevalgsbehandling",
+            "description": ""
+          },
+          "gt0206": {
+            "id": "gt0206",
+            "text": "1. Beta-blokker",
+            "description": ""
+          },
+          "gt0207": {
+            "id": "gt0207",
+            "text": "1. ACE inhibitor",
+            "description": ""
+          },
+          "gt0208": {
+            "id": "gt0208",
+            "text": "1. Angiotensin II-receptorblokkere eller ACE inhibitor",
+            "description": ""
+          },
+          "gt0209": {
+            "id": "gt0209",
+            "text": "1. Calciumkanal-blokker",
+            "description": ""
+          },
+          "gt0210": {
+            "id": "gt0210",
+            "text": "Flerstof-behandling",
+            "description": ""
+          },
+          "gt0211": {
+            "id": "gt0211",
+            "text": "Trinvis multi-præparat blodtrykssænkende behandling bør overvejes, hvis blodtryk fortsat er forhøjet efter 1-3 måneder på monoterapi med anbefalet præparat i maksimal døgndosis.",
+            "description": ""
+          },
+          "gt0212": {
+            "id": "gt0212",
+            "text": "Vælg eventuelt supplerende behandling",
+            "description": ""
+          },
+          "gt0213": {
+            "id": "gt0213",
+            "text": "2. ACE inhibitor",
+            "description": ""
+          },
+          "gt0214": {
+            "id": "gt0214",
+            "text": "2. Angiotensin II-receptorblokkere",
+            "description": ""
+          },
+          "gt0215": {
+            "id": "gt0215",
+            "text": "3. Calciumkanal-blokker",
+            "description": ""
+          },
+          "gt0216": {
+            "id": "gt0216",
+            "text": "4. Thiazid diuretika",
+            "description": ""
+          },
+          "gt0217": {
+            "id": "gt0217",
+            "text": "5. Spironolakton",
+            "description": ""
+          },
+          "gt0218": {
+            "id": "gt0218",
+            "text": "6. Alfa-receptorantagonist",
+            "description": ""
+          },
+          "gt0219": {
+            "id": "gt0219",
+            "text": "7. Moxonidin",
+            "description": ""
+          },
+          "gt0220": {
+            "id": "gt0220",
+            "text": "2. Thiazid diuretika",
+            "description": ""
+          },
+          "gt0221": {
+            "id": "gt0221",
+            "text": "3. Beta-blokker",
+            "description": ""
+          },
+          "gt0222": {
+            "id": "gt0222",
+            "text": "4. Spironolakton",
+            "description": ""
+          },
+          "gt0223": {
+            "id": "gt0223",
+            "text": "5. Calciumkanal-blokker",
+            "description": ""
+          },
+          "gt0224": {
+            "id": "gt0224",
+            "text": "2. Furosemid",
+            "description": ""
+          },
+          "gt0225": {
+            "id": "gt0225",
+            "text": "5. Beta-blokker",
+            "description": ""
+          },
+          "gt0226": {
+            "id": "gt0226",
+            "text": "4. Beta-blokker",
+            "description": ""
+          },
+          "gt0227": {
+            "id": "gt0227",
+            "text": "5. Alfa-receptorantagonist",
+            "description": ""
+          },
+          "gt0228": {
+            "id": "gt0228",
+            "text": "6. Moxonidin",
+            "description": ""
+          },
+          "gt0229": {
+            "id": "gt0229",
+            "text": "2. Calciumkanal-blokker",
+            "description": ""
+          },
+          "gt0230": {
+            "id": "gt0230",
+            "text": "3. Thiazid diuretika",
+            "description": ""
+          },
+          "gt0231": {
+            "id": "gt0231",
+            "text": "7. Beta-blokker",
+            "description": ""
+          },
+          "gt0232": {
+            "id": "gt0232",
+            "text": "3. ACE inhibitor",
+            "description": ""
+          },
+          "gt0233": {
+            "id": "gt0233",
+            "text": "3. Angiotensin II-receptorblokkere",
+            "description": ""
+          },
+          "gt0234": {
+            "id": "gt0234",
+            "text": "*En aktiv recept for Furosemid blev fundet.*\n",
+            "description": ""
+          },
+          "gt0235": {
+            "id": "gt0235",
+            "text": "*En aktiv recept for Thiazid/thiazid lignende diuretika blev fundet.*\n",
+            "description": ""
+          },
+          "gt0236": {
+            "id": "gt0236",
+            "text": "*En aktiv recept for Spironolakton blev fundet.*\n",
+            "description": ""
+          },
+          "gt0237": {
+            "id": "gt0237",
+            "text": "*En aktiv recept for Alfa-blokker blev fundet.*\n",
+            "description": ""
+          },
+          "gt0238": {
+            "id": "gt0238",
+            "text": "*En aktiv recept for Moxonidin blev fundet.*\n",
+            "description": ""
+          },
+          "gt0239": {
+            "id": "gt0239",
+            "text": "* Beta-blokker er anbefalet første valg.\n",
+            "description": ""
+          },
+          "gt0240": {
+            "id": "gt0240",
+            "text": "* Angiotensin II-receptorblokkere (ARB) / ACE inhibitor er anbefalet første valg.\n",
+            "description": ""
+          },
+          "gt0241": {
+            "id": "gt0241",
+            "text": "* Calciumkanal-blokker er anbefalet første valg.\n",
+            "description": ""
+          },
+          "gt0242": {
+            "id": "gt0242",
+            "text": "* Supplerende behandlingsvalg 2-7 er angivet i aftagende prioriteringsorden.\n",
+            "description": ""
+          },
+          "gt0243": {
+            "id": "gt0243",
+            "text": "* Næste supplerende medicinering bør tillægges efter 1-3 måneder hvor BT vedvarende er mere end 10 mmHg over målværdi.\n",
+            "description": ""
+          },
+          "gt0244": {
+            "id": "gt0244",
+            "text": "* Introducer supplerende behandlingsvalg ved 50% af maksimal dosis af igangværende behandling for at reducere risikoen for bivirkninger.\n",
+            "description": ""
+          },
+          "gt0245": {
+            "id": "gt0245",
+            "text": "* Behandlingsvalg 1-4 bør optitreres til maksimal dosis før behandlingsvalg 5-7 igangsættes.\n",
+            "description": ""
+          },
+          "gt0246": {
+            "id": "gt0246",
+            "text": "* **ADVARSEL:** Spironolakton er ikke anbefalet fordi eGFR <30 mL/min.\n",
+            "description": ""
+          },
+          "gt0247": {
+            "id": "gt0247",
+            "text": "* Hvis blodtryk >= 160/100 mmHg, og patienten er i god fysisk kondition, kan man starte behandling med to forskellige blodtrykssænkende præparater (1. og 2. valg hver med 25-50% af maksimal døgndosis) på en gang.\n",
+            "description": ""
+          },
+          "gt0248": {
+            "id": "gt0248",
+            "text": "* **ADVARSEL:** ACE inhibitor må ikke benyttes sammen med ARB medicin.\n",
+            "description": ""
+          },
+          "gt0249": {
+            "id": "gt0249",
+            "text": "Ingen anbefaling",
+            "description": ""
+          },
+          "gt0250": {
+            "id": "gt0250",
+            "text": "Vejledning",
+            "description": ""
+          },
+          "gt0251": {
+            "id": "gt0251",
+            "text": "*En aktiv recept for Beta-blokker blev fundet.*\n",
+            "description": ""
+          },
+          "gt0252": {
+            "id": "gt0252",
+            "text": "*En aktiv recept for ARB / ACE inhibitor blev fundet.*\n",
+            "description": ""
+          },
+          "gt0253": {
+            "id": "gt0253",
+            "text": "*En aktiv recept for Calciumkanal-blokker blev fundet.*\n",
+            "description": ""
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Handling",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Følg anbefaling",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "Årsag til ikke at følge anbefaling",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "Udsæt denne anbefaling de næste 6 måneder",
+            "description": ""
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "Ja",
+            "description": ""
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "Nej",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

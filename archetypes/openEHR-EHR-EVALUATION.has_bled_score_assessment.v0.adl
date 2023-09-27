@@ -1,0 +1,177 @@
+archetype (adl_version=1.4; uid=8feedfe1-7120-3fea-87d9-3ce03195111b)
+	openEHR-EHR-EVALUATION.has_bled_score_assessment.v0
+
+concept
+	[at0000]	-- HAS-BLED score assessment
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"Dennis Forslund">
+				["organisation"] = <"Cambio Healthcare Systems">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Syeeda S Farruque">
+		["email"] = <"models@cambiocds.com">
+		["organisation"] = <"Cambio Healthcare Systems">
+		["date"] = <"2021-08-18">
+	>
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"Att riskvärdera poäng genererad i enlighet med HAS-BLED.">
+			use = <"Använd för att utvärdering av poäng genererad i enlighet med HAS-BLED, vilken används för att uppskatta blödningsrisk hos antikoagulantia-behandlade patienter med förmaksflimmer.
+
+Tolkning av resultat:
+
+0p - låg risk (0.6-1.13% blödningsrisk per 100 patientår)
+1p - mellanrisk (1.02-1.5% blödningsrisk per 100 patientår)
+2p - mellanrisk (1.88-3.2% blödningsrisk per 100 patientår)
+≥3p - hög risk (4.9-19.6% blödningsrisk per 100 patientår)">
+			keywords = <"HAS-BLED", "blödning", "blödningsrisk", "antikoagulantia">
+			misuse = <"Rekommendationen bör värderas som del i fullständig utredning.">
+			copyright = <"© Cambio Healthcare Systems">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the risk categories of the  HAS-BLED risk score and the corresponding recommendation.
+">
+			use = <"Use to record the risk categories of the  HAS-BLED risk score and the corresponding recommendation.
+
+This assessment archetype allows for the categorisation of the HAS-BLED score into the following groups:
+- score of 0-1: relatively low risk (1.13-1.02 risk of bleeding per 100 patient years).
+- score of 2: moderate risk (1.88 risk of bleeding per 100 patient years).
+- score of 3-5: high risk (3.72-12.5  risk of bleeding per 100 patient years).
+- score of ≥5:very high risk.
+
+This assessment archetype allows for the recommendation of anticoagulant use according to the risk categories groups as follow:
+- score of 0-1: relatively low risk - anticoagulation should be considered.
+- score of 2: moderate risk - anticoagulation can be considered.
+- score of 3-5: high risk - alternative to anticoagulation should be considered.
+- score of ≥5:very high risk - alternative to anticoagulation should be considered">
+			keywords = <"HAS-BLED", "hypertension", "abnormal liver/renal function", "stroke", "bleeding", "labile INR", "elderly", "drug/alcohol use", "score">
+			misuse = <"">
+			copyright = <"©Cambio CDS">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Mouna Ghannam", ...>
+	other_details = <
+		["references"] = <"Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJ, Lip GY. A novel user-friendly score (HAS-BLED) to assess 1-year risk of major bleeding in patients with atrial fibrillation: the Euro Heart Survey. Chest. 2010 Nov;138(5):1093-100. doi: 10.1378/chest.10-0134. Epub 2010 Mar 18. PMID: 20299623.
+
+Lip GY, Frison L, Halperin JL, Lane DA. Comparative validation of a novel risk score for predicting bleeding risk in anticoagulated patients with atrial fibrillation: the HAS-BLED (Hypertension, Abnormal Renal/Liver Function, Stroke, Bleeding History or Predisposition, Labile INR, Elderly, Drugs/Alcohol Concomitantly) score. J Am Coll Cardiol. 2011 Jan 11;57(2):173-80. doi: 10.1016/j.jacc.2010.09.024. Epub 2010 Nov 24. PMID: 21111555.">
+		["build_uid"] = <"62753b90-f952-326a-9eb9-9e8fc3556444">
+		["MD5-CAM-1.0.1"] = <"BA3BE28A096767167D85B2E023F5437B">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- HAS-BLED score assessment
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- HAS-BLED risk assessment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Bleeding risk per 100 patient-year
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {	-- Recommendation
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0015] matches {	-- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0016] occurrences matches {0..*} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"HAS-BLED score assessment">
+					description = <"An assessment score used to estimate the  risk of major bleeding for patients on anticoagulation for atrial fibrillation.">
+					comment = <"Original version, c 2010.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"HAS-BLED risk assessment">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Recommendation">
+					description = <"Recommendation suggested for risk band. Not to be taken out of context but a part of a more fullsome investigation.">
+				>
+				["at0014"] = <
+					text = <"Bleeding risk per 100 patient-year">
+					description = <"Percentage bleeding risk per 100 patient-years">
+				>
+				["at0015"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0016"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"*HAS-BLED score assessment(en)">
+					description = <"*An assessment score used to estimate the  risk of major bleeding for patients on anticoagulation for atrial fibrillation.(en)">
+					comment = <"*Original version, c 2010.(en)">
+				>
+				["at0001"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*HAS-BLED risk assessment(en)">
+					description = <"*(en)">
+				>
+				["at0013"] = <
+					text = <"Rekommendation">
+					description = <"Rekommendation baserat på blödningsrisk. Bör värderas som del i fullständig utredning.">
+				>
+				["at0014"] = <
+					text = <"Blödningsrisk per 100 patientår">
+					description = <"Blödningsrisk per 100 patientår uttryckt i procent">
+				>
+				["at0015"] = <
+					text = <"*Item tree (en)">
+					description = <"@ internal @">
+				>
+				["at0016"] = <
+					text = <"*Extension(en)">
+					description = <"*Additional information required to extend the model with local content or to align with other reference models or formalisms.(en)">
+					comment = <"*For example: local information requirements; or additional metadata to align with FHIR.(en)">
+				>
+			>
+		>
+	>

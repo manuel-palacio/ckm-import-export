@@ -1,0 +1,1899 @@
+{
+  "id": "Acute_head_injury_result_display.v1.0.2",
+  "concept": "gt0001",
+  "gdl_version": "2.0",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2019-05-10",
+      "name": "Cambio CDS"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "en": {
+        "id": "en",
+        "copyright": "Cambio Healthcare Systems",
+        "keywords": [
+          "head injury",
+          "head trauma",
+          "brain injury",
+          "traumatic head injury",
+          "traumatic brain injury",
+          "concussion"
+        ]
+      },
+      "sv": {
+        "id": "sv",
+        "copyright": "Cambio Healthcare Systems",
+        "keywords": [
+          "huvudskada",
+          "hjärnskada",
+          "hjärnskakningen",
+          "skallskador"
+        ]
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0080": {
+        "id": "gt0080",
+        "model_id": "org.hl7.fhir.r4.model.Patient",
+        "template_id": "FHIR-R4-Patient.basic_demographic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0071": {
+            "id": "gt0071",
+            "path": "/gender"
+          }
+        }
+      },
+      "gt0009": {
+        "id": "gt0009",
+        "model_id": "openEHR-EHR-OBSERVATION.glasgow_coma_scale.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.glasgow_coma_scale.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0010": {
+            "id": "gt0010",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0007]"
+          }
+        }
+      },
+      "gt0011": {
+        "id": "gt0011",
+        "model_id": "openEHR-EHR-EVALUATION.head_injury_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.head_injury_assessment.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/items[at0002]/items[at0003]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/items[at0002]/items[at0004]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/data[at0001]/items[at0002]/items[at0005]"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "path": "/data[at0001]/items[at0002]/items[at0006]"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "path": "/data[at0001]/items[at0002]/items[at0007]"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/items[at0002]/items[at0008]"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "path": "/data[at0001]/items[at0017]"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "path": "/data[at0001]/items[at0021]"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/data[at0001]/items[at0026]"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "path": "/data[at0001]/items[at0002]/items[at0031]"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "path": "/data[at0001]/items[at0002]/items[at0032]"
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "path": "/data[at0001]/items[at0002]/items[at0033]"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "path": "/data[at0001]/items[at0048]"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "path": "/data[at0001]/items[at0002]/items[at0049]"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "path": "/data[at0001]/items[at0002]/items[at0050]"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "path": "/data[at0001]/items[at0002]/items[at0051]"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "path": "/data[at0001]/items[at0002]/items[at0052]"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "path": "/data[at0001]/items[at0002]/items[at0053]"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "path": "/data[at0001]/items[at0002]/items[at0054]"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "path": "/data[at0001]/items[at0046]"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "path": "/data[at0001]/items[at0037]"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "path": "/data[at0001]/items[at0038]"
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "path": "/data[at0001]/items[at0061]"
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "path": "/data[at0001]/items[at0062]"
+          },
+          "gt0078": {
+            "id": "gt0078",
+            "path": "/data[at0001]/items[at0064]"
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "path": "/data[at0001]/items[at0063]"
+          }
+        }
+      },
+      "gt0018": {
+        "id": "gt0018",
+        "model_id": "openEHR-EHR-OBSERVATION.glasgow_coma_scale_paediatric.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.glasgow_coma_scale_paediatric.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0019": {
+            "id": "gt0019",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]"
+          }
+        }
+      },
+      "gt0065": {
+        "id": "gt0065",
+        "model_id": "openEHR-EHR-OBSERVATION.basic_demographic.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.basic_demographic.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0066": {
+            "id": "gt0066",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0013]"
+          }
+        }
+      },
+      "gt0074": {
+        "id": "gt0074",
+        "model_id": "openEHR-EHR-EVALUATION.head_injury_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.head_injury_assessment.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0075": {
+            "id": "gt0075",
+            "path": "/data[at0001]/items[at0060]"
+          }
+        }
+      }
+    },
+    "templates": {
+      "gt0400": {
+        "id": "gt0400",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "name": "resultDisclaimer",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "result-disclaimer",
+          "resources": [
+            {
+              "uiResourceType": "Display",
+              "id": "disclaimer",
+              "text": "{$gt0500}"
+            }
+          ]
+        }
+      },
+      "gt0410": {
+        "id": "gt0410",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "name": "resultSeverity",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "result-severity",
+          "resources": [
+            {
+              "uiResourceType": "Display",
+              "id": "severity",
+              "text": "{$gt0401}",
+              "severity": "{$gt0502}"
+            }
+          ]
+        }
+      },
+      "gt0430": {
+        "id": "gt0430",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "name": "resultRecommendation",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "result-recommendation",
+          "resources": [
+            {
+              "uiResourceType": "Group",
+              "id": "recommendation-group",
+              "resources": [
+                {
+                  "uiResourceType": "Display",
+                  "id": "recommendation",
+                  "text": "{$gt0601}"
+                },
+                {
+                  "uiResourceType": "Display",
+                  "id": "additional-recommendation",
+                  "text": "{$gt0602}"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "gt0440": {
+        "id": "gt0440",
+        "name": "clinicalIndication",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "clinicalIndication",
+          "resources": [
+            {
+              "name": "clinical-indication",
+              "id": "clinical-indication",
+              "uiResourceType": "InputText",
+              "required": true,
+              "text": "{$gt0441.term}",
+              "initialValue": "{$gt0442.term}"
+            }
+          ]
+        }
+      },
+      "gt0450": {
+        "id": "gt0450",
+        "name": "clinicianNotes",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "clinicianNotes",
+          "resources": [
+            {
+              "name": "clinician-notes",
+              "id": "clinician-notes",
+              "text": "{$gt0451.term}",
+              "uiResourceType": "InputText"
+            }
+          ]
+        }
+      },
+      "gt0460": {
+        "id": "gt0460",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "name": "summaryInfo",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "summaryInfo",
+          "resources": [
+            {
+              "uiResourceType": "InputText",
+              "id": "referralSupplement",
+              "name": "referralSupplement",
+              "text": "{$gt0463.term}"
+            },
+            {
+              "uiResourceType": "Display",
+              "id": "referralSummaryLabel",
+              "text": "{$gt0464.term}"
+            },
+            {
+              "uiResourceType": "Display",
+              "id": "referralSummary",
+              "text": "{$gt0462}"
+            }
+          ]
+        }
+      },
+      "gt0461": {
+        "id": "gt0461",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "name": "summaryInfo",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "summaryInfo",
+          "text": "{$gt0465.term}",
+          "resources": [
+            {
+              "uiResourceType": "Display",
+              "id": "clinicalSummary",
+              "text": "{$gt0462}"
+            }
+          ]
+        }
+      },
+      "gt1000": {
+        "id": "gt1000",
+        "name": "followRecommendation",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "followRecommendation",
+          "text": "{$gt1001.term}",
+          "resources": [
+            {
+              "name": "follow-recommendation",
+              "id": "follow-recommendation",
+              "text": "{$gt1002.term}",
+              "uiResourceType": "InputBoolean",
+              "required": true,
+              "initialValue": true
+            },
+            {
+              "name": "reason-for-deviating",
+              "id": "reason-for-deviating",
+              "text": "{$gt1003.term}",
+              "uiResourceType": "InputText",
+              "required": true,
+              "showWhen": [
+                {
+                  "path": "uiInput.formResponses.followRecommendation.values.follow-recommendation",
+                  "has": {
+                    "value": false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "gt1100": {
+        "id": "gt1100",
+        "name": "orderServiceRequest",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "orderServiceRequest",
+          "text": "{$gt1101.term}",
+          "resources": [
+            {
+              "name": "order-ct",
+              "id": "order-ct",
+              "text": "{$gt1102.term}",
+              "uiResourceType": "InputBoolean",
+              "initialValue": false
+            },
+            {
+              "name": "order-s100b",
+              "id": "order-s100b",
+              "text": "{$gt1103.term}",
+              "uiResourceType": "InputBoolean",
+              "initialValue": false
+            }
+          ]
+        }
+      }
+    },
+    "pre_conditions": [
+    ],
+    "rules": {
+      "gt0797": {
+        "id": "gt0797",
+        "priority": 46,
+        "when": [
+          "$gt0029|age>=18,a|==false"
+        ],
+        "then": [
+          "$gt0500|Disclaimer display|=$gt0503.term"
+        ]
+      },
+      "gt0798": {
+        "id": "gt0798",
+        "priority": 45,
+        "when": [
+          "$gt0010|GCS score|<9||$gt0019|pGCS score|<9"
+        ],
+        "then": [
+          "$gt0500|Disclaimer display|=$gt0505.term"
+        ]
+      },
+      "gt0799": {
+        "id": "gt0799",
+        "priority": 44,
+        "when": [
+          "$gt0028|Estimated time of injury|.code=='at0036'"
+        ],
+        "then": [
+          "$gt0500|Disclaimer display|=$gt0504.term"
+        ]
+      },
+      "gt0800": {
+        "id": "gt0800",
+        "priority": 43,
+        "when": [
+          "$gt0029|age>=18,a|==false",
+          "$gt0012|Head injury level|.code=='at0018'"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0403.term",
+          "$gt0502|Risk level indicator display|='none'",
+          "$gt0602|Additional recommendation display|=$gt0614.term"
+        ]
+      },
+      "gt0801": {
+        "id": "gt0801",
+        "priority": 42,
+        "when": [
+          "$gt0029|age>=18,a|==false",
+          "$gt0012|Head injury level|.code=='at0019'",
+          "$gt0013|Risk level|.code=='at0022'"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0508.term",
+          "$gt0502|Risk level indicator display|='low'",
+          "$gt0602|Additional recommendation display|=$gt0613.term"
+        ]
+      },
+      "gt0802": {
+        "id": "gt0802",
+        "priority": 41,
+        "when": [
+          "$gt0029|age>=18,a|==false",
+          "$gt0012|Head injury level|.code=='at0019'",
+          "$gt0013|Risk level|.code=='at0023'"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0507.term",
+          "$gt0502|Risk level indicator display|='moderate'",
+          "$gt0602|Additional recommendation display|=$gt0612.term"
+        ]
+      },
+      "gt0803": {
+        "id": "gt0803",
+        "priority": 40,
+        "when": [
+          "$gt0012|Head injury level|.code=='at0020'"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0405.term",
+          "$gt0502|Risk level indicator display|='high'",
+          "$gt0602|Additional recommendation display|=$gt0603.term"
+        ]
+      },
+      "gt0804": {
+        "id": "gt0804",
+        "priority": 39,
+        "when": [
+          "$gt0012|Head injury level|.code=='at0019'",
+          "$gt0013|Risk level|.code=='at0024'"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0506.term",
+          "$gt0502|Risk level indicator display|='high'",
+          "$gt0602|Additional recommendation display|=$gt0603.term"
+        ]
+      },
+      "gt0805": {
+        "id": "gt0805",
+        "priority": 38,
+        "when": [
+          "$gt0029|age>=18,a|==true",
+          "$gt0012|Head injury level|.code=='at0019'",
+          "$gt0013|Risk level|.code=='at0023'"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0507.term",
+          "$gt0502|Risk level indicator display|='moderate'",
+          "$gt0602|Additional recommendation display|=$gt0604.term"
+        ]
+      },
+      "gt0806": {
+        "id": "gt0806",
+        "priority": 37,
+        "when": [
+          "$gt0029|age>=18,a|==true",
+          "$gt0012|Head injury level|.code=='at0019'",
+          "$gt0013|Risk level|.code=='at0022'",
+          "$gt0028|Estimated time of injury|.code=='at0034'"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0508.term",
+          "$gt0502|Risk level indicator display|='low'",
+          "$gt0602|Additional recommendation display|=$gt0605.term"
+        ]
+      },
+      "gt0807": {
+        "id": "gt0807",
+        "priority": 36,
+        "when": [
+          "$gt0029|age>=18,a|==true",
+          "$gt0012|Head injury level|.code=='at0019'",
+          "$gt0013|Risk level|.code=='at0022'",
+          "$gt0028|Estimated time of injury|.code=='at0035'||$gt0028|Estimated time of injury|.code=='at0036'"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0508.term",
+          "$gt0502|Risk level indicator display|='low'",
+          "$gt0602|Additional recommendation display|=$gt0606.term"
+        ]
+      },
+      "gt0808": {
+        "id": "gt0808",
+        "priority": 35,
+        "when": [
+          "$gt0029|age>=18,a|==true",
+          "$gt0012|Head injury level|.code=='at0019'",
+          "$gt0013|Risk level|.code=='at0022'",
+          "$gt0028|Estimated time of injury|.value==null"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0508.term",
+          "$gt0502|Risk level indicator display|='low'",
+          "$gt0602|Additional recommendation display|=$gt0607.term"
+        ]
+      },
+      "gt0809": {
+        "id": "gt0809",
+        "priority": 34,
+        "when": [
+          "$gt0029|age>=18,a|==true",
+          "$gt0012|Head injury level|.code=='at0018'"
+        ],
+        "then": [
+          "$gt0401|Severity display|=$gt0403.term",
+          "$gt0502|Risk level indicator display|='none'",
+          "$gt0602|Additional recommendation display|=$gt0608.term"
+        ]
+      },
+      "gt0810": {
+        "id": "gt0810",
+        "priority": 33,
+        "when": [
+          "$gt0014|Recommendation|!=null"
+        ],
+        "then": [
+          "$gt0601|Recommendation display|='**' + $gt0014.value + '**'"
+        ]
+      },
+      "gt0811": {
+        "id": "gt0811",
+        "priority": 32,
+        "when": [
+          "$gt0500|Disclaimer|!=null"
+        ],
+        "then": [
+          "use_template($gt0400|resultDisclaimer|)"
+        ]
+      },
+      "gt0812": {
+        "id": "gt0812",
+        "priority": 31,
+        "when": [
+          "$gt0401|Severity|!=null",
+          "$gt0066|patient-age|!=null",
+          "$gt0010|GCS score|>=9||$gt0019|pGCS score|>=9"
+        ],
+        "then": [
+          "use_template($gt0410|resultSeverity|)"
+        ]
+      },
+      "gt0813": {
+        "id": "gt0813",
+        "priority": 30,
+        "when": [
+          "$gt0601|Recommendation|!=null",
+          "$gt0066|patient-age|!=null",
+          "$gt0010|GCS score|>=9||$gt0019|pGCS score|>=9"
+        ],
+        "then": [
+          "use_template($gt0430|resultRecommendation|)"
+        ]
+      },
+      "gt0814": {
+        "id": "gt0814",
+        "priority": 29,
+        "when": [
+          "$gt0066|patient-age|.magnitude>=18",
+          "$gt0003|Suspected loss of consciousness|!=null",
+          "$gt0004|Repeated (≥2) vomiting|!=null",
+          "$gt0005|Anticoagulation therapy or coagulation disorders|!=null",
+          "$gt0006|Posttraumatic seizures|!=null",
+          "$gt0007|Clinical signs of depressed or basal skull fracture|!=null",
+          "$gt0008|Focal neurological deficits|!=null",
+          "$gt0014|Recommendation|!=null",
+          "$gt0017|Shunt-treated hydrocephalus|!=null",
+          "$gt0021|Antiplatelet medication|!=null",
+          "$gt0028|Estimated time of injury|!=null"
+        ],
+        "then": [
+          "use_template($gt1000|followRecommendation|)"
+        ]
+      },
+      "gt0815": {
+        "id": "gt0815",
+        "priority": 28,
+        "when": [
+          "$gt0066|patient-age|.magnitude>=2",
+          "$gt0066|patient-age|.magnitude<18",
+          "$gt0003|Suspected loss of consciousness|!=null",
+          "$gt0004|Repeated (≥2) vomiting|!=null",
+          "$gt0005|Anticoagulation therapy or coagulation disorders|!=null",
+          "$gt0006|Posttraumatic seizures|!=null",
+          "$gt0007|Clinical signs of depressed or basal skull fracture|!=null",
+          "$gt0008|Focal neurological deficits|!=null",
+          "$gt0014|Recommendation|!=null",
+          "$gt0017|Shunt-treated hydrocephalus|!=null",
+          "$gt0028|Estimated time of injury|!=null",
+          "$gt0030|unconscious1Min|!=null",
+          "$gt0031|posttraumaAmnesia|!=null",
+          "$gt0032|severeHeadache|!=null",
+          "$gt0033|abnormalBehaviour|!=null"
+        ],
+        "then": [
+          "use_template($gt1000|followRecommendation|)"
+        ]
+      },
+      "gt0816": {
+        "id": "gt0816",
+        "priority": 27,
+        "when": [
+          "$gt0066|patient-age|.magnitude<2",
+          "$gt0003|Suspected loss of consciousness|!=null",
+          "$gt0004|Repeated (≥2) vomiting|!=null",
+          "$gt0005|Anticoagulation therapy or coagulation disorders|!=null",
+          "$gt0006|Posttraumatic seizures|!=null",
+          "$gt0007|Clinical signs of depressed or basal skull fracture|!=null",
+          "$gt0008|Focal neurological deficits|!=null",
+          "$gt0014|Recommendation|!=null",
+          "$gt0017|Shunt-treated hydrocephalus|!=null",
+          "$gt0028|Estimated time of injury|!=null",
+          "$gt0030|unconscious1Min|!=null",
+          "$gt0031|posttraumaAmnesia|!=null",
+          "$gt0032|severeHeadache|!=null",
+          "$gt0033|abnormalBehaviour|!=null",
+          "$gt0034|scalpHematoma|!=null",
+          "$gt0035|irritability|!=null"
+        ],
+        "then": [
+          "use_template($gt1000|followRecommendation|)"
+        ]
+      },
+      "gt0817": {
+        "id": "gt0817",
+        "priority": 26,
+        "when": [
+          "$gt0066|patient-age|!=null",
+          "$gt0010|GCS score|>=9||$gt0019|pGCS score|>=9",
+          "($gt0014|Recommendation|.code=='at0027'&&($gt0068|followRecommendation|==null||$gt0068|followRecommendation|==true))||($gt0068|followRecommendation|==false&&$gt0077|orderCT|==true)"
+        ],
+        "then": [
+          "use_template($gt0440|clinicalIndication|)"
+        ]
+      },
+      "gt0818": {
+        "id": "gt0818",
+        "priority": 25,
+        "when": [
+          "$gt0601|Recommendation|!=null",
+          "$gt0066|patient-age|!=null",
+          "$gt0010|GCS score|>=9||$gt0019|pGCS score|>=9",
+          "$gt0068|followRecommendation|==null||$gt0068|followRecommendation|==true"
+        ],
+        "then": [
+          "use_template($gt0450|clinicianNotes|)"
+        ]
+      },
+      "gt0819": {
+        "id": "gt0819",
+        "priority": 24,
+        "when": [
+          "$gt0066|patient age|!=null"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0066.magnitude+'-årig'"
+        ]
+      },
+      "gt0822": {
+        "id": "gt0822",
+        "priority": 21,
+        "when": [
+          "$gt0010|GCS score|!=null"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' med skallskada och GCS poäng: '+ $gt0010 + '.'"
+        ]
+      },
+      "gt0823": {
+        "id": "gt0823",
+        "priority": 20,
+        "when": [
+          "$gt0072|mechanism of injury|!=null"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' '+$gt0072"
+        ]
+      },
+      "gt0824": {
+        "id": "gt0824",
+        "priority": 19,
+        "when": [
+          "$gt0028|occurrence|.code=='at0034'"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Skadan inträffade för mindre än 6 timmar sedan.'"
+        ]
+      },
+      "gt0825": {
+        "id": "gt0825",
+        "priority": 18,
+        "when": [
+          "$gt0028|occurrence|.code=='at0035'"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Skadan inträffade för 6-24 timmar sedan.'"
+        ]
+      },
+      "gt0826": {
+        "id": "gt0826",
+        "priority": 17,
+        "when": [
+          "$gt0028|occurrence|.code=='at0036'"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Skadan inträffade för mer än 24 timmar sedan.'"
+        ]
+      },
+      "gt0827": {
+        "id": "gt0827",
+        "priority": 16,
+        "when": [
+          "$gt0003|loss of consciousness|==true||$gt0030|unconscious1Min|==true"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Patienten har varit medvetslös.'"
+        ]
+      },
+      "gt0828": {
+        "id": "gt0828",
+        "priority": 15,
+        "when": [
+          "$gt0003|loss of consciousness|==false||$gt0030|unconscious1Min|==false"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Patienten har inte varit medvetslös.'"
+        ]
+      },
+      "gt0829": {
+        "id": "gt0829",
+        "priority": 14,
+        "when": [
+          "$gt0004|repeated vomiting|==true"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Patienten har kräkts minst två gånger.'"
+        ]
+      },
+      "gt0830": {
+        "id": "gt0830",
+        "priority": 13,
+        "when": [
+          "$gt0004|repeated vomiting|==false"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Patienten har inte kräkts.'"
+        ]
+      },
+      "gt0831": {
+        "id": "gt0831",
+        "priority": 12,
+        "when": [
+          "$gt0006|post-traumatic seizure|==true"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Patienten har haft krampanfall efteråt.'"
+        ]
+      },
+      "gt0832": {
+        "id": "gt0832",
+        "priority": 11,
+        "when": [
+          "$gt0021|antiplatelet medication|==true"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Patienten tar trombocythämmande läkemedel.'"
+        ]
+      },
+      "gt0833": {
+        "id": "gt0833",
+        "priority": 10,
+        "when": [
+          "$gt0005|anticoagulation therapy|==true"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Patienten tar antikoagulantia/har koagulationsrubbning.'"
+        ]
+      },
+      "gt0834": {
+        "id": "gt0834",
+        "priority": 9,
+        "when": [
+          "$gt0017|shunt-treated hydrocepalus|==true"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Det finns historia av hydrocefalus/inställning av hydrocefalusshunt.'"
+        ]
+      },
+      "gt0835": {
+        "id": "gt0835",
+        "priority": 8,
+        "when": [
+          "$gt0007|depressed skull fracture|==true"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Undersökning visar tecken på skallfraktur.'"
+        ]
+      },
+      "gt0836": {
+        "id": "gt0836",
+        "priority": 7,
+        "when": [
+          "$gt0008|focal neurological deficit|==true"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' Undersökning visar neurologiska bortfall/retningstillstånd.'"
+        ]
+      },
+      "gt0837": {
+        "id": "gt0837",
+        "priority": 6,
+        "when": [
+          "$gt0073|further status|!=null"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' '+$gt0073"
+        ]
+      },
+      "gt0838": {
+        "id": "gt0838",
+        "priority": 5,
+        "when": [
+          "$gt0078|referral supplement|!=null"
+        ],
+        "then": [
+          "$gt0462|summaryInfo|=$gt0462+' '+$gt0078"
+        ]
+      },
+      "gt0839": {
+        "id": "gt0839",
+        "priority": 4,
+        "when": [
+          "$gt0462|summaryInfo|!=null",
+          "($gt0068|followRecommendation|==true&&$gt0014|Recommendation|.code=='at0027')||($gt0068|followRecommendation|==false&&$gt0077|orderCT|==true)"
+        ],
+        "then": [
+          "$gt0075|summary information|=$gt0462|summaryInfo|",
+          "use_template($gt0460|summaryInfo-input|)"
+        ]
+      },
+      "gt0840": {
+        "id": "gt0840",
+        "priority": 3,
+        "when": [
+          "$gt0462|summaryInfo|!=null",
+          "($gt0068|followRecommendation|==true&&$gt0014|Recommendation|.code=='at0027')||($gt0068|followRecommendation|==false&&$gt0077|orderCT|==true)"
+        ],
+        "then": [
+          "$gt0075|summary information|=$gt0462|summaryInfo|",
+          "use_template($gt0461|summaryInfo-display|)"
+        ]
+      },
+      "gt0841": {
+        "id": "gt0841",
+        "priority": 2,
+        "when": [
+          "$gt0601|Recommendation|!=null",
+          "$gt0066|patient-age|!=null",
+          "$gt0010|GCS score|>=9||$gt0019|pGCS score|>=9",
+          "$gt0068|followRecommendation|==false"
+        ],
+        "then": [
+          "use_template($gt1100|orderServiceRequest|)"
+        ]
+      },
+      "gt0842": {
+        "id": "gt0842",
+        "priority": 1,
+        "when": [
+          "($gt0068|followRecommendation|==true&&($gt0014|Recommendation|.code=='at0027'||$gt0014|Recommendation|.code=='at0028'))||($gt0068|followRecommendation|==false&&($gt0077|orderCT|==true||$gt0079|orderS100B|==true))"
+        ],
+        "then": [
+          "use_template($gt0470|clinicalIndicationParameterIsFalse|)"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generate input questionnaire",
+            "description": ""
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Suspected loss of consciousness",
+            "description": ""
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Repeated (≥2) vomiting",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Anticoagulation therapy or coagulation disorders",
+            "description": ""
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Posttraumatic seizures",
+            "description": ""
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Clinical signs of depressed or basal skull fracture",
+            "description": ""
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Focal neurological deficits",
+            "description": ""
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "GCS total score",
+            "description": ""
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Head injury level",
+            "description": ""
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Risk level",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Recommendation",
+            "description": ""
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Shunt-treated hydrocephalus",
+            "description": ""
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "pGCS total score",
+            "description": ""
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "Antiplatelet medication",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Estimated time of injury",
+            "description": ""
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "age>=18,a",
+            "description": ""
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "unconscious1Min",
+            "description": ""
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "posttraumaAmnesia",
+            "description": ""
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "severeHeadache",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "abnormalBehaviour",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "scalpHematoma",
+            "description": ""
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "irritability",
+            "description": ""
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "antithrombotic-code",
+            "description": "description gt0042"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "antithrombotic-date",
+            "description": "description gt0043"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "antithrombotic-dose",
+            "description": "description gt0044"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "Antithrombotic substance",
+            "description": "description gt0045"
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "coagulationDisorder-code",
+            "description": "description gt0047"
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "coagulationDisorder-date",
+            "description": "description gt0048"
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "coagulationDisorder-status",
+            "description": "description gt0049"
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Coagulation disorder",
+            "description": "description gt0050"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "shuntTreatedHydrocephalus-code",
+            "description": "description gt0052"
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "shuntTreatedHydrocephalus-date",
+            "description": "description gt0053"
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "Shunt-treated hydrocephalus",
+            "description": "description gt0054"
+          },
+          "gt0056": {
+            "id": "gt0056",
+            "text": "antiplatelet-code",
+            "description": "description gt0056"
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "antiplatelet-date",
+            "description": "description gt0057"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "antiplatelet-dose",
+            "description": "description gt0058"
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "text": "Antiplatelet substance",
+            "description": "description gt0059"
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "csfDevice-code",
+            "description": "description gt0061"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "csfDevice-date",
+            "description": "description gt0062"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "csfDevice-status",
+            "description": "description gt0063"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Presence of CSF drainage device",
+            "description": "description gt0064"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "patient-age",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "followRecommendation",
+            "description": ""
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "clinical-indication-required parameter",
+            "description": ""
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "patient-gender",
+            "description": ""
+          },
+          "gt0402": {
+            "id": "gt0402",
+            "text": "Result",
+            "description": ""
+          },
+          "gt0403": {
+            "id": "gt0403",
+            "text": "**Minimal Head Injury**",
+            "description": ""
+          },
+          "gt0404": {
+            "id": "gt0404",
+            "text": "**Mild Head Injury**",
+            "description": ""
+          },
+          "gt0405": {
+            "id": "gt0405",
+            "text": "**Moderate Head Injury**",
+            "description": ""
+          },
+          "gt0441": {
+            "id": "gt0441",
+            "text": "Clinical indication for CT scan",
+            "description": ""
+          },
+          "gt0442": {
+            "id": "gt0442",
+            "text": "Bleeding?",
+            "description": ""
+          },
+          "gt0451": {
+            "id": "gt0451",
+            "text": "Additional notes",
+            "description": ""
+          },
+          "gt0461": {
+            "id": "gt0461",
+            "text": "Referral summary",
+            "description": ""
+          },
+          "gt0463": {
+            "id": "gt0463",
+            "text": "Supplementary referral text",
+            "description": ""
+          },
+          "gt0464": {
+            "id": "gt0464",
+            "text": "Referral text to be sent",
+            "description": ""
+          },
+          "gt0465": {
+            "id": "gt0465",
+            "text": "Clinical summary",
+            "description": ""
+          },
+          "gt0503": {
+            "id": "gt0503",
+            "text": "**This decision support is not applicable for age <18 years.**\n\nKindly select the appropriate CDS app or consult the following reference instead: \n\n[_Astrand R, Rosenlund C, Undén J, for the Scandinavian Neurotrauma Committee (SNC). Scandinavian guidelines for initial management of minor and moderate head trauma in children. BMC Medicine. 2016;14:33. doi:10.1186/s12916-016-0574-x._](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-016-0574-x)",
+            "description": ""
+          },
+          "gt0504": {
+            "id": "gt0504",
+            "text": "**SNC Head Injury Guidelines are only validated for use within 24 hours of injury. Please use your best clinical judgement in setting of a delayed evaluation.**\n\n",
+            "description": ""
+          },
+          "gt0505": {
+            "id": "gt0505",
+            "text": "**This decision support is not applicable for GCS score <9.**",
+            "description": ""
+          },
+          "gt0506": {
+            "id": "gt0506",
+            "text": "**Mild head injury with high risk**",
+            "description": ""
+          },
+          "gt0507": {
+            "id": "gt0507",
+            "text": "**Mild head injury with medium risk**",
+            "description": ""
+          },
+          "gt0508": {
+            "id": "gt0508",
+            "text": "**Mild head injury with low risk**",
+            "description": ""
+          },
+          "gt0600": {
+            "id": "gt0600",
+            "text": "Recommendation",
+            "description": ""
+          },
+          "gt0603": {
+            "id": "gt0603",
+            "text": "* Admit for close observation for at least 24 hours.\n\n* Observation time is calculated from the time of injury.\n\n* Consider consultation with neurosurgeon.\n\n* Repeat CT if new/progressive neurological deficits OR deterioration in GCS (>=2 points).",
+            "description": ""
+          },
+          "gt0604": {
+            "id": "gt0604",
+            "text": "* Consider admission for observation >=12 hours after injury as an alternative.",
+            "description": ""
+          },
+          "gt0605": {
+            "id": "gt0605",
+            "text": "* If <6 hours after injury, sample serum for S100B analysis.",
+            "description": ""
+          },
+          "gt0606": {
+            "id": "gt0606",
+            "text": "* If >=6 hours after injury OR if extracranial injury OR if S100B analysis unavailable, then do CT.",
+            "description": ""
+          },
+          "gt0607": {
+            "id": "gt0607",
+            "text": "* If extracranial injury OR if S100B analysis unavailable, then do CT.",
+            "description": ""
+          },
+          "gt0608": {
+            "id": "gt0608",
+            "text": "* Discharge with [_oral and written_](https://static-content.springer.com/esm/art%3A10.1186%2F1741-7015-11-50/MediaObjects/12916_2012_729_MOESM6_ESM.DOC) instructions.\n\n* Some patients may need admission for reasons other than their head injury.",
+            "description": ""
+          },
+          "gt0609": {
+            "id": "gt0609",
+            "text": "**Computed Tomography (CT) scan**",
+            "description": ""
+          },
+          "gt0610": {
+            "id": "gt0610",
+            "text": "**S100 calcium-binding protein B (S100B) analysis**",
+            "description": ""
+          },
+          "gt0611": {
+            "id": "gt0611",
+            "text": "**Discharge**",
+            "description": ""
+          },
+          "gt0612": {
+            "id": "gt0612",
+            "text": "* Observation time is calculated from the time of injury.\n\n* CT-scan is an alternative.\n\n*If abnormal observation or CT-scan:*\n\n* Admit patient for at least 24 hours of observation.\n\n* Consider consultation with neurosurgeon.\n\n* Repeat CT if new/progressive neurological deficits OR deterioration in GCS (>=2 points).\n\n*If normal observation or CT-scan:*\n\n* Discharge with [_oral and written_](https://www.internetmedicin.se/material/Skallskador%20barn%20-%20Utskrivningsra%C3%8C%C5%A0d%20till%20va%C3%8C%C5%A0rdnadshavare%20fo%C3%8C%CB%86r%20barn%20med%20hja%C3%8C%CB%86rnskakning.pdf) instructions.\n\n* Some patients may need admission for reasons other than their head injury.\n\n* Children with injuries suspected to be non-accidental or the result of child abuse, with bulging fontanels och children subjected to high energy trauma, should be admitted for observation och investigation.\n\n* Consider admitting children <1 year old with head injury, regardless of symptoms.",
+            "description": ""
+          },
+          "gt0613": {
+            "id": "gt0613",
+            "text": "* Children with GCS 15 and an isolated risk factor can be observed without CT.\n\n* Observation time is calculated from the time of injury.\n\n* Consider CT-scan if multiple risk factors (children with multiple risk factors can have a higher risk of intracranial injury).\n\n*If abnormal observation or CT-scan:*\n\n* Observe patient for at least 12 hours, alternatively CT can be performed.\n\n*If findings are still abnormal:*\n\n* Admit patient for at least 24 hours of observation.\n\n* Consider consultation with neurosurgeon.\n\n* Repeat CT if new/progressive neurological deficits OR deterioration in GCS (>=2 points).\n\n*If normal observation or CT-scan:*\n\n* Discharge with [_oral and written_](https://www.internetmedicin.se/material/Skallskador%20barn%20-%20Utskrivningsra%C3%8C%C5%A0d%20till%20va%C3%8C%C5%A0rdnadshavare%20fo%C3%8C%CB%86r%20barn%20med%20hja%C3%8C%CB%86rnskakning.pdf) instructions.\n\n* Some patients may need admission for reasons other than their head injury.\n\n* Children with injuries suspected to be non-accidental or the result of child abuse, with bulging fontanels och children subjected to high energy trauma, should be admitted for observation och investigation.\n\n* Consider admitting children <1 year old with head injury, regardless of symptoms.",
+            "description": ""
+          },
+          "gt0614": {
+            "id": "gt0614",
+            "text": "* Discharge with [_oral and written_](https://www.internetmedicin.se/material/Skallskador%20barn%20-%20Utskrivningsra%C3%8C%C5%A0d%20till%20va%C3%8C%C5%A0rdnadshavare%20fo%C3%8C%CB%86r%20barn%20med%20hja%C3%8C%CB%86rnskakning.pdf) instructions.\n\n* Some patients may need admission for reasons other than their head injury.\n\n* Children with injuries suspected to be non-accidental or the result of child abuse, with bulging fontanels och children subjected to high energy trauma, should be admitted for observation och investigation.\n\n* Consider admitting children <1 year old with head injury, regardless of symptoms.",
+            "description": ""
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Action",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Follow recommendation",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "Reason for deviating",
+            "description": ""
+          },
+          "gt1101": {
+            "id": "gt1101",
+            "text": "Orders",
+            "description": ""
+          },
+          "gt1102": {
+            "id": "gt1102",
+            "text": "Order CT-scan",
+            "description": ""
+          },
+          "gt1103": {
+            "id": "gt1103",
+            "text": "Order S100B",
+            "description": ""
+          },
+          "gt4001": {
+            "id": "gt4001",
+            "text": "Input",
+            "description": ""
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "Suspected loss of consciousness",
+            "description": ""
+          },
+          "gt4102": {
+            "id": "gt4102",
+            "text": "Repeated (≥2) vomiting",
+            "description": ""
+          },
+          "gt4103": {
+            "id": "gt4103",
+            "text": "Anticoagulation therapy or coagulation disorders",
+            "description": ""
+          },
+          "gt4104": {
+            "id": "gt4104",
+            "text": "Posttraumatic seizures",
+            "description": ""
+          },
+          "gt4105": {
+            "id": "gt4105",
+            "text": "Clinical signs of depressed or basal skull fracture",
+            "description": ""
+          },
+          "gt4106": {
+            "id": "gt4106",
+            "text": "Focal neurological deficits",
+            "description": ""
+          },
+          "gt4107": {
+            "id": "gt4107",
+            "text": "Shunt-treated hydrocephalus",
+            "description": ""
+          },
+          "gt4108": {
+            "id": "gt4108",
+            "text": "Antiplatelet medication",
+            "description": ""
+          },
+          "gt4109": {
+            "id": "gt4109",
+            "text": "GCS Total score",
+            "description": ""
+          },
+          "gt4110": {
+            "id": "gt4110",
+            "text": "Age",
+            "description": ""
+          }
+        }
+      },
+      "sv": {
+        "id": "sv",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generate input questionnaire",
+            "description": ""
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Suspected loss of consciousness",
+            "description": ""
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Repeated (≥2) vomiting",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Anticoagulation therapy or coagulation disorders",
+            "description": ""
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Posttraumatic seizures",
+            "description": ""
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Clinical signs of depressed or basal skull fracture",
+            "description": ""
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Focal neurological deficits",
+            "description": ""
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "GCS total score",
+            "description": ""
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Head injury level",
+            "description": ""
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Risk level",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Recommendation",
+            "description": ""
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Shunt-treated hydrocephalus",
+            "description": ""
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "pGCS total score",
+            "description": ""
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "Antiplatelet medication",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Estimated time of injury",
+            "description": ""
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "age>=18,a",
+            "description": ""
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "unconscious1Min",
+            "description": ""
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "posttraumaAmnesia",
+            "description": ""
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "severeHeadache",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "abnormalBehaviour",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "scalpHematoma",
+            "description": ""
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "irritability",
+            "description": ""
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "antithrombotic-code",
+            "description": "description gt0042"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "antithrombotic-date",
+            "description": "description gt0043"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "antithrombotic-dose",
+            "description": "description gt0044"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "Antithrombotic substance",
+            "description": "description gt0045"
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "coagulationDisorder-code",
+            "description": "description gt0047"
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "coagulationDisorder-date",
+            "description": "description gt0048"
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "coagulationDisorder-status",
+            "description": "description gt0049"
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Coagulation disorder",
+            "description": "description gt0050"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "shuntTreatedHydrocephalus-code",
+            "description": "description gt0052"
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "shuntTreatedHydrocephalus-date",
+            "description": "description gt0053"
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "Shunt-treated hydrocephalus",
+            "description": "description gt0054"
+          },
+          "gt0056": {
+            "id": "gt0056",
+            "text": "antiplatelet-code",
+            "description": "description gt0056"
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "antiplatelet-date",
+            "description": "description gt0057"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "antiplatelet-dose",
+            "description": "description gt0058"
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "text": "Antiplatelet substance",
+            "description": "description gt0059"
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "csfDevice-code",
+            "description": "description gt0061"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "csfDevice-date",
+            "description": "description gt0062"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "csfDevice-status",
+            "description": "description gt0063"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Presence of CSF drainage device",
+            "description": "description gt0064"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "patient-age",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "followRecommendation",
+            "description": ""
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "clinical-indication-required parameter",
+            "description": ""
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "patient-gender",
+            "description": ""
+          },
+          "gt0402": {
+            "id": "gt0402",
+            "text": "Resultat",
+            "description": ""
+          },
+          "gt0403": {
+            "id": "gt0403",
+            "text": "**Minimal skallskada**",
+            "description": ""
+          },
+          "gt0404": {
+            "id": "gt0404",
+            "text": "**Lätt skallskada**",
+            "description": ""
+          },
+          "gt0405": {
+            "id": "gt0405",
+            "text": "**Medelsvår skallskada**",
+            "description": ""
+          },
+          "gt0441": {
+            "id": "gt0441",
+            "text": "Frågeställning",
+            "description": ""
+          },
+          "gt0442": {
+            "id": "gt0442",
+            "text": "Blödning?",
+            "description": ""
+          },
+          "gt0451": {
+            "id": "gt0451",
+            "text": "Kommentar till bedömning",
+            "description": ""
+          },
+          "gt0461": {
+            "id": "gt0461",
+            "text": "Klinisk sammanfattning",
+            "description": ""
+          },
+          "gt0463": {
+            "id": "gt0463",
+            "text": "Kompletterande uppgifter",
+            "description": ""
+          },
+          "gt0464": {
+            "id": "gt0464",
+            "text": "Remisstext som kommer att skickas",
+            "description": ""
+          },
+          "gt0465": {
+            "id": "gt0465",
+            "text": "Sammanfattning",
+            "description": ""
+          },
+          "gt0503": {
+            "id": "gt0503",
+            "text": "**Beslutsstödet är ej tillämpligt för patient <18 år.**",
+            "description": ""
+          },
+          "gt0504": {
+            "id": "gt0504",
+            "text": "**De evidensbaserade riktlinjerna från Scandinavian Neurotrauma Committee (SNC) har bara validering inom 24 timmar efter skadan. Använd dig av gott kliniskt omdöme om det är mer än 24 timmar sedan skadan inträffade.**\n\n",
+            "description": ""
+          },
+          "gt0505": {
+            "id": "gt0505",
+            "text": "**Beslutsstödet ej tillämplig för GCS poäng <9.**",
+            "description": ""
+          },
+          "gt0506": {
+            "id": "gt0506",
+            "text": "**Lätt skallskada med hög risk**",
+            "description": ""
+          },
+          "gt0507": {
+            "id": "gt0507",
+            "text": "**Lätt skallskada med måttlig risk**",
+            "description": ""
+          },
+          "gt0508": {
+            "id": "gt0508",
+            "text": "**Lätt skallskada med låg risk**",
+            "description": ""
+          },
+          "gt0600": {
+            "id": "gt0600",
+            "text": "Rekommendation",
+            "description": ""
+          },
+          "gt0603": {
+            "id": "gt0603",
+            "text": "* Lägg in patient för observation på sjukhus i minst 24 tim.\n\n* Observationstid beräknas från skadetidpunkt.\n\n* Överväg att skicka en remiss till neurokirurg.\n\n* Uppföljande DT-undersökning vid nya/ökande neurologiska bortfall eller försämring i GCS (>=2 poäng).",
+            "description": ""
+          },
+          "gt0604": {
+            "id": "gt0604",
+            "text": "* Överväg inläggning för observation på sjukhus som ett alternativ om >=12 tim. efter skadan.",
+            "description": ""
+          },
+          "gt0605": {
+            "id": "gt0605",
+            "text": "* S100B analys bör genomföras inom 6 timmar efter skadan.\n* DT-undersökning görs vid extrakraniell skada om >=6 timmar efter skadan eller om S100B analys inte finns.",
+            "description": ""
+          },
+          "gt0606": {
+            "id": "gt0606",
+            "text": "* DT-undersökning görs vid extrakraniell skada om >=6 timmar efter skadan eller om S100B analys inte finns.",
+            "description": ""
+          },
+          "gt0607": {
+            "id": "gt0607",
+            "text": "* DT-undersökning görs vid extrakraniell skada eller om S100B analys inte finns.",
+            "description": ""
+          },
+          "gt0608": {
+            "id": "gt0608",
+            "text": "* Utskrivning från sjukhus med [_muntliga och skriftliga_](https://static-content.springer.com/esm/art%3A10.1186%2F1741-7015-11-50/MediaObjects/12916_2012_729_MOESM6_ESM.DOC) instruktioner.\n\n* En del patienter kan behöva inläggning på sjukhus för andra skäl.",
+            "description": ""
+          },
+          "gt0609": {
+            "id": "gt0609",
+            "text": "**Datortomografi (DT) undersökning**",
+            "description": ""
+          },
+          "gt0610": {
+            "id": "gt0610",
+            "text": "**S100B analys**",
+            "description": ""
+          },
+          "gt0611": {
+            "id": "gt0611",
+            "text": "**Utskrivning från sjukhus**",
+            "description": ""
+          },
+          "gt0612": {
+            "id": "gt0612",
+            "text": "* Observationstid beräknas från skadetidpunkt.\n\n* DT-undersökning görs som ett alternativ.\n\n*Vid onormal observation eller DT-undersökning:*\n\n* Lägg in patient för observation på sjukhus i minst 24 tim.\n\n* Överväg att skicka en remiss till neurokirurg.\n\n* DT eller upprepad DT-undersökning vid nya/ökande neurologiska bortfall eller försämring i GCS (>=2 poäng).\n\n*Vid normal observation eller DT-undersökning:*\n\n* Utskrivning från sjukhus med [_muntliga och skriftliga_](https://www.internetmedicin.se/material/Skallskador%20barn%20-%20Utskrivningsra%C3%8C%C5%A0d%20till%20va%C3%8C%C5%A0rdnadshavare%20fo%C3%8C%CB%86r%20barn%20med%20hja%C3%8C%CB%86rnskakning.pdf) instruktioner.\n\n* Vissa patienter behöver inläggning av andra orsaker.\n\n* Barn med misstänkt icke-accidentell skada eller barnmisshandel, vid fynd av buktande fontanell och barn utsatta för högenergitrauma, bör läggas in för observation och utredning.\n\n* Överväg inläggning av barn <1 år med skallskada, oberoende av symtom.",
+            "description": ""
+          },
+          "gt0613": {
+            "id": "gt0613",
+            "text": "* Barn med GCS 15 och en isolerad riskfaktor kan observeras utan föregående DT\n\n* Observationstid beräknas från skadetidpunkt.\n\n* Överväg DT-undersökning vid multipla riskfaktorer (barn med multipla riskfaktorer kan ha en högre risk för intrakraniell skada).\n\n*Vid onormal observation eller DT-undersökning:*\n\n* Observera patient i minst 12 tim., alternativt görs DT.\n\n*Vid ständiga onormala fynd:*\n\n* Lägg in patient för observation på sjukhus i minst 24 tim.\n\n* Överväg att skicka en remiss till neurokirurg.\n\n* DT eller upprepad DT-undersökning vid nya/ökande neurologiska bortfall eller försämring i GCS (>=2 poäng).\n\n*Vid normal observation eller DT-undersökning:*\n\n* Utskrivning från sjukhus med [_muntliga och skriftliga_](https://www.internetmedicin.se/material/Skallskador%20barn%20-%20Utskrivningsra%C3%8C%C5%A0d%20till%20va%C3%8C%C5%A0rdnadshavare%20fo%C3%8C%CB%86r%20barn%20med%20hja%C3%8C%CB%86rnskakning.pdf) instruktioner.\n\n* Vissa patienter behöver inläggning av andra orsaker.\n\n* Barn med misstänkt icke-accidentell skada eller barnmisshandel, vid fynd av buktande fontanell och barn utsatta för högenergitrauma, bör läggas in för observation och utredning.\n\n* Överväg inläggning av barn <1 år med skallskada, oberoende av symtom.",
+            "description": ""
+          },
+          "gt0614": {
+            "id": "gt0614",
+            "text": "* Utskrivning från sjukhus med [_muntliga och skriftliga_](https://www.internetmedicin.se/material/Skallskador%20barn%20-%20Utskrivningsra%C3%8C%C5%A0d%20till%20va%C3%8C%C5%A0rdnadshavare%20fo%C3%8C%CB%86r%20barn%20med%20hja%C3%8C%CB%86rnskakning.pdf) instruktioner.\n\n* Vissa patienter behöver inläggning av andra orsaker.\n\n* Barn med misstänkt icke-accidentell skada eller barnmisshandel, vid fynd av buktande fontanell och barn utsatta för högenergitrauma, bör läggas in för observation och utredning.\n\n* Överväg inläggning av barn <1 år med skallskada, oberoende av symtom.",
+            "description": ""
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Bedömning",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Följ rekommendation",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "Orsak till avsteg",
+            "description": ""
+          },
+          "gt1101": {
+            "id": "gt1101",
+            "text": "Beställningar",
+            "description": ""
+          },
+          "gt1102": {
+            "id": "gt1102",
+            "text": "Beställ DT",
+            "description": ""
+          },
+          "gt1103": {
+            "id": "gt1103",
+            "text": "Beställ S100B",
+            "description": ""
+          },
+          "gt4001": {
+            "id": "gt4001",
+            "text": "Input",
+            "description": ""
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "Suspected loss of consciousness",
+            "description": ""
+          },
+          "gt4102": {
+            "id": "gt4102",
+            "text": "Repeated (≥2) vomiting",
+            "description": ""
+          },
+          "gt4103": {
+            "id": "gt4103",
+            "text": "Anticoagulation therapy or coagulation disorders",
+            "description": ""
+          },
+          "gt4104": {
+            "id": "gt4104",
+            "text": "Posttraumatic seizures",
+            "description": ""
+          },
+          "gt4105": {
+            "id": "gt4105",
+            "text": "Clinical signs of depressed or basal skull fracture",
+            "description": ""
+          },
+          "gt4106": {
+            "id": "gt4106",
+            "text": "Focal neurological deficits",
+            "description": ""
+          },
+          "gt4107": {
+            "id": "gt4107",
+            "text": "Shunt-treated hydrocephalus",
+            "description": ""
+          },
+          "gt4108": {
+            "id": "gt4108",
+            "text": "Antiplatelet medication",
+            "description": ""
+          },
+          "gt4109": {
+            "id": "gt4109",
+            "text": "GCS Total score",
+            "description": ""
+          },
+          "gt4110": {
+            "id": "gt4110",
+            "text": "Age",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,694 @@
+archetype (adl_version=1.4; uid=77646bc2-95c8-3064-8105-eec2424f5b21)
+	openEHR-EHR-OBSERVATION.madrs.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"Dennis Forslund">
+				["organisation"] = <"Cambio Healthcare Systems">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["name"] = <"Rosario Silva Sepulveda">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"rosario.silva.s@outlook.com">
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Dennis Forslund, Cambio Healthcare Systems, Oskar Nielsen", ...>
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"*To record the results for each component parameter for the MADRS. (en)">
+			keywords = <"*Montgomery (en)","*Åsberg (en)","*Depression (en)","*Rating (en)","*Scale (en)","*MADRS (en)">
+			copyright = <"*© Cambio CDS (en)">
+			use = <"*Use to record the results for each component parameter for the MADRS. (en)">
+			misuse = <"*Not to be used to record information related to PTSD as a diagnosis. Use instead openEHR-EHR-EVALUATION.problem_diagnosis.v1. (en)">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the results for each component parameter for the MADRS.">
+			keywords = <"Montgomery","Åsberg","Depression","Rating","Scale","MADRS">
+			copyright = <"© Cambio CDS">
+			use = <"Use to record the results for each component parameter for the MADRS.">
+			misuse = <"Not to be used to record information related to PTSD as a diagnosis. Use instead openEHR-EHR-EVALUATION.problem_diagnosis.v1.">
+		>
+	>
+	other_details = <
+		["references"] = <"Montgomery SA, Asberg M. (1979). \"A new depression scale designed to be sensitive to change\". British Journal of Psychiatry 134 (4): 382–89.
+
+Cunningham, JL et al. (2011). \"Agreement between physicians' and patients' ratings on the Montgomery Åsberg Depression Rating Scale\". J. Affective Disorders 135 (1-3): 148–53.
+
+Williams JBW, Kobak KA. Development and reliability of a structured interview guide for the Montgomery–Åsberg Depression Rating Scale (SIGMA). Br J Psychiatry (2008) 192:52–8.10.1192/bjp.bp.106.032532.">
+		["MD5-CAM-1.0.1"] = <"31cbfdf3b9f345613e6b93a683c5daa5">
+		["build_uid"] = <"502bddd0-f80f-3a11-8963-a5be42c18bc9">
+		["current_contact"] = <"rosario.silva.s@outlook.com">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Montgomery Åsberg Depression Rating Scale (MADRS)
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Apparent sadness
+										value matches {
+											0|[local::at0006],
+											1|[local::at0007],
+											2|[local::at0008],
+											3|[local::at0009],
+											4|[local::at0010],
+											5|[local::at0011],
+											6|[local::at0012]
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Reported sadness
+										value matches {
+											0|[local::at0014],
+											1|[local::at0007],
+											2|[local::at0016],
+											3|[local::at0009],
+											4|[local::at0018],
+											5|[local::at0011],
+											6|[local::at0020]
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {    -- Inner tension
+										value matches {
+											0|[local::at0022],
+											1|[local::at0007],
+											2|[local::at0024],
+											3|[local::at0009],
+											4|[local::at0026],
+											5|[local::at0011],
+											6|[local::at0028]
+										}
+									}
+									ELEMENT[at0029] occurrences matches {0..1} matches {    -- Reduced sleep
+										value matches {
+											0|[local::at0030],
+											1|[local::at0007],
+											2|[local::at0032],
+											3|[local::at0009],
+											4|[local::at0034],
+											5|[local::at0011],
+											6|[local::at0036]
+										}
+									}
+									ELEMENT[at0037] occurrences matches {0..1} matches {    -- Reduced appetite
+										value matches {
+											0|[local::at0038],
+											1|[local::at0007],
+											2|[local::at0040],
+											3|[local::at0009],
+											4|[local::at0042],
+											5|[local::at0011],
+											6|[local::at0044]
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Concentration difficulties
+										value matches {
+											0|[local::at0046],
+											1|[local::at0007],
+											2|[local::at0048],
+											3|[local::at0009],
+											4|[local::at0050],
+											5|[local::at0011],
+											6|[local::at0052]
+										}
+									}
+									ELEMENT[at0053] occurrences matches {0..1} matches {    -- Lassitude
+										value matches {
+											0|[local::at0054],
+											1|[local::at0007],
+											2|[local::at0056],
+											3|[local::at0009],
+											4|[local::at0058],
+											5|[local::at0011],
+											6|[local::at0060]
+										}
+									}
+									ELEMENT[at0061] occurrences matches {0..1} matches {    -- Inability to feel
+										value matches {
+											0|[local::at0062],
+											1|[local::at0007],
+											2|[local::at0064],
+											3|[local::at0009],
+											4|[local::at0066],
+											5|[local::at0011],
+											6|[local::at0068]
+										}
+									}
+									ELEMENT[at0069] occurrences matches {0..1} matches {    -- Pessimistic thoughts
+										value matches {
+											0|[local::at0070],
+											1|[local::at0007],
+											2|[local::at0072],
+											3|[local::at0009],
+											4|[local::at0074],
+											5|[local::at0011],
+											6|[local::at0076]
+										}
+									}
+									ELEMENT[at0080] occurrences matches {0..1} matches {    -- Suicidal thoughts
+										value matches {
+											0|[local::at0081],
+											1|[local::at0007],
+											2|[local::at0083],
+											3|[local::at0009],
+											4|[local::at0085],
+											5|[local::at0011],
+											6|[local::at0087]
+										}
+									}
+									ELEMENT[at0077] occurrences matches {0..1} matches {    -- Total score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..60|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0088] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0089] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Montgomery Åsberg Depression Rating Scale (MADRS)">
+					description = <"An assessment score that assists the diagnosis of Depresison using the Montgomery Åsberg Depression Rating Scale (MADRS).">
+					comment = <"Original version, c 1979.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Apparent sadness">
+					description = <"Representing despondency, gloom and despair (more than just ordinary transient low spirits), reflected in speech, facial expression, and posture. Rate by depth and inability to brighten up.">
+				>
+				["at0006"] = <
+					text = <"No sadness.">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Looks dispirited but does brighten up without difficulty.">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Appears sad and unhappy most of the time.">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Looks miserable all the time. Extremely despondent.">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Reported sadness">
+					description = <"Representing reports of depressed mood, regardless of whether it is reflected in appearance or not. Includes low spirits, despondency or the feeling of being beyond help and without hope.">
+				>
+				["at0014"] = <
+					text = <"Occasional sadness in keeping with the circumstances.">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Sad or low but brightens up without Sad or low but brightens up without difficulty.">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Pervasive feelings of sadness or gloominess. The mood is still influenced by external circumstances.">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Continuous or unvarying sadness, misery or despondency.">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Inner tension">
+					description = <"Representing feelings of ill-defined discomfort, edginess, inner turmoil mounting to either panic, dread or anguish. Rate according to intensity, frequency, duration and the extent of reassurance called for.">
+				>
+				["at0022"] = <
+					text = <"Placid. Only reflecting inner tension.">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Occasional feelings of edginess and ill-defined discomfort.">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Continuous feelings of inner tension or intermittent panic which the patient can only master with some difficulty.">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Unrelenting dread or anguish. Overwhelming panic.">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Reduced sleep">
+					description = <"Representing the experience of reduced duration or depth of sleep compared to the subject’s own normal pattern when well. ">
+				>
+				["at0030"] = <
+					text = <"Sleeps as usual.">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Slight difficulty dropping off to sleep or slightly reduced light or fitful sleep.">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Sleep reduced or broken by at least two hours.">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Less than two or three hours sleep.">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Reduced appetite">
+					description = <"Representing the feeling of loss of appetite compared with when well. Rate by loss of desire for food or the need to force oneself to eat. ">
+				>
+				["at0038"] = <
+					text = <"Normal or increased appetite.">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Slightly reduced appetite.">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"No appetite. Food is tasteless.">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Needs persuasion to eat.">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Concentration difficulties">
+					description = <"Representing difficulties in collecting one’s thoughts mounting to incapacitating lack of concentration. Rate according to intensity, frequency, and degree of incapacity produced.">
+				>
+				["at0046"] = <
+					text = <"No difficulties in concentrating.">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Occasional difficulties in collecting one’s thoughts.">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Difficulties in concentrating and sustaining thought which reduces ability to read or hold a conversation.">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Unable to read or converse without great initiative.">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Lassitude">
+					description = <"Representing a difficulty getting started or slowness initiating and performing everyday activities.">
+				>
+				["at0054"] = <
+					text = <"Hardly no difficulty in getting started. No sluggishness.">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Difficulties in starting activities.">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Difficulties in starting simple routine activities which are carried out with effort.">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Complete lassitude. Unable to do anything without help.">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Inability to feel">
+					description = <"Representing the subjective experience of reduced interest in the surroundings, or activities that normally give pleasure. The ability to react with adequate emotion to circumstances or people is reduced.">
+				>
+				["at0062"] = <
+					text = <"Normal interest in the surroundings and in other people.">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Reduced ability to enjoy usual interest.">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Loss of interest in surroundings. Loss of feelings for friends and acquaintances.">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"The experience of being emotionally paralyzed, inability to feel anger, grief or pleasure and a complete or even painful failure to feel for close relatives and friends.">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Pessimistic thoughts">
+					description = <"Representing thoughts of guilt. Inferiority, self-reproach, sinfulness, remorse and ruin.">
+				>
+				["at0070"] = <
+					text = <"No pessimistic thoughts.">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Fluctuating ideas of failure, self-reproach or self-depreciation.">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Persistent self-accusations, or definite but still rational ideas of guilt or sin. Increasingly pessimistic about the future.">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Delusions of ruin, remorse or unredeemable sin. Self-accusations which are absurd and unshakable.">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Total score">
+					description = <"The total sum of each component parameter for the Montgomery Åsberg Depression Rating Scale (MADRS).">
+				>
+				["at0080"] = <
+					text = <"Suicidal thoughts">
+					description = <"Representing the feeling that life is not worth living, that a natural death would be welcome, suicidal thoughts, and the preparations for suicide. Suicidal attempts should not in themselves influence the rating.">
+				>
+				["at0081"] = <
+					text = <"Enjoys life or takes it as it comes.">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Weary of life. Only fleeting suicidal thoughts.">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"Probably better off dead. Suicidal thoughts are common, and suicide is considered as a possible solution, but without specific plans or intention.">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Explicit plans for suicide when there is an opportunity. Active preparations for suicide.">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0089"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"Montgomery Åsberg Depression Rating Scale (MADRS)">
+					description = <"*An assessment score that assists the diagnosis of Depresison using the Montgomery Åsberg Depression Rating Scale (MADRS). (en)">
+				>
+				["at0001"] = <
+					text = <"*Event Series(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time. (en)">
+				>
+				["at0003"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0005"] = <
+					text = <"*Apparent sadness (en)">
+					description = <"Avser uppgift om sänkt grundstämning oavsett om den tar sig uttryck eller ej. Omfattar känslor av sorgsenhet, olycklighet, hopplöshet och hjälplöshet. Bedömningen baseras på intensitet, varaktighet och i vilken grad sinnesstämningen påverkas av yttre omständigheter. Förhöjd sinnesstämning skattas ”0”.">
+				>
+				["at0006"] = <
+					text = <"Neutralt stämningsläge. Kan känna såväl tillfällig munterhet som nedstämdhet, allt efter omständigheterna, utan övervikt för ena eller andra stämningsläget.">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Övervägande upplevelser av nedstämdhet men ljusare stunder förekommer.">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"*">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Genomgående nedstämdhet och dyster till sinnes. Sinnesstämningen påverkas föga av yttre omständigheter.">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"*">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Genomgående upplevelser av maximal nedstämdhet.">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"*Reported sadness (en)">
+					description = <"Avser en sänkning av det emotionella grundläget (till skillnad från situationsutlösta affekter). Omfattar dysterhet, tungsinne och nedstämdhet, som manifesterar sig i mimik, kroppshållning och rörelsemönster. Bedömningen baseras på utpräglingsgrad och avledbarhet. Förhöjd grundstämning skattas ”0” på detta item.">
+				>
+				["at0014"] = <
+					text = <"Neutral stämningsläge.">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Ser genomgående nedstämd ut, men kan tillfälligt växla till ljusare sinnesstämning.">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Ser nedstämd och olycklig ut oavsett samtalsämne.">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Genomgående uttryck för extrem dysterhet, tungsinne eller förtvivlad olycka.">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"*Inner tension (en)">
+					description = <"Avser känslor av vag psykisk olust, inre oro eller obehaglig inre spänning, ångest eller vånda, som kan stegras till det outhärdliga. Bedömningen baseras på intensitet, frekvens, duration och behov av hjälp. Särhålles från nedstämdhet (1).">
+				>
+				["at0022"] = <
+					text = <"Mestadels lugn.">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Tillfälliga känslor av obehaglig psykisk spänning.">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Ständig känsla av inre oro, någon gång så intensiv att den endast med viss svårighet kan bemästras.">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Långdragna ångestkänslor. Överväldigande känslor av skräck eller dödsångest, som ej kan bemästras på egen hand.">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"*Reduced sleep (en)">
+					description = <"Avser uppgifter om minskad sömntid eller sömndjup i förhållande till de ordinära sömnvanorna. Ökad sömn skattas ”0” på detta item.">
+				>
+				["at0030"] = <
+					text = <"Sover som vanligt.">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Måttliga insomningssvårigheter eller kortare, ytligare eller oroligare sömn än vanligt.">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Minskad sömntid (minst två timmar mindre än normalt). Vaknar ofta under natten även utan yttre störningar.">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Mindre än två till tre timmars nattsömn totalt.">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"*Reduced appetite (en)">
+					description = <"Avser upplevelser av att aptiten är sämre än normalt.">
+				>
+				["at0038"] = <
+					text = <"Normalt eller ökad aptit.">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Dålig matlust.">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Aptit saknas nästan helt, maten smakar inte, måste tvinga sig att äta.">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Måste övertalas att äta något överhuvudtaget. Matvägran.">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"*Concentration difficulties (en)">
+					description = <"Avser svårigheter att samla tankarna eller koncentrera sig. Bedömningen baseras på intensitet, frekvens och i vilken mån olika aktiviteter försvåras.">
+				>
+				["at0046"] = <
+					text = <"Inga koncentrationssvårigheter.">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Tillfälligt svårt att hålla tankarna samlade vid t ex läsning eller TV-tittande.">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Uppenbara koncentrationssvårigheter som försvårar läsning eller samtal.">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Kontinuerliga, invalidiserande koncentrationssvårigheter.">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"*Lassitude (en)">
+					description = <"Avser den subjektiva upplevelsen av initiativlöshet, känslan av att behöva ett motstånd, innan en aktivitet kan påbörjas.">
+				>
+				["at0054"] = <
+					text = <"Ingen svårighet att ta itu med nya uppgifter.">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Lätta igångsättningssvårigheter.">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Svårt att komma igång även med enkla rutinuppgifter, som kräver stor ansträngning.">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Oförmögen att ta initiativ till de enklaste aktiviteter. Kan inte påbörja någon verksamhet på egen hand.">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"*Inability to feel (en)">
+					description = <"Avser upplevelser av minskat intresse för omvärlden eller för sådana aktiviteter som vanligen bereder nöje eller glädje. Subjektiv oförmåga att reagera känslomässigt inför människor eller företeelser i omgivningen.">
+				>
+				["at0062"] = <
+					text = <"Normalt intresse för omvärlden och för andra människor.">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Svårigheter att finna nöje i sådant som vanligen väcker intresse. Minskad förmåga att bli arg eller irriterad.">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Ointresserad av omvärlden. Upplevelser av likgiltighet inför vänner och bekanta.">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Total oförmåga att känna adekvat sorg eller vrede. Totalt eller smärtsam likgiltighet och oförmåga att uppleva känslor även för närstående.">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"*Pessimistic thoughts (en)">
+					description = <"Avser självförebråelser, självanklagelser, föreställningar om synd och skuld, mindervärdighet och ekonomisk ruin.">
+				>
+				["at0070"] = <
+					text = <"Inga pessimistiska tankar.">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Fluktuerande självförebråelser och mindervärdesidéer.">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Ständiga självanklagelser. Klara, men inte orimliga, tankar om synd eller  skuld. Uttalat pessimistisk framtidssyn.">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Absurda föreställningar om ekonomisk ruin och oförlåtliga synder. Absurda självanklagelser.">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Total poäng">
+					description = <"*The total sum of each component parameter for the Montgomery Åsberg Depression Rating Scale (MADRS). (en)">
+				>
+				["at0080"] = <
+					text = <"*Suicidal thoughts (en)">
+					description = <"Avser upplevelser av livsleda, dödsönskningar och självmordstankar samt förberedelser för självmord. Eventuella självmordsförsök påverkar ej i sig skattningen.">
+				>
+				["at0081"] = <
+					text = <"Ordinär livslust. Inga självmordstankar.">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Livsleda, men inga eller endast vaga dödsönskningar.">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"Självmordstankar förekommer och självmord betraktas som en tänkbar  utväg, men ingen bestämd självmordsavsikt.">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Uttalande avsikter att begå självmord, när tillfälle bjuds. Aktiva förberedelser för självmord.">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"*Item tree (en)">
+					description = <"@ internal @">
+				>
+				["at0089"] = <
+					text = <"*Extension (en)">
+					description = <"*Additional information required to extend the model with local content or to align with other reference models or formalisms. (en)">
+					comment = <"*For example: local information requirements; or additional metadata to align with FHIR. (en)">
+				>
+			>
+		>
+	>

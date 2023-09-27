@@ -1,0 +1,1694 @@
+{
+  "id": "Generate_oral_health_careplan_form.v1.0.0",
+  "concept": "gt0001",
+  "gdl_version": "2.0",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2020-11-26",
+      "name": "Cambio CDS"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "sv": {
+        "id": "sv",
+        "purpose": "Att skapa en vårdplan baserad på resultat av ROAG-J riskbedömning.",
+        "keywords": [
+          "munhälsa",
+          "munvård",
+          "munvårdsåtgärd",
+          "roag",
+          "senior alert"
+        ],
+        "use": "Göras:\n*  Vid inskrivning eller första kontakt med vård och omsorg\n*  I samband med övriga riskbedömningar i Senior alert\n*  Fortlöpande hos de som är i risk för att utveckla problem eller som har ohälsa i munnen; grad två eller tre inom något områdei ROAG\n*  När en person ändrar sitt ätbeteende, exempelvis inte vill äta eller reagerar onormalt på kall eller varm mat och dryck\nOmråden som bedömas är:  Röst, Läppar, Munslemhinna, Tunga, Tandkött, Tänder, Proteser, Saliv, Sväljning och gradering göras enligt följande,\nGrad 1 -Friskt eller normalt tillstånd\nGrad 2 -Måttliga förändringar/avvikelser som kan åtgärdas av vårdpersonal\nGrad 3 -Svårare förändringar/avvikelser som kräver konsultation/ remiss till tandvård\nVid en eller flera 2:or ska åtgärder göras av personal på enheten. Om bedömningen även visar 3:or påbörjar personalen åtgärder och ska dessutom kontakta tandläkare.",
+        "misuse": "ROAG-J är inte ett instrument för att diagnostisera utan för att vård-och omsorgspersonal ska uppmärksamma och åtgärda ohälsa i munnen.",
+        "copyright": "© Cambio Healthcare Systems"
+      },
+      "en": {
+        "id": "en",
+        "purpose": "To create a care plan based on the results of the ROAG-J assessment.",
+        "keywords": [
+          "oral health",
+          "roag",
+          "oral health assessment",
+          "mouth assessment",
+          "senior alert"
+        ],
+        "use": "Documentation is performed:\n* Upon enrollment or first contact with care\n* In connection with other risk assessments in Senior alert\n* Continuously in those at risk of developing problems or having ill health; grade 2 or 3 in any area of ​​the ROAG\n* When a person changes their eating behavior, for example, does not want to eat or reacts abnormally to cold or hot food and drink\nAreas assessed are: Voice, Lips, Oral mucosa, Tongue, Gums, Teeth, Prosthesis, Saliva, Swallowing and grading is done as follows,\nGrade 1 - Healthy or normal condition - no recommendation\nGrade 2 - Moderate changes - can be addressed by healthcare professionals\nGrade 3 - More difficult changes - require consultation / referral to dental care",
+        "misuse": "ROAG-J is not a diagnostic tool, but directs healthcare professionals to pay attention to and manage patients' oral health problems.",
+        "copyright": "© Cambio Healthcare Systems"
+      }
+    },
+    "other_details": {
+      "references": "1. Nordvall D, Andersson P, Gahnberg L, Hägglin C. Riskbedömning med ROAG-J i kvalitetsregistret Senior alert-Effekter på munhälsan ur ett longitudinellt perspektiv.\n2. Eilers J, Berger AM, Petersen, MC. Development, testing and application of the oral assessment guide. Oncol Nurs Forum 1988; 15: 325-330. "
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0006": {
+        "id": "gt0006",
+        "model_id": "openEHR-EHR-OBSERVATION.revised_oral_assessment_guide.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.revised_oral_assessment_guide.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0007": {
+            "id": "gt0007",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0045]"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0046]"
+          }
+        }
+      },
+      "gt0200": {
+        "id": "gt0200",
+        "model_id": "openEHR-EHR-EVALUATION.revised_oral_assessment_guide.v0",
+        "template_id": "openEHR-EHR-EVALUATION.revised_oral_assessment_guide.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0201": {
+            "id": "gt0201",
+            "path": "/data[at0001]/items[at0013]"
+          },
+          "gt0301": {
+            "id": "gt0301",
+            "path": "/data[at0001]/items[at0014]"
+          }
+        }
+      }
+    },
+    "templates": {
+      "gt2000": {
+        "id": "gt2000",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "name": "carePlanQuestionnaire",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "carePlanQuestionnaire",
+          "resources": [
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-goal",
+              "text": "{$gt4101.term}",
+              "resources": [
+                {
+                  "uiResourceType": "Group",
+                  "id": "selectAtLeastOneCareplanGoal",
+                  "text": "{$gt5002.term}",
+                  "resources": [
+                    {
+                      "uiResourceType": "InputBoolean",
+                      "name": "establishGoodOralHealthDuringTheCarePeriod",
+                      "id": "establishGoodOralHealthDuringTheCarePeriod",
+                      "text": "{$gt4102.term}",
+                      "initialValue": false
+                    },
+                    {
+                      "uiResourceType": "InputText",
+                      "name": "establishGoodOralHealthDuringTheCarePeriodDescription",
+                      "id": "establishGoodOralHealthDuringTheCarePeriodDescription",
+                      "text": "",
+                      "showWhen": [
+                        {
+                          "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                          "has": {
+                            "value": true
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "uiResourceType": "InputBoolean",
+                      "name": "improveOralHealthDuringTheCarePeriod",
+                      "id": "improveOralHealthDuringTheCarePeriod",
+                      "text": "{$gt4104.term}",
+                      "initialValue": false
+                    },
+                    {
+                      "uiResourceType": "InputText",
+                      "name": "improveOralHealthDuringTheCarePeriodDescription",
+                      "id": "improveOralHealthDuringTheCarePeriodDescription",
+                      "text": "",
+                      "showWhen": [
+                        {
+                          "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                          "has": {
+                            "value": true
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-voice",
+              "text": "{$gt4106.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "moistenMouth",
+                  "id": "moistenMouth",
+                  "text": "{$gt4107.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "moistenMouthDescription",
+                  "id": "moistenMouthDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.moistenMouth",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-lips",
+              "text": "{$gt4109.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "lubricateLips",
+                  "id": "lubricateLips",
+                  "text": "{$gt4110.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "lubricateLipsDescription",
+                  "id": "lubricateLipsDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.lubricateLips",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "localPainReliefOfLips",
+                  "id": "localPainReliefOfLips",
+                  "text": "{$gt4112.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "localPainReliefOfLipsDescription",
+                  "id": "localPainReliefOfLipsDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.localPainReliefOfLips",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-mucousMembranes",
+              "text": "{$gt4114.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "cleaningAndMoisteningOfOralMucousMembranes",
+                  "id": "cleaningAndMoisteningOfOralMucousMembranes",
+                  "text": "{$gt4115.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "cleaningAndMoisteningOfOralMucousMembranesDescription",
+                  "id": "cleaningAndMoisteningOfOralMucousMembranesDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.cleaningAndMoisteningOfOralMucousMembranes",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "removalOfCrusts",
+                  "id": "removalOfCrusts",
+                  "text": "{$gt4117.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "removalOfCrustsDescription",
+                  "id": "removalOfCrustsDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.removalOfCrusts",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "localPainReliefMouthMucousMembranes",
+                  "id": "localPainReliefMouthMucousMembranes",
+                  "text": "{$gt4119.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "localPainReliefMouthMucousMembranesDescription",
+                  "id": "localPainReliefMouthMucousMembranesDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.localPainReliefMouthMucousMembranes",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-tongue",
+              "text": "{$gt4121.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "cleaningOfTongue",
+                  "id": "cleaningOfTongue",
+                  "text": "{$gt4122.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "cleaningOfTongueDescription",
+                  "id": "cleaningOfTongueDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.cleaningOfTongue",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "moistenTongue",
+                  "id": "moistenTongue",
+                  "text": "{$gt4124.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "moistenTongueDescription",
+                  "id": "moistenTongueDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.moistenTongue",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "localPainReliefOfTongue",
+                  "id": "localPainReliefOfTongue",
+                  "text": "{$gt4126.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "localPainReliefOfTongueDescription",
+                  "id": "localPainReliefOfTongueDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.localPainReliefOfTongue",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-gumsTeethImplants",
+              "text": "{$gt4128.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "informationAndOrOralCareTrainingToPerformOralCareYourself",
+                  "id": "informationAndOrOralCareTrainingToPerformOralCareYourself",
+                  "text": "{$gt4129.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "informationAndOrOralCareTrainingToPerformOralCareYourselfDescription",
+                  "id": "informationAndOrOralCareTrainingToPerformOralCareYourselfDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.informationAndOrOralCareTrainingToPerformOralCareYourself",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "brushingAssistanceOrFullHelp",
+                  "id": "brushingAssistanceOrFullHelp",
+                  "text": "{$gt4131.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "brushingAssistanceOrFullHelpDescription",
+                  "id": "brushingAssistanceOrFullHelpDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.brushingAssistanceOrFullHelp",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "cleaningBetweenTeethAssistanceOrCompleteHelp",
+                  "id": "cleaningBetweenTeethAssistanceOrCompleteHelp",
+                  "text": "{$gt4133.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "cleaningBetweenTeethAssistanceOrCompleteHelpDescription",
+                  "id": "cleaningBetweenTeethAssistanceOrCompleteHelpDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.cleaningBetweenTeethAssistanceOrCompleteHelp",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "washWithFoamDryerAssistanceOrFullHelp",
+                  "id": "washWithFoamDryerAssistanceOrFullHelp",
+                  "text": "{$gt4135.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "washWithFoamDryerAssistanceOrFullHelpDescription",
+                  "id": "washWithFoamDryerAssistanceOrFullHelpDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.washWithFoamDryerAssistanceOrFullHelp",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "fluorideSupplyInAdditionToFluorideToothpasteAssistanceOrFullAssistance",
+                  "id": "fluorideSupplyInAdditionToFluorideToothpasteAssistanceOrFullAssistance",
+                  "text": "{$gt4137.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "fluorideSupplyInAdditionToFluorideToothpasteAssistanceOrFullAssistanceDescription",
+                  "id": "fluorideSupplyInAdditionToFluorideToothpasteAssistanceOrFullAssistanceDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.fluorideSupplyInAdditionToFluorideToothpasteAssistanceOrFullAssistance",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "extraOralCareInCaseOfEnhancedDietAssistanceOrCompleteAssistance",
+                  "id": "extraOralCareInCaseOfEnhancedDietAssistanceOrCompleteAssistance",
+                  "text": "{$gt4139.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "extraOralCareInCaseOfEnhancedDietAssistanceOrCompleteAssistanceDescription",
+                  "id": "extraOralCareInCaseOfEnhancedDietAssistanceOrCompleteAssistanceDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.extraOralCareInCaseOfEnhancedDietAssistanceOrCompleteAssistance",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-prosthesis",
+              "text": "{$gt4141.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "informationAndOrOralCareTrainingToPerformOralProstheticCleansingYourself",
+                  "id": "informationAndOrOralCareTrainingToPerformOralProstheticCleansingYourself",
+                  "text": "{$gt4142.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "informationAndOrOralCareTrainingToPerformOralProstheticCleansingYourselfDescription",
+                  "id": "informationAndOrOralCareTrainingToPerformOralProstheticCleansingYourselfDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.informationAndOrOralCareTrainingToPerformOralProstheticCleansingYourself",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "prostheticCleaningAssistanceOrFullHelp",
+                  "id": "prostheticCleaningAssistanceOrFullHelp",
+                  "text": "{$gt4144.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "prostheticCleaningAssistanceOrFullHelpDescription",
+                  "id": "prostheticCleaningAssistanceOrFullHelpDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.prostheticCleaningAssistanceOrFullHelp",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "cleaningOfRemainingTeethAndMucousMembranesAssistanceOrCompleteAssistance",
+                  "id": "cleaningOfRemainingTeethAndMucousMembranesAssistanceOrCompleteAssistance",
+                  "text": "{$gt4146.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "cleaningOfRemainingTeethAndMucousMembranesAssistanceOrCompleteAssistanceDescription",
+                  "id": "cleaningOfRemainingTeethAndMucousMembranesAssistanceOrCompleteAssistanceDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.cleaningOfRemainingTeethAndMucousMembranesAssistanceOrCompleteAssistance",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-saliva",
+              "text": "{$gt4148.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "moistenTheMucousMembranesOfTheMouth",
+                  "id": "moistenTheMucousMembranesOfTheMouth",
+                  "text": "{$gt4149.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "moistenTheMucousMembranesOfTheMouthDescription",
+                  "id": "moistenTheMucousMembranesOfTheMouthDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.moistenTheMucousMembranesOfTheMouth",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-swallowing",
+              "text": "{$gt4151.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "easeSwallowingByWettingTheMouth",
+                  "id": "easeSwallowingByWettingTheMouth",
+                  "text": "{$gt4152.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "easeSwallowingByWettingTheMouthDescription",
+                  "id": "easeSwallowingByWettingTheMouthDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.easeSwallowingByWettingTheMouth",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "otherActionOralHealth",
+                  "id": "otherActionOralHealth",
+                  "text": "{$gt4154.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "otherActionOralHealthDescription",
+                  "id": "otherActionOralHealthDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.otherActionOralHealth",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "endOfLifeCareOralHealth",
+                  "id": "endOfLifeCareOralHealth",
+                  "text": "{$gt4156.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "endOfLifeCareOralHealthDescription",
+                  "id": "endOfLifeCareOralHealthDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.endOfLifeCareOralHealth",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "thePersonDeclinesAllPreventiveMeasuresOralHealth",
+                  "id": "thePersonDeclinesAllPreventiveMeasuresOralHealth",
+                  "text": "{$gt4158.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "thePersonDeclinesAllPreventiveMeasuresOralHealthDescription",
+                  "id": "thePersonDeclinesAllPreventiveMeasuresOralHealthDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.thePersonDeclinesAllPreventiveMeasuresOralHealth",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "contactReferralToADentistIfAtLeastOneScoreOf3",
+                  "id": "contactReferralToADentistIfAtLeastOneScoreOf3",
+                  "text": "{$gt4160.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "contactReferralToADentistIfAtLeastOneScoreOf3Description",
+                  "id": "contactReferralToADentistIfAtLeastOneScoreOf3Description",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.contactReferralToADentistIfAtLeastOneScoreOf3",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-participation",
+              "text": "{$gt4162.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "patientParticipation",
+                  "id": "patientParticipation",
+                  "text": "{$gt4163.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "patientParticipationDescription",
+                  "id": "patientParticipationDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.patientParticipation",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "otherParticipation",
+                  "id": "otherParticipation",
+                  "text": "{$gt4165.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "otherParticipationDescription",
+                  "id": "otherParticipationDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.otherParticipation",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "uiResourceType": "Group",
+              "id": "careplan-coordination",
+              "text": "{$gt4167.term}",
+              "enableWhen": [
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.establishGoodOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                },
+                {
+                  "path": "uiInput.formResponses.carePlanQuestionnaire.values.improveOralHealthDuringTheCarePeriod",
+                  "has": {
+                    "value": true
+                  }
+                }
+              ],
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "contactWith",
+                  "id": "contactWith",
+                  "text": "{$gt4168.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputText",
+                  "name": "contactWithDescription",
+                  "id": "contactWithDescription",
+                  "text": "",
+                  "showWhen": [
+                    {
+                      "path": "uiInput.formResponses.carePlanQuestionnaire.values.contactWith",
+                      "has": {
+                        "value": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "pre_conditions": [
+    ],
+    "rules": {
+      "gt1001": {
+        "id": "gt1001",
+        "priority": 1,
+        "then": [
+          "use_template($gt2000|careplan|)"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "sv": {
+        "id": "sv",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generate Oral Health Careplan Form"
+          },
+          "gt0002": {
+            "id": "gt0002",
+            "text": "careplan",
+            "description": "FHIR-STU3-Questionnaire.roag-careplan"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "carePlanChoice",
+            "description": "FHIR-STU3-Questionnaire.carePlanChoice.v0"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Skapa vårdplan?",
+            "description": "FHIR-STU3-Questionnaire.carePlanChoice.v0"
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "Mål",
+            "description": ""
+          },
+          "gt5002": {
+            "id": "gt5002",
+            "text": "Ett mål måste väljas för att skapa en vårdplan.",
+            "description": ""
+          },
+          "gt4102": {
+            "id": "gt4102",
+            "text": "Upprätta god munhälsa under vårdtiden",
+            "description": ""
+          },
+          "gt4103": {
+            "id": "gt4103",
+            "text": "Upprätta god munhälsa under vårdtiden beskrivning",
+            "description": ""
+          },
+          "gt4104": {
+            "id": "gt4104",
+            "text": "Förbättra munhälsa under vårdtiden",
+            "description": ""
+          },
+          "gt4105": {
+            "id": "gt4105",
+            "text": "Förbättra munhälsa under vårdtiden beskrivning",
+            "description": ""
+          },
+          "gt4106": {
+            "id": "gt4106",
+            "text": "Röst",
+            "description": ""
+          },
+          "gt4107": {
+            "id": "gt4107",
+            "text": "Fukta munnen",
+            "description": ""
+          },
+          "gt4108": {
+            "id": "gt4108",
+            "text": "Fukta munnen beskrivning",
+            "description": ""
+          },
+          "gt4109": {
+            "id": "gt4109",
+            "text": "Läppar",
+            "description": ""
+          },
+          "gt4110": {
+            "id": "gt4110",
+            "text": "Smörj läpparna",
+            "description": ""
+          },
+          "gt4111": {
+            "id": "gt4111",
+            "text": "Smörj läpparna beskrivning",
+            "description": ""
+          },
+          "gt4112": {
+            "id": "gt4112",
+            "text": "Lokal smärtlindring läppar",
+            "description": ""
+          },
+          "gt4113": {
+            "id": "gt4113",
+            "text": "Lokal smärtlindring läppar beskrivning",
+            "description": ""
+          },
+          "gt4114": {
+            "id": "gt4114",
+            "text": "Munslemhinnor",
+            "description": ""
+          },
+          "gt4115": {
+            "id": "gt4115",
+            "text": "Rengöring och fuktning av munslemhinnor",
+            "description": ""
+          },
+          "gt4116": {
+            "id": "gt4116",
+            "text": "Rengöring och fuktning av munslemhinnor beskrivning",
+            "description": ""
+          },
+          "gt4117": {
+            "id": "gt4117",
+            "text": "Borttagning av krustor",
+            "description": ""
+          },
+          "gt4118": {
+            "id": "gt4118",
+            "text": "Borttagning av krustor beskrivning",
+            "description": ""
+          },
+          "gt4119": {
+            "id": "gt4119",
+            "text": "Lokal smärtlindring munslemhinnor",
+            "description": ""
+          },
+          "gt4120": {
+            "id": "gt4120",
+            "text": "Lokal smärtlindring munslemhinnor beskrivning",
+            "description": ""
+          },
+          "gt4121": {
+            "id": "gt4121",
+            "text": "Tunga",
+            "description": ""
+          },
+          "gt4122": {
+            "id": "gt4122",
+            "text": "Rengöring av tunga",
+            "description": ""
+          },
+          "gt4123": {
+            "id": "gt4123",
+            "text": "Rengöring av tunga beskrivning",
+            "description": ""
+          },
+          "gt4124": {
+            "id": "gt4124",
+            "text": "Fukta tungan",
+            "description": ""
+          },
+          "gt4125": {
+            "id": "gt4125",
+            "text": "Fukta tungan beskrivning",
+            "description": ""
+          },
+          "gt4126": {
+            "id": "gt4126",
+            "text": "Lokal smärtlindring tunga",
+            "description": ""
+          },
+          "gt4127": {
+            "id": "gt4127",
+            "text": "Lokal smärtlindring tunga beskrivning",
+            "description": ""
+          },
+          "gt4128": {
+            "id": "gt4128",
+            "text": "Tandkött - Tänder - Implantat",
+            "description": ""
+          },
+          "gt4129": {
+            "id": "gt4129",
+            "text": "Information och/eller träning i munvård för att utföra munvård själv",
+            "description": ""
+          },
+          "gt4130": {
+            "id": "gt4130",
+            "text": "Information och/eller träning i munvård för att utföra munvård själv beskrivning",
+            "description": ""
+          },
+          "gt4131": {
+            "id": "gt4131",
+            "text": "Tandborstning - assistans eller fullständig hjälp",
+            "description": ""
+          },
+          "gt4132": {
+            "id": "gt4132",
+            "text": "Tandborstning - assistans eller fullständig hjälp beskrivning",
+            "description": ""
+          },
+          "gt4133": {
+            "id": "gt4133",
+            "text": "Rengöring mellan tänderna - assistans eller fullständig hjälp",
+            "description": ""
+          },
+          "gt4134": {
+            "id": "gt4134",
+            "text": "Rengöring mellan tänderna - assistans eller fullständig hjälp beskrivning",
+            "description": ""
+          },
+          "gt4135": {
+            "id": "gt4135",
+            "text": "Tvätta med skumgummitork - assistans eller fullständig hjälp",
+            "description": ""
+          },
+          "gt4136": {
+            "id": "gt4136",
+            "text": "Tvätta med skumgummitork - assistans eller fullständig hjälp beskrivning",
+            "description": ""
+          },
+          "gt4137": {
+            "id": "gt4137",
+            "text": "Fluortillförsel utöver fluortandkräm - assistans eller fullständig hjälp",
+            "description": ""
+          },
+          "gt4138": {
+            "id": "gt4138",
+            "text": "Fluortillförsel utöver fluortandkräm - assistans eller fullständig hjälp beskrivning",
+            "description": ""
+          },
+          "gt4139": {
+            "id": "gt4139",
+            "text": "Extra munvård vid förstärkt kost - assistans eller fullständig hjälp",
+            "description": ""
+          },
+          "gt4140": {
+            "id": "gt4140",
+            "text": "Extra munvård vid förstärkt kost - assistans eller fullständig hjälp beskrivning",
+            "description": ""
+          },
+          "gt4141": {
+            "id": "gt4141",
+            "text": "Protes",
+            "description": ""
+          },
+          "gt4142": {
+            "id": "gt4142",
+            "text": "Information och/eller träning i munvård för att utföra munvård/protesrengöring själv",
+            "description": ""
+          },
+          "gt4143": {
+            "id": "gt4143",
+            "text": "Information och/eller träning i munvård för att utföra munvård/protesrengöring själv beskrivning",
+            "description": ""
+          },
+          "gt4144": {
+            "id": "gt4144",
+            "text": "Protesrengöring - assistans eller fullständig hjälp",
+            "description": ""
+          },
+          "gt4145": {
+            "id": "gt4145",
+            "text": "Protesrengöring - assistans eller fullständig hjälp beskrivning",
+            "description": ""
+          },
+          "gt4146": {
+            "id": "gt4146",
+            "text": "Rengöring av kvarvarande tänder och munslemhinnor - assistans eller fullständig hjälp",
+            "description": ""
+          },
+          "gt4147": {
+            "id": "gt4147",
+            "text": "Rengöring av kvarvarande tänder och munslemhinnor - assistans eller fullständig hjälp beskrivning",
+            "description": ""
+          },
+          "gt4148": {
+            "id": "gt4148",
+            "text": "Saliv",
+            "description": ""
+          },
+          "gt4149": {
+            "id": "gt4149",
+            "text": "Fukta munslemhinnorna",
+            "description": ""
+          },
+          "gt4150": {
+            "id": "gt4150",
+            "text": "Fukta munslemhinnorna beskrivning",
+            "description": ""
+          },
+          "gt4151": {
+            "id": "gt4151",
+            "text": "Sväljning",
+            "description": ""
+          },
+          "gt4152": {
+            "id": "gt4152",
+            "text": "Underlätta sväljning genom fuktning av munnen",
+            "description": ""
+          },
+          "gt4153": {
+            "id": "gt4153",
+            "text": "Underlätta sväljning genom fuktning av munnen beskrivning",
+            "description": ""
+          },
+          "gt4154": {
+            "id": "gt4154",
+            "text": "Annan åtgärd - munhälsa",
+            "description": ""
+          },
+          "gt4155": {
+            "id": "gt4155",
+            "text": "Annan åtgärd - munhälsa beskrivning",
+            "description": ""
+          },
+          "gt4156": {
+            "id": "gt4156",
+            "text": "Vård i livets slutskede - munhälsa",
+            "description": ""
+          },
+          "gt4157": {
+            "id": "gt4157",
+            "text": "Vård i livets slutskede - munhälsa beskrivning",
+            "description": ""
+          },
+          "gt4158": {
+            "id": "gt4158",
+            "text": "Personen avböjer samtliga förebyggande åtgärder - munhälsa",
+            "description": ""
+          },
+          "gt4159": {
+            "id": "gt4159",
+            "text": "Personen avböjer samtliga förebyggande åtgärder - munhälsa beskrivning",
+            "description": ""
+          },
+          "gt4160": {
+            "id": "gt4160",
+            "text": "Kontakt/remiss till tandläkare vid minst en 3:a",
+            "description": ""
+          },
+          "gt4161": {
+            "id": "gt4161",
+            "text": "Kontakt/remiss till tandläkare vid minst en 3:a beskrivning",
+            "description": ""
+          },
+          "gt4162": {
+            "id": "gt4162",
+            "text": "Delaktighet",
+            "description": ""
+          },
+          "gt4163": {
+            "id": "gt4163",
+            "text": "Patienten är delaktig vid upprättande av vårdplan",
+            "description": ""
+          },
+          "gt4164": {
+            "id": "gt4164",
+            "text": "Patienten är delaktig vid upprättande av vårdplan beskrivning",
+            "description": ""
+          },
+          "gt4165": {
+            "id": "gt4165",
+            "text": "Annan åtgärd - delaktighet",
+            "description": ""
+          },
+          "gt4166": {
+            "id": "gt4166",
+            "text": "Annan åtgärd - delaktighet beskrivning",
+            "description": ""
+          },
+          "gt4167": {
+            "id": "gt4167",
+            "text": "Samordning",
+            "description": ""
+          },
+          "gt4168": {
+            "id": "gt4168",
+            "text": "Kontakt med",
+            "description": ""
+          },
+          "gt4169": {
+            "id": "gt4169",
+            "text": "Kontakt med beskrivning",
+            "description": ""
+          }
+        }
+      },
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generate Oral Health Careplan Form"
+          },
+          "gt0002": {
+            "id": "gt0002",
+            "text": "careplan",
+            "description": "FHIR-STU3-Questionnaire.roag-careplan"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "carePlanChoice",
+            "description": "FHIR-STU3-Questionnaire.carePlanChoice.v0"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Create care plan?",
+            "description": "FHIR-STU3-Questionnaire.carePlanChoice.v0"
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "Goal",
+            "description": ""
+          },
+          "gt5002": {
+            "id": "gt5002",
+            "text": "A goal must be selected to create a care plan.",
+            "description": ""
+          },
+          "gt4102": {
+            "id": "gt4102",
+            "text": "Establish good oral health during the care period",
+            "description": ""
+          },
+          "gt4103": {
+            "id": "gt4103",
+            "text": "Establish good oral health during the care period description",
+            "description": ""
+          },
+          "gt4104": {
+            "id": "gt4104",
+            "text": "Improve oral health during the care period",
+            "description": ""
+          },
+          "gt4105": {
+            "id": "gt4105",
+            "text": "Improve oral health during the care period description",
+            "description": ""
+          },
+          "gt4106": {
+            "id": "gt4106",
+            "text": "Voice",
+            "description": ""
+          },
+          "gt4107": {
+            "id": "gt4107",
+            "text": "Moisten mouth",
+            "description": ""
+          },
+          "gt4108": {
+            "id": "gt4108",
+            "text": "Moisten mouth description",
+            "description": ""
+          },
+          "gt4109": {
+            "id": "gt4109",
+            "text": "Lips",
+            "description": ""
+          },
+          "gt4110": {
+            "id": "gt4110",
+            "text": "Lubricate lips",
+            "description": ""
+          },
+          "gt4111": {
+            "id": "gt4111",
+            "text": "Lubricate lips description",
+            "description": ""
+          },
+          "gt4112": {
+            "id": "gt4112",
+            "text": "Local pain relief of lips",
+            "description": ""
+          },
+          "gt4113": {
+            "id": "gt4113",
+            "text": "Local pain relief of lips description",
+            "description": ""
+          },
+          "gt4114": {
+            "id": "gt4114",
+            "text": "Mucous membranes",
+            "description": ""
+          },
+          "gt4115": {
+            "id": "gt4115",
+            "text": "Cleaning and moistening of oral mucous membranes",
+            "description": ""
+          },
+          "gt4116": {
+            "id": "gt4116",
+            "text": "Cleaning and moistening of oral mucous membranes description",
+            "description": ""
+          },
+          "gt4117": {
+            "id": "gt4117",
+            "text": "Removal of crusts",
+            "description": ""
+          },
+          "gt4118": {
+            "id": "gt4118",
+            "text": "Removal of crusts description",
+            "description": ""
+          },
+          "gt4119": {
+            "id": "gt4119",
+            "text": "Local pain relief mouth mucous membranes",
+            "description": ""
+          },
+          "gt4120": {
+            "id": "gt4120",
+            "text": "Local pain relief mouth mucous membranes description",
+            "description": ""
+          },
+          "gt4121": {
+            "id": "gt4121",
+            "text": "Tongue",
+            "description": ""
+          },
+          "gt4122": {
+            "id": "gt4122",
+            "text": "Cleaning of tongue",
+            "description": ""
+          },
+          "gt4123": {
+            "id": "gt4123",
+            "text": "Cleaning of tongue description",
+            "description": ""
+          },
+          "gt4124": {
+            "id": "gt4124",
+            "text": "Moisten tongue",
+            "description": ""
+          },
+          "gt4125": {
+            "id": "gt4125",
+            "text": "Moisten tongue description",
+            "description": ""
+          },
+          "gt4126": {
+            "id": "gt4126",
+            "text": "Local pain relief of tongue",
+            "description": ""
+          },
+          "gt4127": {
+            "id": "gt4127",
+            "text": "Local pain relief of tongue description",
+            "description": ""
+          },
+          "gt4128": {
+            "id": "gt4128",
+            "text": "Gums - Teeth - Implants",
+            "description": ""
+          },
+          "gt4129": {
+            "id": "gt4129",
+            "text": "Information and/or oral care training to perform oral care yourself",
+            "description": ""
+          },
+          "gt4130": {
+            "id": "gt4130",
+            "text": "Information and/or oral care training to perform oral care yourself description",
+            "description": ""
+          },
+          "gt4131": {
+            "id": "gt4131",
+            "text": "Brushing - assistance or full help",
+            "description": ""
+          },
+          "gt4132": {
+            "id": "gt4132",
+            "text": "Brushing - assistance or full help description",
+            "description": ""
+          },
+          "gt4133": {
+            "id": "gt4133",
+            "text": "Cleaning between teeth - assistance or complete help",
+            "description": ""
+          },
+          "gt4134": {
+            "id": "gt4134",
+            "text": "Cleaning between teeth - assistance or complete help description",
+            "description": ""
+          },
+          "gt4135": {
+            "id": "gt4135",
+            "text": "Wash with foam dryer - assistance or full help",
+            "description": ""
+          },
+          "gt4136": {
+            "id": "gt4136",
+            "text": "Wash with foam dryer - assistance or full help description",
+            "description": ""
+          },
+          "gt4137": {
+            "id": "gt4137",
+            "text": "Fluoride supply in addition to fluoride toothpaste - assistance or full assistance",
+            "description": ""
+          },
+          "gt4138": {
+            "id": "gt4138",
+            "text": "Fluoride supply in addition to fluoride toothpaste - assistance or full assistance description",
+            "description": ""
+          },
+          "gt4139": {
+            "id": "gt4139",
+            "text": "Extra oral care in case of enhanced diet - assistance or complete assistance",
+            "description": ""
+          },
+          "gt4140": {
+            "id": "gt4140",
+            "text": "Extra oral care in case of enhanced diet - assistance or complete assistance description",
+            "description": ""
+          },
+          "gt4141": {
+            "id": "gt4141",
+            "text": "Prosthesis",
+            "description": ""
+          },
+          "gt4142": {
+            "id": "gt4142",
+            "text": "Information and/or oral care training to perform oral/prosthetic cleansing yourself",
+            "description": ""
+          },
+          "gt4143": {
+            "id": "gt4143",
+            "text": "Information and/or oral care training to perform oral/prosthetic cleansing yourself description",
+            "description": ""
+          },
+          "gt4144": {
+            "id": "gt4144",
+            "text": "Prosthetic cleaning - assistance or full help",
+            "description": ""
+          },
+          "gt4145": {
+            "id": "gt4145",
+            "text": "Prosthetic cleaning - assistance or full help description",
+            "description": ""
+          },
+          "gt4146": {
+            "id": "gt4146",
+            "text": "Cleaning of remaining teeth and mucous membranes - assistance or complete assistance",
+            "description": ""
+          },
+          "gt4147": {
+            "id": "gt4147",
+            "text": "Cleaning of remaining teeth and mucous membranes - assistance or complete assistance description",
+            "description": ""
+          },
+          "gt4148": {
+            "id": "gt4148",
+            "text": "Saliva",
+            "description": ""
+          },
+          "gt4149": {
+            "id": "gt4149",
+            "text": "Moisten the mucous membranes of the mouth",
+            "description": ""
+          },
+          "gt4150": {
+            "id": "gt4150",
+            "text": "Moisten the mucous membranes of the mouth description",
+            "description": ""
+          },
+          "gt4151": {
+            "id": "gt4151",
+            "text": "Swallowing",
+            "description": ""
+          },
+          "gt4152": {
+            "id": "gt4152",
+            "text": "Ease swallowing by wetting the mouth",
+            "description": ""
+          },
+          "gt4153": {
+            "id": "gt4153",
+            "text": "Ease swallowing by wetting the mouth description",
+            "description": ""
+          },
+          "gt4154": {
+            "id": "gt4154",
+            "text": "Other action - oral health",
+            "description": ""
+          },
+          "gt4155": {
+            "id": "gt4155",
+            "text": "Other action - oral health description",
+            "description": ""
+          },
+          "gt4156": {
+            "id": "gt4156",
+            "text": "End-of-life care - oral health",
+            "description": ""
+          },
+          "gt4157": {
+            "id": "gt4157",
+            "text": "End-of-life care - oral health description",
+            "description": ""
+          },
+          "gt4158": {
+            "id": "gt4158",
+            "text": "The person declines all preventive measures - oral health",
+            "description": ""
+          },
+          "gt4159": {
+            "id": "gt4159",
+            "text": "The person declines all preventive measures - oral health description",
+            "description": ""
+          },
+          "gt4160": {
+            "id": "gt4160",
+            "text": "Contact/referral to a dentist if at least one score of 3",
+            "description": ""
+          },
+          "gt4161": {
+            "id": "gt4161",
+            "text": "Contact/referral to a dentist if at least one score of 3 description",
+            "description": ""
+          },
+          "gt4162": {
+            "id": "gt4162",
+            "text": "Participation",
+            "description": ""
+          },
+          "gt4163": {
+            "id": "gt4163",
+            "text": "Patient participation",
+            "description": ""
+          },
+          "gt4164": {
+            "id": "gt4164",
+            "text": "Patient participation description",
+            "description": ""
+          },
+          "gt4165": {
+            "id": "gt4165",
+            "text": "Other participation",
+            "description": ""
+          },
+          "gt4166": {
+            "id": "gt4166",
+            "text": "Other participation description",
+            "description": ""
+          },
+          "gt4167": {
+            "id": "gt4167",
+            "text": "Coordination",
+            "description": ""
+          },
+          "gt4168": {
+            "id": "gt4168",
+            "text": "Contact with",
+            "description": ""
+          },
+          "gt4169": {
+            "id": "gt4169",
+            "text": "Contact with description",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

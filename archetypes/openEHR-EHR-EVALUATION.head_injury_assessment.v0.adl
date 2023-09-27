@@ -1,0 +1,761 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.head_injury_assessment.v0
+
+concept
+	[at0000]	-- Head injury assessment
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Cambio">
+	>
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"*Record assessment of acute head injuries(en)">
+			use = <"*Used with SNC guidelines for management of acute head injuries in adults(en)">
+			misuse = <"*(en)">
+			copyright = <"*(en)">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Record assessment of acute head injuries">
+			use = <"Used with SNC guidelines for management of acute head injuries in adults">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"6DD2598E5EC606CB46B94F27DB84F5FB">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Head injury assessment
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					CLUSTER[at0002] occurrences matches {0..1} matches {	-- Clinical input
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0003] occurrences matches {0..1} matches {	-- Suspected loss of consciousness
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0004] occurrences matches {0..1} matches {	-- Repeated (≥2) vomiting
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0005] occurrences matches {0..1} matches {	-- Anticoagulation therapy or coagulation disorders
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0006] occurrences matches {0..1} matches {	-- Posttraumatic seizures
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {	-- Clinical signs of depressed or basal skull fracture
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {	-- Focal neurological deficits
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0031] occurrences matches {0..1} matches {	-- Shunt-treated hydrocephalus
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0032] occurrences matches {0..1} matches {	-- Antiplatelet medication
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0033] occurrences matches {0..1} matches {	-- Estimated time of injury
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0034, 	-- Less than 6 hours ago
+											at0035, 	-- 6-24 hours ago
+											at0036]	-- More than 24 hours ago
+										}
+									}
+								}
+							}
+							ELEMENT[at0039] occurrences matches {0..1} matches {	-- CT findings
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0040, 	-- Normal
+											at0041, 	-- Abnormal
+											at0042]	-- Not known
+										}
+									}
+								}
+							}
+							ELEMENT[at0043] occurrences matches {0..1} matches {	-- S100B result
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0044, 	-- <0.10 ug/L
+											at0045]	-- >=0.10 ug/L
+										}
+									}
+								}
+							}
+							ELEMENT[at0049] occurrences matches {0..1} matches {	-- Loss of consciousness >1 minute
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0050] occurrences matches {0..1} matches {	-- Posttraumatic amnesia
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0051] occurrences matches {0..1} matches {	-- Severe/worsening headache
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0052] occurrences matches {0..1} matches {	-- Abnormal behaviour
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0053] occurrences matches {0..1} matches {	-- Temporal/parietal scalp hematoma
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0054] occurrences matches {0..1} matches {	-- Irritability
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {	-- Head injury level
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0018, 	-- Minimal
+									at0019, 	-- Mild
+									at0020]	-- Moderate
+								}
+							}
+						}
+					}
+					ELEMENT[at0021] occurrences matches {0..1} matches {	-- Risk level
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0022, 	-- Low
+									at0023, 	-- Medium
+									at0024]	-- High
+								}
+							}
+						}
+					}
+					ELEMENT[at0026] occurrences matches {0..1} matches {	-- Recommendation
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0027, 	-- Computed Tomography (CT) Scanning
+									at0028, 	-- S100 calcium-binding protein B (S100B) Analysis
+									at0029, 	-- Admission
+									at0030, 	-- Discharge
+									at0055, 	-- Observation ≥ 12 hours
+									at0056]	-- Observation ≥ 6 hours
+								}
+							}
+						}
+					}
+					ELEMENT[at0037] occurrences matches {0..1} matches {	-- Mechanism of injury
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0038] occurrences matches {0..1} matches {	-- Further status
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0046] occurrences matches {0..1} matches {	-- Follow recommendation
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0047] occurrences matches {0..1} matches {	-- Reason for deviation
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0048] occurrences matches {0..1} matches {	-- Age >=18 years
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0057] occurrences matches {0..1} matches {	-- Recommendation description
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0058] occurrences matches {0..1} matches {	-- Clinician notes
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0059] occurrences matches {0..1} matches {	-- Clinical indication for CT scan
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0060] occurrences matches {0..1} matches {	-- Clinical summary
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0061] occurrences matches {0..1} matches {	-- Send clinical summary
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0062] occurrences matches {0..1} matches {	-- Order CT-scan
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0063] occurrences matches {0..1} matches {	-- Order S100B
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False; False}
+							}
+						}
+					}
+					ELEMENT[at0064] occurrences matches {0..1} matches {	-- Referral supplement
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Head injury assessment">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Clinical input">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Suspected loss of consciousness">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Repeated (≥2) vomiting">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Anticoagulation therapy or coagulation disorders">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Posttraumatic seizures">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Clinical signs of depressed or basal skull fracture">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Focal neurological deficits">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Head injury level">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Minimal">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Mild">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Moderate">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Risk level">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Low">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Medium">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"High">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Recommendation">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Computed Tomography (CT) Scanning">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"S100 calcium-binding protein B (S100B) Analysis">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Admission">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Discharge">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Shunt-treated hydrocephalus">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Antiplatelet medication">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Estimated time of injury">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Less than 6 hours ago">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"6-24 hours ago">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"More than 24 hours ago">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Mechanism of injury">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Further status">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"CT findings">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Normal">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Abnormal">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Not known">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"S100B result">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"<0.10 ug/L">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <">=0.10 ug/L">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Follow recommendation">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Reason for deviation">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Age >=18 years">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Loss of consciousness >1 minute">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Posttraumatic amnesia">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Severe/worsening headache">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Abnormal behaviour">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Temporal/parietal scalp hematoma">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Irritability">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Observation ≥ 12 hours">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Observation ≥ 6 hours">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Recommendation description">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Clinician notes">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Clinical indication for CT scan">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Clinical summary">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Send clinical summary">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Order CT-scan">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Order S100B">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Referral supplement">
+					description = <"*">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"Bedömning av skallskada">
+					description = <"*unknown(en)">
+				>
+				["at0001"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"Klinisk data">
+					description = <"**(en)">
+				>
+				["at0003"] = <
+					text = <"Misstänkt kortvarig medvetlöshet">
+					description = <"**(en)">
+				>
+				["at0004"] = <
+					text = <"Kräkningar (två eller fler)">
+					description = <"**(en)">
+				>
+				["at0005"] = <
+					text = <"Tar antikoagulantia/har koagulationsrubbning">
+					description = <"**(en)">
+				>
+				["at0006"] = <
+					text = <"Krampanfall efteråt">
+					description = <"**(en)">
+				>
+				["at0007"] = <
+					text = <"Tecken på skallfraktur">
+					description = <"**(en)">
+				>
+				["at0008"] = <
+					text = <"Neurologiska bortfall/retningstillstånd">
+					description = <"**(en)">
+				>
+				["at0017"] = <
+					text = <"Bedömning av skallskada">
+					description = <"**(en)">
+				>
+				["at0018"] = <
+					text = <"Minimal">
+					description = <"**(en)">
+				>
+				["at0019"] = <
+					text = <"Lätt">
+					description = <"**(en)">
+				>
+				["at0020"] = <
+					text = <"Medelsvår">
+					description = <"**(en)">
+				>
+				["at0021"] = <
+					text = <"Risk">
+					description = <"**(en)">
+				>
+				["at0022"] = <
+					text = <"Låg">
+					description = <"**(en)">
+				>
+				["at0023"] = <
+					text = <"Måttlig">
+					description = <"**(en)">
+				>
+				["at0024"] = <
+					text = <"Hög">
+					description = <"**(en)">
+				>
+				["at0026"] = <
+					text = <"Rekommendation">
+					description = <"**(en)">
+				>
+				["at0027"] = <
+					text = <"Datortomografi (DT) undersökning">
+					description = <"**(en)">
+				>
+				["at0028"] = <
+					text = <"S100B analys">
+					description = <"**(en)">
+				>
+				["at0029"] = <
+					text = <"Inläggning på sjukhus">
+					description = <"**(en)">
+				>
+				["at0030"] = <
+					text = <"Utskrivning från sjukhus">
+					description = <"**(en)">
+				>
+				["at0031"] = <
+					text = <"Hydrocefalus med shunt">
+					description = <"**(en)">
+				>
+				["at0032"] = <
+					text = <"Tar trombocythämmande läkemedel">
+					description = <"**(en)">
+				>
+				["at0033"] = <
+					text = <"Uppskattad tid sedan skada">
+					description = <"**(en)">
+				>
+				["at0034"] = <
+					text = <"Före 6 tim.">
+					description = <"**(en)">
+				>
+				["at0035"] = <
+					text = <"6-24 tim.">
+					description = <"**(en)">
+				>
+				["at0036"] = <
+					text = <"Efter 24 tim.">
+					description = <"**(en)">
+				>
+				["at0037"] = <
+					text = <"Anamnes">
+					description = <"**(en)">
+				>
+				["at0038"] = <
+					text = <"Ytterligare status">
+					description = <"**(en)">
+				>
+				["at0039"] = <
+					text = <"DT-undersökning">
+					description = <"**(en)">
+				>
+				["at0040"] = <
+					text = <"Normal">
+					description = <"**(en)">
+				>
+				["at0041"] = <
+					text = <"Avvikande">
+					description = <"**(en)">
+				>
+				["at0042"] = <
+					text = <"Vet ej">
+					description = <"**(en)">
+				>
+				["at0043"] = <
+					text = <"S100B resultat">
+					description = <"**(en)">
+				>
+				["at0044"] = <
+					text = <"<0,10 ug/L">
+					description = <"**(en)">
+				>
+				["at0045"] = <
+					text = <">=0,10 ug/L">
+					description = <"**(en)">
+				>
+				["at0046"] = <
+					text = <"Följ rekommendation">
+					description = <"**(en)">
+				>
+				["at0047"] = <
+					text = <"Orsak till avsteg">
+					description = <"**(en)">
+				>
+				["at0048"] = <
+					text = <"Ålder >=18 år">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Medvetslöshet >1 minut">
+					description = <"**(en)">
+				>
+				["at0050"] = <
+					text = <"Posttraumatisk amnesi">
+					description = <"**(en)">
+				>
+				["at0051"] = <
+					text = <"Svår/progressiv huvudvärk">
+					description = <"**(en)">
+				>
+				["at0052"] = <
+					text = <"Uppför sig onormalt">
+					description = <"**(en)">
+				>
+				["at0053"] = <
+					text = <"Temporal eller parietal skalphematom">
+					description = <"**(en)">
+				>
+				["at0054"] = <
+					text = <"Irritabel">
+					description = <"**(en)">
+				>
+				["at0055"] = <
+					text = <"Observation ≥ 12 timmar">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Observation ≥ 6 timmar">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Rekommendationsbeskrivning">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Kommentar till bedömning">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Frågeställning">
+					description = <"**(en)">
+				>
+				["at0060"] = <
+					text = <"Tilläggsinformation">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Skicka tilläggsinformation">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Beställ DT">
+					description = <"**">
+				>
+				["at0063"] = <
+					text = <"Beställ S100B">
+					description = <"**">
+				>
+				["at0064"] = <
+					text = <"*Referral supplement(en)">
+					description = <"**(en)">
+				>
+			>
+		>
+	>

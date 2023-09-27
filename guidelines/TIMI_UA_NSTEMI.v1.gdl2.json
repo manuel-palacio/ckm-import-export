@@ -1,0 +1,466 @@
+{
+  "id": "TIMI_UA_NSTEMI.v1",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2017-03-16",
+      "name": "Rosario Silva Sepulveda",
+      "organisation": "Cambio CDS",
+      "email": "rosario.silva.s@outlook.com"
+    },
+    "other_contributors": [
+      "Dennis Forslund",
+      "Jimmy Axelsson",
+      "Daniel Keszthelyi",
+      "Syeeda S Farruque"
+    ],
+    "lifecycle_state": "Author draft",
+    "details": {
+      "sv": {
+        "id": "sv",
+        "purpose": "TIMI Risk Score for Unstable Angina/NSTEMI används för att klassificera patienter med bröstsmärta; särskilt lämpade är patienter med bekräftad NSTEMI eller instabil angina pectoris.",
+        "keywords": [
+          "instabil angina",
+          "NSTEMI",
+          "TIMI Risk Score for Unstable Angina/NSTEMI",
+          "non ST elevation myocardial infarction",
+          "kardiologi"
+        ],
+        "use": "Instrumentet baseras på sju kriterier:\r\n\r\nÅlder ≥ 65\t                                               \r\n≥ 3 riskfaktorer för kranskärlssjukdom*\t                \r\nKänd kranskärlssjukdom (stenos ≥ 50%)\t                \r\nASA-bruk senaste sju dagarna\t                   \r\nSvår angina (≥ 2 episoder per dygn)       \r\nEKG ST-förändringar ≥ 0.5mm\t                \r\nFörhöjda hjärtmarkörer\t                  \r\n\r\n*Även med 0/1 riskfaktorer, är detta kriterium ej av tillräcklig betydelse för att säkert kunna skicka hem patienten från sjukhuset.\r\n\r\nMaximal poäng uppgår till 7p och resultatet tolkas med avseende 14-dagars \\\"all-cause mortality\\\" enligt:\r\n\r\n0-1p : 5% risk \r\n2p: 8% risk \r\n3p: 13% risk \r\n4p: 20% risk\r\n5p: 26% risk \r\n≥ 6p: 41% risk",
+        "misuse": " Instrumentet är endast avsett att understödja utredningen och ska ej ensamt ligga till grund för beslutsfattande.",
+        "copyright": "© Cambio Healthcare Systems"
+      },
+      "en": {
+        "id": "en",
+        "purpose": "The TIMI Risk Score for Unstable Angina/NSTEMI helps to grade patients with anginal symptoms, but is better-suited for patients with confirmed NSTEMI or unstable angina.",
+        "keywords": [
+          "unstable angina",
+          "NSTEMI",
+          "TIMI Risk Score for Unstable Angina/NSTEMI",
+          "non ST elevation myocardial infarction",
+          "cardiology"
+        ],
+        "use": "Seven criteria are used to score the risk:\r\n\r\nCriteria\t                                                     Value\r\n\r\nAge ≥ 65\t                                                +1\r\n≥ 3 CAD Risk Factors*\t                   +1\r\nKnown CAD (Stenosis ≥ 50%)\t                   +1\r\nASA Use in Past 7 days\t                   +1\r\nSevere angina (≥ 2 episodes in 24 hrs)         +1\r\nEKG ST changes ≥ 0.5mm\t                   +1\r\nPositive Cardiac Marker\t                   +1\r\nThe scores range from 0 to 7\r\n\r\nRisk grading follows:\r\n\r\n0-1 points: 5% risk at 14 days of all-cause mortality\r\n2 points: 8% risk at 14 days of all-cause mortality\r\n3 points: 13% risk at 14 days of all-cause mortality\r\n4 points: 20% risk at 14 days of all-cause mortality\r\n5 points: 26% risk at 14 days of all-cause mortality\r\n≥ 6 points: 41% risk at 14 days of all-cause mortality",
+        "misuse": "Even with a 0/1 point score, risk factors are not low enough to safely allow discharge from hospital. Thus do not use this tool on its own but verify the risk with another tool and/or your organisation's practices.",
+        "copyright": "© Cambio CDS"
+      }
+    },
+    "other_details": {
+      "references": "Antman EM, Cohen M, et. al. The TIMI risk score for unstable angina/non-ST elevation MI: A method for prognostication and therapeutic decision making. JAMA. 2000 Aug 16;284(7):835-42.\n\nPollack, C. V., Sites, F. D., Shofer, F. S., Sease, K. L. and Hollander, J. E. (2006), Application of the TIMI Risk Score for Unstable Angina and Non-ST Elevation Acute Coronary Syndrome to an Unselected Emergency Department Chest Pain Population. Academic Emergency Medicine, 13: 13–18. doi:10.1197/j.aem.2005.06.031"
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0053": {
+        "id": "gt0053",
+        "model_id": "openEHR-EHR-OBSERVATION.timi_risk_ua_nstemi.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.timi_risk_ua_nstemi.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0054": {
+            "id": "gt0054",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0022]"
+          }
+        }
+      },
+      "gt0056": {
+        "id": "gt0056",
+        "model_id": "openEHR-EHR-EVALUATION.timi_risk_ua_nstemi_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.timi_risk_ua_nstemi_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0057": {
+            "id": "gt0057",
+            "path": "/data[at0001]/items[at0010]"
+          }
+        }
+      },
+      "gt0059": {
+        "id": "gt0059",
+        "model_id": "openEHR-EHR-OBSERVATION.timi_risk_ua_nstemi.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.timi_risk_ua_nstemi.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0060": {
+            "id": "gt0060",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0023]"
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0005]"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0006]"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0007]"
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0008]"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0009]"
+          }
+        }
+      }
+    },
+    "rules": {
+      "gt0058": {
+        "id": "gt0058",
+        "priority": 8,
+        "when": [
+          "$gt0060|Age|!=null",
+          "$gt0061|CAD risk factors|!=null",
+          "$gt0062|Known CAD|!=null",
+          "$gt0063|ASA use in past 7 days|!=null",
+          "$gt0064|Severe angina episodes|!=null",
+          "$gt0065|EKG ST changes|!=null",
+          "$gt0066|Positive Cardiac Marker|!=null"
+        ],
+        "then": [
+          "$gt0054|Total score|.magnitude=$gt0060.value+$gt0061.value+$gt0062.value+$gt0063.value+$gt0064.value+$gt0065.value+$gt0066.value"
+        ]
+      },
+      "gt0074": {
+        "id": "gt0074",
+        "priority": 7,
+        "when": [
+          "$gt0054|Total score|>=0",
+          "$gt0054|Total score|<=1"
+        ],
+        "then": [
+          "$gt0067|Interpretation text|=$gt0068.term"
+        ]
+      },
+      "gt0075": {
+        "id": "gt0075",
+        "priority": 6,
+        "when": [
+          "$gt0054|Total score|==2"
+        ],
+        "then": [
+          "$gt0067|Interpretation text|=$gt0069.term"
+        ]
+      },
+      "gt0076": {
+        "id": "gt0076",
+        "priority": 5,
+        "when": [
+          "$gt0054|Total score|==3"
+        ],
+        "then": [
+          "$gt0067|Interpretation text|=$gt0070.term"
+        ]
+      },
+      "gt0077": {
+        "id": "gt0077",
+        "priority": 4,
+        "when": [
+          "$gt0054|Total score|==4"
+        ],
+        "then": [
+          "$gt0067|Interpretation text|=$gt0071.term"
+        ]
+      },
+      "gt0078": {
+        "id": "gt0078",
+        "priority": 3,
+        "when": [
+          "$gt0054|Total score|==5"
+        ],
+        "then": [
+          "$gt0067|Interpretation text|=$gt0072.term"
+        ]
+      },
+      "gt0079": {
+        "id": "gt0079",
+        "priority": 2,
+        "when": [
+          "$gt0054|Total score|>=6",
+          "$gt0054|Total score|<=7"
+        ],
+        "then": [
+          "$gt0067|Interpretation text|=$gt0073.term"
+        ]
+      },
+      "gt0080": {
+        "id": "gt0080",
+        "priority": 1,
+        "when": [
+          "$gt0054|Total score|!=null"
+        ],
+        "then": [
+          "$gt0057|Interpretation|=$gt0067"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "sv": {
+        "id": "sv",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "TIMI Risk Score for UA/NSTEMI",
+            "description": "TIMI Risk Score for Unstable Angina/NSTEMI är det mest välkända instrumentet för riskskattning av bröstsmärta."
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "*(en) Total score",
+            "description": "*(en) Sum of individual scores: range 0-7"
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "*(en) Interpretation",
+            "description": ""
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "*(en) Calculation rule",
+            "description": ""
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "*(en) Age",
+            "description": ""
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "*(en) CAD risk factors",
+            "description": "*(en) Risk factors for Coronary Artery Disease (CAD): \n- Family history of CAD,\n- Hypertension,\n- Hypercholesterolemia,\n- Diabetes,\n- Current Smoker."
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "*(en) Known CAD",
+            "description": ""
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "*(en) ASA use in past 7 days",
+            "description": ""
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "*(en) Severe angina episodes",
+            "description": ""
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "*(en) EKG ST changes",
+            "description": ""
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "*(en) Positive Cardiac Marker",
+            "description": "*(en) *"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "*(en) Interpretation text",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "*(en) 5% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "*(en) 8% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "*(en) 13% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "*(en) 20% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "*(en) 26% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "*(en) 41% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "*(en) Total Score 0-1 rule",
+            "description": ""
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "*(en) Total score == 1 rule",
+            "description": ""
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "*(en) Total score == 3 rule",
+            "description": ""
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "*(en) Total score == 4 rule",
+            "description": ""
+          },
+          "gt0078": {
+            "id": "gt0078",
+            "text": "*(en) Total score == 5 rule",
+            "description": ""
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "text": "*(en) Total score >= 6 rule",
+            "description": ""
+          },
+          "gt0080": {
+            "id": "gt0080",
+            "text": "*(en) Interpretation rule",
+            "description": ""
+          }
+        }
+      },
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "TIMI UA NSTEMI",
+            "description": "The TIMI Risk Score for Unstable Angina/NSTEMI is the best known chest pain risk score tool."
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "Total score",
+            "description": "Sum of individual scores: range 0-7"
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "Interpretation",
+            "description": ""
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "Calculation rule"
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Age",
+            "description": ""
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "CAD risk factors",
+            "description": "Risk factors for Coronary Artery Disease (CAD): \n- Family history of CAD,\n- Hypertension,\n- Hypercholesterolemia,\n- Diabetes,\n- Current Smoker."
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "Known CAD",
+            "description": ""
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "ASA use in past 7 days",
+            "description": ""
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Severe angina episodes",
+            "description": ""
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "EKG ST changes",
+            "description": ""
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "Positive Cardiac Marker",
+            "description": "*"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Interpretation text",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "5% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "8% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "13% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "20% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "26% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "41% risk at 14 days of all-cause mortality",
+            "description": ""
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "Total score == 0-1 rule"
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "Total score == 2 rule"
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "Total score == 3 rule"
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "Total score == 4 rule"
+          },
+          "gt0078": {
+            "id": "gt0078",
+            "text": "Total score == 5 rule"
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "text": "Total score >= 6 rule"
+          },
+          "gt0080": {
+            "id": "gt0080",
+            "text": "Interpretation rule"
+          }
+        }
+      }
+    }
+  }
+}

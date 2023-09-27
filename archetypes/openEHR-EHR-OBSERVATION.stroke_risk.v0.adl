@@ -1,0 +1,104 @@
+archetype (adl_version=1.4; uid=4f654308-5ddb-47f7-a8ce-02e5f4262aa9)
+	openEHR-EHR-OBSERVATION.stroke_risk.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2021-07-06">
+		["name"] = <"Rong Chen">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"rong.chen@cambio.se">
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Konstantinos Kalliamvakos, Cambio CDS, Stockholm", ...>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the risk for a patient to suffer a stroke.">
+			keywords = <"stroke risk, stroke, stroke prevention, CHA2DS2-VASc", ...>
+			copyright = <"© Cambio CDS">
+			use = <"Use to record the risk for a patient to suffer a stroke based on the CHA2DS2-VASc score.">
+			misuse = <"Do not use in patients with no diagnosis of atrial fibrillation.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Lip GY, Frison L, Halperin JL, Lane DA. Identifying patients at high risk for stroke despite anticoagulation: a comparison of contemporary stroke risk stratification schemes in an anticoagulated atrial fibrillation cohort. Stroke. 2010 Dec;41(12):2731-8. doi: 10.1161/STROKEAHA.110.590257. Epub 2010 Oct 21. PMID: 20966417.">
+		["current_contact"] = <"Rong Chen, Cambio CDS, rong.chen@cambio.se">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"678f113dfe9792b05ab5810d33ee812a">
+		["build_uid"] = <"fcc1923f-1593-44cb-a331-9cac3ff4ccef">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Stroke risk
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Risk for stroke
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::507]>
+												list = <
+													["1"] = <
+														units = <"%">
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0004] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Stroke risk">
+					description = <"The percentage of risk for suffering a stroke.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Risk for stroke">
+					description = <"">
+				>
+			>
+		>
+	>

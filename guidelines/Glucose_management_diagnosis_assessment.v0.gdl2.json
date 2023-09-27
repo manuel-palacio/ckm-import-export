@@ -1,0 +1,207 @@
+{
+  "id": "Glucose_management_diagnosis_assessment.v0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2022-10-20",
+      "name": "Konstantinos Kalliamvakos",
+      "organisation": "Cambio CDS",
+      "email": "konstantinos.kalliamvakos@cambio.se"
+    },
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "misuse": "Not for making a diagnosis of type 2 diabetes."
+      }
+    },
+    "other_details": {
+      "references": "Snorgaard OD, Drivsholm TO, Breum L. Farmakologisk behandling af type 2 diabetes—mål og algoritmer—2018.\n\nSnorgaard O, Mølsted S, Dolsø M, Poulsen GM, Drivsholm TB, Glenner M, Lose H, Schack-Nielsen L. Forløbsprogram for Type 2 Diabetes: Hospitaler, almen praksis og kommunerne i Region Hoevdstaden."
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0004": {
+        "id": "gt0004",
+        "model_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+        "template_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0006": {
+            "id": "gt0006",
+            "path": "/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002]"
+          }
+        },
+        "predicates": [
+          "/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002] is_a local::gt0008|Heart failure|"
+        ]
+      },
+      "gt0014": {
+        "id": "gt0014",
+        "model_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+        "template_id": "openEHR-EHR-EVALUATION.problem_diagnosis.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0016": {
+            "id": "gt0016",
+            "path": "/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002]"
+          }
+        },
+        "predicates": [
+          "/items[openEHR-EHR-EVALUATION.problem_diagnosis.v1]/data[at0001]/items[at0002] is_a local::gt0018|Cardiovascular disease diagnosis code|"
+        ]
+      },
+      "gt0039": {
+        "id": "gt0039",
+        "model_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0040": {
+            "id": "gt0040",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0002]/items[at0008]"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0002]/items[at0009]"
+          }
+        }
+      }
+    },
+    "default_actions": [
+      "$gt0040|Heart failure|=local::at0022|No|",
+      "$gt0041|Cardiovascular disease|=local::at0022|No|"
+    ],
+    "rules": {
+      "gt0044": {
+        "id": "gt0044",
+        "priority": 2,
+        "when": [
+          "$gt0006|heart-failure|!=null"
+        ],
+        "then": [
+          "$gt0040|Heart failure|=local::at0021|Yes|"
+        ]
+      },
+      "gt0045": {
+        "id": "gt0045",
+        "priority": 1,
+        "when": [
+          "$gt0016|cardiovascular-disease|!=null"
+        ],
+        "then": [
+          "$gt0041|Cardiovascular disease|=local::at0021|Yes|"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Glucose management diagnosis assessment",
+            "description": ""
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Heart failure diagnosis",
+            "description": ""
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Heart failure diagnosis code",
+            "description": ""
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Cardiovascular disease diagnosis",
+            "description": ""
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Cardiovascular disease diagnosis code",
+            "description": ""
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Heart failure",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "Cardiovascular disease",
+            "description": ""
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "set heart failure exists"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "set cvd exists"
+          }
+        }
+      }
+    },
+    "term_bindings": {
+      "ICD-10-SE": {
+        "id": "ICD-10-SE",
+        "bindings": {
+          "gt0008": {
+            "codes": [
+              "ICD-10-SE::DI501",
+              "ICD-10-SE::DI110"
+            ]
+          },
+          "gt0018": {
+            "codes": [
+              "ICD-10-SE::I210",
+              "ICD-10-SE::I211",
+              "ICD-10-SE::I212",
+              "ICD-10-SE::I213",
+              "ICD-10-SE::I214",
+              "ICD-10-SE::I219",
+              "ICD-10-SE::I252",
+              "ICD-10-SE::I630",
+              "ICD-10-SE::I631",
+              "ICD-10-SE::I632",
+              "ICD-10-SE::I633",
+              "ICD-10-SE::I634",
+              "ICD-10-SE::I635",
+              "ICD-10-SE::I649",
+              "ICD-10-SE::I208",
+              "ICD-10-SE::I209",
+              "ICD-10-SE::I702",
+              "ICD-10-SE::I678",
+              "ICD-10-SE::I679",
+              "ICD-10-SE::I480",
+              "ICD-10-SE::I481",
+              "ICD-10-SE::I482",
+              "ICD-10-SE::I483",
+              "ICD-10-SE::I489",
+              "ICD-10-SE::I471",
+              "ICD-10-SE::I455B",
+              "ICD-10-SE::I441D",
+              "ICD-10-SE::I441E",
+              "ICD-10-SE::I442",
+              "ICD-10-SE::I443",
+              "ICD-10-SE::I109",
+              "ICD-10-SE::I150",
+              "ICD-10-SE::I151",
+              "ICD-10-SE::I152",
+              "ICD-10-SE::I158",
+              "ICD-10-SE::I159"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

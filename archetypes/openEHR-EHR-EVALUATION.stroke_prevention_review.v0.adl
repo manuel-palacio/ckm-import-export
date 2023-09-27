@@ -1,0 +1,235 @@
+archetype (adl_version=1.4; uid=bfeb48ec-24ad-4783-945c-e46cd216a04a)
+	openEHR-EHR-EVALUATION.stroke_prevention_review.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2022-09-15">
+		["name"] = <"Konstantinos Kalliamvakos">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"konstantinos.kalliamvakos@cambio.se">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To document a clinical review of stroke prevention treatment in patients with atrial fibrillation.">
+			keywords = <"atrial fibrillation","stroke","CHA2DS2-VASc">
+			copyright = <"© Cambio CDS">
+			use = <"Use for recording a documented decision when a CDS recommendation for stroke prevention has been assessed.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"b114a140a7a77686a748dd8754fd3ab8">
+		["build_uid"] = <"9841976d-7372-38e9-9059-c6bd8a5ad185">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Stroke prevention review
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Follow CDS recommendation
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- No
+									at0004,    -- Yes
+									at0005]    -- Postpone
+								}
+							}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Reason for deviation
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0007,    -- Any contraindication
+									at0008,    -- Patient preference
+									at0009]    -- Other
+								}
+							}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Reason for deviation, specify
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Postpone decision
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0012,    -- 1 day
+									at0013,    -- 7 days
+									at0014,    -- 30 days
+									at0015]    -- 365 days
+								}
+							}
+						}
+					}
+					ELEMENT[at0016] occurrences matches {0..1} matches {    -- Delay
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::128]>
+								list = <
+									["1"] = <
+										units = <"d">
+										magnitude = <|0.0..365.0|>
+										precision = <|0|>
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {    -- Reason for delayed decision
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0018,    -- Patient related
+									at0019,    -- Lab tests needed
+									at0020,    -- Referral to another department
+									at0021]    -- Other reason
+								}
+							}
+						}
+					}
+					ELEMENT[at0022] occurrences matches {0..1} matches {    -- Reason for delayed decision, specify
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0023] occurrences matches {0..1} matches {    -- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0024] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Stroke prevention review">
+					description = <"Documentation of the decision after a CDS recommendation for stroke prevention.">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Follow CDS recommendation">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Yes">
+					description = <"">
+				>
+                ["at0005"] = <
+					text = <"Postpone">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Reason for deviation">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Any contraindication">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Patient preference">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Other">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Reason for deviation, specify">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Postpone decision">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"1 day">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"7 days">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"30 days">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"365 days">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Delay">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Reason for delayed decision">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Patient related">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Lab tests needed">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Referral to another department">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Other reason">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Reason for delayed decision, specify">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Comment">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

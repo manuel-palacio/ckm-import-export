@@ -1,0 +1,104 @@
+archetype (adl_version=1.4; uid=5dd4affe-c0f0-428f-a3ee-55e92d56ca2d)
+	openEHR-EHR-OBSERVATION.test_terminology_codes.v0
+
+concept
+	[at0000]	-- test_terminology_codes
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+		["date"] = <"2021-08-24">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"test">
+			use = <"test">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"NotSet">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_namespace"] = <"org.openehr">
+		["original_namespace"] = <"org.openehr">
+		["build_uid"] = <"18ef74f4-620e-36a3-b0ad-3c0c16df5c3b">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["MD5-CAM-1.0.1"] = <"292D58822233842D6E5BFFC99BA743F2">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- test_terminology_codes
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Execution
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0006, 	-- It worked!
+													at0007]	-- It didn't work :(
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0004] matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"test_terminology_codes">
+					description = <"test_terminology_codes">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Execution">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"It worked!">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"It didn't work :(">
+					description = <"*">
+				>
+			>
+		>
+	>

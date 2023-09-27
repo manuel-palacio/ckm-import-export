@@ -1,0 +1,642 @@
+archetype (adl_version=1.4; uid=da1e451d-3ea4-4597-9dad-fd7f00bfe736)
+	openEHR-EHR-OBSERVATION.roag.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2022-10-13">
+		["name"] = <"Rashmi Damodaran">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"rashmi.damodaran@cambio.se">
+	>
+	lifecycle_state = <"unmanaged">
+	other_contributors = <"Eneimi Allwell-Brown", ...>
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"2bd1315e6336a76540fa2d2d76cf173a">
+		["build_uid"] = <"9faf29c0-5603-4bc5-bb30-4b9d27b06762">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Revised Oral Assessment Guide - Jönköping (ROAG-J)
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0004] occurrences matches {0..1} matches {    -- Risk assessment
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {    -- Voice
+												value matches {
+													0|[local::at0014],
+													1|[local::at0015],
+													2|[local::at0016],
+													3|[local::at0017]
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {    -- Lips
+												value matches {
+													1|[local::at0018],
+													2|[local::at0019],
+													3|[local::at0020]
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {    -- Mucous Membrane
+												value matches {
+													1|[local::at0021],
+													2|[local::at0022],
+													3|[local::at0023]
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {    -- Tongue
+												value matches {
+													1|[local::at0024],
+													2|[local::at0025],
+													3|[local::at0026]
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {    -- Gums
+												value matches {
+													0|[local::at0027],
+													1|[local::at0028],
+													2|[local::at0029],
+													3|[local::at0030]
+												}
+											}
+											ELEMENT[at0010] occurrences matches {0..1} matches {    -- Teeth/dentures
+												value matches {
+													0|[local::at0031],
+													1|[local::at0032],
+													2|[local::at0033],
+													3|[local::at0034]
+												}
+											}
+											ELEMENT[at0011] occurrences matches {0..1} matches {    -- Prosthesis
+												value matches {
+													0|[local::at0035],
+													1|[local::at0036],
+													2|[local::at0037],
+													3|[local::at0038]
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {    -- Saliva
+												value matches {
+													1|[local::at0039],
+													2|[local::at0040],
+													3|[local::at0041]
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {    -- Swallowing
+												value matches {
+													0|[local::at0042],
+													1|[local::at0043],
+													2|[local::at0044],
+													3|[local::at0045]
+												}
+											}
+										}
+									}
+									CLUSTER[at0046] occurrences matches {0..1} matches {    -- Causes
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0047] occurrences matches {0..1} matches {    -- Pain in the oral cavity during or between meals
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0048] occurrences matches {0..1} matches {    -- Impaired sensory capacity in the oral cavity
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0049] occurrences matches {0..1} matches {    -- Impaired mouth and facial muscles
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0050] occurrences matches {0..1} matches {    -- Impaired function in hand or arm or impaired general condition that worsens oral hygiene
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0051] occurrences matches {0..1} matches {    -- Impaired ability to understand information and instruction
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..1} matches {    -- Short intervals between meals
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0053] occurrences matches {0..1} matches {    -- Other cause
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+										}
+									}
+									ELEMENT[at0054] occurrences matches {0..1} matches {    -- Number of 2s
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0055] occurrences matches {0..1} matches {    -- Number of 3s
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Revised Oral Assessment Guide - Jönköping (ROAG-J)">
+					description = <"roag">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Risk assessment">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Voice">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Lips">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Mucous Membrane">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Tongue">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Gums">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Teeth/dentures">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Prosthesis">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Saliva">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Swallowing">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Not relevant for assessment">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Normal">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Deep or rasping">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Difficulty talking or painful">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Smooth and pink">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Dry or cracked, and/or angular cheilitis">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Ulcerated or bleeding">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Pink and moist">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Dry and/or change in colour, red, blue-red or white">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Very red, or thick, white coating or blisters /ulceration with or without bleeding">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Pink, moist,  papillae present">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Dry, no papillae present or change in colour (red or white)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Very thick white coating; blisters or ulceration">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"No gums present, only mucous membrane">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Pink and firm">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Oedematous and/or red">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Bleeding easily under finger pressure">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"No teeth">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Clean, no debris">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Plaque or debris in local areas">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Plaque or debris generalised">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Has no prosthesis">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Clean and functions properly">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Plaque or debris">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Not used or malfunctioning">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"No friction">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Slightly increased friction">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Significantly increased friction">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Not relevant for assessment">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Normal swallow">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Some pain or difficulty on swallowing">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"Unable to swallow">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Causes">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Pain in the oral cavity during or between meals">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Impaired sensory capacity in the oral cavity">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Impaired mouth and facial muscles">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Impaired function in hand or arm or impaired general condition that worsens oral hygiene">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"Impaired ability to understand information and instruction">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Short intervals between meals">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Other cause">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Number of 2s">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"Number of 3s">
+					description = <"">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"Revised Oral Assessment Guide - Jönköping (ROAG-J)">
+					description = <"ROAG (Revised Oral Assessment Guide) är ett standardiserat enkelt riskbedömningsinstrument för att förbättra munhälsan hos äldre. Bedömningen tar bara 3-4 minuter att utföra. ROAG beskriver tillståndet inom nio områden i munnen, från friskt till sjukt (gradering 1-3). Områden bedömas är:  Röst, Läppar, Munslemhinna, Tunga, Tandkött, Tänder, Proteser, Saliv, Sväljning. Vid en eller flera 2:or ska åtgärder göras av personal på enheten. Om bedömningen även visar 3:or påbörjar personalen åtgärder och ska dessutom kontakta tandläkare.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Träd">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Riskbedömning">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Röst">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Läppar">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Munslemhinnor">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Tunga">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Tandkött">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Tänder">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Protes">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Saliv">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Sväljning">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Ej aktuellt att bedöma">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Normal">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Torr, hes, smackande">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Svårt att tala">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Lena, ljusröda, fuktiga">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Röda, torra eller områden med färgförändring eller beläggning">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Sår, med eller utan blödning, blåsor">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Ljusröd, fuktig med papiller">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Inga papiller, röd torr, beläggning">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Sår med eller utan blödning, blåsor">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Ljusröd, fuktig med papiller">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Inga papiller, röd torr, beläggning">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Sår med eller utan blödning, blåsor">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Har inget tandkött, har endast munslemhinna">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Ljusrött och fast">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Svullet, rodnat">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Spontan blödning">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Har inga egna tänder">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Rena, ingen synlig beläggning eller matrester">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Beläggning eller matrester lokalt">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Beläggning, matrester generellt eller trasiga tänder">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Har ingen protes">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Ren och fungerar">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Beläggning eller matrester">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Används ej eller dåligt fungerande">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Glider lätt">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Glider trögt">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Glider inte alls">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Ej aktuellt att bedöma">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Obehindrad sväljning">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Obetydliga sväljproblem">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"Uttalade sväljproblem">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Orsaker">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Har ont i munnen vid eller mellan måltid">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Nedsatt känsel i munnen">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Nedsatt funktion i mun och ansiktsmuskulatur">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Nedsatt funktion i hand eller arm eller nedsatt allmäntillstånd som försvårar munvård">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"Nedsatt förmåga att förstå information och instruktion">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Korta intervaller mellan måltider">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Annan orsak">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Antal 2:or">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"Antal 3:or">
+					description = <"">
+				>
+			>
+		>
+	>

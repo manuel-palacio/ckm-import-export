@@ -1,0 +1,273 @@
+{
+  "id": "CPOT.v1",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2017-11-04",
+      "name": "Syeeda S Farruque",
+      "organisation": "Cambio Healthcare Systems",
+      "email": "models@cambiocds.com"
+    },
+    "other_contributors": [
+      "Aulia Zahrina Qashri"
+    ],
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "The Critical Care Pain Observation Tool (CPOT) provides a method to rate pain among critically ill patients using clinical observations alone and is useful even with intubated or sedated patients due to using facial expressions, movement and interaction with ventilated breathing. ",
+        "keywords": [
+          "Critical Care Pain Observation Tool",
+          "ventilated"
+        ],
+        "use": "The total score is the sum of the individual scores, with a range of 0 to 8 and separates intubated patients from extubated patients.\n\nManagement:\nFor those patients with a CPOT score of ≤ 2:\n\n•\tThere is likely minimal to no pain present. Consider re-evaluation in the future.\n\nFor those patients with a CPOT score of >2:\n\n•\tThere is an unacceptable level of pain. Consider further or alternative analgesia and sedation.",
+        "misuse": "Do not rely on one measurement. Regular re-evaluation is crucial to appropriate pain management.",
+        "copyright": "© Cambio Healthcare Systems"
+      }
+    },
+    "other_details": {
+      "references": "Ref. 1: Gélinas C, Fortier M, Viens C, Fillion L, Puntillo KA. Pain assessment and management in critically ill intubated patients: a retrospective study. Am J Crit Care. 2004;13:126-135. "
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.critical_care_pain_observation_tool.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.critical_care_pain_observation_tool.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0005]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0006]"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0007]"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0008]"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0011]"
+          }
+        }
+      },
+      "gt0009": {
+        "id": "gt0009",
+        "model_id": "openEHR-EHR-OBSERVATION.critical_care_pain_observation_tool.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.critical_care_pain_observation_tool.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0016": {
+            "id": "gt0016",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0009]"
+          }
+        }
+      },
+      "gt0027": {
+        "id": "gt0027",
+        "model_id": "openEHR-EHR-EVALUATION.critical_care_pain_observation_tool_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.critical_care_pain_observation_tool_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0028": {
+            "id": "gt0028",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "path": "/data[at0001]/items[at0003]"
+          }
+        }
+      }
+    },
+    "rules": {
+      "gt0024": {
+        "id": "gt0024",
+        "priority": 5,
+        "when": [
+          "$gt0003|Patient intubated|==1|local::at0014|Yes|",
+          "$gt0004|Facial expression|!=null",
+          "$gt0005|Body movements|!=null",
+          "$gt0006|Muscle Tension|!=null",
+          "$gt0007|Compliance with the ventilator |!=null"
+        ],
+        "then": [
+          "$gt0016|Total score|.magnitude=$gt0004.value+$gt0005.value+$gt0006.value+$gt0007.value"
+        ]
+      },
+      "gt0025": {
+        "id": "gt0025",
+        "priority": 4,
+        "when": [
+          "$gt0003|Patient intubated|!=null",
+          "$gt0003|Patient intubated|==0|local::at0013|No|",
+          "$gt0004|Facial expression|!=null",
+          "$gt0005|Body movements|!=null",
+          "$gt0006|Muscle Tension|!=null",
+          "$gt0008|Vocalization|!=null"
+        ],
+        "then": [
+          "$gt0016|Total score|.magnitude=$gt0004.value+$gt0005.value+$gt0006.value+$gt0008.value"
+        ]
+      },
+      "gt0030": {
+        "id": "gt0030",
+        "priority": 3,
+        "when": [
+          "$gt0016|Total score|<=2"
+        ],
+        "then": [
+          "$gt0033|Interpretation text|=$gt0035.term",
+          "$gt0034|Management Text|=$gt0036.term"
+        ]
+      },
+      "gt0031": {
+        "id": "gt0031",
+        "priority": 2,
+        "when": [
+          "$gt0016|Total score|>2"
+        ],
+        "then": [
+          "$gt0033|Interpretation text|=$gt0037.term",
+          "$gt0034|Management Text|=$gt0038.term"
+        ]
+      },
+      "gt0032": {
+        "id": "gt0032",
+        "priority": 1,
+        "when": [
+          "(fired($gt0030))||(fired($gt0031))"
+        ],
+        "then": [
+          "$gt0028|Interpretation|=$gt0033",
+          "$gt0029|Management|=$gt0034"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Critical care pain observation tool",
+            "description": "The Critical Care Pain Observation Tool (CPOT) provides a method to rate pain among critically ill patients using clinical observations alone"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Patient intubated",
+            "description": "The score is summed differently depending on whether the patient was intubated or not"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Facial expression",
+            "description": "Facial expression"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Body movements",
+            "description": "Body movements"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Muscle Tension",
+            "description": "Muscle Tension \n(Evaluation by passive flexion and \nextension of upper extremities)\n"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Compliance with the ventilator ",
+            "description": "Compliance with the ventilator \n(Intubated patients only)"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Vocalization",
+            "description": "Vocalization \n(Extubated patients only)\n"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Total score",
+            "description": "If the patient was intubated, the score excludes the extubated question within the score"
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Calculate Score if intubated"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Calculate Score if extubated"
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Interpretation",
+            "description": "Score interpretation"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "Management",
+            "description": "Management"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "Set interpretation re-evaluation"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "Set interpretation treat with analgesia"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "Interpretation Output"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Interpretation text",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Management Text",
+            "description": ""
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "There is likely minimal to no pain present.",
+            "description": ""
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Consider re-evaluation in the future.",
+            "description": ""
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "There is an unacceptable level of pain.",
+            "description": ""
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Consider further or alternative analgesia and sedation.",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

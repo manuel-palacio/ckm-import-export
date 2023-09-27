@@ -1,0 +1,2836 @@
+{
+  "id": "T2D_prescribing_observations_review.v1.0.0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2019-11-29",
+      "name": "Eneimi Allwell-Brown",
+      "organisation": "Cambio CDS",
+      "email": "eneim.allwell-brown@cambio.se"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "en": {
+        "id": "en",
+        "copyright": "Cambio CDS"
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0090]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0092]"
+          }
+        }
+      },
+      "gt0035": {
+        "id": "gt0035",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0036": {
+            "id": "gt0036",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0056]"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0057]"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0058]"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0059]"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0060]"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0061]"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0062]"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0063]"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0064]"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0088]"
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0065]"
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0073]"
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0074]"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0078]"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0075]"
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0115]"
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0116]"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0117]"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0118]"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0119]"
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0120]"
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0089]"
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0079]"
+          },
+          "gt0088": {
+            "id": "gt0088",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0112]"
+          },
+          "gt0089": {
+            "id": "gt0089",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0113]"
+          },
+          "gt0091": {
+            "id": "gt0091",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0114]"
+          },
+          "gt0160": {
+            "id": "gt0160",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0039]"
+          },
+          "gt0161": {
+            "id": "gt0161",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0045]"
+          },
+          "gt0162": {
+            "id": "gt0162",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0040]"
+          },
+          "gt0163": {
+            "id": "gt0163",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0046]"
+          },
+          "gt0164": {
+            "id": "gt0164",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0043]"
+          },
+          "gt0165": {
+            "id": "gt0165",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0049]"
+          },
+          "gt0166": {
+            "id": "gt0166",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0038]"
+          },
+          "gt0167": {
+            "id": "gt0167",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0006]"
+          },
+          "gt0168": {
+            "id": "gt0168",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0090]"
+          },
+          "gt0169": {
+            "id": "gt0169",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0091]"
+          },
+          "gt0170": {
+            "id": "gt0170",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0092]"
+          },
+          "gt0171": {
+            "id": "gt0171",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0093]"
+          },
+          "gt0172": {
+            "id": "gt0172",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0044]"
+          },
+          "gt0173": {
+            "id": "gt0173",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0050]"
+          },
+          "gt0174": {
+            "id": "gt0174",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0015]"
+          },
+          "gt0175": {
+            "id": "gt0175",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0041]"
+          },
+          "gt0176": {
+            "id": "gt0176",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0047]"
+          },
+          "gt0177": {
+            "id": "gt0177",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0017]/items[at0018]"
+          },
+          "gt0178": {
+            "id": "gt0178",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0017]/items[at0019]"
+          },
+          "gt0179": {
+            "id": "gt0179",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0017]/items[at0020]"
+          },
+          "gt0180": {
+            "id": "gt0180",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0077]"
+          },
+          "gt0181": {
+            "id": "gt0182",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0076]"
+          }
+        }
+      },
+      "gt0200": {
+        "id": "gt0200",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0201": {
+            "id": "gt0201",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0039]"
+          },
+          "gt0202": {
+            "id": "gt0202",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0040]"
+          },
+          "gt0203": {
+            "id": "gt0203",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0041]"
+          },
+          "gt0204": {
+            "id": "gt0204",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0044]"
+          },
+          "gt0205": {
+            "id": "gt0205",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0090]"
+          },
+          "gt0206": {
+            "id": "gt0206",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0092]"
+          },
+          "gt0207": {
+            "id": "gt0207",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0064]"
+          },
+          "gt0208": {
+            "id": "gt0208",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0088]"
+          },
+          "gt0209": {
+            "id": "gt0209",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0062]"
+          },
+          "gt0210": {
+            "id": "gt0210",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0056]"
+          },
+          "gt0211": {
+            "id": "gt0211",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0058]"
+          },
+          "gt0212": {
+            "id": "gt0212",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0060]"
+          },
+          "gt0213": {
+            "id": "gt0213",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0112]"
+          },
+          "gt0214": {
+            "id": "gt0214",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0017]/items[at0018]"
+          },
+          "gt0215": {
+            "id": "gt0215",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0017]/items[at0019]"
+          },
+          "gt0216": {
+            "id": "gt0216",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0017]/items[at0020]"
+          },
+          "gt0217": {
+            "id": "gt0217",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0077]"
+          },
+          "gt0218": {
+            "id": "gt0218",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0076]"
+          }
+        }
+      }
+    },
+    "default_actions": [
+      "$gt0177|Prevent hypoglycaemia|=true",
+      "$gt0178|Promote weight loss|=true",
+      "$gt0179|Prescribe low cost|=true",
+      "$gt0180|Black ethnicity|=false",
+      "$gt0181|Smoking status|=false"
+    ],
+    "templates": {
+      "gt2000": {
+        "id": "gt2000",
+        "name": "display-bmi",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Display",
+          "id": "display-bmi",
+          "quantity": {
+            "magnitude": "{$gt2001}",
+            "unit": "kg/m2",
+            "precision": 1
+          },
+          "text": "{$gt2002.term}"
+        }
+      }
+    },
+    "rules": {
+      "gt1001": {
+        "id": "gt1001",
+        "priority": 56,
+        "when": [
+          "$gt0201|egfr-userInput|!=null"
+        ],
+        "then": [
+          "$gt0160|Latest eGFR|=$gt0201|egfr-userInput|",
+          "$gt0161|Latest eGFR date|=$currentDateTime"
+        ]
+      },
+      "gt1002": {
+        "id": "gt1002",
+        "priority": 55,
+        "when": [
+          "$gt0202|acr-userInput|!=null"
+        ],
+        "then": [
+          "$gt0162|Latest ACR|=$gt0202|acr-userInput|",
+          "$gt0163|Latest ACR date|=$currentDateTime"
+        ]
+      },
+      "gt1003": {
+        "id": "gt1003",
+        "priority": 54,
+        "when": [
+          "$gt0202|acr-userInput|.magnitude>=30"
+        ],
+        "then": [
+          "$gt0166|Latest albuminuria category|=true"
+        ]
+      },
+      "gt1004": {
+        "id": "gt1004",
+        "priority": 53,
+        "when": [
+          "$gt0202|acr-userInput|.magnitude<30"
+        ],
+        "then": [
+          "$gt0166|Latest albuminuria category|=false"
+        ]
+      },
+      "gt1005": {
+        "id": "gt1005",
+        "priority": 52,
+        "when": [
+          "$gt0201|Latest eGFR|.magnitude<15"
+        ],
+        "then": [
+          "$gt0167|eGFR category|=local::at0007|<15|"
+        ]
+      },
+      "gt1006": {
+        "id": "gt1006",
+        "priority": 51,
+        "when": [
+          "$gt0201|Latest eGFR|.magnitude>=15",
+          "$gt0201|Latest eGFR|.magnitude<30"
+        ],
+        "then": [
+          "$gt0167|eGFR category|=local::at0008|15-29|"
+        ]
+      },
+      "gt1007": {
+        "id": "gt1007",
+        "priority": 50,
+        "when": [
+          "$gt0201|Latest eGFR|.magnitude>=30",
+          "$gt0201|Latest eGFR|.magnitude<60"
+        ],
+        "then": [
+          "$gt0167|eGFR category|=local::at0009|30-59 OR 60-89 with albuminuria|"
+        ]
+      },
+      "gt1008": {
+        "id": "gt1008",
+        "priority": 49,
+        "when": [
+          "$gt0201|Latest eGFR|.magnitude>=60",
+          "$gt0201|Latest eGFR|.magnitude<90",
+          "$gt0166|Albuminuria|==true"
+        ],
+        "then": [
+          "$gt0167|eGFR category|=local::at0009|30-59 OR 60-89 with albuminuria|"
+        ]
+      },
+      "gt1009": {
+        "id": "gt1009",
+        "priority": 48,
+        "when": [
+          "$gt0201|Latest eGFR|.magnitude>=60",
+          "$gt0201|Latest eGFR|.magnitude<90",
+          "$gt0166|Albuminuria|!=true"
+        ],
+        "then": [
+          "$gt0167|eGFR category|=local::at0010|60-89 without albuminuria OR >90 with albuminuria|"
+        ]
+      },
+      "gt1010": {
+        "id": "gt1010",
+        "priority": 47,
+        "when": [
+          "$gt0201|Latest eGFR|.magnitude>=90",
+          "$gt0166|Albuminuria|==true"
+        ],
+        "then": [
+          "$gt0167|eGFR category|=local::at0010|60-89 without albuminuria OR >90 with albuminuria|"
+        ]
+      },
+      "gt1011": {
+        "id": "gt1011",
+        "priority": 46,
+        "when": [
+          "$gt0201|Latest eGFR|.magnitude>=90",
+          "$gt0166|Albuminuria|!=true"
+        ],
+        "then": [
+          "$gt0167|eGFR category|=local::at0011|>90 without albuminuria|"
+        ]
+      },
+      "gt1012": {
+        "id": "gt1012",
+        "priority": 45,
+        "when": [
+          "$gt0201|eGFR-local|.magnitude>30",
+          "$gt0201|eGFR-local|.magnitude<45"
+        ],
+        "then": [
+          "$gt0052|eGFR 30-45 mL/min|=true"
+        ]
+      },
+      "gt1013": {
+        "id": "gt1013",
+        "priority": 44,
+        "when": [
+          "$gt0201|eGFR-local|.magnitude<=30"
+        ],
+        "then": [
+          "$gt0052|eGFR 30-45 mL/min|=false"
+        ]
+      },
+      "gt1014": {
+        "id": "gt1014",
+        "priority": 43,
+        "when": [
+          "$gt0201|eGFR-local|.magnitude<45"
+        ],
+        "then": [
+          "$gt0049|eGFR <45 mL/min|=true"
+        ]
+      },
+      "gt1015": {
+        "id": "gt1015",
+        "priority": 42,
+        "when": [
+          "$gt0201|eGFR-local|.magnitude>=45"
+        ],
+        "then": [
+          "$gt0049|eGFR <45 mL/min|=false",
+          "$gt0052|eGFR 30-45 mL/min|=false"
+        ]
+      },
+      "gt1016": {
+        "id": "gt1016",
+        "priority": 41,
+        "when": [
+          "$gt0203|hba1c-userInput|!=null"
+        ],
+        "then": [
+          "$gt0175|Latest HbA1c|=$gt0203|hba1c-userInput|",
+          "$gt0176|Latest HbA1c date|=$currentDateTime"
+        ]
+      },
+      "gt1017": {
+        "id": "gt1017",
+        "priority": 40,
+        "when": [
+          "$gt0204|bmi-userInput|!=null"
+        ],
+        "then": [
+          "$gt0172|Latest BMI|=$gt0204|bmi-userInput|",
+          "$gt0173|Latest BMI date|=$currentDateTime"
+        ]
+      },
+      "gt1018": {
+        "id": "gt1018",
+        "priority": 39,
+        "when": [
+          "$gt0205|height-userInput|!=null"
+        ],
+        "then": [
+          "$gt0168|Latest height|=$gt0205|height-userInput|",
+          "$gt0169|Latest height date|=$currentDateTime"
+        ]
+      },
+      "gt1019": {
+        "id": "gt1019",
+        "priority": 38,
+        "when": [
+          "$gt0206|weight-userInput|!=null"
+        ],
+        "then": [
+          "$gt0170|Latest weight|=$gt0206|weight-userInput|",
+          "$gt0171|Latest weight date|=$currentDateTime"
+        ]
+      },
+      "gt1020": {
+        "id": "gt1020",
+        "priority": 37,
+        "when": [
+          "$gt0003|height-ehrInput|!=null",
+          "$gt0206|weight-userInput|!=null"
+        ],
+        "then": [
+          "$gt0172|Latest calculated BMI|.magnitude=$gt0206/($gt0003^2)",
+          "$gt0172|Latest calculated BMI|.unit='kg/m2'",
+          "$gt0172|Latest calculated BMI|.precision=1",
+          "$gt0173|Latest calculated BMI date|=$currentDateTime"
+        ]
+      },
+      "gt1021": {
+        "id": "gt1021",
+        "priority": 36,
+        "when": [
+          "$gt0205|height-userInput|!=null",
+          "$gt0004|weight-ehrInput|!=null"
+        ],
+        "then": [
+          "$gt0172|Latest calculated BMI|.magnitude=$gt0004/($gt0205^2)",
+          "$gt0172|Latest calculated BMI|.unit='kg/m2'",
+          "$gt0172|Latest calculated BMI|.precision=1",
+          "$gt0173|Latest calculated BMI date|=$currentDateTime"
+        ]
+      },
+      "gt1022": {
+        "id": "gt1022",
+        "priority": 35,
+        "when": [
+          "$gt0205|height-userInput|!=null",
+          "$gt0206|weight-userInput|!=null"
+        ],
+        "then": [
+          "$gt0172|Latest calculated BMI|.magnitude=$gt0206/($gt0205^2)",
+          "$gt0172|Latest calculated BMI|.unit='kg/m2'",
+          "$gt0172|Latest calculated BMI|.precision=1",
+          "$gt0173|Latest calculated BMI date|=$currentDateTime"
+        ]
+      },
+      "gt1023": {
+        "id": "gt1023",
+        "priority": 34,
+        "when": [
+          "$gt0172|Latest calculated BMI|!=null",
+          "$gt0205|height-userInput|!=null||$gt0206|weight-userInput|!=null"
+        ],
+        "then": [
+          "$gt2001|bmi-display|=$gt0172.magnitude",
+          "use_template($gt2000)"
+        ]
+      },
+      "gt1024": {
+        "id": "gt1024",
+        "priority": 33,
+        "when": [
+          "$gt0172|Latest BMI|.magnitude<25"
+        ],
+        "then": [
+          "$gt0174|BMI <25 kg/m2|=true"
+        ]
+      },
+      "gt1025": {
+        "id": "gt1025",
+        "priority": 32,
+        "when": [
+          "$gt0172|Latest BMI|.magnitude>=25"
+        ],
+        "then": [
+          "$gt0174|BMI <25 kg/m2|=false"
+        ]
+      },
+      "gt1026": {
+        "id": "gt1026",
+        "priority": 31,
+        "when": [
+          "$gt0207|sbp-uiInput|!=null"
+        ],
+        "then": [
+          "$gt0044|Latest SBP|=$gt0207|SBP value|",
+          "$gt0046|Latest SBP date|=$currentDateTime"
+        ]
+      },
+      "gt1027": {
+        "id": "gt1027",
+        "priority": 30,
+        "when": [
+          "$gt0207|sbp-uiInput|.magnitude>=160"
+        ],
+        "then": [
+          "$gt0051|SBP >= 160 category|=true"
+        ]
+      },
+      "gt1028": {
+        "id": "gt1028",
+        "priority": 29,
+        "when": [
+          "$gt0207|sbp-uiInput|.magnitude<160"
+        ],
+        "then": [
+          "$gt0051|SBP >= 160 category|=false"
+        ]
+      },
+      "gt1029": {
+        "id": "gt1029",
+        "priority": 28,
+        "when": [
+          "$gt0208|dbp-uiInput|!=null"
+        ],
+        "then": [
+          "$gt0045|Latest DBP|=$gt0208|DBP value|",
+          "$gt0076|Latest DBP date|=$currentDateTime"
+        ]
+      },
+      "gt1030": {
+        "id": "gt1030",
+        "priority": 27,
+        "when": [
+          "$gt0208|dbp-uiInput|.magnitude>=100"
+        ],
+        "then": [
+          "$gt0077|DBP >= 100 category|=true"
+        ]
+      },
+      "gt1031": {
+        "id": "gt1031",
+        "priority": 26,
+        "when": [
+          "$gt0208|dbp-uiInput|.magnitude<100"
+        ],
+        "then": [
+          "$gt0077|DBP >= 100 category|=false"
+        ]
+      },
+      "gt1032": {
+        "id": "gt1032",
+        "priority": 25,
+        "when": [
+          "$gt0209|heartRate-uiInput|!=null"
+        ],
+        "then": [
+          "$gt0042|Latest heart rate|=$gt0209|heartRate-uiInput|",
+          "$gt0043|Latest Heart rate date|=$currentDateTime"
+        ]
+      },
+      "gt1033": {
+        "id": "gt1033",
+        "priority": 24,
+        "when": [
+          "$gt0209|Latest heart rate|.magnitude>100"
+        ],
+        "then": [
+          "$gt0048|Heart rate >100 beats/min|=true"
+        ]
+      },
+      "gt1034": {
+        "id": "gt1034",
+        "priority": 23,
+        "when": [
+          "$gt0209|Latest heart rate|.magnitude<=100"
+        ],
+        "then": [
+          "$gt0048|Heart rate >100 beats/min|=false"
+        ]
+      },
+      "gt1035": {
+        "id": "gt1035",
+        "priority": 22,
+        "when": [
+          "$gt0210|ldl-uiInput|!=null"
+        ],
+        "then": [
+          "$gt0036=$gt0210|ldl-uiInput|",
+          "$gt0037=$currentDateTime"
+        ]
+      },
+      "gt1036": {
+        "id": "gt1036",
+        "priority": 21,
+        "when": [
+          "$gt0210|ldl-uiInput|.magnitude>=2.8"
+        ],
+        "then": [
+          "$gt0070|LDLC >=2.8 mmol/L|=true"
+        ]
+      },
+      "gt1037": {
+        "id": "gt1037",
+        "priority": 20,
+        "when": [
+          "$gt0210|ldl-uiInput|.magnitude<2.8",
+          "$gt0210|ldl-uiInput|.magnitude>=1.4"
+        ],
+        "then": [
+          "$gt0071|LDLC 1.4-<2.8 mmol/L|=true"
+        ]
+      },
+      "gt1038": {
+        "id": "gt1038",
+        "priority": 19,
+        "when": [
+          "$gt0210|ldl-uiInput|.magnitude<1.4"
+        ],
+        "then": [
+          "$gt0072|LDLC <1.4 mmol/L|=true",
+          "$gt0075|LDLC <1.8 mmol/L|=true"
+        ]
+      },
+      "gt1039": {
+        "id": "gt1039",
+        "priority": 18,
+        "when": [
+          "$gt0210|ldl-uiInput|.magnitude>=3.6"
+        ],
+        "then": [
+          "$gt0073|LDLC >=3.6 mmol/L|=true",
+          "$gt0070|LDLC >=2.8 mmol/L|=true"
+        ]
+      },
+      "gt1040": {
+        "id": "gt1040",
+        "priority": 17,
+        "when": [
+          "$gt0210|ldl-uiInput|.magnitude<3.6",
+          "$gt0210|ldl-uiInput|.magnitude>=1.8"
+        ],
+        "then": [
+          "$gt0074|LDLC 1.8-<3.6 mmol/L|=true"
+        ]
+      },
+      "gt1041": {
+        "id": "gt1041",
+        "priority": 16,
+        "when": [
+          "$gt0210|ldl-uiInput |.magnitude<1.8"
+        ],
+        "then": [
+          "$gt0075|LDLC <1.8 mmol/L|=true"
+        ]
+      },
+      "gt1042": {
+        "id": "gt1042",
+        "priority": 15,
+        "when": [
+          "$gt0211|hdl-uiInput|!=null"
+        ],
+        "then": [
+          "$gt0038=$gt0211|hdl-uiInput|",
+          "$gt0039=$currentDateTime"
+        ]
+      },
+      "gt1043": {
+        "id": "gt1043",
+        "priority": 14,
+        "when": [
+          "$gt0212|total-cholesterol-uiInput|!=null"
+        ],
+        "then": [
+          "$gt0040=$gt0212|total-cholesterol-uiInput|",
+          "$gt0041=$currentDateTime"
+        ]
+      },
+      "gt1044": {
+        "id": "gt1044",
+        "priority": 13,
+        "when": [
+          "$gt0213|triglyceride-uiInput|!=null"
+        ],
+        "then": [
+          "$gt0088=$gt0213|triglyceride-uiInput|",
+          "$gt0089=$currentDateTime"
+        ]
+      },
+      "gt1045": {
+        "id": "gt1045",
+        "priority": 12,
+        "when": [
+          "$gt0213|triglyceride-uiInput|.magnitude>=4"
+        ],
+        "then": [
+          "$gt0091|Triglyceride >=4 mmol/L|=true"
+        ]
+      },
+      "gt1046": {
+        "id": "gt1046",
+        "priority": 11,
+        "when": [
+          "$gt0213|triglyceride-uiInput|.magnitude<4"
+        ],
+        "then": [
+          "$gt0091|Triglyceride >=4 mmol/L|=false"
+        ]
+      },
+      "gt1047": {
+        "id": "gt1047",
+        "priority": 10,
+        "when": [
+          "$gt0214|Avoid hypoglycaemia|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0177|Prevent hypoglycaemia|=true"
+        ]
+      },
+      "gt1048": {
+        "id": "gt1048",
+        "priority": 9,
+        "when": [
+          "$gt0214|Avoid hypoglycaemia|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0177|Prevent hypoglycaemia|=false"
+        ]
+      },
+      "gt1049": {
+        "id": "gt1049",
+        "priority": 8,
+        "when": [
+          "$gt0215|Weight loss|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0178|Promote weight loss|=true"
+        ]
+      },
+      "gt1050": {
+        "id": "gt1050",
+        "priority": 7,
+        "when": [
+          "$gt0215|Weight loss|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0178|Promote weight loss|=false"
+        ]
+      },
+      "gt1051": {
+        "id": "gt1051",
+        "priority": 6,
+        "when": [
+          "$gt0216|Low cost|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0179|Prescribe low cost|=true"
+        ]
+      },
+      "gt1052": {
+        "id": "gt1052",
+        "priority": 5,
+        "when": [
+          "$gt0216|Low cost|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0179|Prescribe low cost|=false"
+        ]
+      },
+      "gt1053": {
+        "id": "gt1053",
+        "priority": 4,
+        "when": [
+          "$gt0217|black-ethnicity|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0180|Black ethnicity|=true"
+        ]
+      },
+      "gt1054": {
+        "id": "gt1054",
+        "priority": 3,
+        "when": [
+          "$gt0217|black-ethnicity|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0180|Black ethnicity|=false"
+        ]
+      },
+      "gt1055": {
+        "id": "gt1055",
+        "priority": 2,
+        "when": [
+          "$gt0218|smoking-status|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0181|Smoking status|=true"
+        ]
+      },
+      "gt1056": {
+        "id": "gt1056",
+        "priority": 1,
+        "when": [
+          "$gt0218|smoking-status|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0181|Smoking status|=false"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "T2D_prescribing_observations_review.v1.0.0",
+            "description": ""
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "height-ehrInput",
+            "description": "*"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "weight-ehrInput",
+            "description": "*"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "ldlc",
+            "description": "description gt0036"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "ldlc date",
+            "description": "description gt0037"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "hdl",
+            "description": "description gt0038"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "hdl date",
+            "description": "description gt0039"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "totalc",
+            "description": "description gt0040"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "totalc date",
+            "description": "description gt0041"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "heart rate",
+            "description": "description gt0042"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "heart rate date",
+            "description": "description gt0043"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "sbp",
+            "description": "description gt0044"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "dbp",
+            "description": "description gt0045"
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "sbp date",
+            "description": "description gt0046"
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "heart rate >100 beats/min",
+            "description": "description gt0048"
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "egfr <45 mL/min",
+            "description": "description gt0049"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "sbp >=160 mmHg",
+            "description": "description gt0051"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "egfr 30-45 mL/min",
+            "description": "description gt0052"
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "egfr-userInput",
+            "description": "*"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "acr-userInput",
+            "description": "*"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "hba1c-userInput",
+            "description": "*"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "glucose-userInput",
+            "description": "*"
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "ldlc >=2.8 mmol/L",
+            "description": "description gt0070"
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "ldlc 1.4-<2.8 mmol/L",
+            "description": "*"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "ldlc <1.4 mmol/L",
+            "description": "*"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "ldlc >=3.6 mmol/L",
+            "description": "description gt0073"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "ldlc 1.8-3.6 mmol/L",
+            "description": "description gt0074"
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "ldlc <1.8 mmol/L",
+            "description": "description gt0075"
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "dbp date",
+            "description": "description gt0076"
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "dbp >=100 mmHg",
+            "description": "description gt0077"
+          },
+          "gt0088": {
+            "id": "gt0088",
+            "text": "triglyceride",
+            "description": "description gt0088"
+          },
+          "gt0089": {
+            "id": "gt0089",
+            "text": "triglyceride date",
+            "description": "description gt0089"
+          },
+          "gt0091": {
+            "id": "gt0091",
+            "text": "triglyceride >=4 mmol/L",
+            "description": "description gt0091"
+          },
+          "gt0160": {
+            "id": "gt0160",
+            "text": "egfr",
+            "description": "description gt0160"
+          },
+          "gt0161": {
+            "id": "gt0161",
+            "text": "egfr date",
+            "description": "description gt0161"
+          },
+          "gt0162": {
+            "id": "gt0162",
+            "text": "acr",
+            "description": "description gt0162"
+          },
+          "gt0163": {
+            "id": "gt0163",
+            "text": "acr date",
+            "description": "description gt0163"
+          },
+          "gt0164": {
+            "id": "gt0164",
+            "text": "urine albumin",
+            "description": "description gt0164"
+          },
+          "gt0165": {
+            "id": "gt0165",
+            "text": "urine albumin date",
+            "description": "description gt0165"
+          },
+          "gt0166": {
+            "id": "gt0166",
+            "text": "albuminuria",
+            "description": "description gt0166"
+          },
+          "gt0167": {
+            "id": "gt0167",
+            "text": "egfr category",
+            "description": "description gt0167"
+          },
+          "gt0168": {
+            "id": "gt0168",
+            "text": "height",
+            "description": "description gt0168"
+          },
+          "gt0169": {
+            "id": "gt0169",
+            "text": "height date",
+            "description": "description gt0169"
+          },
+          "gt0170": {
+            "id": "gt0170",
+            "text": "weight",
+            "description": "description gt0170"
+          },
+          "gt0171": {
+            "id": "gt0171",
+            "text": "weight date",
+            "description": "description gt0171"
+          },
+          "gt0172": {
+            "id": "gt0172",
+            "text": "bmi",
+            "description": "description gt0172"
+          },
+          "gt0173": {
+            "id": "gt0173",
+            "text": "bmi date",
+            "description": "description gt0173"
+          },
+          "gt0174": {
+            "id": "gt0174",
+            "text": "bmi <25 kg/m2",
+            "description": "description gt0174"
+          },
+          "gt0175": {
+            "id": "gt0175",
+            "text": "hba1c",
+            "description": "description gt0175"
+          },
+          "gt0176": {
+            "id": "gt0176",
+            "text": "hba1c date",
+            "description": "description gt0176"
+          },
+          "gt0177": {
+            "id": "gt0177",
+            "text": "avoid hypoglycemia",
+            "description": "description gt0177"
+          },
+          "gt0178": {
+            "id": "gt0178",
+            "text": "promote weight loss",
+            "description": "description gt0178"
+          },
+          "gt0179": {
+            "id": "gt0179",
+            "text": "prescribe low cost",
+            "description": "description gt0179"
+          },
+          "gt0180": {
+            "id": "gt0180",
+            "text": "black ethnicity",
+            "description": "description gt0180"
+          },
+          "gt0181": {
+            "id": "gt0181",
+            "text": "term gt0181",
+            "description": "description gt0181"
+          },
+          "gt0182": {
+            "id": "gt0182",
+            "text": "smoking",
+            "description": "description gt0182"
+          },
+          "gt0201": {
+            "id": "gt0201",
+            "text": "egfr-userInput",
+            "description": "description gt0201"
+          },
+          "gt0202": {
+            "id": "gt0202",
+            "text": "acr-userInput",
+            "description": "description gt0202"
+          },
+          "gt0203": {
+            "id": "gt0203",
+            "text": "hba1c-userInput",
+            "description": "description gt0203"
+          },
+          "gt0204": {
+            "id": "gt0204",
+            "text": "bmi-userInput",
+            "description": "description gt0204"
+          },
+          "gt0205": {
+            "id": "gt0205",
+            "text": "height-userInput",
+            "description": "description gt0205"
+          },
+          "gt0206": {
+            "id": "gt0206",
+            "text": "weight-userInput",
+            "description": "description gt0206"
+          },
+          "gt0207": {
+            "id": "gt0207",
+            "text": "sbp-userInput",
+            "description": "description gt0207"
+          },
+          "gt0208": {
+            "id": "gt0208",
+            "text": "dbp-userInput",
+            "description": "description gt0208"
+          },
+          "gt0209": {
+            "id": "gt0209",
+            "text": "heartRate-userInput",
+            "description": "description gt0209"
+          },
+          "gt0210": {
+            "id": "gt0210",
+            "text": "ldl-userInput",
+            "description": "description gt0210"
+          },
+          "gt0211": {
+            "id": "gt0211",
+            "text": "hdl-userInput",
+            "description": "description gt0211"
+          },
+          "gt0212": {
+            "id": "gt0212",
+            "text": "totalc-userInput",
+            "description": "description gt0212"
+          },
+          "gt0213": {
+            "id": "gt0213",
+            "text": "triglyceride-userinput",
+            "description": "description gt0213"
+          },
+          "gt0214": {
+            "id": "gt0214",
+            "text": "avoid-hypoglycemia userInput",
+            "description": "description gt0214"
+          },
+          "gt0215": {
+            "id": "gt0215",
+            "text": "promote-weight-loss userInput",
+            "description": "description gt0215"
+          },
+          "gt0216": {
+            "id": "gt0216",
+            "text": "prescribe-low-cost userInput",
+            "description": "description gt0216"
+          },
+          "gt0217": {
+            "id": "gt0217",
+            "text": "black-ethnicity userInput",
+            "description": "description gt0217"
+          },
+          "gt0218": {
+            "id": "gt0218",
+            "text": "smoking userInput",
+            "description": "description gt0218"
+          },
+          "gt1000": {
+            "id": "gt1000",
+            "text": "set latest-albuminuria-category false",
+            "description": "description gt1000"
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "set latest egfr-UI",
+            "description": "description gt1001"
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "set latest acr-UI",
+            "description": "description gt1002"
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "set latest hba1c-UI",
+            "description": "description gt1003"
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "set latest glucose-UI",
+            "description": "description gt1004"
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "set egfr category <15",
+            "description": "description gt1005"
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "set egfr category 15-29",
+            "description": "description gt1006"
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "set latest height-UI",
+            "description": "description gt1007"
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "set latest weight-UI",
+            "description": "description gt1008"
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "calculate latest bmi",
+            "description": "description gt1009"
+          },
+          "gt1010": {
+            "id": "gt1010",
+            "text": "display latest calculated bmi",
+            "description": "description gt1010"
+          },
+          "gt1011": {
+            "id": "gt1011",
+            "text": "set latest-albuminuria-category true",
+            "description": "description gt1011"
+          },
+          "gt1012": {
+            "id": "gt1012",
+            "text": "set latest egfr-category(<15)-UI",
+            "description": "description gt1012"
+          },
+          "gt1013": {
+            "id": "gt1013",
+            "text": "set latest egfr-category(15-29)-UI",
+            "description": "description gt1013"
+          },
+          "gt1014": {
+            "id": "gt1014",
+            "text": "set latest egfr-category(30-59)-UI",
+            "description": "description gt1014"
+          },
+          "gt1015": {
+            "id": "gt1015",
+            "text": "set latest egfr-category(60-89 with albuminuria)-UI",
+            "description": "description gt1015"
+          },
+          "gt1016": {
+            "id": "gt1016",
+            "text": "set latest egfr-category(60-89 without albuminuria)-UI",
+            "description": "description gt1016"
+          },
+          "gt1017": {
+            "id": "gt1017",
+            "text": "set latest egfr-category(>90 with albuminuria)-UI",
+            "description": "description gt1017"
+          },
+          "gt1018": {
+            "id": "gt1018",
+            "text": "set latest egfr-category(>90 with albuminuria)-UI",
+            "description": "description gt1018"
+          },
+          "gt1019": {
+            "id": "gt1019",
+            "text": "latest bmi-category <25 true",
+            "description": "description gt1019"
+          },
+          "gt1020": {
+            "id": "gt1020",
+            "text": "latest bmi-category <25 false",
+            "description": "description gt1020"
+          },
+          "gt1021": {
+            "id": "gt1021",
+            "text": "set latest bmi-UI",
+            "description": "description gt1021"
+          },
+          "gt1022": {
+            "id": "gt1022",
+            "text": "term gt1022",
+            "description": "description gt1022"
+          },
+          "gt1023": {
+            "id": "gt1023",
+            "text": "term gt1023",
+            "description": "description gt1023"
+          },
+          "gt1024": {
+            "id": "gt1024",
+            "text": "term gt1024",
+            "description": "description gt1024"
+          },
+          "gt1025": {
+            "id": "gt1025",
+            "text": "term gt1025",
+            "description": "description gt1025"
+          },
+          "gt1026": {
+            "id": "gt1026",
+            "text": "term gt1026",
+            "description": "description gt1026"
+          },
+          "gt1027": {
+            "id": "gt1027",
+            "text": "term gt1027",
+            "description": "description gt1027"
+          },
+          "gt1028": {
+            "id": "gt1028",
+            "text": "term gt1028",
+            "description": "description gt1028"
+          },
+          "gt1029": {
+            "id": "gt1029",
+            "text": "term gt1029",
+            "description": "description gt1029"
+          },
+          "gt1030": {
+            "id": "gt1030",
+            "text": "term gt1030",
+            "description": "description gt1030"
+          },
+          "gt1031": {
+            "id": "gt1031",
+            "text": "term gt1031",
+            "description": "description gt1031"
+          },
+          "gt1032": {
+            "id": "gt1032",
+            "text": "term gt1032",
+            "description": "description gt1032"
+          },
+          "gt1033": {
+            "id": "gt1033",
+            "text": "term gt1033",
+            "description": "description gt1033"
+          },
+          "gt1034": {
+            "id": "gt1034",
+            "text": "term gt1034",
+            "description": "description gt1034"
+          },
+          "gt1035": {
+            "id": "gt1035",
+            "text": "term gt1035",
+            "description": "description gt1035"
+          },
+          "gt1036": {
+            "id": "gt1036",
+            "text": "term gt1036",
+            "description": "description gt1036"
+          },
+          "gt1037": {
+            "id": "gt1037",
+            "text": "term gt1037",
+            "description": "description gt1037"
+          },
+          "gt1038": {
+            "id": "gt1038",
+            "text": "term gt1038",
+            "description": "description gt1038"
+          },
+          "gt1039": {
+            "id": "gt1039",
+            "text": "term gt1039",
+            "description": "description gt1039"
+          },
+          "gt1040": {
+            "id": "gt1040",
+            "text": "term gt1040",
+            "description": "description gt1040"
+          },
+          "gt1041": {
+            "id": "gt1041",
+            "text": "term gt1041",
+            "description": "description gt1041"
+          },
+          "gt1042": {
+            "id": "gt1042",
+            "text": "term gt1042",
+            "description": "description gt1042"
+          },
+          "gt1043": {
+            "id": "gt1043",
+            "text": "term gt1043",
+            "description": "description gt1043"
+          },
+          "gt1044": {
+            "id": "gt1044",
+            "text": "term gt1044",
+            "description": "description gt1044"
+          },
+          "gt1045": {
+            "id": "gt1045",
+            "text": "term gt1045",
+            "description": "description gt1045"
+          },
+          "gt1046": {
+            "id": "gt1046",
+            "text": "term gt1046",
+            "description": "description gt1046"
+          },
+          "gt1047": {
+            "id": "gt1047",
+            "text": "term gt1047",
+            "description": "description gt1047"
+          },
+          "gt1048": {
+            "id": "gt1048",
+            "text": "term gt1048",
+            "description": "description gt1048"
+          },
+          "gt1049": {
+            "id": "gt1049",
+            "text": "term gt1049",
+            "description": "description gt1049"
+          },
+          "gt1050": {
+            "id": "gt1050",
+            "text": "term gt1050",
+            "description": "description gt1050"
+          },
+          "gt1051": {
+            "id": "gt1051",
+            "text": "term gt1051",
+            "description": "description gt1051"
+          },
+          "gt1052": {
+            "id": "gt1052",
+            "text": "term gt1052",
+            "description": "description gt1052"
+          },
+          "gt1053": {
+            "id": "gt1053",
+            "text": "term gt1053",
+            "description": "description gt1053"
+          },
+          "gt1054": {
+            "id": "gt1054",
+            "text": "term gt1054",
+            "description": "description gt1054"
+          },
+          "gt1055": {
+            "id": "gt1055",
+            "text": "term gt1055",
+            "description": "description gt1055"
+          },
+          "gt1056": {
+            "id": "gt1056",
+            "text": "term gt1056",
+            "description": "description gt1056"
+          },
+          "gt2000": {
+            "id": "gt2000",
+            "text": "term gt2000",
+            "description": "description gt2000"
+          },
+          "gt2001": {
+            "id": "gt2001",
+            "text": "term gt2001",
+            "description": "description gt2001"
+          },
+          "gt2002": {
+            "id": "gt2002",
+            "text": "**New calculated BMI:** ",
+            "description": "description gt2001"
+          },
+          "gt2003": {
+            "id": "gt2003",
+            "text": "egfr-ehrInput",
+            "description": "description gt2003"
+          },
+          "gt2004": {
+            "id": "gt2004",
+            "text": "egfrDate-ehrInput",
+            "description": "description gt2004"
+          },
+          "gt2006": {
+            "id": "gt2006",
+            "text": "acr-ehrInput",
+            "description": "description gt2006"
+          },
+          "gt2007": {
+            "id": "gt2007",
+            "text": "acrDate-ehrInput",
+            "description": "description gt2007"
+          },
+          "gt2008": {
+            "id": "gt2008",
+            "text": "hba1c-ehrInput",
+            "description": "description gt2008"
+          },
+          "gt2009": {
+            "id": "gt2009",
+            "text": "hba1cDate-ehrInput",
+            "description": "description gt2009"
+          },
+          "gt2010": {
+            "id": "gt2010",
+            "text": "glucose-ehrInput",
+            "description": "description gt2010"
+          },
+          "gt2011": {
+            "id": "gt2011",
+            "text": "glucoseDate-ehrInput",
+            "description": "description gt2011"
+          },
+          "gt2012": {
+            "id": "gt2012",
+            "text": "bmi-ehrInput",
+            "description": "description gt2012"
+          },
+          "gt2013": {
+            "id": "gt2013",
+            "text": "bmiDate-ehrInput",
+            "description": "description gt2013"
+          },
+          "gt2021": {
+            "id": "gt2021",
+            "text": "height-ehrInput",
+            "description": "description gt2021"
+          },
+          "gt2022": {
+            "id": "gt2022",
+            "text": "heightDate-ehrInput",
+            "description": "description gt2022"
+          },
+          "gt2023": {
+            "id": "gt2023",
+            "text": "weight-ehrInput",
+            "description": "description gt2023"
+          },
+          "gt2024": {
+            "id": "gt2024",
+            "text": "weightDate-ehrInput",
+            "description": "description gt2024"
+          },
+          "gt4001": {
+            "id": "gt4001",
+            "text": "Input",
+            "description": ""
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "<15",
+            "description": ""
+          },
+          "gt4102": {
+            "id": "gt4102",
+            "text": "15-29",
+            "description": ""
+          },
+          "gt4103": {
+            "id": "gt4103",
+            "text": "30-59 OR 60-89 with albuminuria",
+            "description": ""
+          },
+          "gt4104": {
+            "id": "gt4104",
+            "text": "60-89 without albuminuria OR >90 with albuminuria",
+            "description": ""
+          },
+          "gt4105": {
+            "id": "gt4105",
+            "text": ">90 without albuminuria",
+            "description": ""
+          },
+          "gt4106": {
+            "id": "gt4106",
+            "text": "eGFR category",
+            "description": ""
+          },
+          "gt4107": {
+            "id": "gt4107",
+            "text": "BMI <25 kg/m2",
+            "description": ""
+          },
+          "gt4108": {
+            "id": "gt4108",
+            "text": "Avoid hypoglycemia",
+            "description": ""
+          },
+          "gt4109": {
+            "id": "gt4109",
+            "text": "Promote weight loss",
+            "description": ""
+          },
+          "gt4110": {
+            "id": "gt4110",
+            "text": "Prescribe low cost",
+            "description": ""
+          },
+          "gt4111": {
+            "id": "gt4111",
+            "text": "Latest eGFR",
+            "description": ""
+          },
+          "gt4112": {
+            "id": "gt4112",
+            "text": "Latest eGFR date",
+            "description": ""
+          },
+          "gt4113": {
+            "id": "gt4113",
+            "text": "Latest ACR",
+            "description": ""
+          },
+          "gt4114": {
+            "id": "gt4114",
+            "text": "Latest ACR date",
+            "description": ""
+          },
+          "gt4115": {
+            "id": "gt4115",
+            "text": "Latest HbA1c",
+            "description": ""
+          },
+          "gt4116": {
+            "id": "gt4116",
+            "text": "Latest HbA1c",
+            "description": ""
+          },
+          "gt4117": {
+            "id": "gt4117",
+            "text": "Latest glucose",
+            "description": ""
+          },
+          "gt4118": {
+            "id": "gt4118",
+            "text": "Latest glucose date",
+            "description": ""
+          },
+          "gt4119": {
+            "id": "gt4119",
+            "text": "Latest urine albumin",
+            "description": ""
+          },
+          "gt4120": {
+            "id": "gt4120",
+            "text": "Latest urine albumin date",
+            "description": ""
+          },
+          "gt4121": {
+            "id": "gt4121",
+            "text": "Latest BMI",
+            "description": ""
+          },
+          "gt4122": {
+            "id": "gt4122",
+            "text": "Latest BMI date",
+            "description": ""
+          },
+          "gt4125": {
+            "id": "gt4125",
+            "text": "**Systolic blood pressure**",
+            "description": ""
+          },
+          "gt4127": {
+            "id": "gt4127",
+            "text": "**Diastolic blood pressure**",
+            "description": ""
+          },
+          "gt4129": {
+            "id": "gt4129",
+            "text": "**Height**",
+            "description": ""
+          },
+          "gt4131": {
+            "id": "gt4131",
+            "text": "**Weight**",
+            "description": ""
+          },
+          "gt4132": {
+            "id": "gt4132",
+            "text": "set latest egfr-EHR"
+          },
+          "gt4133": {
+            "id": "gt4133",
+            "text": "set latest acr-EHR"
+          },
+          "gt4134": {
+            "id": "gt4134",
+            "text": "set latest hba1c-EHR"
+          },
+          "gt4135": {
+            "id": "gt4135",
+            "text": "set latest glucose-EHR"
+          },
+          "gt4136": {
+            "id": "gt4136",
+            "text": "set latest height-EHR"
+          },
+          "gt4137": {
+            "id": "gt4137",
+            "text": "set latest weight-EHR"
+          },
+          "gt4138": {
+            "id": "gt4138",
+            "text": "set latest bmi-EHR"
+          },
+          "gt4139": {
+            "id": "gt4139",
+            "text": "BMI <25 kg/m2",
+            "description": "Is the patient's BMI less than 25 kg/m2?"
+          },
+          "gt4140": {
+            "id": "gt4140",
+            "text": "eGFR category",
+            "description": "Select the patients renal function category based on eGFR (mL/min/1.73m2) and presence or absence of albuminuria."
+          },
+          "gt4141": {
+            "id": "gt4141",
+            "text": "Albuminuria",
+            "description": "*"
+          },
+          "gt4142": {
+            "id": "gt4142",
+            "text": "set latest bmi-category"
+          },
+          "gt4143": {
+            "id": "gt4143",
+            "text": "set latest albuminuria-category"
+          },
+          "gt4144": {
+            "id": "gt4144",
+            "text": "set latest egfr-category"
+          }
+        }
+      },
+      "da": {
+        "id": "da",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "T2D_prescribing_observations_review.v1.0.0",
+            "description": ""
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Latest eGFR",
+            "description": "*"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Latest eGFR date",
+            "description": "*"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "term gt0036",
+            "description": "description gt0036"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "term gt0037",
+            "description": "description gt0037"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "term gt0038",
+            "description": "description gt0038"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "term gt0039",
+            "description": "description gt0039"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "term gt0040",
+            "description": "description gt0040"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "term gt0041",
+            "description": "description gt0041"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "term gt0042",
+            "description": "description gt0042"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "term gt0043",
+            "description": "description gt0043"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "term gt0044",
+            "description": "description gt0044"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "term gt0045",
+            "description": "description gt0045"
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "term gt0046",
+            "description": "description gt0046"
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "term gt0048",
+            "description": "description gt0048"
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "term gt0049",
+            "description": "description gt0049"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "term gt0051",
+            "description": "description gt0051"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "term gt0052",
+            "description": "description gt0052"
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "egfr",
+            "description": "*"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "acr",
+            "description": "*"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "hba1c",
+            "description": "*"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "glucose",
+            "description": "*"
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "term gt0070",
+            "description": "description gt0070"
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "height",
+            "description": "*"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "weight",
+            "description": "*"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "term gt0073",
+            "description": "description gt0073"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "term gt0074",
+            "description": "description gt0074"
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "term gt0075",
+            "description": "description gt0075"
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "term gt0076",
+            "description": "description gt0076"
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "term gt0077",
+            "description": "description gt0077"
+          },
+          "gt0088": {
+            "id": "gt0088",
+            "text": "term gt0088",
+            "description": "description gt0088"
+          },
+          "gt0089": {
+            "id": "gt0089",
+            "text": "term gt0089",
+            "description": "description gt0089"
+          },
+          "gt0091": {
+            "id": "gt0091",
+            "text": "term gt0091",
+            "description": "description gt0091"
+          },
+          "gt0160": {
+            "id": "gt0160",
+            "text": "term gt0160",
+            "description": "description gt0160"
+          },
+          "gt0161": {
+            "id": "gt0161",
+            "text": "term gt0161",
+            "description": "description gt0161"
+          },
+          "gt0162": {
+            "id": "gt0162",
+            "text": "term gt0162",
+            "description": "description gt0162"
+          },
+          "gt0163": {
+            "id": "gt0163",
+            "text": "term gt0163",
+            "description": "description gt0163"
+          },
+          "gt0164": {
+            "id": "gt0164",
+            "text": "term gt0164",
+            "description": "description gt0164"
+          },
+          "gt0165": {
+            "id": "gt0165",
+            "text": "term gt0165",
+            "description": "description gt0165"
+          },
+          "gt0166": {
+            "id": "gt0166",
+            "text": "term gt0166",
+            "description": "description gt0166"
+          },
+          "gt0167": {
+            "id": "gt0167",
+            "text": "term gt0167",
+            "description": "description gt0167"
+          },
+          "gt0168": {
+            "id": "gt0168",
+            "text": "term gt0168",
+            "description": "description gt0168"
+          },
+          "gt0169": {
+            "id": "gt0169",
+            "text": "term gt0169",
+            "description": "description gt0169"
+          },
+          "gt0170": {
+            "id": "gt0170",
+            "text": "term gt0170",
+            "description": "description gt0170"
+          },
+          "gt0171": {
+            "id": "gt0171",
+            "text": "term gt0171",
+            "description": "description gt0171"
+          },
+          "gt0172": {
+            "id": "gt0172",
+            "text": "term gt0172",
+            "description": "description gt0172"
+          },
+          "gt0173": {
+            "id": "gt0173",
+            "text": "term gt0173",
+            "description": "description gt0173"
+          },
+          "gt0174": {
+            "id": "gt0174",
+            "text": "term gt0174",
+            "description": "description gt0174"
+          },
+          "gt0175": {
+            "id": "gt0175",
+            "text": "term gt0175",
+            "description": "description gt0175"
+          },
+          "gt0176": {
+            "id": "gt0176",
+            "text": "term gt0176",
+            "description": "description gt0176"
+          },
+          "gt0177": {
+            "id": "gt0177",
+            "text": "term gt0177",
+            "description": "description gt0177"
+          },
+          "gt0178": {
+            "id": "gt0178",
+            "text": "term gt0178",
+            "description": "description gt0178"
+          },
+          "gt0179": {
+            "id": "gt0179",
+            "text": "term gt0179",
+            "description": "description gt0179"
+          },
+          "gt0180": {
+            "id": "gt0180",
+            "text": "term gt0180",
+            "description": "description gt0180"
+          },
+          "gt0181": {
+            "id": "gt0181",
+            "text": "term gt0181",
+            "description": "description gt0181"
+          },
+          "gt0182": {
+            "id": "gt0182",
+            "text": "term gt0182",
+            "description": "description gt0182"
+          },
+          "gt0201": {
+            "id": "gt0201",
+            "text": "term gt0201",
+            "description": "description gt0201"
+          },
+          "gt0202": {
+            "id": "gt0202",
+            "text": "term gt0202",
+            "description": "description gt0202"
+          },
+          "gt0203": {
+            "id": "gt0203",
+            "text": "term gt0203",
+            "description": "description gt0203"
+          },
+          "gt0204": {
+            "id": "gt0204",
+            "text": "term gt0204",
+            "description": "description gt0204"
+          },
+          "gt0205": {
+            "id": "gt0205",
+            "text": "term gt0205",
+            "description": "description gt0205"
+          },
+          "gt0206": {
+            "id": "gt0206",
+            "text": "term gt0206",
+            "description": "description gt0206"
+          },
+          "gt0207": {
+            "id": "gt0207",
+            "text": "term gt0207",
+            "description": "description gt0207"
+          },
+          "gt0208": {
+            "id": "gt0208",
+            "text": "term gt0208",
+            "description": "description gt0208"
+          },
+          "gt0209": {
+            "id": "gt0209",
+            "text": "term gt0209",
+            "description": "description gt0209"
+          },
+          "gt0210": {
+            "id": "gt0210",
+            "text": "term gt0210",
+            "description": "description gt0210"
+          },
+          "gt0211": {
+            "id": "gt0211",
+            "text": "term gt0211",
+            "description": "description gt0211"
+          },
+          "gt0212": {
+            "id": "gt0212",
+            "text": "term gt0212",
+            "description": "description gt0212"
+          },
+          "gt0213": {
+            "id": "gt0213",
+            "text": "term gt0213",
+            "description": "description gt0213"
+          },
+          "gt0214": {
+            "id": "gt0214",
+            "text": "term gt0214",
+            "description": "description gt0214"
+          },
+          "gt0215": {
+            "id": "gt0215",
+            "text": "term gt0215",
+            "description": "description gt0215"
+          },
+          "gt0216": {
+            "id": "gt0216",
+            "text": "term gt0216",
+            "description": "description gt0216"
+          },
+          "gt0217": {
+            "id": "gt0217",
+            "text": "term gt0217",
+            "description": "description gt0217"
+          },
+          "gt0218": {
+            "id": "gt0218",
+            "text": "term gt0218",
+            "description": "description gt0218"
+          },
+          "gt1000": {
+            "id": "gt1000",
+            "text": "term gt1000",
+            "description": "description gt1000"
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "term gt1001",
+            "description": "description gt1001"
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "term gt1002",
+            "description": "description gt1002"
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "term gt1003",
+            "description": "description gt1003"
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "term gt1004",
+            "description": "description gt1004"
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "term gt1005",
+            "description": "description gt1005"
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "term gt1006",
+            "description": "description gt1006"
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "term gt1007",
+            "description": "description gt1007"
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "term gt1008",
+            "description": "description gt1008"
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "term gt1009",
+            "description": "description gt1009"
+          },
+          "gt1010": {
+            "id": "gt1010",
+            "text": "term gt1010",
+            "description": "description gt1010"
+          },
+          "gt1011": {
+            "id": "gt1011",
+            "text": "term gt1011",
+            "description": "description gt1011"
+          },
+          "gt1012": {
+            "id": "gt1012",
+            "text": "term gt1012",
+            "description": "description gt1012"
+          },
+          "gt1013": {
+            "id": "gt1013",
+            "text": "term gt1013",
+            "description": "description gt1013"
+          },
+          "gt1014": {
+            "id": "gt1014",
+            "text": "term gt1014",
+            "description": "description gt1014"
+          },
+          "gt1015": {
+            "id": "gt1015",
+            "text": "term gt1015",
+            "description": "description gt1015"
+          },
+          "gt1016": {
+            "id": "gt1016",
+            "text": "term gt1016",
+            "description": "description gt1016"
+          },
+          "gt1017": {
+            "id": "gt1017",
+            "text": "term gt1017",
+            "description": "description gt1017"
+          },
+          "gt1018": {
+            "id": "gt1018",
+            "text": "term gt1018",
+            "description": "description gt1018"
+          },
+          "gt1019": {
+            "id": "gt1019",
+            "text": "term gt1019",
+            "description": "description gt1019"
+          },
+          "gt1020": {
+            "id": "gt1020",
+            "text": "term gt1020",
+            "description": "description gt1020"
+          },
+          "gt1021": {
+            "id": "gt1021",
+            "text": "term gt1021",
+            "description": "description gt1021"
+          },
+          "gt1022": {
+            "id": "gt1022",
+            "text": "term gt1022",
+            "description": "description gt1022"
+          },
+          "gt1023": {
+            "id": "gt1023",
+            "text": "term gt1023",
+            "description": "description gt1023"
+          },
+          "gt1024": {
+            "id": "gt1024",
+            "text": "term gt1024",
+            "description": "description gt1024"
+          },
+          "gt1025": {
+            "id": "gt1025",
+            "text": "term gt1025",
+            "description": "description gt1025"
+          },
+          "gt1026": {
+            "id": "gt1026",
+            "text": "term gt1026",
+            "description": "description gt1026"
+          },
+          "gt1027": {
+            "id": "gt1027",
+            "text": "term gt1027",
+            "description": "description gt1027"
+          },
+          "gt1028": {
+            "id": "gt1028",
+            "text": "term gt1028",
+            "description": "description gt1028"
+          },
+          "gt1029": {
+            "id": "gt1029",
+            "text": "term gt1029",
+            "description": "description gt1029"
+          },
+          "gt1030": {
+            "id": "gt1030",
+            "text": "term gt1030",
+            "description": "description gt1030"
+          },
+          "gt1031": {
+            "id": "gt1031",
+            "text": "term gt1031",
+            "description": "description gt1031"
+          },
+          "gt1032": {
+            "id": "gt1032",
+            "text": "term gt1032",
+            "description": "description gt1032"
+          },
+          "gt1033": {
+            "id": "gt1033",
+            "text": "term gt1033",
+            "description": "description gt1033"
+          },
+          "gt1034": {
+            "id": "gt1034",
+            "text": "term gt1034",
+            "description": "description gt1034"
+          },
+          "gt1035": {
+            "id": "gt1035",
+            "text": "term gt1035",
+            "description": "description gt1035"
+          },
+          "gt1036": {
+            "id": "gt1036",
+            "text": "term gt1036",
+            "description": "description gt1036"
+          },
+          "gt1037": {
+            "id": "gt1037",
+            "text": "term gt1037",
+            "description": "description gt1037"
+          },
+          "gt1038": {
+            "id": "gt1038",
+            "text": "term gt1038",
+            "description": "description gt1038"
+          },
+          "gt1039": {
+            "id": "gt1039",
+            "text": "term gt1039",
+            "description": "description gt1039"
+          },
+          "gt1040": {
+            "id": "gt1040",
+            "text": "term gt1040",
+            "description": "description gt1040"
+          },
+          "gt1041": {
+            "id": "gt1041",
+            "text": "term gt1041",
+            "description": "description gt1041"
+          },
+          "gt1042": {
+            "id": "gt1042",
+            "text": "term gt1042",
+            "description": "description gt1042"
+          },
+          "gt1043": {
+            "id": "gt1043",
+            "text": "term gt1043",
+            "description": "description gt1043"
+          },
+          "gt1044": {
+            "id": "gt1044",
+            "text": "term gt1044",
+            "description": "description gt1044"
+          },
+          "gt1045": {
+            "id": "gt1045",
+            "text": "term gt1045",
+            "description": "description gt1045"
+          },
+          "gt1046": {
+            "id": "gt1046",
+            "text": "term gt1046",
+            "description": "description gt1046"
+          },
+          "gt1047": {
+            "id": "gt1047",
+            "text": "term gt1047",
+            "description": "description gt1047"
+          },
+          "gt1048": {
+            "id": "gt1048",
+            "text": "term gt1048",
+            "description": "description gt1048"
+          },
+          "gt1049": {
+            "id": "gt1049",
+            "text": "term gt1049",
+            "description": "description gt1049"
+          },
+          "gt1050": {
+            "id": "gt1050",
+            "text": "term gt1050",
+            "description": "description gt1050"
+          },
+          "gt1051": {
+            "id": "gt1051",
+            "text": "term gt1051",
+            "description": "description gt1051"
+          },
+          "gt1052": {
+            "id": "gt1052",
+            "text": "term gt1052",
+            "description": "description gt1052"
+          },
+          "gt1053": {
+            "id": "gt1053",
+            "text": "term gt1053",
+            "description": "description gt1053"
+          },
+          "gt1054": {
+            "id": "gt1054",
+            "text": "term gt1054",
+            "description": "description gt1054"
+          },
+          "gt1055": {
+            "id": "gt1055",
+            "text": "term gt1055",
+            "description": "description gt1055"
+          },
+          "gt1056": {
+            "id": "gt1056",
+            "text": "term gt1056",
+            "description": "description gt1056"
+          },
+          "gt2000": {
+            "id": "gt2000",
+            "text": "term gt2000",
+            "description": "description gt2000"
+          },
+          "gt2001": {
+            "id": "gt2001",
+            "text": "term gt2001",
+            "description": "description gt2001"
+          },
+          "gt2002": {
+            "id": "gt2002",
+            "text": "**Nyberegnet BMI:** ",
+            "description": "description gt2001"
+          },
+          "gt2003": {
+            "id": "gt2003",
+            "text": "term gt2003",
+            "description": "description gt2003"
+          },
+          "gt2004": {
+            "id": "gt2004",
+            "text": "term gt2004",
+            "description": "description gt2004"
+          },
+          "gt2006": {
+            "id": "gt2006",
+            "text": "term gt2006",
+            "description": "description gt2006"
+          },
+          "gt2007": {
+            "id": "gt2007",
+            "text": "term gt2007",
+            "description": "description gt2007"
+          },
+          "gt2008": {
+            "id": "gt2008",
+            "text": "term gt2008",
+            "description": "description gt2008"
+          },
+          "gt2009": {
+            "id": "gt2009",
+            "text": "term gt2009",
+            "description": "description gt2009"
+          },
+          "gt2010": {
+            "id": "gt2010",
+            "text": "term gt2010",
+            "description": "description gt2010"
+          },
+          "gt2011": {
+            "id": "gt2011",
+            "text": "term gt2011",
+            "description": "description gt2011"
+          },
+          "gt2012": {
+            "id": "gt2012",
+            "text": "term gt2012",
+            "description": "description gt2012"
+          },
+          "gt2013": {
+            "id": "gt2013",
+            "text": "term gt2013",
+            "description": "description gt2013"
+          },
+          "gt2021": {
+            "id": "gt2021",
+            "text": "term gt2021",
+            "description": "description gt2021"
+          },
+          "gt2022": {
+            "id": "gt2022",
+            "text": "term gt2022",
+            "description": "description gt2022"
+          },
+          "gt2023": {
+            "id": "gt2023",
+            "text": "term gt2023",
+            "description": "description gt2023"
+          },
+          "gt2024": {
+            "id": "gt2024",
+            "text": "term gt2024",
+            "description": "description gt2024"
+          },
+          "gt4001": {
+            "id": "gt4001",
+            "text": "Observationer",
+            "description": ""
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "<15",
+            "description": ""
+          },
+          "gt4102": {
+            "id": "gt4102",
+            "text": "15-29",
+            "description": ""
+          },
+          "gt4103": {
+            "id": "gt4103",
+            "text": "30-59 OR 60-89 with albuminuria",
+            "description": ""
+          },
+          "gt4104": {
+            "id": "gt4104",
+            "text": "60-89 without albuminuria OR >90 with albuminuria",
+            "description": ""
+          },
+          "gt4105": {
+            "id": "gt4105",
+            "text": ">90 without albuminuria",
+            "description": ""
+          },
+          "gt4106": {
+            "id": "gt4106",
+            "text": "eGFR category",
+            "description": ""
+          },
+          "gt4107": {
+            "id": "gt4107",
+            "text": "BMI <25 kg/m2",
+            "description": ""
+          },
+          "gt4108": {
+            "id": "gt4108",
+            "text": "Avoid hypoglycemia",
+            "description": ""
+          },
+          "gt4109": {
+            "id": "gt4109",
+            "text": "Promote weight loss",
+            "description": ""
+          },
+          "gt4110": {
+            "id": "gt4110",
+            "text": "Prescribe low cost",
+            "description": ""
+          },
+          "gt4111": {
+            "id": "gt4111",
+            "text": "**eGFR**",
+            "description": ""
+          },
+          "gt4112": {
+            "id": "gt4112",
+            "text": "eGFR date",
+            "description": ""
+          },
+          "gt4113": {
+            "id": "gt4113",
+            "text": "**ACR**",
+            "description": ""
+          },
+          "gt4114": {
+            "id": "gt4114",
+            "text": "ACR date",
+            "description": ""
+          },
+          "gt4115": {
+            "id": "gt4115",
+            "text": "**HbA1c**",
+            "description": ""
+          },
+          "gt4116": {
+            "id": "gt4116",
+            "text": "HbA1c date",
+            "description": ""
+          },
+          "gt4117": {
+            "id": "gt4117",
+            "text": "**Fasting glucose**",
+            "description": ""
+          },
+          "gt4118": {
+            "id": "gt4118",
+            "text": "Latest glucose date",
+            "description": ""
+          },
+          "gt4119": {
+            "id": "gt4119",
+            "text": "Latest urine albumin",
+            "description": ""
+          },
+          "gt4120": {
+            "id": "gt4120",
+            "text": "Latest urine albumin date",
+            "description": ""
+          },
+          "gt4121": {
+            "id": "gt4121",
+            "text": "**BMI**",
+            "description": ""
+          },
+          "gt4122": {
+            "id": "gt4122",
+            "text": "BMI date",
+            "description": ""
+          },
+          "gt4125": {
+            "id": "gt4125",
+            "text": "**Sytolisk blodtryk**",
+            "description": ""
+          },
+          "gt4127": {
+            "id": "gt4127",
+            "text": "**Diastolisk blodtryk**",
+            "description": ""
+          },
+          "gt4129": {
+            "id": "gt4129",
+            "text": "**Højde**",
+            "description": ""
+          },
+          "gt4131": {
+            "id": "gt4131",
+            "text": "**Vægt**",
+            "description": ""
+          },
+          "gt4132": {
+            "id": "gt4132",
+            "text": "*(en) Copy of term gt1001",
+            "description": ""
+          },
+          "gt4133": {
+            "id": "gt4133",
+            "text": "*(en) Copy of term gt1002",
+            "description": ""
+          },
+          "gt4134": {
+            "id": "gt4134",
+            "text": "*(en) Copy of term gt1003",
+            "description": ""
+          },
+          "gt4135": {
+            "id": "gt4135",
+            "text": "*(en) Copy of term gt1004",
+            "description": ""
+          },
+          "gt4136": {
+            "id": "gt4136",
+            "text": "*(en) Copy of term gt1007",
+            "description": ""
+          },
+          "gt4137": {
+            "id": "gt4137",
+            "text": "*(en) Copy of term gt1008",
+            "description": ""
+          },
+          "gt4138": {
+            "id": "gt4138",
+            "text": "*(en) Copy of term gt1021",
+            "description": ""
+          },
+          "gt4139": {
+            "id": "gt4139",
+            "text": "*(en) BMI <25 kg/m2",
+            "description": "*(en) Is the patient's BMI less than 25 kg/m2?"
+          },
+          "gt4140": {
+            "id": "gt4140",
+            "text": "*(en) eGFR category",
+            "description": "*(en) Select the patients renal function category based on eGFR (mL/min/1.73m2) and presence or absence of albuminuria."
+          },
+          "gt4141": {
+            "id": "gt4141",
+            "text": "*(en) Albuminuria",
+            "description": "*(en) *"
+          },
+          "gt4142": {
+            "id": "gt4142",
+            "text": "*(en) Copy of latest bmi <25 true",
+            "description": ""
+          },
+          "gt4143": {
+            "id": "gt4143",
+            "text": "*(en) Copy of set latest bmi-category",
+            "description": ""
+          },
+          "gt4144": {
+            "id": "gt4144",
+            "text": "*(en) Copy of set latest bmi-category",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

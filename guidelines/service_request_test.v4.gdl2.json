@@ -1,0 +1,247 @@
+{
+  "id": "service_request_test.v4",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2023-09-21",
+      "name": "Rong Chen",
+      "organisation": "Cambio CDS",
+      "email": "rong.chen@cambio.se"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "en": {
+        "id": "en",
+        "copyright": "Cambio Healthcare Systems",
+        "keywords": [
+          "heart failure",
+          "referral"
+        ]
+      },
+      "sv": {
+        "id": "sv",
+        "copyright": "Cambio Healthcare Systems",
+        "keywords": [
+          "hjärtvikt",
+          "remiss"
+        ]
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+        "gt1007": {
+            "id": "gt1007",
+            "model_id": "openEHR-EHR-OBSERVATION.body_mass_index.v2",
+            "template_id": "openEHR-EHR-OBSERVATION.body_mass_index.v2",
+            "type": "INPUT",
+            "elements": {
+                "gt1004": {
+                    "id": "gt1004",
+                    "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+                }
+            }
+        }    
+    },
+    "templates": {
+      "gt0028": {
+        "id": "gt0028",
+        "name": "hfReferralRequest",
+        "model_id": "generic_model",
+        "object": {
+          "referralRequest": [
+            "{$gt0023}"
+          ]
+        }
+      },
+      "gt0023": {
+        "id": "gt0023",
+        "model_id": "generic_model",
+        "object": {
+          "action": "create",
+          "model": "org.hl7.fhir.r4.model.ServiceRequest",
+          "data": {
+            "resourceType": "ServiceRequest",
+            "id": "svfHeartFailure-referralRequest",
+            "name": "svfHeartFailure-referralRequest",
+            "status": "active",
+            "intent": "plan",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "3457005",
+                    "display": "Referral"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "183519002",
+                  "display": "Referral to cardiology service"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient"
+            },
+            "authoredOn": "{$currentDateTime}",
+            "reasonCode": {
+              "text": "{$gt0024}"
+            }
+          }
+        }
+      }
+    },
+    "pre_conditions": [],
+    "rules": {
+      "gt0025": {
+        "id": "gt0025",
+        "priority": 3,
+        "when": [
+        ],
+        "then": [
+          "$gt0024|Description local variable|=($gt0005|Diagnosis|.term + '\n' + $gt0005|Diagnosis| + '\n\n' + $gt0003|Referral purpose|.term + '\n' + $gt0003|Referral purpose| + '\n\n' + $gt0004|Anamnesis|.term + '\n' + $gt0004|Anamnesis|)"
+        ]
+      },
+      "gt0026": {
+        "id": "gt0026",
+        "priority": 2,
+        "when": [          
+        ],
+        "then": [
+          "use_template($gt0023)"
+        ]
+      },
+      "gt0029": {
+        "id": "gt0029",
+        "priority": 1,
+        "when": [
+        ],
+        "then": [
+          "use_template($gt0028)"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Heart failure referral request",
+            "description": "Generate the referral request template for the heart failure treatment assessment."
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Reason for referral",
+            "description": ""
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Anamnesis",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Diagnosis",
+            "description": ""
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Ejection Fraction (EF) % < 40",
+            "description": ""
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "NYHA class II-IV",
+            "description": ""
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Sinus Rythm",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Atrial Fibrillation",
+            "description": ""
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "QRS width >130 ms",
+            "description": ""
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Recommendation",
+            "description": ""
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?",
+            "description": ""
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Additional information",
+            "description": ""
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "Is interepreter needed?",
+            "description": ""
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "Language",
+            "description": ""
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "generic template for referral request",
+            "description": ""
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Description local variable",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Set description",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Set generate referral request template",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Referral request output instructions template",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "test input",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
+
+  

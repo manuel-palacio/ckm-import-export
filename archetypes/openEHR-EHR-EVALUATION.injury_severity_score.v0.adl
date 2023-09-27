@@ -1,0 +1,74 @@
+archetype (adl_version=1.4; uid=b7e81827-d0bb-4b29-bdaa-da5295d06b11)
+	openEHR-EHR-EVALUATION.injury_severity_score.v0
+
+concept
+	[at0000]	-- injury_severity_score
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+		["date"] = <"2021-08-03">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"???">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"NotSet">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_namespace"] = <"org.openehr">
+		["original_namespace"] = <"org.openehr">
+		["build_uid"] = <"31f1195f-565a-37c6-a955-7ffc02bd829b">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["MD5-CAM-1.0.1"] = <"731E83F0E5284210CF30B84B96D4A9A2">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- injury_severity_score
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Assessment of most severe injury
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0003] matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"injury_severity_score">
+					description = <"injury_severity_score">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Assessment of most severe injury">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>

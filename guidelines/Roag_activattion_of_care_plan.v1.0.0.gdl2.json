@@ -1,0 +1,134 @@
+{
+    "id": "Roag_activattion_of_care_plan.v1.0.0",
+    "gdl_version": "2.0",
+    "concept": "gt0001",
+    "language": {
+      "original_language": "ISO_639-1::en"
+    },
+    "description": {
+      "original_author": {
+        "date": "2019-04-05",
+        "name": "Medical Informatics Group (MIG)",
+        "organisation": "Cambio Healthcare Systems",
+        "email": "mig@cambiocds.com"
+      },
+      "lifecycle_state": "Author draft",
+      "details": {
+        "sv": {
+          "id": "sv",
+          "purpose": "Att bedöma vilka åtgärder samt/eller remittering förordas.",
+          "keywords": [
+            "munhälsa",
+            "munvård",
+            "munvårdsåtgärd",
+            "roag",
+            "senior alert"
+          ],
+          "use": "Bedömning göras:\n*  Vid inskrivning eller första kontakt med vård och omsorg\n*  I samband med övriga riskbedömningar i Senior alert\n*  Fortlöpande hos de som är i risk för att utveckla problem eller som har ohälsa i munnen; grad två eller tre inom något områdei ROAG\n*  När en person ändrar sitt ätbeteende, exempelvis inte vill äta eller reagerar onormalt på kall eller varm mat och dryck\nOmråden som bedömas är:  Röst, Läppar, Munslemhinna, Tunga, Tandkött, Tänder, Proteser, Saliv, Sväljning och gradering göras enligt följande,\nGrad 1 –Friskt eller normalt tillstånd\nGrad 2 –Måttliga förändringar/avvikelser som kan åtgärdas av vårdpersonal\nGrad 3 –Svårare förändringar/avvikelser som kräver konsultation/ remiss till tandvård\nVid en eller flera 2:or ska åtgärder göras av personal på enheten. Om bedömningen även visar 3:or påbörjar personalen åtgärder och ska dessutom kontakta tandläkare.",
+          "misuse": "ROAG-J är inte ett instrument för att diagnostisera utan för att vård-och omsorgspersonal ska uppmärksamma och åtgärda ohälsa i munnen.",
+          "copyright": "© Cambio Healthcare Systems"
+        },
+        "en": {
+          "id": "en",
+          "purpose": "To assess results of the ROAG questionnaire.",
+          "keywords": [
+            "oral health",
+            "roag",
+            "oral health assessment",
+            "mouth assessment",
+            "senior alert"
+          ],
+          "use": "Assessment is performed:\n* Upon enrollment or first contact with care\n* In connection with other risk assessments in Senior alert\n* Continuously in those at risk of developing problems or having ill health; grade 2 or 3 in any area of ​​the ROAG\n* When a person changes their eating behavior, for example, does not want to eat or reacts abnormally to cold or hot food and drink\nAreas assessed are: Voice, Lips, Oral mucosa, Tongue, Gums, Teeth, Prosthesis, Saliva, Swallowing and grading is done as follows,\nGrade 1 - Healthy or normal condition - no recommendation\nGrade 2 - Moderate changes - can be addressed by healthcare professionals\nGrade 3 - More difficult changes - require consultation / referral to dental care",
+          "misuse": "ROAG-J is not a diagnostic tool, but directs healthcare professionals to pay attention to and manage patients' oral health problems.",
+          "copyright": "© Cambio Healthcare Systems"
+        }
+      },
+      "other_details": {
+        "references": "1. Nordvall D, Andersson P, Gahnberg L, Hägglin C. Riskbedömning med ROAG-J i kvalitetsregistret Senior alert-Effekter på munhälsan ur ett longitudinellt perspektiv.\n2. Eilers J, Berger AM, Petersen, MC. Development, testing and application of the oral assessment guide. Oncol Nurs Forum 1988; 15: 325-330. "
+      }
+    },
+    "definition": {
+      "data_bindings": {
+        "gt0300": {
+          "id": "gt0300",
+          "model_id": "openEHR-EHR-EVALUATION.roag_assessment.v0",
+          "template_id": "openEHR-EHR-EVALUATION.roag_assessment.v0",
+          "type": "OUTPUT",
+          "elements": {
+            "gt0082": {
+              "id": "gt0082",
+              "path": "/data[at0001]/items[at0005]"
+            }
+          }
+        },
+        "gt0301": {
+          "id": "gt0301",
+          "model_id": "openEHR-EHR-EVALUATION.roag_assessment.v0",
+          "template_id": "openEHR-EHR-EVALUATION.roag_assessment.v0",
+          "type": "INPUT",
+          "elements": {
+            "gt0083": {
+              "id": "gt0083",
+              "path": "/data[at0001]/items[at0005]"
+            }
+          }
+        }
+      },
+      "rules": {
+        "gt0112": {
+          "id": "gt0112",
+          "priority": 1,
+          "when": [
+            "$gt0083|Activate care plan input|!=null"
+          ],
+          "then": [
+            "$gt0082|Activate care plan|==$gt0083"
+          ]
+        }
+      }
+    },
+    "ontology": {
+      "term_definitions": {
+        "en": {
+          "id": "en",
+          "terms": {
+            "gt0001": {
+              "id": "gt0001",
+              "text": "Roag activation of care plan",
+              "description": "ROAG is an acronym for Revised Oral Assessment Guide. It is a standardized risk assessment tool used to document oral health and recommend levels of care in nine areas: voice, lips, oral mucosa, tongue, gums, teeth, saliva, swallowing, and presence of any prosthesis or implants. The assessment takes only 3-4 minutes to complete and grading is assigned from healthy to sick (grading 1-3). For grade 1 symptoms/signs, there are no care recommendations. If the ROAG assessment shows at least a grade 2, care measures can be instituted by staff of the unit. With at least a grade 3, a referral is required to a dental specialist in addition to the local care measures."
+            },
+            "gt0082": {
+              "id": "gt0082",
+              "text": "Activate care plan input",
+              "description": ""
+            },
+            "gt0083": {
+              "id": "gt0083",
+              "text": "Activate care plan",
+              "description": ""
+            }
+          }
+        },
+        "sv": {
+          "id": "sv",
+          "terms": {
+            "gt0001": {
+              "id": "gt0001",
+              "text": "Skapa ROAG bedömning",
+              "description": "ROAG (Revised Oral Assessment Guide) är ett standardiserat enkelt riskbedömningsinstrument som beskriver tillståndet inom nio områden i munnen, från friskt till sjukt (gradering 1-3). Områden bedömas är:  Röst, Läppar, Munslemhinna, Tunga, Tandkött, Tänder, Proteser, Saliv, Sväljning. Vid en eller flera 2:or ska åtgärder göras av personal på enheten. Om bedömningen även visar 3:or påbörjar personalen åtgärder och ska dessutom kontakta tandläkare. Det finns ingen anvising vid grad 1 status i alla områden."
+            },
+            "gt0082": {
+              "id": "gt0082",
+              "text": "Activering av vårdplan input",
+              "description": ""
+            },
+            "gt0083": {
+              "id": "gt0083",
+              "text": "Activering av vårdplan",
+              "description": ""
+            }
+          }
+        }
+      }
+    }
+  }

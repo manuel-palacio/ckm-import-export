@@ -1,0 +1,974 @@
+archetype (adl_version=1.4; uid=647596b9-5ac4-460d-b5ba-425dbeb6240f)
+	openEHR-EHR-INSTRUCTION.nursing_support_oral_health.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"*(en)">
+			copyright = <"*(en)">
+			use = <"*(en)">
+			misuse = <"*(en)">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"6956b3d2230e5f3930330cb858940436">
+		["build_uid"] = <"b9db0ac4-6fea-38a4-95e3-42c37918f7de">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {    -- nursing_support_oral_health
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] occurrences matches {0..1} matches {    -- Current Activity
+				description matches {
+					ITEM_TREE[at0002] matches {    -- *Tree(en)
+						items cardinality matches {0..*; unordered} matches {
+							CLUSTER[at0005] occurrences matches {0..1} matches {    -- Goal
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Establish good oral health during the care period
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Establish good oral health during the care period description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Improve oral health during the care period
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Improve oral health during the care period description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0083] occurrences matches {0..1} matches {    -- Voice
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Moisten mouth
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Moisten mouth description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0006] occurrences matches {0..1} matches {    -- Lips
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0024] occurrences matches {0..1} matches {    -- Lubricate lips
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Lubricate lips description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {    -- Local pain relief of lips
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Local pain relief of lips description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0007] occurrences matches {0..1} matches {    -- Mucous membranes
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0030] occurrences matches {0..1} matches {    -- Cleaning and moistening of oral mucous membranes
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0031] occurrences matches {0..1} matches {    -- Cleaning and moistening of oral mucous membranes description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0032] occurrences matches {0..1} matches {    -- Removal of crusts
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Removal of crusts description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Local pain relief mouth mucous membranes
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0035] occurrences matches {0..1} matches {    -- Local pain relief mouth mucous membranes description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0008] occurrences matches {0..1} matches {    -- Tongue
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0038] occurrences matches {0..1} matches {    -- Cleaning of tongue
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0039] occurrences matches {0..1} matches {    -- Cleaning of tongue description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0040] occurrences matches {0..1} matches {    -- Moisten tongue
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0041] occurrences matches {0..1} matches {    -- Moisten tongue description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0042] occurrences matches {0..1} matches {    -- Local pain relief of tongue
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {    -- Local pain relief of tongue description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0009] occurrences matches {0..1} matches {    -- Gums - Teeth - Implants
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Information and/or oral care training to perform oral care yourself
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Information and/or oral care training to perform oral care yourself description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0046] occurrences matches {0..1} matches {    -- Brushing - assistance or full help
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {    -- Brushing - assistance or full help description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0048] occurrences matches {0..1} matches {    -- Cleaning between teeth - assistance or complete help
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0049] occurrences matches {0..1} matches {    -- Cleaning between teeth - assistance or complete help description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0050] occurrences matches {0..1} matches {    -- Wash with foam dryer - assistance or full help
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0051] occurrences matches {0..1} matches {    -- Wash with foam dryer - assistance or full help description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0052] occurrences matches {0..1} matches {    -- Fluoride supply in addition to fluoride toothpaste - assistance or full assistance
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0053] occurrences matches {0..1} matches {    -- Fluoride supply in addition to fluoride toothpaste - assistance or full assistance description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0054] occurrences matches {0..1} matches {    -- Extra oral care in case of enhanced diet - assistance or complete assistance
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0055] occurrences matches {0..1} matches {    -- Extra oral care in case of enhanced diet - assistance or complete assistance description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0082] occurrences matches {0..1} matches {    -- Prosthesis
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0056] occurrences matches {0..1} matches {    -- Information and/or oral care training to perform oral/prosthetic cleansing yourself
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0057] occurrences matches {0..1} matches {    -- Information and/or oral care training to perform oral/prosthetic cleansing yourself description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0058] occurrences matches {0..1} matches {    -- Prosthetic cleaning - assistance or full help
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0059] occurrences matches {0..1} matches {    -- Prosthetic cleaning - assistance or full help description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0060] occurrences matches {0..1} matches {    -- Cleaning of remaining teeth and mucous membranes - assistance or complete assistance
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0061] occurrences matches {0..1} matches {    -- Cleaning of remaining teeth and mucous membranes - assistance or complete assistance description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0010] occurrences matches {0..1} matches {    -- Saliva
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0079] occurrences matches {0..1} matches {    -- Moisten the mucous membranes of the mouth
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0080] occurrences matches {0..1} matches {    -- Moisten the mucous membranes of the mouth description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0011] occurrences matches {0..1} matches {    -- Swallowing
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0062] occurrences matches {0..1} matches {    -- Ease swallowing by wetting the mouth
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0063] occurrences matches {0..1} matches {    -- Ease swallowing by wetting the mouth description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0064] occurrences matches {0..1} matches {    -- Other action - oral health
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0065] occurrences matches {0..1} matches {    -- Other action - oral health description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0066] occurrences matches {0..1} matches {    -- End-of-life care - oral health
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0067] occurrences matches {0..1} matches {    -- End-of-life care - oral health description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0068] occurrences matches {0..1} matches {    -- The person declines all preventive measures - oral health
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0069] occurrences matches {0..1} matches {    -- The person declines all preventive measures - oral health description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0070] occurrences matches {0..1} matches {    -- Contact/referral to a dentist if at least one score of 3
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0071] occurrences matches {0..1} matches {    -- Contact/referral to a dentist if at least one score of 3 description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0012] occurrences matches {0..1} matches {    -- Participation
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0072] occurrences matches {0..1} matches {    -- Patient participation
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0073] occurrences matches {0..1} matches {    -- Patient participation description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0074] occurrences matches {0..1} matches {    -- Other participation
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0075] occurrences matches {0..1} matches {    -- Other participation description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0013] occurrences matches {0..1} matches {    -- Coordination
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0076] occurrences matches {0..1} matches {    -- Contact with
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0077] occurrences matches {0..1} matches {    -- Contact with description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"nursing_support_oral_health">
+					description = <"">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"*Current Activity(en)">
+				>
+				["at0002"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0005"] = <
+					text = <"Goal">
+					description = <"**(en)">
+				>
+				["at0006"] = <
+					text = <"Lips">
+					description = <"**(en)">
+				>
+				["at0007"] = <
+					text = <"Mucous membranes">
+					description = <"**(en)">
+				>
+				["at0008"] = <
+					text = <"Tongue">
+					description = <"**(en)">
+				>
+				["at0009"] = <
+					text = <"Gums - Teeth - Implants">
+					description = <"**(en)">
+				>
+				["at0010"] = <
+					text = <"Saliva">
+					description = <"**(en)">
+				>
+				["at0011"] = <
+					text = <"Swallowing">
+					description = <"**(en)">
+				>
+				["at0012"] = <
+					text = <"Participation">
+					description = <"**(en)">
+				>
+				["at0013"] = <
+					text = <"Coordination">
+					description = <"**(en)">
+				>
+				["at0014"] = <
+					text = <"Establish good oral health during the care period">
+					description = <"**(en)">
+				>
+				["at0015"] = <
+					text = <"Establish good oral health during the care period description">
+					description = <"**(en)">
+				>
+				["at0016"] = <
+					text = <"Improve oral health during the care period">
+					description = <"**(en)">
+				>
+				["at0017"] = <
+					text = <"Improve oral health during the care period description">
+					description = <"**(en)">
+				>
+				["at0022"] = <
+					text = <"Moisten mouth">
+					description = <"**(en)">
+				>
+				["at0023"] = <
+					text = <"Moisten mouth description">
+					description = <"**(en)">
+				>
+				["at0024"] = <
+					text = <"Lubricate lips">
+					description = <"**(en)">
+				>
+				["at0025"] = <
+					text = <"Lubricate lips description">
+					description = <"**(en)">
+				>
+				["at0026"] = <
+					text = <"Local pain relief of lips">
+					description = <"**(en)">
+				>
+				["at0027"] = <
+					text = <"Local pain relief of lips description">
+					description = <"**(en)">
+				>
+				["at0030"] = <
+					text = <"Cleaning and moistening of oral mucous membranes">
+					description = <"**(en)">
+				>
+				["at0031"] = <
+					text = <"Cleaning and moistening of oral mucous membranes description">
+					description = <"**(en)">
+				>
+				["at0032"] = <
+					text = <"Removal of crusts">
+					description = <"**(en)">
+				>
+				["at0033"] = <
+					text = <"Removal of crusts description">
+					description = <"**(en)">
+				>
+				["at0034"] = <
+					text = <"Local pain relief mouth mucous membranes">
+					description = <"**(en)">
+				>
+				["at0035"] = <
+					text = <"Local pain relief mouth mucous membranes description">
+					description = <"**(en)">
+				>
+				["at0038"] = <
+					text = <"Cleaning of tongue">
+					description = <"**(en)">
+				>
+				["at0039"] = <
+					text = <"Cleaning of tongue description">
+					description = <"**(en)">
+				>
+				["at0040"] = <
+					text = <"Moisten tongue">
+					description = <"**(en)">
+				>
+				["at0041"] = <
+					text = <"Moisten tongue description">
+					description = <"**(en)">
+				>
+				["at0042"] = <
+					text = <"Local pain relief of tongue">
+					description = <"**(en)">
+				>
+				["at0043"] = <
+					text = <"Local pain relief of tongue description">
+					description = <"**(en)">
+				>
+				["at0044"] = <
+					text = <"Information and/or oral care training to perform oral care yourself">
+					description = <"**(en)">
+				>
+				["at0045"] = <
+					text = <"Information and/or oral care training to perform oral care yourself description">
+					description = <"**(en)">
+				>
+				["at0046"] = <
+					text = <"Brushing - assistance or full help">
+					description = <"**(en)">
+				>
+				["at0047"] = <
+					text = <"Brushing - assistance or full help description">
+					description = <"**(en)">
+				>
+				["at0048"] = <
+					text = <"Cleaning between teeth - assistance or complete help">
+					description = <"**(en)">
+				>
+				["at0049"] = <
+					text = <"Cleaning between teeth - assistance or complete help description">
+					description = <"**(en)">
+				>
+				["at0050"] = <
+					text = <"Wash with foam dryer - assistance or full help">
+					description = <"**(en)">
+				>
+				["at0051"] = <
+					text = <"Wash with foam dryer - assistance or full help description">
+					description = <"**(en)">
+				>
+				["at0052"] = <
+					text = <"Fluoride supply in addition to fluoride toothpaste - assistance or full assistance">
+					description = <"**(en)">
+				>
+				["at0053"] = <
+					text = <"Fluoride supply in addition to fluoride toothpaste - assistance or full assistance description">
+					description = <"**(en)">
+				>
+				["at0054"] = <
+					text = <"Extra oral care in case of enhanced diet - assistance or complete assistance">
+					description = <"**(en)">
+				>
+				["at0055"] = <
+					text = <"Extra oral care in case of enhanced diet - assistance or complete assistance description">
+					description = <"**(en)">
+				>
+				["at0056"] = <
+					text = <"Information and/or oral care training to perform oral/prosthetic cleansing yourself">
+					description = <"**(en)">
+				>
+				["at0057"] = <
+					text = <"Information and/or oral care training to perform oral/prosthetic cleansing yourself description">
+					description = <"**(en)">
+				>
+				["at0058"] = <
+					text = <"Prosthetic cleaning - assistance or full help">
+					description = <"**(en)">
+				>
+				["at0059"] = <
+					text = <"Prosthetic cleaning - assistance or full help description">
+					description = <"**(en)">
+				>
+				["at0060"] = <
+					text = <"Cleaning of remaining teeth and mucous membranes - assistance or complete assistance">
+					description = <"**(en)">
+				>
+				["at0061"] = <
+					text = <"Cleaning of remaining teeth and mucous membranes - assistance or complete assistance description">
+					description = <"**(en)">
+				>
+				["at0062"] = <
+					text = <"Ease swallowing by wetting the mouth">
+					description = <"**(en)">
+				>
+				["at0063"] = <
+					text = <"Ease swallowing by wetting the mouth description">
+					description = <"**(en)">
+				>
+				["at0064"] = <
+					text = <"Other action - oral health">
+					description = <"**(en)">
+				>
+				["at0065"] = <
+					text = <"Other action - oral health description">
+					description = <"**(en)">
+				>
+				["at0066"] = <
+					text = <"End-of-life care - oral health">
+					description = <"**(en)">
+				>
+				["at0067"] = <
+					text = <"End-of-life care - oral health description">
+					description = <"**(en)">
+				>
+				["at0068"] = <
+					text = <"The person declines all preventive measures - oral health">
+					description = <"**(en)">
+				>
+				["at0069"] = <
+					text = <"The person declines all preventive measures - oral health description">
+					description = <"**(en)">
+				>
+				["at0070"] = <
+					text = <"Contact/referral to a dentist if at least one score of 3">
+					description = <"**(en)">
+				>
+				["at0071"] = <
+					text = <"Contact/referral to a dentist if at least one score of 3 description">
+					description = <"**(en)">
+				>
+				["at0072"] = <
+					text = <"Patient participation">
+					description = <"**(en)">
+				>
+				["at0073"] = <
+					text = <"Patient participation description">
+					description = <"**(en)">
+				>
+				["at0074"] = <
+					text = <"Other participation">
+					description = <"**(en)">
+				>
+				["at0075"] = <
+					text = <"Other participation description">
+					description = <"**(en)">
+				>
+				["at0076"] = <
+					text = <"Contact with">
+					description = <"**(en)">
+				>
+				["at0077"] = <
+					text = <"Contact with description">
+					description = <"**(en)">
+				>
+				["at0079"] = <
+					text = <"Moisten the mucous membranes of the mouth">
+					description = <"**(en)">
+				>
+				["at0080"] = <
+					text = <"Moisten the mucous membranes of the mouth description">
+					description = <"**(en)">
+				>
+				["at0082"] = <
+					text = <"Prosthesis">
+					description = <"**(en)">
+				>
+				["at0083"] = <
+					text = <"Voice">
+					description = <"**(en)">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"*nursing_support_oral_health (en)">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"Current Activity">
+				>
+				["at0002"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Mål">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Läppar">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Munslemhinnor">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Tunga">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Tandkött - Tänder - Implantat">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Saliv">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Sväljning">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Delaktighet">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Samordning">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Upprätta god munhälsa under vårdtiden">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Upprätta god munhälsa under vårdtiden beskrivning">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Förbättra munhälsa under vårdtiden">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Förbättra munhälsa under vårdtiden beskrivning">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Fukta munnen">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Fukta munnen beskrivning">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Smörj läpparna">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Smörj läpparna beskrivning">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Lokal smärtlindring läppar">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Lokal smärtlindring läppar beskrivning">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Rengöring och fuktning av munslemhinnor">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Rengöring och fuktning av munslemhinnor beskrivning">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Borttagning av krustor">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Borttagning av krustor beskrivning">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Lokal smärtlindring munslemhinnor">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Lokal smärtlindring munslemhinnor beskrivning">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Rengöring av tunga">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Rengöring av tunga beskrivning">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Fukta tungan">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Fukta tungan beskrivning">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Lokal smärtlindring tunga">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Lokal smärtlindring tunga beskrivning">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Information och/eller träning i munvård för att utföra munvård själv">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Information och/eller träning i munvård för att utföra munvård själv beskrivning">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Tandborstning - assistans eller fullständig hjälp">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Tandborstning - assistans eller fullständig hjälp beskrivning">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Rengöring mellan tänderna - assistans eller fullständig hjälp">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Rengöring mellan tänderna - assistans eller fullständig hjälp beskrivning">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Tvätta med skumgummitork - assistans eller fullständig hjälp">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Tvätta med skumgummitork - assistans eller fullständig hjälp beskrivning">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Fluortillförsel utöver fluortandkräm - assistans eller fullständig hjälp">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Fluortillförsel utöver fluortandkräm - assistans eller fullständig hjälp beskrivning">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Extra munvård vid förstärkt kost - assistans eller fullständig hjälp">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Extra munvård vid förstärkt kost - assistans eller fullständig hjälp beskrivning">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Information och/eller träning i munvård för att utföra munvård/protesrengöring själv">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Information och/eller träning i munvård för att utföra munvård/protesrengöring själv beskrivning">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Protesrengöring - assistans eller fullständig hjälp">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Protesrengöring - assistans eller fullständig hjälp beskrivning">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Rengöring av kvarvarande tänder och munslemhinnor - assistans eller fullständig hjälp">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Rengöring av kvarvarande tänder och munslemhinnor - assistans eller fullständig hjälp beskrivning">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Underlätta sväljning genom fuktning av munnen">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Underlätta sväljning genom fuktning av munnen beskrivning">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Annan åtgärd - munhälsa">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Annan åtgärd - munhälsa beskrivning">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Vård i livets slutskede - munhälsa">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"Vård i livets slutskede - munhälsa beskrivning">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Personen avböjer samtliga förebyggande åtgärder - munhälsa">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Personen avböjer samtliga förebyggande åtgärder - munhälsa beskrivning">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Kontakt/remiss till tandläkare vid minst en 3:a">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Kontakt/remiss till tandläkare vid minst en 3:a beskrivning">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Patienten är delaktig vid upprättande av vårdplan">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Patienten är delaktig vid upprättande av vårdplan beskrivning">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Annan åtgärd - delaktighet">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Annan åtgärd - delaktighet beskrivning">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Kontakt med">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Kontakt med beskrivning">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"Fukta munslemhinnorna">
+					description = <"*">
+				>
+				["at0080"] = <
+					text = <"Fukta munslemhinnorna beskrivning">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"Protes">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Röst">
+					description = <"*">
+				>
+			>
+		>
+	>

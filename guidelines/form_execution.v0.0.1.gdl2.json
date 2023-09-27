@@ -1,0 +1,97 @@
+{
+  "id": "form_execution.v0.0.1",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2022-10-31",
+      "name": "Konstantinos Kalliamvakos",
+      "organisation": "Cambio CDS",
+      "email": "konstantinos.kalliamvakos@cambio.se"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "Form execution test.",
+        "use": "Use to test the guideline execution of forms.",
+        "copyright": "Cambio CDS"
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.input.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.input.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          }
+        }
+      },
+      "gt0004": {
+        "id": "gt0004",
+        "model_id": "openEHR-EHR-OBSERVATION.output.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.output.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          }
+        }
+      }
+    },
+    "default_actions": [
+      "$gt0005|Output|='The form execution did not work :('"
+    ],
+    "rules": {
+      "gt0006": {
+        "id": "gt0006",
+        "priority": 1,
+        "when": [
+          "$gt0003|Input|!=null"
+        ],
+        "then": [
+          "$gt0005|Output|='The form execution worked!!!'"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Test Form Execution",
+            "description": "A guideline for testing the execution of guidelines in a form."
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Input",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Output",
+            "description": ""
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Form execution"
+          }
+        }
+      }
+    }
+  }
+}

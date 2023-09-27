@@ -1,0 +1,5032 @@
+archetype (adl_version=1.4; uid=5c4e3ba3-174d-4faa-ba17-da4f8822c9eb)
+	openEHR-EHR-OBSERVATION.belfast_100k_genomes_project.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2022-06-17">
+		["name"] = <"Rashmi Damodaran">
+		["organisation"] = <"Cambio CDS">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"c579be23fea0d486a0ca98dbd292956d">
+		["build_uid"] = <"bc9a91ba-25bf-3729-98e7-b8db6f600682">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Belfast 100k Genomes Project
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0068] occurrences matches {0..1} matches {    -- Familial Hypercholesterolemia phenotypes
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0005] occurrences matches {0..1} matches {    -- Hyperlipidemia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0006] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0007] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0041] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0042] occurrences matches {0..1} matches {    -- Hypercholesterolemia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0019] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0020] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0021] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0012] occurrences matches {0..1} matches {    -- Hyperbetalipoproteinemia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0022] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0040] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0024] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0014] occurrences matches {0..1} matches {    -- Hyperlipoproteinemia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0025] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0026] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0027] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0015] occurrences matches {0..1} matches {    -- Myocardial infarction
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0028] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0029] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0030] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0016] occurrences matches {0..1} matches {    -- Hypertriglyceridemia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0031] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0032] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0033] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0017] occurrences matches {0..1} matches {    -- Tendon xanthomatosis
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0034] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0035] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0036] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0018] occurrences matches {0..1} matches {    -- Corneal arcus
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0037] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0038] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0039] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0069] occurrences matches {0..1} matches {    -- Familial Hypercholesterolemia eligibility
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0070] occurrences matches {0..1} matches {    -- Total cholesterol > 6.7 mmol/l (260 mg/dl) in a child < 16 years
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0071] occurrences matches {0..1} matches {    -- LDL cholesterol above 4.0 mmol/l in a child < 16 years
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0072] occurrences matches {0..1} matches {    -- Total cholesterol >7.5 mmol/l (290 mg/dl) in an adult
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0073] occurrences matches {0..1} matches {    -- LDL cholesterol above 4.9 mmol/l (190 mg/dl) in an adult
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0074] occurrences matches {0..1} matches {    -- Tendon xanthomas (TX) in patient
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0075] occurrences matches {0..1} matches {    -- Tendon xanthomas (TX) in 1st degree relative (parent, sibling, child) or in 2nd degree relative (grandparent, uncle, aunt)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0076] occurrences matches {0..1} matches {    -- Total cholesterol >8.5 mmol/l in an adult
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0077] occurrences matches {0..1} matches {    -- LDL cholesterol above 5.5 mmol/l in an adult
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0078] occurrences matches {0..1} matches {    -- Family history of myocardial infarction below age of 50 in 2nd degree relative or below age 60 in 1st degree relative
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0079] occurrences matches {0..1} matches {    -- Family history of raised cholesterol: >7.5 mmol/l in adult 1st or 2nd degree relative or > 6.7 mmol/l in child or sibling under 16
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0080] occurrences matches {0..1} matches {    -- Polygenic risk 12-SNP gene score in the bottom two quartiles
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0129] occurrences matches {0..1} matches {    -- Rare multisystem ciliopathy disorders phenotypes
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0130] occurrences matches {0..1} matches {    -- Delayed gross motor development
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0136] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0137] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0138] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0132] occurrences matches {0..1} matches {    -- Delayed fine motor development
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0139] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0140] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0141] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0134] occurrences matches {0..1} matches {    -- Delayed speech and language development
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0142] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0143] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0144] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0146] occurrences matches {0..1} matches {    -- Global developmental delay
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0147] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0148] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0149] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0150] occurrences matches {0..1} matches {    -- Intellectual disability
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0151] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0152] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0153] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0154] occurrences matches {0..1} matches {    -- Microcephaly
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0155] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0156] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0157] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0158] occurrences matches {0..1} matches {    -- Macrocephaly
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0159] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0160] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0161] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0162] occurrences matches {0..1} matches {    -- Generalized hypotonia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0163] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0164] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0165] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0166] occurrences matches {0..1} matches {    -- Ataxia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0167] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0168] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0169] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0171] occurrences matches {0..1} matches {    -- Molar tooth sign on MRI
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0172] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0173] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0174] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0175] occurrences matches {0..1} matches {    -- Cerebellar vermis hypoplasia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0176] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0177] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0178] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0179] occurrences matches {0..1} matches {    -- Occipital encephalocele
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0180] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0181] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0182] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0187] occurrences matches {0..1} matches {    -- Polymicrogyria
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0188] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0189] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0190] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0191] occurrences matches {0..1} matches {    -- Neonatal breathing dysregulation
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0192] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0193] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0194] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0199] occurrences matches {0..1} matches {    -- Oculomotor apraxia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0201] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0202] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0203] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0200] occurrences matches {0..1} matches {    -- Coloboma
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0204] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0205] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0206] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0207] occurrences matches {0..1} matches {    -- Retinal dystrophy
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0211] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0212] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0213] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0208] occurrences matches {0..1} matches {    -- Abnormal facial shape
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0214] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0215] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0216] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0209] occurrences matches {0..1} matches {    -- Accessory oral frenulum
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0217] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0218] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0219] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0210] occurrences matches {0..1} matches {    -- Hamartoma of tongue
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0220] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0221] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0222] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0223] occurrences matches {0..1} matches {    -- Cleft palate
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0230] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0231] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0232] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0224] occurrences matches {0..1} matches {    -- Abnormality of cardiovascular system morphology
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0233] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0234] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0235] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0225] occurrences matches {0..1} matches {    -- Hyperechogenic kidneys
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0236] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0237] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0238] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0227] occurrences matches {0..1} matches {    -- Multiple renal cysts
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0239] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0240] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0241] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0228] occurrences matches {0..1} matches {    -- Hypertension
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0242] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0243] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0244] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0229] occurrences matches {0..1} matches {    -- Chronic kidney disease
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0245] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0246] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0247] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0248] occurrences matches {0..1} matches {    -- Hepatic fibrosis
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0257] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0258] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0259] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0249] occurrences matches {0..1} matches {    -- Elevated hepatic transaminases
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0260] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0261] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0262] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0250] occurrences matches {0..1} matches {    -- Preaxial hand polydactyly
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0263] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0264] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0265] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0251] occurrences matches {0..1} matches {    -- Postaxial hand polydactyly
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0266] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0267] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0268] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0253] occurrences matches {0..1} matches {    -- Mesoaxial hand polydactyly
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0269] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0270] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0271] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0254] occurrences matches {0..1} matches {    -- Preaxial foot polydactyly
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0275] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0276] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0277] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0255] occurrences matches {0..1} matches {    -- Postaxial foot polydactyly
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0278] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0279] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0280] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0256] occurrences matches {0..1} matches {    -- Mesoaxial foot polydactyly
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0281] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0282] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0283] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0284] occurrences matches {0..1} matches {    -- Short stature
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0286] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0287] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0288] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0285] occurrences matches {0..1} matches {    -- Obesity
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0289] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0290] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0291] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0083] occurrences matches {0..1} matches {    -- Rare multisystem ciliopathy disorders eligibility
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0296] occurrences matches {0..1} matches {    -- Clinical diagnosis of oral-facial-digital syndromes
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0297] occurrences matches {0..1} matches {    -- Clinical diagnosis of cranioectodermal dysplasia
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0298] occurrences matches {0..1} matches {    -- Clinical diagnosis of a rare multisystem ciliopathy
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0299] occurrences matches {0..1} matches {    -- Renal dysplasia, polycystic or ‘bright’ kidneys
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0300] occurrences matches {0..1} matches {    -- Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0301] occurrences matches {0..1} matches {    -- Polydactyly
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0302] occurrences matches {0..1} matches {    -- Short limbs and/or short ribs
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0303] occurrences matches {0..1} matches {    -- Occipital encephalocele
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0304] occurrences matches {0..1} matches {    -- Retinal dystrophy
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0305] occurrences matches {0..1} matches {    -- GMS R104 Skeletal dysplasia phenotypes
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0306] occurrences matches {0..1} matches {    -- Skeletal dysplasia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0410] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0411] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0412] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0307] occurrences matches {0..1} matches {    -- Short stature
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0416] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0417] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0418] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0308] occurrences matches {0..1} matches {    -- Intellectual disability
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0419] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0420] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0421] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0309] occurrences matches {0..1} matches {    -- Abnormal facial shape
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0422] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0423] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0424] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0310] occurrences matches {0..1} matches {    -- Global developmental delay
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0425] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0426] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0427] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0312] occurrences matches {0..1} matches {    -- GMS R104 Skeletal dysplasia eligibility
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0313] occurrences matches {0..1} matches {    -- Clinical features indicative of a likely monogenic skeletal dysplasia
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0314] occurrences matches {0..1} matches {    -- GMS R59 Early onset or syndromic epilepsy phenotypes
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0316] occurrences matches {0..1} matches {    -- Generalized seizures
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0323] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0324] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0325] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0317] occurrences matches {0..1} matches {    -- Focal seizures
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0326] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0327] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0328] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0318] occurrences matches {0..1} matches {    -- Epileptic spasms
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0329] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0330] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0331] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0319] occurrences matches {0..1} matches {    -- Infantile encephalopathy
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0332] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0333] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0334] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0320] occurrences matches {0..1} matches {    -- Intellectual disability
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0335] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0336] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0337] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0321] occurrences matches {0..1} matches {    -- Abnormal facial shape
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0338] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0339] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0340] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0322] occurrences matches {0..1} matches {    -- Global developmental delay
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0341] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0342] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0343] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0315] occurrences matches {0..1} matches {    -- GMS R59 Early onset or syndromic epilepsy eligibility
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0344] occurrences matches {0..1} matches {    -- Unexplained epilepsy with clinical suspicion of a monogenic cause
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0345] occurrences matches {0..1} matches {    -- Onset under 2 years
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0346] occurrences matches {0..1} matches {    -- Clinical features suggestive of specific genetic epilepsy, for example Dravet syndrome
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0347] occurrences matches {0..1} matches {    -- Intellectual disability
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0348] occurrences matches {0..1} matches {    -- Autism spectrum disorder
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0349] occurrences matches {0..1} matches {    -- Structural abnormality (e.g. dysmorphism, congenital malformation)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0350] occurrences matches {0..1} matches {    -- Unexplained cognitive/memory decline
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0351] occurrences matches {0..1} matches {    -- Noonan syndrome phenotypes
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0353] occurrences matches {0..1} matches {    -- Increased nuchal translucency
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0428] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0429] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0430] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0355] occurrences matches {0..1} matches {    -- Nonimmune hydrops fetalis
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0431] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0432] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0433] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0356] occurrences matches {0..1} matches {    -- Polyhydramnios
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0434] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0435] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0436] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0357] occurrences matches {0..1} matches {    -- Failure to thrive in infancy
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0437] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0438] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0439] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0358] occurrences matches {0..1} matches {    -- Feeding difficulties
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0440] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0441] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0442] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0359] occurrences matches {0..1} matches {    -- Pulmonic stenosis
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0443] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0444] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0445] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0360] occurrences matches {0..1} matches {    -- Hypertrophic cardiomyopathy
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0446] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0447] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0448] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0361] occurrences matches {0..1} matches {    -- Abnormality of the atrioventricular valves
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0449] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0450] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0451] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0362] occurrences matches {0..1} matches {    -- Atrial septal defect
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0452] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0453] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0454] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0363] occurrences matches {0..1} matches {    -- Ventricular septal defect
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0455] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0456] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0457] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0364] occurrences matches {0..1} matches {    -- Arrhythmia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0458] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0459] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0460] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0365] occurrences matches {0..1} matches {    -- Lymphedema
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0461] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0462] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0463] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0366] occurrences matches {0..1} matches {    -- Pleural effusion
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0464] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0465] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0466] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0367] occurrences matches {0..1} matches {    -- Intellectual disability
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0467] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0468] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0469] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0368] occurrences matches {0..1} matches {    -- Specific learning disability
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0470] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0471] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0472] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0369] occurrences matches {0..1} matches {    -- Delayed gross motor development
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0473] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0474] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0475] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0370] occurrences matches {0..1} matches {    -- Delayed speech and language development
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0476] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0477] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0478] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0371] occurrences matches {0..1} matches {    -- Abnormality of the kidney
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0479] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0480] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0481] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0372] occurrences matches {0..1} matches {    -- Delayed puberty
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0482] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0483] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0484] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0373] occurrences matches {0..1} matches {    -- Cryptorchidism
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0485] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0486] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0487] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0374] occurrences matches {0..1} matches {    -- Decreased fertility
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0488] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0489] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0490] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0375] occurrences matches {0..1} matches {    -- Abnormality of hair texture
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0491] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0492] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0493] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0376] occurrences matches {0..1} matches {    -- Follicular hyperkeratosis
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0494] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0495] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0496] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0377] occurrences matches {0..1} matches {    -- Cafe-au-lait spot
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0497] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0498] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0499] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0378] occurrences matches {0..1} matches {    -- Multiple lentigines
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0500] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0501] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0502] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0379] occurrences matches {0..1} matches {    -- Hemangioma
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0503] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0504] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0505] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0380] occurrences matches {0..1} matches {    -- Papilloma
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0506] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0507] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0508] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0381] occurrences matches {0..1} matches {    -- Pectus carinatum
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0509] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0510] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0511] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0382] occurrences matches {0..1} matches {    -- Pectus excavatum
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0512] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0513] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0514] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0383] occurrences matches {0..1} matches {    -- Wide intermamillary distance
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0515] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0516] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0517] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0384] occurrences matches {0..1} matches {    -- Webbed neck
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0518] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0519] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0520] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0385] occurrences matches {0..1} matches {    -- Abnormality of the coagulation cascade
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0521] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0522] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0523] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0386] occurrences matches {0..1} matches {    -- Abnormality of thrombocytes
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0524] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0525] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0526] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0388] occurrences matches {0..1} matches {    -- Neoplasm
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0527] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0528] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0529] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0389] occurrences matches {0..1} matches {    -- Immunodeficiency
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0530] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0531] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0532] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0390] occurrences matches {0..1} matches {    -- Autoimmunity
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0533] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0534] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0535] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0391] occurrences matches {0..1} matches {    -- Abnormality of brain morphology
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0536] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0537] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0538] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0392] occurrences matches {0..1} matches {    -- Seizures
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0539] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0540] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0541] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0393] occurrences matches {0..1} matches {    -- Autism
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0543] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0542] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0544] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0394] occurrences matches {0..1} matches {    -- Depression
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0545] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0546] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0547] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0396] occurrences matches {0..1} matches {    -- Schizophrenia
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0548] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0549] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0550] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0397] occurrences matches {0..1} matches {    -- Ptosis
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0551] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0552] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0553] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0398] occurrences matches {0..1} matches {    -- Abnormality of refraction
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0554] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0555] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0556] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0399] occurrences matches {0..1} matches {    -- Strabismus
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0557] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0558] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0559] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0400] occurrences matches {0..1} matches {    -- Hearing abnormality
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0560] occurrences matches {0..1} matches {    -- Phenotype identifier
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0561] occurrences matches {0..1} matches {    -- Phenotype present
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0008,    -- Yes
+																	at0009,    -- No
+																	at0010]    -- Unknown
+																}
+															}
+														}
+													}
+													ELEMENT[at0562] occurrences matches {0..1} matches {    -- Phenotype description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0352] occurrences matches {0..1} matches {    -- Noonan syndrome eligibility
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0401] occurrences matches {0..1} matches {    -- Early feeding difficulty/ failure to thrive
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0402] occurrences matches {0..1} matches {    -- Relative macrocephaly
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0403] occurrences matches {0..1} matches {    -- Short stature
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0404] occurrences matches {0..1} matches {    -- Developmental disability
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0405] occurrences matches {0..1} matches {    -- Cardiomyopathy
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0406] occurrences matches {0..1} matches {    -- Congenital heart disease
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0407] occurrences matches {0..1} matches {    -- Arrhythmia
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0408] occurrences matches {0..1} matches {    -- Suggestive malignancy ( bladder carcinoma, Rhabdomyosarcoma, Leukaemia, phaeochromocytoma)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0409] occurrences matches {0..1} matches {    -- Skin abnormalities (hyperkeratosis, cafe au lait patches, ulerythema oophorogenes, keratosis pilaris, excess palmar skin)
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0008,    -- Yes
+															at0009,    -- No
+															at0010]    -- Unknown
+														}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0065] occurrences matches {0..1} matches {    -- Assessment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0066] occurrences matches {0..1} matches {    -- Considerations prior to recruitment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0067] occurrences matches {0..1} matches {    -- Comments
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0311] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Belfast 100k Genomes Project">
+					description = <"ni_100k_genomes_project">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Hyperlipidemia">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Unknown">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Hyperbetalipoproteinemia">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Hyperlipoproteinemia">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Myocardial infarction">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Hypertriglyceridemia">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Tendon xanthomatosis">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Corneal arcus">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Hypercholesterolemia">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"Assessment">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Considerations prior to recruitment">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Comments">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"Familial Hypercholesterolemia phenotypes">
+					description = <"">
+				>
+				["at0069"] = <
+					text = <"Familial Hypercholesterolemia eligibility">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Total cholesterol > 6.7 mmol/l (260 mg/dl) in a child < 16 years">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"LDL cholesterol above 4.0 mmol/l in a child < 16 years">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"Total cholesterol >7.5 mmol/l (290 mg/dl) in an adult">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"LDL cholesterol above 4.9 mmol/l (190 mg/dl) in an adult">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"Tendon xanthomas (TX) in patient">
+					description = <"">
+				>
+				["at0075"] = <
+					text = <"Tendon xanthomas (TX) in 1st degree relative (parent, sibling, child) or in 2nd degree relative (grandparent, uncle, aunt)">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Total cholesterol >8.5 mmol/l in an adult">
+					description = <"">
+				>
+				["at0077"] = <
+					text = <"LDL cholesterol above 5.5 mmol/l in an adult">
+					description = <"">
+				>
+				["at0078"] = <
+					text = <"Family history of myocardial infarction below age of 50 in 2nd degree relative or below age 60 in 1st degree relative">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"Family history of raised cholesterol: >7.5 mmol/l in adult 1st or 2nd degree relative or > 6.7 mmol/l in child or sibling under 16">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"Polygenic risk 12-SNP gene score in the bottom two quartiles">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"Rare multisystem ciliopathy disorders eligibility">
+					description = <"">
+				>
+				["at0129"] = <
+					text = <"Rare multisystem ciliopathy disorders phenotypes">
+					description = <"">
+				>
+				["at0130"] = <
+					text = <"Delayed gross motor development">
+					description = <"">
+				>
+				["at0132"] = <
+					text = <"Delayed fine motor development">
+					description = <"">
+				>
+				["at0134"] = <
+					text = <"Delayed speech and language development">
+					description = <"">
+				>
+				["at0136"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0137"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0138"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0139"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0140"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0141"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0142"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0143"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0144"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0146"] = <
+					text = <"Global developmental delay">
+					description = <"">
+				>
+				["at0147"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0148"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0149"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0150"] = <
+					text = <"Intellectual disability">
+					description = <"">
+				>
+				["at0151"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0152"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0153"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0154"] = <
+					text = <"Microcephaly">
+					description = <"">
+				>
+				["at0155"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0156"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0157"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0158"] = <
+					text = <"Macrocephaly">
+					description = <"">
+				>
+				["at0159"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0160"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0161"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0162"] = <
+					text = <"Generalized hypotonia">
+					description = <"">
+				>
+				["at0163"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0164"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0165"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0166"] = <
+					text = <"Ataxia">
+					description = <"">
+				>
+				["at0167"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0168"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0169"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0171"] = <
+					text = <"Molar tooth sign on MRI">
+					description = <"">
+				>
+				["at0172"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0173"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0174"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0175"] = <
+					text = <"Cerebellar vermis hypoplasia">
+					description = <"">
+				>
+				["at0176"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0177"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0178"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0179"] = <
+					text = <"Occipital encephalocele">
+					description = <"">
+				>
+				["at0180"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0181"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0182"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0187"] = <
+					text = <"Polymicrogyria">
+					description = <"">
+				>
+				["at0188"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0189"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0190"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0191"] = <
+					text = <"Neonatal breathing dysregulation">
+					description = <"">
+				>
+				["at0192"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0193"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0194"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0199"] = <
+					text = <"Oculomotor apraxia">
+					description = <"">
+				>
+				["at0200"] = <
+					text = <"Coloboma">
+					description = <"">
+				>
+				["at0201"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0202"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0203"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0204"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0205"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0206"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0207"] = <
+					text = <"Retinal dystrophy">
+					description = <"">
+				>
+				["at0208"] = <
+					text = <"Abnormal facial shape">
+					description = <"">
+				>
+				["at0209"] = <
+					text = <"Accessory oral frenulum">
+					description = <"">
+				>
+				["at0210"] = <
+					text = <"Hamartoma of tongue">
+					description = <"">
+				>
+				["at0211"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0212"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0213"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0214"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0215"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0216"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0217"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0218"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0219"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0220"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0221"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0222"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0223"] = <
+					text = <"Cleft palate">
+					description = <"">
+				>
+				["at0224"] = <
+					text = <"Abnormality of cardiovascular system morphology">
+					description = <"">
+				>
+				["at0225"] = <
+					text = <"Hyperechogenic kidneys">
+					description = <"">
+				>
+				["at0227"] = <
+					text = <"Multiple renal cysts">
+					description = <"">
+				>
+				["at0228"] = <
+					text = <"Hypertension">
+					description = <"">
+				>
+				["at0229"] = <
+					text = <"Chronic kidney disease">
+					description = <"">
+				>
+				["at0230"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0231"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0232"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0233"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0234"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0235"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0236"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0237"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0238"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0239"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0240"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0241"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0242"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0243"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0244"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0245"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0246"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0247"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0248"] = <
+					text = <"Hepatic fibrosis">
+					description = <"">
+				>
+				["at0249"] = <
+					text = <"Elevated hepatic transaminases">
+					description = <"">
+				>
+				["at0250"] = <
+					text = <"Preaxial hand polydactyly">
+					description = <"">
+				>
+				["at0251"] = <
+					text = <"Postaxial hand polydactyly">
+					description = <"">
+				>
+				["at0253"] = <
+					text = <"Mesoaxial hand polydactyly">
+					description = <"">
+				>
+				["at0254"] = <
+					text = <"Preaxial foot polydactyly">
+					description = <"">
+				>
+				["at0255"] = <
+					text = <"Postaxial foot polydactyly">
+					description = <"">
+				>
+				["at0256"] = <
+					text = <"Mesoaxial foot polydactyly">
+					description = <"">
+				>
+				["at0257"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0258"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0259"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0260"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0261"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0262"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0263"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0264"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0265"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0266"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0267"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0268"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0269"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0270"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0271"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0275"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0276"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0277"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0278"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0279"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0280"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0281"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0282"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0283"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0284"] = <
+					text = <"Short stature">
+					description = <"">
+				>
+				["at0285"] = <
+					text = <"Obesity">
+					description = <"">
+				>
+				["at0286"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0287"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0288"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0289"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0290"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0291"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0296"] = <
+					text = <"Clinical diagnosis of oral-facial-digital syndromes">
+					description = <"">
+				>
+				["at0297"] = <
+					text = <"Clinical diagnosis of cranioectodermal dysplasia">
+					description = <"">
+				>
+				["at0298"] = <
+					text = <"Clinical diagnosis of a rare multisystem ciliopathy">
+					description = <"">
+				>
+				["at0299"] = <
+					text = <"Renal dysplasia, polycystic or ‘bright’ kidneys">
+					description = <"">
+				>
+				["at0300"] = <
+					text = <"Cerebellar hypoplasia (especially vermis where visible) / Dandy-Walker malformation or variant">
+					description = <"">
+				>
+				["at0301"] = <
+					text = <"Polydactyly">
+					description = <"">
+				>
+				["at0302"] = <
+					text = <"Short limbs and/or short ribs">
+					description = <"">
+				>
+				["at0303"] = <
+					text = <"Occipital encephalocele">
+					description = <"">
+				>
+				["at0304"] = <
+					text = <"Retinal dystrophy">
+					description = <"">
+				>
+				["at0305"] = <
+					text = <"GMS R104 Skeletal dysplasia phenotypes">
+					description = <"">
+				>
+				["at0306"] = <
+					text = <"Skeletal dysplasia">
+					description = <"">
+				>
+				["at0307"] = <
+					text = <"Short stature">
+					description = <"">
+				>
+				["at0308"] = <
+					text = <"Intellectual disability">
+					description = <"">
+				>
+				["at0309"] = <
+					text = <"Abnormal facial shape">
+					description = <"">
+				>
+				["at0310"] = <
+					text = <"Global developmental delay">
+					description = <"">
+				>
+				["at0311"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0312"] = <
+					text = <"GMS R104 Skeletal dysplasia eligibility">
+					description = <"">
+				>
+				["at0313"] = <
+					text = <"Clinical features indicative of a likely monogenic skeletal dysplasia">
+					description = <"">
+				>
+				["at0314"] = <
+					text = <"GMS R59 Early onset or syndromic epilepsy phenotypes">
+					description = <"">
+				>
+				["at0315"] = <
+					text = <"GMS R59 Early onset or syndromic epilepsy eligibility">
+					description = <"">
+				>
+				["at0316"] = <
+					text = <"Generalized seizures">
+					description = <"">
+				>
+				["at0317"] = <
+					text = <"Focal seizures">
+					description = <"">
+				>
+				["at0318"] = <
+					text = <"Epileptic spasms">
+					description = <"">
+				>
+				["at0319"] = <
+					text = <"Infantile encephalopathy">
+					description = <"">
+				>
+				["at0320"] = <
+					text = <"Intellectual disability">
+					description = <"">
+				>
+				["at0321"] = <
+					text = <"Abnormal facial shape">
+					description = <"">
+				>
+				["at0322"] = <
+					text = <"Global developmental delay">
+					description = <"">
+				>
+				["at0323"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0324"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0325"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0326"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0327"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0328"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0329"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0330"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0331"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0332"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0333"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0334"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0335"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0336"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0337"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0338"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0339"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0340"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0341"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0342"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0343"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0344"] = <
+					text = <"Unexplained epilepsy with clinical suspicion of a monogenic cause">
+					description = <"">
+				>
+				["at0345"] = <
+					text = <"Onset under 2 years">
+					description = <"">
+				>
+				["at0346"] = <
+					text = <"Clinical features suggestive of specific genetic epilepsy, for example Dravet syndrome">
+					description = <"">
+				>
+				["at0347"] = <
+					text = <"Intellectual disability">
+					description = <"">
+				>
+				["at0348"] = <
+					text = <"Autism spectrum disorder">
+					description = <"">
+				>
+				["at0349"] = <
+					text = <"Structural abnormality (e.g. dysmorphism, congenital malformation)">
+					description = <"">
+				>
+				["at0350"] = <
+					text = <"Unexplained cognitive/memory decline">
+					description = <"">
+				>
+				["at0351"] = <
+					text = <"Noonan syndrome phenotypes">
+					description = <"">
+				>
+				["at0352"] = <
+					text = <"Noonan syndrome eligibility">
+					description = <"">
+				>
+				["at0353"] = <
+					text = <"Increased nuchal translucency">
+					description = <"">
+				>
+				["at0355"] = <
+					text = <"Nonimmune hydrops fetalis">
+					description = <"">
+				>
+				["at0356"] = <
+					text = <"Polyhydramnios">
+					description = <"">
+				>
+				["at0357"] = <
+					text = <"Failure to thrive in infancy">
+					description = <"">
+				>
+				["at0358"] = <
+					text = <"Feeding difficulties">
+					description = <"">
+				>
+				["at0359"] = <
+					text = <"Pulmonic stenosis">
+					description = <"">
+				>
+				["at0360"] = <
+					text = <"Hypertrophic cardiomyopathy">
+					description = <"">
+				>
+				["at0361"] = <
+					text = <"Abnormality of the atrioventricular valves">
+					description = <"">
+				>
+				["at0362"] = <
+					text = <"Atrial septal defect">
+					description = <"">
+				>
+				["at0363"] = <
+					text = <"Ventricular septal defect">
+					description = <"">
+				>
+				["at0364"] = <
+					text = <"Arrhythmia">
+					description = <"">
+				>
+				["at0365"] = <
+					text = <"Lymphedema">
+					description = <"">
+				>
+				["at0366"] = <
+					text = <"Pleural effusion">
+					description = <"">
+				>
+				["at0367"] = <
+					text = <"Intellectual disability">
+					description = <"">
+				>
+				["at0368"] = <
+					text = <"Specific learning disability">
+					description = <"">
+				>
+				["at0369"] = <
+					text = <"Delayed gross motor development">
+					description = <"">
+				>
+				["at0370"] = <
+					text = <"Delayed speech and language development">
+					description = <"">
+				>
+				["at0371"] = <
+					text = <"Abnormality of the kidney">
+					description = <"">
+				>
+				["at0372"] = <
+					text = <"Delayed puberty">
+					description = <"">
+				>
+				["at0373"] = <
+					text = <"Cryptorchidism">
+					description = <"">
+				>
+				["at0374"] = <
+					text = <"Decreased fertility">
+					description = <"">
+				>
+				["at0375"] = <
+					text = <"Abnormality of hair texture">
+					description = <"">
+				>
+				["at0376"] = <
+					text = <"Follicular hyperkeratosis">
+					description = <"">
+				>
+				["at0377"] = <
+					text = <"Cafe-au-lait spot">
+					description = <"">
+				>
+				["at0378"] = <
+					text = <"Multiple lentigines">
+					description = <"">
+				>
+				["at0379"] = <
+					text = <"Hemangioma">
+					description = <"">
+				>
+				["at0380"] = <
+					text = <"Papilloma">
+					description = <"">
+				>
+				["at0381"] = <
+					text = <"Pectus carinatum">
+					description = <"">
+				>
+				["at0382"] = <
+					text = <"Pectus excavatum">
+					description = <"">
+				>
+				["at0383"] = <
+					text = <"Wide intermamillary distance">
+					description = <"">
+				>
+				["at0384"] = <
+					text = <"Webbed neck">
+					description = <"">
+				>
+				["at0385"] = <
+					text = <"Abnormality of the coagulation cascade">
+					description = <"">
+				>
+				["at0386"] = <
+					text = <"Abnormality of thrombocytes">
+					description = <"">
+				>
+				["at0388"] = <
+					text = <"Neoplasm">
+					description = <"">
+				>
+				["at0389"] = <
+					text = <"Immunodeficiency">
+					description = <"">
+				>
+				["at0390"] = <
+					text = <"Autoimmunity">
+					description = <"">
+				>
+				["at0391"] = <
+					text = <"Abnormality of brain morphology">
+					description = <"">
+				>
+				["at0392"] = <
+					text = <"Seizures">
+					description = <"">
+				>
+				["at0393"] = <
+					text = <"Autism">
+					description = <"">
+				>
+				["at0394"] = <
+					text = <"Depression">
+					description = <"">
+				>
+				["at0396"] = <
+					text = <"Schizophrenia">
+					description = <"">
+				>
+				["at0397"] = <
+					text = <"Ptosis">
+					description = <"">
+				>
+				["at0398"] = <
+					text = <"Abnormality of refraction">
+					description = <"">
+				>
+				["at0399"] = <
+					text = <"Strabismus">
+					description = <"">
+				>
+				["at0400"] = <
+					text = <"Hearing abnormality">
+					description = <"">
+				>
+				["at0401"] = <
+					text = <"Early feeding difficulty/ failure to thrive">
+					description = <"">
+				>
+				["at0402"] = <
+					text = <"Relative macrocephaly">
+					description = <"">
+				>
+				["at0403"] = <
+					text = <"Short stature">
+					description = <"">
+				>
+				["at0404"] = <
+					text = <"Developmental disability">
+					description = <"">
+				>
+				["at0405"] = <
+					text = <"Cardiomyopathy">
+					description = <"">
+				>
+				["at0406"] = <
+					text = <"Congenital heart disease">
+					description = <"">
+				>
+				["at0407"] = <
+					text = <"Arrhythmia">
+					description = <"">
+				>
+				["at0408"] = <
+					text = <"Suggestive malignancy ( bladder carcinoma, Rhabdomyosarcoma, Leukaemia, phaeochromocytoma)">
+					description = <"">
+				>
+				["at0409"] = <
+					text = <"Skin abnormalities (hyperkeratosis, cafe au lait patches, ulerythema oophorogenes, keratosis pilaris, excess palmar skin)">
+					description = <"">
+				>
+				["at0410"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0411"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0412"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0416"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0417"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0418"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0419"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0420"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0421"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0422"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0423"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0424"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0425"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0426"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0427"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0428"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0429"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0430"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0431"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0432"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0433"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0434"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0435"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0436"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0437"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0438"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0439"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0440"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0441"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0442"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0443"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0444"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0445"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0446"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0447"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0448"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0449"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0450"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0451"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0452"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0453"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0454"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0455"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0456"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0457"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0458"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0459"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0460"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0461"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0462"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0463"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0464"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0465"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0466"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0467"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0468"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0469"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0470"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0471"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0472"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0473"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0474"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0475"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0476"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0477"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0478"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0479"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0480"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0481"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0482"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0483"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0484"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0485"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0486"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0487"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0488"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0489"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0490"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0491"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0492"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0493"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0494"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0495"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0496"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0497"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0498"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0499"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0500"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0501"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0502"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0503"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0504"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0505"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0506"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0507"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0508"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0509"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0510"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0511"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0512"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0513"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0514"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0515"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0516"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0517"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0518"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0519"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0520"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0521"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0522"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0523"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0524"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0525"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0526"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0527"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0528"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0529"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0530"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0531"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0532"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0533"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0534"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0535"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0536"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0537"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0538"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0539"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0540"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0541"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0542"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0543"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0544"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0545"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0546"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0547"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0548"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0549"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0550"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0551"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0552"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0553"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0554"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0555"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0556"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0557"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0558"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0559"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+				["at0560"] = <
+					text = <"Phenotype identifier">
+					description = <"">
+				>
+				["at0561"] = <
+					text = <"Phenotype present">
+					description = <"">
+				>
+				["at0562"] = <
+					text = <"Phenotype description">
+					description = <"">
+				>
+			>
+		>
+	>

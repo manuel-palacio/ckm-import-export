@@ -1,0 +1,721 @@
+archetype (adl_version=1.4; uid=07644920-f849-428e-840a-da38da406f18)
+	openEHR-EHR-OBSERVATION.easi.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2022-04-26">
+		["name"] = <"Rashmi Damodaran">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"rashmi.damodaran@cambio.se">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"ba408f9a33de683d6186274f4af6644c">
+		["build_uid"] = <"998477db-3384-36df-a577-db0c678e0996">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- EASI score
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0005] occurrences matches {0..1} matches {    -- Head and neck
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0122] occurrences matches {0..1} matches {    -- Affected area
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0123] occurrences matches {0..1} matches {    -- Face
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..33.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0124] occurrences matches {0..1} matches {    -- Neck (front)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..17.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0125] occurrences matches {0..1} matches {    -- Scalp
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..33.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0126] occurrences matches {0..1} matches {    -- Neck (back)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..17.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0006] occurrences matches {0..1} matches {    -- Affected area
+														value matches {
+															0|[local::at0007],
+															1|[local::at0008],
+															2|[local::at0009],
+															3|[local::at0010],
+															4|[local::at0011],
+															5|[local::at0012],
+															6|[local::at0013]
+														}
+													}
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {    -- Erythema
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0019] occurrences matches {0..1} matches {    -- Edema/Papulation
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {    -- Excoriation
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0029] occurrences matches {0..1} matches {    -- Lichenification
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+										}
+									}
+									CLUSTER[at0066] occurrences matches {0..1} matches {    -- Upper extremities
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0132] occurrences matches {0..1} matches {    -- Affected area
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0130] occurrences matches {0..1} matches {    -- Right arm (dorsal)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..25.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0131] occurrences matches {0..1} matches {    -- Left arm (dorsal)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..25.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0133] occurrences matches {0..1} matches {    -- Right arm (ventral)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..25.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0134] occurrences matches {0..1} matches {    -- Left arm (ventral)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..25.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0067] occurrences matches {0..1} matches {    -- Affected area
+														value matches {
+															0|[local::at0007],
+															1|[local::at0008],
+															2|[local::at0009],
+															3|[local::at0010],
+															4|[local::at0011],
+															5|[local::at0012],
+															6|[local::at0013]
+														}
+													}
+												}
+											}
+											ELEMENT[at0076] occurrences matches {0..1} matches {    -- Erythema
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0081] occurrences matches {0..1} matches {    -- Edema/Papulation
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0086] occurrences matches {0..1} matches {    -- Excoriation
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0091] occurrences matches {0..1} matches {    -- Lichenification
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+										}
+									}
+									CLUSTER[at0036] occurrences matches {0..1} matches {    -- Trunk
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0127] occurrences matches {0..1} matches {    -- Affected area
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0128] occurrences matches {0..1} matches {    -- Front
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..55.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0129] occurrences matches {0..1} matches {    -- Back
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..45.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0038] occurrences matches {0..1} matches {    -- Affected area
+														value matches {
+															0|[local::at0007],
+															1|[local::at0008],
+															2|[local::at0009],
+															3|[local::at0010],
+															4|[local::at0011],
+															5|[local::at0012],
+															6|[local::at0013]
+														}
+													}
+												}
+											}
+											ELEMENT[at0046] occurrences matches {0..1} matches {    -- Erythema
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0051] occurrences matches {0..1} matches {    -- Edema/Papulation
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0056] occurrences matches {0..1} matches {    -- Excoriation
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0061] occurrences matches {0..1} matches {    -- Lichenification
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+										}
+									}
+									CLUSTER[at0096] occurrences matches {0..1} matches {    -- Lower extremities
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0135] occurrences matches {0..1} matches {    -- Affected area
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0136] occurrences matches {0..1} matches {    -- Right leg (dorsal)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..22.5|>
+																		precision = <|1|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0137] occurrences matches {0..1} matches {    -- Left leg (dorsal)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..22.5|>
+																		precision = <|1|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0138] occurrences matches {0..1} matches {    -- Gluteal region
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..10.0|>
+																		precision = <|0|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0139] occurrences matches {0..1} matches {    -- Right leg (ventral)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..22.5|>
+																		precision = <|1|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0140] occurrences matches {0..1} matches {    -- Left leg (ventral)
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::507]>
+																list = <
+																	["1"] = <
+																		units = <"%">
+																		magnitude = <|0.0..22.5|>
+																		precision = <|1|>
+																	>
+																>
+															>
+														}
+													}
+													ELEMENT[at0097] occurrences matches {0..1} matches {    -- Affected area
+														value matches {
+															0|[local::at0007],
+															1|[local::at0008],
+															2|[local::at0009],
+															3|[local::at0010],
+															4|[local::at0011],
+															5|[local::at0012],
+															6|[local::at0013]
+														}
+													}
+												}
+											}
+											ELEMENT[at0105] occurrences matches {0..1} matches {    -- Erythema
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0110] occurrences matches {0..1} matches {    -- Edema/Papulation
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0115] occurrences matches {0..1} matches {    -- Excoriation
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+											ELEMENT[at0120] occurrences matches {0..1} matches {    -- Lichenification
+												value matches {
+													0|[local::at0015],
+													1|[local::at0016],
+													2|[local::at0017],
+													3|[local::at0018]
+												}
+											}
+										}
+									}
+									ELEMENT[at0121] occurrences matches {0..1} matches {    -- Total score
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::380]>
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..72.0|>
+														precision = <|1|>
+													>
+												>
+											>
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"EASI score">
+					description = <"EASI">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Head and neck">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Affected area">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"0">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"1 - 9%">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"10 - 29%">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"30 - 49%">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"50 - 69%">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"70 - 89%">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"90 - 100%">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Erythema">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"None">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Mild">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Moderate">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Severe">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Edema/Papulation">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Excoriation">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Lichenification">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Trunk">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Affected area">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Erythema">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"Edema/Papulation">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"Excoriation">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"Lichenification">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Upper extremities">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Affected area">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Erythema">
+					description = <"">
+				>
+				["at0081"] = <
+					text = <"Edema/Papulation">
+					description = <"">
+				>
+				["at0086"] = <
+					text = <"Excoriation">
+					description = <"">
+				>
+				["at0091"] = <
+					text = <"Lichenification">
+					description = <"">
+				>
+				["at0096"] = <
+					text = <"Lower extremities">
+					description = <"">
+				>
+				["at0097"] = <
+					text = <"Affected area">
+					description = <"">
+				>
+				["at0105"] = <
+					text = <"Erythema">
+					description = <"">
+				>
+				["at0110"] = <
+					text = <"Edema/Papulation">
+					description = <"">
+				>
+				["at0115"] = <
+					text = <"Excoriation">
+					description = <"">
+				>
+				["at0120"] = <
+					text = <"Lichenification">
+					description = <"">
+				>
+				["at0121"] = <
+					text = <"Total score">
+					description = <"">
+				>
+				["at0122"] = <
+					text = <"Affected area">
+					description = <"">
+				>
+				["at0123"] = <
+					text = <"Face">
+					description = <"">
+				>
+				["at0124"] = <
+					text = <"Neck (front)">
+					description = <"">
+				>
+				["at0125"] = <
+					text = <"Scalp">
+					description = <"">
+				>
+				["at0126"] = <
+					text = <"Neck (back)">
+					description = <"">
+				>
+				["at0127"] = <
+					text = <"Affected area">
+					description = <"">
+				>
+				["at0128"] = <
+					text = <"Front">
+					description = <"">
+				>
+				["at0129"] = <
+					text = <"Back">
+					description = <"">
+				>
+				["at0130"] = <
+					text = <"Right arm (dorsal)">
+					description = <"">
+				>
+				["at0131"] = <
+					text = <"Left arm (dorsal)">
+					description = <"">
+				>
+				["at0132"] = <
+					text = <"Affected area">
+					description = <"">
+				>
+				["at0133"] = <
+					text = <"Right arm (ventral)">
+					description = <"">
+				>
+				["at0134"] = <
+					text = <"Left arm (ventral)">
+					description = <"">
+				>
+				["at0135"] = <
+					text = <"Affected area">
+					description = <"">
+				>
+				["at0136"] = <
+					text = <"Right leg (dorsal)">
+					description = <"">
+				>
+				["at0137"] = <
+					text = <"Left leg (dorsal)">
+					description = <"">
+				>
+				["at0138"] = <
+					text = <"Gluteal region">
+					description = <"">
+				>
+				["at0139"] = <
+					text = <"Right leg (ventral)">
+					description = <"">
+				>
+				["at0140"] = <
+					text = <"Left leg (ventral)">
+					description = <"">
+				>
+			>
+		>
+	>

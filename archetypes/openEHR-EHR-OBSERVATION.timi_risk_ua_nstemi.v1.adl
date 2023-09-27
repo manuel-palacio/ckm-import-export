@@ -1,0 +1,383 @@
+archetype (adl_version=1.4; uid=508c5889-b456-36e0-93ec-bc3fbd75f906)
+	openEHR-EHR-OBSERVATION.timi_risk_ua_nstemi.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"Dennis Forslund">
+				["organisation"] = <"Cambio Healthcare Systems">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2017-03-16">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"rosario.silva.s@outlook.com">
+		["name"] = <"Rosario Silva Sepulveda">
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Syeeda S Farruque", ...>
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"*To record the results for each component parameter and their total sum for the TIMI Risk score for Unstable Angina NSTEMI. (en)">
+			keywords = <"instabil angina","NSTEMI","non ST elevation myocardial infarction","TIMI Risk Score for UA/NSTEMI","kardiologi">
+			copyright = <"*© Cambio CDS (en)">
+			use = <"*Use to record the results for each component parameter and their total sum for the TIMI Risk score for Unstable Angina NSTEMI. (en)">
+			misuse = <"*Not to be used to record information related to past personal medical history. Use instead openEHR-EHR-EVALUATION.problem_diagnosis.v1.
+
+Not to be used to record information related to basic demographics. Use instead openEHR-EHR-EVALUATION.basic_demographic.v1. (en)">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the results for each component parameter and their total sum for the TIMI Risk score for Unstable Angina NSTEMI.">
+			keywords = <"Unstable angina","NSTEMI","non ST elevation Myocardial Infarction","TIMI RIsk score for UA/NSTEMI","cardiology">
+			copyright = <"© Cambio CDS">
+			use = <"Use to record the results for each component parameter and their total sum for the TIMI Risk score for Unstable Angina NSTEMI.">
+			misuse = <"Not to be used to record information related to past personal medical history. Use instead openEHR-EHR-EVALUATION.problem_diagnosis.v1.
+
+Not to be used to record information related to basic demographics. Use instead openEHR-EHR-EVALUATION.basic_demographic.v1.">
+		>
+	>
+	other_details = <
+		["references"] = <"Antman EM, Cohen M, et. al. The TIMI risk score for unstable angina/non-ST elevation MI: A method for prognostication and therapeutic decision making. JAMA. 2000 Aug 16;284(7):835-42.
+
+Pollack, C. V., Sites, F. D., Shofer, F. S., Sease, K. L. and Hollander, J. E. (2006), Application of the TIMI Risk Score for Unstable Angina and Non-ST Elevation Acute Coronary Syndrome to an Unselected Emergency Department Chest Pain Population. Academic Emergency Medicine, 13: 13–18. doi:10.1197/j.aem.2005.06.031">
+		["MD5-CAM-1.0.1"] = <"c2e1a3b35eccdc897d63e28ddfcc7536">
+		["build_uid"] = <"de60dc53-79be-3fe7-acd7-8f35855b8d82">
+		["current_contact"] = <"rosario.silva.s@outlook.com">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- TIMI Risk score for Unstable Angina NSTEMI
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Age
+										value matches {
+											0|[local::at0024],
+											1|[local::at0025]
+										}
+									}
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- CAD risk factors
+										value matches {
+											0|[local::at0010],
+											1|[local::at0011]
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Known CAD
+										value matches {
+											0|[local::at0012],
+											1|[local::at0013]
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- ASA use in past 7 days
+										value matches {
+											0|[local::at0014],
+											1|[local::at0015]
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Severe angina episodes
+										value matches {
+											0|[local::at0016],
+											1|[local::at0017]
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- EKG ST changes
+										value matches {
+											0|[local::at0018],
+											1|[local::at0019]
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Positive Cardiac Marker
+										value matches {
+											0|[local::at0020],
+											1|[local::at0021]
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Total score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..7|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0027] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0028] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"TIMI Risk score for Unstable Angina NSTEMI">
+					description = <"An assessment score for Unstable Angina. The TIMI Risk score for Unstable Angina NSTEMI is the best known chest pain risk score tool.">
+					comment = <"Original version, c 2000.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"CAD risk factors">
+					description = <"Risk factors for Coronary Artery Disease (CAD): 
+- Family history of CAD,
+- Hypertension,
+- Hypercholesterolemia,
+- Diabetes,
+- Current Smoker.">
+				>
+				["at0005"] = <
+					text = <"Known CAD">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"ASA use in past 7 days">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Severe angina episodes">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"EKG ST changes">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Positive Cardiac Marker">
+					description = <"Creatinine Kinase MB fraction and/or cardiac-specific troponin levels.">
+				>
+				["at0010"] = <
+					text = <"< 3 CAD risk factors">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"≥ 3 CAD risk factors">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Stenosis < 50%">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Stenosis ≥ 50%">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"< 2 episodes in 24 hrs">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"≥ 2 episodes in 24 hrs">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"< 0.5mm">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"≥ 0.5mm">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"No">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Total score">
+					description = <"Sum of individual scores: range 0-7">
+				>
+				["at0023"] = <
+					text = <"Age">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"< 65 years">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"≥ 65 years">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0028"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"*TIMI Risk score for Unstable Angina NSTEMI (en)">
+					description = <"*An assessment score for Unstable Angina. The TIMI Risk score for Unstable Angina NSTEMI is the best known chest pain risk score tool. (en)">
+				>
+				["at0001"] = <
+					text = <"*Event Series(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time. (en)">
+				>
+				["at0003"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0004"] = <
+					text = <"*CAD risk factors (en)">
+					description = <"*Risk factors for Coronary Artery Disease (CAD): 
+- Family history of CAD,
+- Hypertension,
+- Hypercholesterolemia,
+- Diabetes,
+- Current Smoker. (en)">
+				>
+				["at0005"] = <
+					text = <"*Known CAD (en)">
+					description = <"Har patienten en känd kranskärlssjukdom (stenos ≥ 50%)?">
+				>
+				["at0006"] = <
+					text = <"*ASA use in past 7 days (en)">
+					description = <"Har patienten intagit acetylsalicylsyra senaste sju dagarna?">
+				>
+				["at0007"] = <
+					text = <"*Severe angina episodes (en)">
+					description = <"Har patienten svår angina (≥ 2 episoder per dygn)?">
+				>
+				["at0008"] = <
+					text = <"*EKG ST changes (en)">
+					description = <"Finns ST-förändringar ≥ 0.5mm på aktuellt EKG?">
+				>
+				["at0009"] = <
+					text = <"Förhöjda hjärtmarkörer">
+					description = <"*Creatinine Kinase MB fraction and/or cardiac-specific troponin levels. (en)">
+				>
+				["at0010"] = <
+					text = <"Nej">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Nej">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Nej">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Nej">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Nej">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Nej">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Total poäng">
+					description = <"Summan av samtliga faktorer.">
+				>
+				["at0023"] = <
+					text = <"*Age (en)">
+					description = <"Är patienten 65 år gammal eller äldre?">
+				>
+				["at0024"] = <
+					text = <"Nej">
+					description = <"**(en)">
+				>
+				["at0025"] = <
+					text = <"Ja">
+					description = <"**(en)">
+				>
+				["at0027"] = <
+					text = <"*Item tree (en)">
+					description = <"@ internal @">
+				>
+				["at0028"] = <
+					text = <"*Extension (en)">
+					description = <"*Additional information required to extend the model with local content or to align with other reference models or formalisms. (en)">
+					comment = <"*For example: local information requirements; or additional metadata to align with FHIR. (en)">
+				>
+			>
+		>
+	>

@@ -1,0 +1,924 @@
+archetype (adl_version=1.4; uid=2ee133a0-1f12-3b68-8c57-85376278bb0f)
+	openEHR-EHR-INSTRUCTION.nursing_support_malnutrition.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2020-10-27">
+		["name"] = <"Eneimi Allwell-Brown">
+		["organisation"] = <"Cambio Healthcare Systems">
+		["email"] = <"models@cambiocds.com">
+	>
+	lifecycle_state = <"AuthorDraft">
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"*(en)">
+			copyright = <"*(en)">
+			use = <"*(en)">
+			misuse = <"*(en)">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"Cambio CDS">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"b26cea4aff6ebc3534b7799a22316e5f">
+		["build_uid"] = <"3a4c294a-82c5-35df-8403-0a0d6bc04918">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {    -- Nursing support malnutrition
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] occurrences matches {0..1} matches {    -- Current Activity
+				description matches {
+					ITEM_TREE[at0002] matches {    -- *Tree(en)
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0110] occurrences matches {0..1} matches {    -- Activate care plan?
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0111,    -- No
+											at0112]    -- Yes
+										}
+									}
+								}
+							}
+							ELEMENT[at0113] occurrences matches {0..1} matches {    -- Reason for creating care plan
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							CLUSTER[at0005] occurrences matches {0..1} matches {    -- Goal
+								items cardinality matches {1..*; unordered} matches {
+									CLUSTER[at0086] occurrences matches {0..1} matches {    -- A goal must be selected to create a care plan.
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0014] occurrences matches {0..1} matches {    -- Preventing malnutrition in connection with care
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {    -- Preventing malnutrition in connection with care description
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0087] occurrences matches {0..1} matches {    -- To treat malnutrition in connection with care
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0088] occurrences matches {0..1} matches {    -- To treat malnutrition in connection with care description
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+								}
+							}
+							CLUSTER[at0006] occurrences matches {0..1} matches {    -- Nutritional management
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Snack
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Snack description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0024] occurrences matches {0..1} matches {    -- Enrichment of diet, protein and energy rich diet
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Enrichment of diet, protein and energy rich diet description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {    -- Consistency-adapted diet
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Consistency-adapted diet description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Nutrition drink
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0029] occurrences matches {0..1} matches {    -- Nutrition drink description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0078] occurrences matches {0..1} matches {    -- Adapt food to cultural and religious needs
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0079] occurrences matches {0..1} matches {    -- Adapt food to cultural and religious needs description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0089] occurrences matches {0..1} matches {    -- Night fasting max 11 hours
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0090] occurrences matches {0..1} matches {    -- Night fasting max 11 hours description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0091] occurrences matches {0..1} matches {    -- Enteral nutrition
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0092] occurrences matches {0..1} matches {    -- Enteral nutrition description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0093] occurrences matches {0..1} matches {    -- Parenteral nutrition
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0094] occurrences matches {0..1} matches {    -- Parenteral nutrition description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0095] occurrences matches {0..1} matches {    -- Other action - nutrition treatment
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0096] occurrences matches {0..1} matches {    -- Other action - nutrition treatment description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0007] occurrences matches {0..1} matches {    -- Eating support measures
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0030] occurrences matches {0..1} matches {    -- Environmental adaptation for individual meal situations
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0031] occurrences matches {0..1} matches {    -- Environmental adaptation for individual meal situations description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0097] occurrences matches {0..1} matches {    -- Encourage and support your own food intake
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0098] occurrences matches {0..1} matches {    -- Encourage and support your own food intake description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0099] occurrences matches {0..1} matches {    -- Feeding
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0100] occurrences matches {0..1} matches {    -- Feeding description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0101] occurrences matches {0..1} matches {    -- Prescription of aids
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0102] occurrences matches {0..1} matches {    -- Prescription of aids description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0103] occurrences matches {0..1} matches {    -- Training to eat and drink
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0104] occurrences matches {0..1} matches {    -- Training to eat and drink description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0105] occurrences matches {0..1} matches {    -- Other action - support measures
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0106] occurrences matches {0..1} matches {    -- Other action - support measures description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0008] occurrences matches {0..1} matches {    -- Observation / monitoring
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0038] occurrences matches {0..1} matches {    -- Close monitoring
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0039] occurrences matches {0..1} matches {    -- Close monitoring description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0040] occurrences matches {0..1} matches {    -- Weight control
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0041] occurrences matches {0..1} matches {    -- Weight control description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0009] occurrences matches {0..1} matches {    -- Oral Care
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Training oral care
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Training oral care description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0046] occurrences matches {0..1} matches {    -- Assistance in oral care
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {    -- Assistance in oral care description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0048] occurrences matches {0..1} matches {    -- Other measures - oral care
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0049] occurrences matches {0..1} matches {    -- Other measures - oral care description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0107] occurrences matches {0..1} matches {    -- Information / teaching
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0108] occurrences matches {0..1} matches {    -- Information and teaching on dietary issues
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0109] occurrences matches {0..1} matches {    -- Information and teaching on dietary issues description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0012] occurrences matches {0..1} matches {    -- Participation
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0072] occurrences matches {0..1} matches {    -- Patient participation
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0073] occurrences matches {0..1} matches {    -- Patient participation description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0074] occurrences matches {0..1} matches {    -- Other participation measures
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0075] occurrences matches {0..1} matches {    -- Other participation measures description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0013] occurrences matches {0..1} matches {    -- Coordination
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0076] occurrences matches {0..1} matches {    -- Contact with
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0077] occurrences matches {0..1} matches {    -- Contact with description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Nursing support malnutrition">
+					description = <"*">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"*Current Activity(en)">
+				>
+				["at0002"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0005"] = <
+					text = <"Goal">
+					description = <"**(en)">
+				>
+				["at0006"] = <
+					text = <"Nutritional management">
+					description = <"**(en)">
+				>
+				["at0007"] = <
+					text = <"Eating support measures">
+					description = <"**(en)">
+				>
+				["at0008"] = <
+					text = <"Observation / monitoring">
+					description = <"**(en)">
+				>
+				["at0009"] = <
+					text = <"Oral Care">
+					description = <"**(en)">
+				>
+				["at0012"] = <
+					text = <"Participation">
+					description = <"**(en)">
+				>
+				["at0013"] = <
+					text = <"Coordination">
+					description = <"**(en)">
+				>
+				["at0014"] = <
+					text = <"Preventing malnutrition in connection with care">
+					description = <"**(en)">
+				>
+				["at0015"] = <
+					text = <"Preventing malnutrition in connection with care description">
+					description = <"**(en)">
+				>
+				["at0022"] = <
+					text = <"Snack">
+					description = <"**(en)">
+				>
+				["at0023"] = <
+					text = <"Snack description">
+					description = <"**(en)">
+				>
+				["at0024"] = <
+					text = <"Enrichment of diet, protein and energy rich diet">
+					description = <"**(en)">
+				>
+				["at0025"] = <
+					text = <"Enrichment of diet, protein and energy rich diet description">
+					description = <"**(en)">
+				>
+				["at0026"] = <
+					text = <"Consistency-adapted diet">
+					description = <"**(en)">
+				>
+				["at0027"] = <
+					text = <"Consistency-adapted diet description">
+					description = <"**(en)">
+				>
+				["at0028"] = <
+					text = <"Nutrition drink">
+					description = <"**(en)">
+				>
+				["at0029"] = <
+					text = <"Nutrition drink description">
+					description = <"**(en)">
+				>
+				["at0030"] = <
+					text = <"Environmental adaptation for individual meal situations">
+					description = <"**(en)">
+				>
+				["at0031"] = <
+					text = <"Environmental adaptation for individual meal situations description">
+					description = <"**(en)">
+				>
+				["at0038"] = <
+					text = <"Close monitoring">
+					description = <"**(en)">
+				>
+				["at0039"] = <
+					text = <"Close monitoring description">
+					description = <"**(en)">
+				>
+				["at0040"] = <
+					text = <"Weight control">
+					description = <"**(en)">
+				>
+				["at0041"] = <
+					text = <"Weight control description">
+					description = <"**(en)">
+				>
+				["at0044"] = <
+					text = <"Training oral care">
+					description = <"**(en)">
+				>
+				["at0045"] = <
+					text = <"Training oral care description">
+					description = <"**(en)">
+				>
+				["at0046"] = <
+					text = <"Assistance in oral care">
+					description = <"**(en)">
+				>
+				["at0047"] = <
+					text = <"Assistance in oral care description">
+					description = <"**(en)">
+				>
+				["at0048"] = <
+					text = <"Other measures - oral care">
+					description = <"**(en)">
+				>
+				["at0049"] = <
+					text = <"Other measures - oral care description">
+					description = <"**(en)">
+				>
+				["at0072"] = <
+					text = <"Patient participation">
+					description = <"**(en)">
+				>
+				["at0073"] = <
+					text = <"Patient participation description">
+					description = <"**(en)">
+				>
+				["at0074"] = <
+					text = <"Other participation measures">
+					description = <"**(en)">
+				>
+				["at0075"] = <
+					text = <"Other participation measures description">
+					description = <"**(en)">
+				>
+				["at0076"] = <
+					text = <"Contact with">
+					description = <"**(en)">
+				>
+				["at0077"] = <
+					text = <"Contact with description">
+					description = <"**(en)">
+				>
+				["at0078"] = <
+					text = <"Adapt food to cultural and religious needs">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"Adapt food to cultural and religious needs description">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"A goal must be selected to create a care plan.">
+					description = <"**(en)">
+				>
+				["at0087"] = <
+					text = <"To treat malnutrition in connection with care">
+					description = <"**(en)">
+				>
+				["at0088"] = <
+					text = <"To treat malnutrition in connection with care description">
+					description = <"**(en)">
+				>
+				["at0089"] = <
+					text = <"Night fasting max 11 hours">
+					description = <"**(en)">
+				>
+				["at0090"] = <
+					text = <"Night fasting max 11 hours description">
+					description = <"**(en)">
+				>
+				["at0091"] = <
+					text = <"Enteral nutrition">
+					description = <"**(en)">
+				>
+				["at0092"] = <
+					text = <"Enteral nutrition description">
+					description = <"**(en)">
+				>
+				["at0093"] = <
+					text = <"Parenteral nutrition">
+					description = <"**(en)">
+				>
+				["at0094"] = <
+					text = <"Parenteral nutrition description">
+					description = <"**(en)">
+				>
+				["at0095"] = <
+					text = <"Other action - nutrition treatment">
+					description = <"**(en)">
+				>
+				["at0096"] = <
+					text = <"Other action - nutrition treatment description">
+					description = <"**(en)">
+				>
+				["at0097"] = <
+					text = <"Encourage and support your own food intake">
+					description = <"**(en)">
+				>
+				["at0098"] = <
+					text = <"Encourage and support your own food intake description">
+					description = <"**(en)">
+				>
+				["at0099"] = <
+					text = <"Feeding">
+					description = <"**(en)">
+				>
+				["at0100"] = <
+					text = <"Feeding description">
+					description = <"**(en)">
+				>
+				["at0101"] = <
+					text = <"Prescription of aids">
+					description = <"**(en)">
+				>
+				["at0102"] = <
+					text = <"Prescription of aids description">
+					description = <"**(en)">
+				>
+				["at0103"] = <
+					text = <"Training to eat and drink">
+					description = <"**(en)">
+				>
+				["at0104"] = <
+					text = <"Training to eat and drink description">
+					description = <"**(en)">
+				>
+				["at0105"] = <
+					text = <"Other action - support measures">
+					description = <"**(en)">
+				>
+				["at0106"] = <
+					text = <"Other action - support measures description">
+					description = <"**(en)">
+				>
+				["at0107"] = <
+					text = <"Information / teaching">
+					description = <"**(en)">
+				>
+				["at0108"] = <
+					text = <"Information and teaching on dietary issues">
+					description = <"**(en)">
+				>
+				["at0109"] = <
+					text = <"Information and teaching on dietary issues description">
+					description = <"**(en)">
+				>
+				["at0110"] = <
+					text = <"Activate care plan?">
+					description = <"">
+				>
+				["at0111"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0112"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0113"] = <
+					text = <"Reason for creating care plan">
+					description = <"">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vårdprevention - fallrisk">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"Current Activity">
+				>
+				["at0002"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Mål">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Nutritionsbehandling">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Ätstödjande åtgärder">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Observation/övervakning">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Munvård">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Delaktighet">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Samordning">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Att förebygga undernäring i samband med vård">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Att förebygga undernäring i samband med vård beskrivning">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Mellanmål">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Mellanmål beskrivning">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Berikning av kost, protein- och energirik kost">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Berikning av kost, protein- och energirik kost beskrivning">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Konsistensanpassad kost">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Konsistensanpassad kost beskrivning">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Näringsdryck">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Näringsdryck beskrivning">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Omgivningsanpassning för individuella måltidssituationer">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Omgivningsanpassning för individuella måltidssituationer beskrivning">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Övervakning av närings- och vätskeintag">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Övervakning av närings- och vätskeintag beskrivning">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Viktkontroll">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Viktkontroll beskrivning">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Träning munvård">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Träning munvård beskrivning">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Assistans vid munvård">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Assistans vid munvård beskrivning">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Andra åtgärder - munvård">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Andra åtgärder - munvård beskrivning">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Patienten är delaktig vid upprättande av vårdplan">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Patienten är delaktig vid upprättande av vårdplan beskrivning">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Annan åtgärd - delaktighet">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Annan åtgärd - delaktighet beskrivning">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Kontakt med">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Kontakt med beskrivning">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"Anpassa maten efter kulturella och religiösa behov">
+					description = <"**(en)">
+				>
+				["at0079"] = <
+					text = <"Anpassa maten efter kulturella och religiösa behov beskrivning">
+					description = <"**(en)">
+				>
+				["at0086"] = <
+					text = <"Ett mål måste väljas för att skapa en vårdplan.">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Att behandla undernäring i samband med vård">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Att behandla undernäring i samband med vård beskrivning">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Nattfasta max 11 timmar">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Nattfasta max 11 timmar beskrivning">
+					description = <"*">
+				>
+				["at0091"] = <
+					text = <"Enteral näringstillförsel">
+					description = <"*">
+				>
+				["at0092"] = <
+					text = <"Enteral näringstillförsel beskrivning">
+					description = <"*">
+				>
+				["at0093"] = <
+					text = <"Parenteral näringstillförsel">
+					description = <"*">
+				>
+				["at0094"] = <
+					text = <"Parenteral näringstillförsel beskrivning">
+					description = <"*">
+				>
+				["at0095"] = <
+					text = <"Annan åtgärd - nutritionsbehandling">
+					description = <"*">
+				>
+				["at0096"] = <
+					text = <"Annan åtgärd - nutritionsbehandling beskrivning">
+					description = <"*">
+				>
+				["at0097"] = <
+					text = <"Uppmuntra och stötta eget matintag">
+					description = <"*">
+				>
+				["at0098"] = <
+					text = <"Uppmuntra och stötta eget matintag beskrivning">
+					description = <"*">
+				>
+				["at0099"] = <
+					text = <"Matning">
+					description = <"*">
+				>
+				["at0100"] = <
+					text = <"Matning beskrivning">
+					description = <"*">
+				>
+				["at0101"] = <
+					text = <"Hjälpmedelsförskrivning">
+					description = <"*">
+				>
+				["at0102"] = <
+					text = <"Hjälpmedelsförskrivning beskrivning">
+					description = <"*">
+				>
+				["at0103"] = <
+					text = <"Träning att äta och dricka">
+					description = <"*">
+				>
+				["at0104"] = <
+					text = <"Träning att äta och dricka beskrivning">
+					description = <"*">
+				>
+				["at0105"] = <
+					text = <"Annan åtgärd - ätstödjande åtgärder">
+					description = <"*">
+				>
+				["at0106"] = <
+					text = <"Annan åtgärd - ätstödjande åtgärder beskrivning">
+					description = <"*">
+				>
+				["at0107"] = <
+					text = <"Information/undervisning">
+					description = <"*">
+				>
+				["at0108"] = <
+					text = <"Information och undervisning om kostfrågor">
+					description = <"*">
+				>
+				["at0109"] = <
+					text = <"Information och undervisning om kostfrågor beskrivning">
+					description = <"*">
+				>
+				["at0110"] = <
+					text = <"Skapa vårdplan?">
+					description = <"">
+				>
+				["at0111"] = <
+					text = <"Nej">
+					description = <"">
+				>
+				["at0112"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0113"] = <
+					text = <"Anledning till att skapa vårdplan">
+					description = <"">
+				>
+			>
+		>
+	>

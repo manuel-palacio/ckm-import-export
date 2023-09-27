@@ -1,0 +1,1974 @@
+{
+  "id": "LDL_cholesterol_correction.v1.0.0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2023-05-24",
+      "name": "Konstantinos Kalliamvakos",
+      "organisation": "Cambio CDS",
+      "email": "konstantinos.kalliamvakos@cambio.se"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "To calculate the real amount of LDL cholesterol when a statin medication is present.",
+        "keywords": [
+          "LDL",
+          "low density",
+          "lipoprotein",
+          "total",
+          "corrected",
+          "cholesterol"
+        ],
+        "use": "Use to calculate the real amount of LDL cholesterol when a statin medication is present.",
+        "misuse": "",
+        "copyright": "Cambio CDS"
+      },
+      "sv": {
+        "id": "sv",
+        "purpose": "*To calculate the real amount of LDL cholesterol when a statin medication is present.(en)",
+        "keywords": [
+          "LDL",
+          "betalipoprotein",
+          "total",
+          "korrigerat",
+          "kolesterol"
+        ],
+        "use": "*Use to calculate the real amount of LDL cholesterol when a statin medication is present.(en)",
+        "misuse": ""
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "org.hl7.fhir.r4.model.Observation",
+        "template_id": "FHIR-R4-Observation.lipids_ldl_cholesterol.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/code/coding[0]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/valueQuantity"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/effectiveDateTime"
+          }
+        },
+        "predicates": [
+          "/code/coding[0] is_a local::gt0006|LDL-cholesterol code|",
+          "max(/effectiveDateTime)"
+        ]
+      },
+      "gt0007": {
+        "id": "gt0007",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0011|Atorvastatin code|"
+        ]
+      },
+      "gt0012": {
+        "id": "gt0012",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0013": {
+            "id": "gt0013",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0016|Fluvastatin code|"
+        ]
+      },
+      "gt0017": {
+        "id": "gt0017",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0018": {
+            "id": "gt0018",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0021|Pravastatin code|"
+        ]
+      },
+      "gt0022": {
+        "id": "gt0022",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0023": {
+            "id": "gt0023",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0026|Rosuvastatin code|"
+        ]
+      },
+      "gt0027": {
+        "id": "gt0027",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0028": {
+            "id": "gt0028",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0031|Simvastatin code|"
+        ]
+      },
+      "gt0032": {
+        "id": "gt0032",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0033": {
+            "id": "gt0033",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0036|Ezetimibe substance|"
+        ]
+      },
+      "gt0037": {
+        "id": "gt0037",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0038": {
+            "id": "gt0038",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "path": "/dosage[1]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0042|Pravastatin/Ezetimibe code|"
+        ]
+      },
+      "gt0043": {
+        "id": "gt0043",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0044": {
+            "id": "gt0044",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "path": "/dosage[1]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0048|Simvastatin/Ezetimibe code|"
+        ]
+      },
+      "gt0049": {
+        "id": "gt0049",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0050": {
+            "id": "gt0050",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "path": "/dosage[1]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0054|Atorvastatin/Ezetimibe code|"
+        ]
+      },
+      "gt0055": {
+        "id": "gt0055",
+        "model_id": "org.hl7.fhir.r4.model.MedicationStatement",
+        "template_id": "FHIR-R4-MedicationStatement.generic.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0056": {
+            "id": "gt0056",
+            "path": "/medicationCodeableConcept/coding[0]"
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "path": "/effectivePeriod/start"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "path": "/dosage[0]/doseAndRate[0]/doseQuantity"
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "path": "/dosage[1]/doseAndRate[0]/doseQuantity"
+          }
+        },
+        "predicates": [
+          "/medicationCodeableConcept/coding[0] is_a local::gt0060|Rosuvastatin/Ezetimibe code|"
+        ]
+      },
+      "gt0061": {
+        "id": "gt0061",
+        "model_id": "openEHR-EHR-EVALUATION.fh_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.fh_assessment.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0062": {
+            "id": "gt0062",
+            "path": "/data[at0001]/items[at0002]/items[at0003]"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "path": "/data[at0001]/items[at0002]/items[at0004]"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "path": "/data[at0001]/items[at0002]/items[at0005]"
+          }
+        }
+      }
+    },
+    "default_actions": [
+      "$gt0065|Local variable: Pravastatin 10mg|=false",
+      "$gt0066|Local variable: Pravastatin 20mg|=false",
+      "$gt0067|Local variable: Pravastatin 40mg|=false",
+      "$gt0068|Local variable: Ezetimibe 10mg|=false",
+      "$gt0069|Local variable: Simvastatin 10mg|=false",
+      "$gt0070|Local variable: Simvastatin 20mg|=false",
+      "$gt0071|Local variable: Simvastatin 40mg|=false",
+      "$gt0072|Local variable: Simvastatin 80mg|=false",
+      "$gt0073|Local variable: Atorvastatin 10mg|=false",
+      "$gt0074|Local variable: Atorvastatin 20mg|=false",
+      "$gt0075|Local variable: Atorvastatin 40mg|=false",
+      "$gt0076|Local variable: Atorvastatin 80mg|=false",
+      "$gt0077|Local variable: Rosuvastatin 10mg|=false",
+      "$gt0078|Local variable: Rosuvastatin 20mg|=false",
+      "$gt0079|Local variable: Rosuvastatin 40mg|=false"
+    ],
+    "rules": {
+      "gt0080": {
+        "id": "gt0080",
+        "priority": 33,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0009|Atorvastatin start date/time|",
+          "$gt0010|Atorvastatin dose|==10,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.6",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Atorvastatin'",
+          "$gt0064|Medication dose|='10 mg'",
+          "$gt0073|Local variable: Atorvastatin 10mg|=true"
+        ]
+      },
+      "gt0081": {
+        "id": "gt0081",
+        "priority": 32,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0009|Atorvastatin start date/time|",
+          "$gt0010|Atorvastatin dose|==20,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.8",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Atorvastatin'",
+          "$gt0064|Medication dose|='20 mg'",
+          "$gt0074|Local variable: Atorvastatin 20mg|=true"
+        ]
+      },
+      "gt0082": {
+        "id": "gt0082",
+        "priority": 31,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0009|Atorvastatin start date/time|",
+          "$gt0010|Atorvastatin dose|==40,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Atorvastatin'",
+          "$gt0064|Medication dose|='40 mg'",
+          "$gt0075|Local variable: Atorvastatin 40mg|=true"
+        ]
+      },
+      "gt0083": {
+        "id": "gt0083",
+        "priority": 30,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0009|Atorvastatin start date/time|",
+          "$gt0010|Atorvastatin dose|==80,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.2",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Atorvastatin'",
+          "$gt0064|Medication dose|='80 mg'",
+          "$gt0076|Local variable: Atorvastatin 80mg|=true"
+        ]
+      },
+      "gt0084": {
+        "id": "gt0084",
+        "priority": 29,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0014|Fluvastatin start date/time|",
+          "$gt0015|Fluvastatin dose|==20,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.27",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Fluvastatin'",
+          "$gt0064|Medication dose|='20 mg'"
+        ]
+      },
+      "gt0085": {
+        "id": "gt0085",
+        "priority": 28,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0014|Fluvastatin start date/time|",
+          "$gt0015|Fluvastatin dose|==40,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.37",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Fluvastatin'",
+          "$gt0064|Medication dose|='40 mg'"
+        ]
+      },
+      "gt0086": {
+        "id": "gt0086",
+        "priority": 27,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0014|Fluvastatin start date/time|",
+          "$gt0015|Fluvastatin dose|==80,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.49",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Fluvastatin'",
+          "$gt0064|Medication dose|='80 mg'"
+        ]
+      },
+      "gt0087": {
+        "id": "gt0087",
+        "priority": 26,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0019|Pravastatin start date/time|",
+          "$gt0020|Pravastatin dose|==10,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.2",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Pravastatin'",
+          "$gt0064|Medication dose|='10 mg'",
+          "$gt0065|Local variable: Pravastatin 10mg|=true"
+        ]
+      },
+      "gt0088": {
+        "id": "gt0088",
+        "priority": 25,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0019|Pravastatin start date/time|",
+          "$gt0020|Pravastatin dose|==20,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.3",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Pravastatin'",
+          "$gt0064|Medication dose|='20 mg'",
+          "$gt0066|Local variable: Pravastatin 20mg|=true"
+        ]
+      },
+      "gt0089": {
+        "id": "gt0089",
+        "priority": 24,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0019|Pravastatin start date/time|",
+          "$gt0020|Pravastatin dose|==40,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.5",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Pravastatin'",
+          "$gt0064|Medication dose|='40 mg'",
+          "$gt0067|Local variable: Pravastatin 40mg|=true"
+        ]
+      },
+      "gt0090": {
+        "id": "gt0090",
+        "priority": 23,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0024|Rosuvastatin start date/time|",
+          "$gt0025|Rosuvastatin dose|==5,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.8",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Rosuvastatin'",
+          "$gt0064|Medication dose|='5 mg'"
+        ]
+      },
+      "gt0091": {
+        "id": "gt0091",
+        "priority": 22,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0024|Rosuvastatin start date/time|",
+          "$gt0025|Rosuvastatin dose|==10,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.9",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Rosuvastatin'",
+          "$gt0064|Medication dose|='10 mg'",
+          "$gt0077|Local variable: Rosuvastatin 10mg|=true"
+        ]
+      },
+      "gt0092": {
+        "id": "gt0092",
+        "priority": 21,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0024|Rosuvastatin start date/time|",
+          "$gt0025|Rosuvastatin dose|==20,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.1",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Rosuvastatin'",
+          "$gt0064|Medication dose|='20 mg'",
+          "$gt0078|Local variable: Rosuvastatin 20mg|=true"
+        ]
+      },
+      "gt0093": {
+        "id": "gt0093",
+        "priority": 20,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0024|Rosuvastatin start date/time|",
+          "$gt0025|Rosuvastatin dose|==40,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.4",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Rosuvastatin'",
+          "$gt0064|Medication dose|='40 mg'",
+          "$gt0079|Local variable: Rosuvastatin 40mg|=true"
+        ]
+      },
+      "gt0094": {
+        "id": "gt0094",
+        "priority": 19,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0029|Simvastatin start date/time|",
+          "$gt0030|Simvastatin dose|==10,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.4",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Simvastatin'",
+          "$gt0064|Medication dose|='10 mg'",
+          "$gt0069|Local variable: Simvastatin 10mg|=true"
+        ]
+      },
+      "gt0095": {
+        "id": "gt0095",
+        "priority": 18,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0029|Simvastatin start date/time|",
+          "$gt0030|Simvastatin dose|==20,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.6",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Simvastatin'",
+          "$gt0064|Medication dose|='20 mg'",
+          "$gt0070|Local variable: Simvastatin 20mg|=true"
+        ]
+      },
+      "gt0096": {
+        "id": "gt0096",
+        "priority": 17,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0029|Simvastatin start date/time|",
+          "$gt0030|Simvastatin dose|==40,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.7",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Simvastatin'",
+          "$gt0064|Medication dose|='40 mg'",
+          "$gt0071|Local variable: Simvastatin 40mg|=true"
+        ]
+      },
+      "gt0097": {
+        "id": "gt0097",
+        "priority": 16,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0029|Simvastatin start date/time|",
+          "$gt0030|Simvastatin dose|==80,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.9",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Simvastatin'",
+          "$gt0064|Medication dose|='80 mg'",
+          "$gt0072|Local variable: Simvastatin 80mg|=true"
+        ]
+      },
+      "gt0098": {
+        "id": "gt0098",
+        "priority": 15,
+        "when": [
+          "$gt0004|LDL-Cholesterol value|!=null",
+          "$gt0005|LDL-Cholesterol date/time|>=$gt0034|Ezetimibe start date/time|",
+          "$gt0035|Ezetimibe dose|==10,mg"
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.2",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Ezetimibe'",
+          "$gt0064|Medication dose|='10 mg'",
+          "$gt0068|Local variable: Ezetimibe 10mg|=true"
+        ]
+      },
+      "gt0099": {
+        "id": "gt0099",
+        "priority": 14,
+        "when": [
+          "($gt0065|Local variable: Pravastatin 10mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0039|Pravastatin/Ezetimibe start date/time|&&$gt0040|Pravastatin/Ezetimibe dose [0]|==10,mg&&$gt0041|Pravastatin/Ezetimibe dose [1]|==10,mg)"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.5",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Pravastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='10 mg/10 mg'"
+        ]
+      },
+      "gt0100": {
+        "id": "gt0100",
+        "priority": 13,
+        "when": [
+          "(($gt0066|Local variable: Pravastatin 20mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0039|Pravastatin/Ezetimibe start date/time|)&&(($gt0040|Pravastatin/Ezetimibe dose [0]|==10,mg&&$gt0041|Pravastatin/Ezetimibe dose [1]|==20,mg)||($gt0040|Pravastatin/Ezetimibe dose [0]|==20,mg&&$gt0041|Pravastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.6",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Pravastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='20 mg/10 mg'"
+        ]
+      },
+      "gt0101": {
+        "id": "gt0101",
+        "priority": 12,
+        "when": [
+          "(($gt0067|Local variable: Pravastatin 40mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0039|Pravastatin/Ezetimibe start date/time|)&&(($gt0040|Pravastatin/Ezetimibe dose [0]|==10,mg&&$gt0041|Pravastatin/Ezetimibe dose [1]|==40,mg)||($gt0040|Pravastatin/Ezetimibe dose [0]|==40,mg&&$gt0041|Pravastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.7",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Pravastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='40 mg/10 mg'"
+        ]
+      },
+      "gt0102": {
+        "id": "gt0102",
+        "priority": 11,
+        "when": [
+          "($gt0069|Local variable: Simvastatin 10mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0045|Simvastatin/Ezetimibe start date/time|&&$gt0046|Simvastatin/Ezetimibe dose [0]|==10,mg&&$gt0047|Simvastatin/Ezetimibe dose [1]|==10,mg)"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*1.9",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Simvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='10 mg/10 mg'"
+        ]
+      },
+      "gt0103": {
+        "id": "gt0103",
+        "priority": 10,
+        "when": [
+          "(($gt0070|Local variable: Simvastatin 20mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0045|Simvastatin/Ezetimibe start date/time|)&&(($gt0046|Simvastatin/Ezetimibe dose [0]|==10,mg&&$gt0047|Simvastatin/Ezetimibe dose [1]|==20,mg)||($gt0046|Simvastatin/Ezetimibe dose [0]|==20,mg&&$gt0047|Simvastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Simvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='20 mg/10 mg'"
+        ]
+      },
+      "gt0104": {
+        "id": "gt0104",
+        "priority": 9,
+        "when": [
+          "(($gt0071|Local variable: Simvastatin 40mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0045|Simvastatin/Ezetimibe start date/time|)&&(($gt0046|Simvastatin/Ezetimibe dose [0]|==10,mg&&$gt0047|Simvastatin/Ezetimibe dose [1]|==40,mg)||($gt0046|Simvastatin/Ezetimibe dose [0]|==40,mg&&$gt0047|Simvastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.3",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Simvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='40 mg/10 mg'"
+        ]
+      },
+      "gt0105": {
+        "id": "gt0105",
+        "priority": 8,
+        "when": [
+          "(($gt0072|Local variable: Simvastatin 80mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0045|Simvastatin/Ezetimibe start date/time|)&&(($gt0046|Simvastatin/Ezetimibe dose [0]|==10,mg&&$gt0047|Simvastatin/Ezetimibe dose [1]|==80,mg)||($gt0046|Simvastatin/Ezetimibe dose [0]|==80,mg&&$gt0047|Simvastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.4",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Simvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='80 mg/10 mg'"
+        ]
+      },
+      "gt0106": {
+        "id": "gt0106",
+        "priority": 7,
+        "when": [
+          "($gt0073|Local variable: Atorvastatin 10mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0051|Atorvastatin/Ezetimibe start date/time|&&$gt0052|Atorvastatin/Ezetimibe dose [0]|==10,mg&&$gt0053|Atorvastatin/Ezetimibe dose [1]|==10,mg)"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Atorvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='10 mg/10 mg'"
+        ]
+      },
+      "gt0107": {
+        "id": "gt0107",
+        "priority": 6,
+        "when": [
+          "(($gt0074|Local variable: Atorvastatin 20mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0051|Atorvastatin/Ezetimibe start date/time|)&&(($gt0052|Atorvastatin/Ezetimibe dose [0]|==10,mg&&$gt0053|Atorvastatin/Ezetimibe dose [1]|==20,mg)||($gt0052|Atorvastatin/Ezetimibe dose [0]|==20,mg&&$gt0053|Atorvastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.2",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Atorvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='20 mg/10 mg'"
+        ]
+      },
+      "gt0108": {
+        "id": "gt0108",
+        "priority": 5,
+        "when": [
+          "(($gt0075|Local variable: Atorvastatin 40mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0051|Atorvastatin/Ezetimibe start date/time|)&&(($gt0052|Atorvastatin/Ezetimibe dose [0]|==10,mg&&$gt0053|Atorvastatin/Ezetimibe dose [1]|==40,mg)||($gt0052|Atorvastatin/Ezetimibe dose [0]|==40,mg&&$gt0053|Atorvastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.2",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Atorvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='40 mg/10 mg'"
+        ]
+      },
+      "gt0109": {
+        "id": "gt0109",
+        "priority": 4,
+        "when": [
+          "(($gt0076|Local variable: Atorvastatin 80mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0051|Atorvastatin/Ezetimibe start date/time|)&&(($gt0052|Atorvastatin/Ezetimibe dose [0]|==10,mg&&$gt0053|Atorvastatin/Ezetimibe dose [1]|==80,mg)||($gt0052|Atorvastatin/Ezetimibe dose [0]|==80,mg&&$gt0053|Atorvastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.5",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Atorvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='80 mg/10 mg'"
+        ]
+      },
+      "gt0110": {
+        "id": "gt0110",
+        "priority": 3,
+        "when": [
+          "($gt0077|Local variable: Rosuvastatin 10mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0057|Rosuvastatin/Ezetimibe start date/time|&&$gt0058|Rosuvastatin/Ezetimibe dose [0]|==10,mg&&$gt0059|Rosuvastatin/Ezetimibe dose [1]|==10,mg)"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.5",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Rosuvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='10 mg/10 mg'"
+        ]
+      },
+      "gt0111": {
+        "id": "gt0111",
+        "priority": 2,
+        "when": [
+          "(($gt0078|Local variable: Rosuvastatin 20mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0057|Rosuvastatin/Ezetimibe start date/time|)&&(($gt0058|Rosuvastatin/Ezetimibe dose [0]|==10,mg&&$gt0059|Rosuvastatin/Ezetimibe dose [1]|==20,mg)||($gt0058|Rosuvastatin/Ezetimibe dose [0]|==20,mg&&$gt0059|Rosuvastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*2.7",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Rosuvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='20 mg/10 mg'"
+        ]
+      },
+      "gt0112": {
+        "id": "gt0112",
+        "priority": 1,
+        "when": [
+          "(($gt0079|Local variable: Rosuvastatin 40mg|==true&&$gt0068|Local variable: Ezetimibe 10mg|==true)||(($gt0004|LDL-Cholesterol value|!=null&&$gt0005|LDL-Cholesterol date/time|>=$gt0057|Rosuvastatin/Ezetimibe start date/time|)&&(($gt0058|Rosuvastatin/Ezetimibe dose [0]|==10,mg&&$gt0059|Rosuvastatin/Ezetimibe dose [1]|==40,mg)||($gt0058|Rosuvastatin/Ezetimibe dose [0]|==40,mg&&$gt0059|Rosuvastatin/Ezetimibe dose [1]|==10,mg))))"
+
+        ],
+        "then": [
+          "$gt0062|Corrected LDL|.magnitude=$gt0004.magnitude*3.3",
+          "$gt0062|Corrected LDL|.precision=2",
+          "$gt0062|Corrected LDL|.unit='mmol/L'",
+          "$gt0063|Medication name|='Rosuvastatin/Ezetimibe'",
+          "$gt0064|Medication dose|='40 mg/10 mg'"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "LDL-Cholesterol correction",
+            "description": "Correction of LDL cholesterol when a statin medication is detected."
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "LDL-Cholesterol",
+            "description": ""
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "LDL-Cholesterol value",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "LDL-Cholesterol date/time",
+            "description": ""
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "LDL-Cholesterol code",
+            "description": ""
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Atorvastatin",
+            "description": ""
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "Atorvastatin start date/time",
+            "description": ""
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "Atorvastatin dose",
+            "description": ""
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Atorvastatin code",
+            "description": ""
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Fluvastatin",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Fluvastatin start date/time",
+            "description": ""
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Fluvastatin dose",
+            "description": ""
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Fluvastatin code",
+            "description": ""
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Pravastatin",
+            "description": ""
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "Pravastatin start date/time",
+            "description": ""
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "Pravastatin dose",
+            "description": ""
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "Pravastatin code",
+            "description": ""
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Rosuvastatin",
+            "description": ""
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Rosuvastatin start date/time",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Rosuvastatin dose",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Rosuvastatin code",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Simvastatin",
+            "description": ""
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "Simvastatin start date/time",
+            "description": ""
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "Simvastatin dose",
+            "description": ""
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "Simvastatin code",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Ezetimibe",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Ezetimibe start date/time",
+            "description": ""
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Ezetimibe dose",
+            "description": ""
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Ezetimibe code",
+            "description": ""
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Pravastatin/Ezetimibe",
+            "description": ""
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Pravastatin/Ezetimibe start date/time",
+            "description": ""
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Pravastatin/Ezetimibe dose [0]",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "Pravastatin/Ezetimibe dose [1]",
+            "description": ""
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "Pravastatin/Ezetimibe code",
+            "description": ""
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "Simvastatin/Ezetimibe",
+            "description": ""
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "Simvastatin/Ezetimibe start date/time",
+            "description": ""
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "Simvastatin/Ezetimibe dose [0]",
+            "description": ""
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "Simvastatin/Ezetimibe dose [1]",
+            "description": ""
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "Simvastatin/Ezetimibe code",
+            "description": ""
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Atorvastatin/Ezetimibe",
+            "description": ""
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "Atorvastatin/Ezetimibe start date/time",
+            "description": ""
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Atorvastatin/Ezetimibe dose [0]",
+            "description": ""
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "Atorvastatin/Ezetimibe dose [1]",
+            "description": ""
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "Atorvastatin/Ezetimibe code",
+            "description": ""
+          },
+          "gt0056": {
+            "id": "gt0056",
+            "text": "Rosuvastatin/Ezetimibe",
+            "description": ""
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "Rosuvastatin/Ezetimibe start date/time",
+            "description": ""
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "Rosuvastatin/Ezetimibe dose [0]",
+            "description": ""
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "text": "Rosuvastatin/Ezetimibe dose [1]",
+            "description": ""
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Rosuvastatin/Ezetimibe code",
+            "description": ""
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "Corrected LDL",
+            "description": ""
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "Medication name",
+            "description": ""
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Medication dose",
+            "description": ""
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "Local variable: Pravastatin 10mg",
+            "description": ""
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "Local variable: Pravastatin 20mg",
+            "description": ""
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Local variable: Pravastatin 40mg",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "Local variable: Ezetimibe 10mg",
+            "description": ""
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "Local variable: Simvastatin 10mg",
+            "description": ""
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "Local variable: Simvastatin 20mg",
+            "description": ""
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "Local variable: Simvastatin 40mg",
+            "description": ""
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Local variable: Simvastatin 80mg",
+            "description": ""
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "Local variable: Atorvastatin 10mg",
+            "description": ""
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "Local variable: Atorvastatin 20mg",
+            "description": ""
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "Local variable: Atorvastatin 40mg",
+            "description": ""
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "Local variable: Atorvastatin 80mg",
+            "description": ""
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "Local variable: Rosuvastatin 10mg",
+            "description": ""
+          },
+          "gt0078": {
+            "id": "gt0078",
+            "text": "Local variable: Rosuvastatin 20mg",
+            "description": ""
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "text": "Local variable: Rosuvastatin 40mg",
+            "description": ""
+          },
+          "gt0080": {
+            "id": "gt0080",
+            "text": "Correct LDL for Atorvastatin 10mg",
+            "description": ""
+          },
+          "gt0081": {
+            "id": "gt0081",
+            "text": "Correct LDL for Atorvastatin 20mg",
+            "description": ""
+          },
+          "gt0082": {
+            "id": "gt0082",
+            "text": "Correct LDL for Atorvastatin 40mg",
+            "description": ""
+          },
+          "gt0083": {
+            "id": "gt0083",
+            "text": "Correct LDL for Atorvastatin 80mg",
+            "description": ""
+          },
+          "gt0084": {
+            "id": "gt0084",
+            "text": "Correct LDL for Fluvastatin 10mg",
+            "description": ""
+          },
+          "gt0085": {
+            "id": "gt0085",
+            "text": "Correct LDL for Fluvastatin 40mg",
+            "description": ""
+          },
+          "gt0086": {
+            "id": "gt0086",
+            "text": "Correct LDL for Fluvastatin 80mg",
+            "description": ""
+          },
+          "gt0087": {
+            "id": "gt0087",
+            "text": "Correct LDL for Pravastatin 10mg",
+            "description": ""
+          },
+          "gt0088": {
+            "id": "gt0088",
+            "text": "Correct LDL for Pravastatin 20mg",
+            "description": ""
+          },
+          "gt0089": {
+            "id": "gt0089",
+            "text": "Correct LDL for Pravastatin 40mg",
+            "description": ""
+          },
+          "gt0090": {
+            "id": "gt0090",
+            "text": "Correct LDL for Rosuvastatin 5mg",
+            "description": ""
+          },
+          "gt0091": {
+            "id": "gt0091",
+            "text": "Correct LDL for Rosuvastatin 10mg",
+            "description": ""
+          },
+          "gt0092": {
+            "id": "gt0092",
+            "text": "Correct LDL for Rosuvastatin 20mg",
+            "description": ""
+          },
+          "gt0093": {
+            "id": "gt0093",
+            "text": "Correct LDL for Rosuvastatin 40mg",
+            "description": ""
+          },
+          "gt0094": {
+            "id": "gt0094",
+            "text": "Correct LDL for Simvastatin 10mg",
+            "description": ""
+          },
+          "gt0095": {
+            "id": "gt0095",
+            "text": "Correct LDL for Simvastatin 20mg",
+            "description": ""
+          },
+          "gt0096": {
+            "id": "gt0096",
+            "text": "Correct LDL for Simvastatin 40mg",
+            "description": ""
+          },
+          "gt0097": {
+            "id": "gt0097",
+            "text": "Correct LDL for Simvastatin 80mg",
+            "description": ""
+          },
+          "gt0098": {
+            "id": "gt0098",
+            "text": "Correct LDL for Ezetimibe 10mg",
+            "description": ""
+          },
+          "gt0099": {
+            "id": "gt0099",
+            "text": "Correct LDL for Pravastatin/Ezetimibe 10/10mg",
+            "description": ""
+          },
+          "gt0100": {
+            "id": "gt0100",
+            "text": "Correct LDL for Pravastatin/Ezetimibe 20/10mg",
+            "description": ""
+          },
+          "gt0101": {
+            "id": "gt0101",
+            "text": "Correct LDL for Pravastatin/Ezetimibe 40/10mg",
+            "description": ""
+          },
+          "gt0102": {
+            "id": "gt0102",
+            "text": "Correct LDL for Simvastatin/Ezetimibe 10/10mg",
+            "description": ""
+          },
+          "gt0103": {
+            "id": "gt0103",
+            "text": "Correct LDL for Simvastatin/Ezetimibe 20/10mg",
+            "description": ""
+          },
+          "gt0104": {
+            "id": "gt0104",
+            "text": "Correct LDL for Simvastatin/Ezetimibe 40/10mg",
+            "description": ""
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "text": "Correct LDL for Simvastatin/Ezetimibe 80/10mg",
+            "description": ""
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "text": "Correct LDL for Atorvastatin/Ezetimibe 10/10mg",
+            "description": ""
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "Correct LDL for Atorvastatin/Ezetimibe 20/10mg",
+            "description": ""
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "Correct LDL for Atorvastatin/Ezetimibe 40/10mg",
+            "description": ""
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "text": "Correct LDL for Atorvastatin/Ezetimibe 80/10mg",
+            "description": ""
+          },
+          "gt0110": {
+            "id": "gt0110",
+            "text": "Correct LDL for Rosuvastatin/Ezetimibe 10/10mg",
+            "description": ""
+          },
+          "gt0111": {
+            "id": "gt0111",
+            "text": "Correct LDL for Rosuvastatin/Ezetimibe 20/10mg",
+            "description": ""
+          },
+          "gt0112": {
+            "id": "gt0112",
+            "text": "Correct LDL for Rosuvastatin/Ezetimibe 40/10mg",
+            "description": ""
+          }
+        }
+      },
+      "sv": {
+        "id": "sv",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "LDL-kolesterol korrigering",
+            "description": "*Correction of LDL cholesterol when a statin medication is detected.(en)"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "LDL-kolesterol",
+            "description": ""
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "LDL-kolesterol värde",
+            "description": ""
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "LDL-kolesterol datum/tid",
+            "description": ""
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "LDL-kolesterol kod",
+            "description": ""
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Atorvastatin",
+            "description": ""
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "Atorvastatin start datum/tid",
+            "description": ""
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "Atorvastatin dos",
+            "description": ""
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Atorvastatin kod",
+            "description": ""
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Fluvastatin",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Fluvastatin start datum/tid",
+            "description": ""
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Fluvastatin dos",
+            "description": ""
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Fluvastatin kod",
+            "description": ""
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Pravastatin",
+            "description": ""
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "Pravastatin start datum/tid",
+            "description": ""
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "Pravastatin dos",
+            "description": ""
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "Pravastatin kod",
+            "description": ""
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "Rosuvastatin",
+            "description": ""
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "Rosuvastatin start datum/tid",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "Rosuvastatin dos",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "Rosuvastatin kod",
+            "description": ""
+          },
+          "gt0028": {
+            "id": "gt0028",
+            "text": "Simvastatin",
+            "description": ""
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "Simvastatin start datum/tid",
+            "description": ""
+          },
+          "gt0030": {
+            "id": "gt0030",
+            "text": "Simvastatin dos",
+            "description": ""
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "Simvastatin kod",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Ezetimibe",
+            "description": ""
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Ezetimibe start datum/tid",
+            "description": ""
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Ezetimibe dos",
+            "description": ""
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Ezetimibe kod",
+            "description": ""
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Pravastatin/Ezetimibe",
+            "description": ""
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Pravastatin/Ezetimibe start datum/tid",
+            "description": ""
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Pravastatin/Ezetimibe dos [0]",
+            "description": ""
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "Pravastatin/Ezetimibe dos [1]",
+            "description": ""
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "Pravastatin/Ezetimibe kod",
+            "description": ""
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "Simvastatin/Ezetimibe",
+            "description": ""
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "Simvastatin/Ezetimibe start datum/tid",
+            "description": ""
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "Simvastatin/Ezetimibe dos [0]",
+            "description": ""
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "Simvastatin/Ezetimibe dos [1]",
+            "description": ""
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "Simvastatin/Ezetimibe kod",
+            "description": ""
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Atorvastatin/Ezetimibe",
+            "description": ""
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "Atorvastatin/Ezetimibe start datum/tid",
+            "description": ""
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Atorvastatin/Ezetimibe dos [0]",
+            "description": ""
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "Atorvastatin/Ezetimibe dos [1]",
+            "description": ""
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "Atorvastatin/Ezetimibe kod",
+            "description": ""
+          },
+          "gt0056": {
+            "id": "gt0056",
+            "text": "Rosuvastatin/Ezetimibe",
+            "description": ""
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "Rosuvastatin/Ezetimibe start datum/tid",
+            "description": ""
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "Rosuvastatin/Ezetimibe dos [0]",
+            "description": ""
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "text": "Rosuvastatin/Ezetimibe dos [1]",
+            "description": ""
+          },
+          "gt0060": {
+            "id": "gt0060",
+            "text": "Rosuvastatin/Ezetimibe kod",
+            "description": ""
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "Korrigerat LDL",
+            "description": ""
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "Läkemedel",
+            "description": ""
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Läkemedel dos",
+            "description": ""
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "Lokal variabel: Pravastatin 10mg",
+            "description": ""
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "Lokal variabel: Pravastatin 20mg",
+            "description": ""
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Lokal variabel: Pravastatin 40mg",
+            "description": ""
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "Lokal variabel: Ezetimibe 10mg",
+            "description": ""
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "Lokal variabel: Simvastatin 10mg",
+            "description": ""
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "Lokal variabel: Simvastatin 20mg",
+            "description": ""
+          },
+          "gt0071": {
+            "id": "gt0071",
+            "text": "Lokal variabel: Simvastatin 40mg",
+            "description": ""
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Lokal variabel: Simvastatin 80mg",
+            "description": ""
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "Lokal variabel: Atorvastatin 10mg",
+            "description": ""
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "Lokal variabel: Atorvastatin 20mg",
+            "description": ""
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "Lokal variabel: Atorvastatin 40mg",
+            "description": ""
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "Lokal variabel: Atorvastatin 80mg",
+            "description": ""
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "Lokal variabel: Rosuvastatin 10mg",
+            "description": ""
+          },
+          "gt0078": {
+            "id": "gt0078",
+            "text": "Lokal variabel: Rosuvastatin 20mg",
+            "description": ""
+          },
+          "gt0079": {
+            "id": "gt0079",
+            "text": "Lokal variabel: Rosuvastatin 40mg",
+            "description": ""
+          },
+          "gt0080": {
+            "id": "gt0080",
+            "text": "Korrigera LDL för Atorvastatin 10mg",
+            "description": ""
+          },
+          "gt0081": {
+            "id": "gt0081",
+            "text": "Korrigera LDL för Atorvastatin 20mg",
+            "description": ""
+          },
+          "gt0082": {
+            "id": "gt0082",
+            "text": "Korrigera LDL för Atorvastatin 40mg",
+            "description": ""
+          },
+          "gt0083": {
+            "id": "gt0083",
+            "text": "Korrigera LDL för Atorvastatin 80mg",
+            "description": ""
+          },
+          "gt0084": {
+            "id": "gt0084",
+            "text": "Korrigera LDL för Fluvastatin 10mg",
+            "description": ""
+          },
+          "gt0085": {
+            "id": "gt0085",
+            "text": "Korrigera LDL för Fluvastatin 40mg",
+            "description": ""
+          },
+          "gt0086": {
+            "id": "gt0086",
+            "text": "Korrigera LDL för Fluvastatin 80mg",
+            "description": ""
+          },
+          "gt0087": {
+            "id": "gt0087",
+            "text": "Korrigera LDL för Pravastatin 10mg",
+            "description": ""
+          },
+          "gt0088": {
+            "id": "gt0088",
+            "text": "Korrigera LDL för Pravastatin 20mg",
+            "description": ""
+          },
+          "gt0089": {
+            "id": "gt0089",
+            "text": "Korrigera LDL för Pravastatin 40mg",
+            "description": ""
+          },
+          "gt0090": {
+            "id": "gt0090",
+            "text": "Korrigera LDL för Rosuvastatin 5mg",
+            "description": ""
+          },
+          "gt0091": {
+            "id": "gt0091",
+            "text": "Korrigera LDL för Rosuvastatin 10mg",
+            "description": ""
+          },
+          "gt0092": {
+            "id": "gt0092",
+            "text": "Korrigera LDL för Rosuvastatin 20mg",
+            "description": ""
+          },
+          "gt0093": {
+            "id": "gt0093",
+            "text": "Korrigera LDL för Rosuvastatin 40mg",
+            "description": ""
+          },
+          "gt0094": {
+            "id": "gt0094",
+            "text": "Korrigera LDL för Simvastatin 10mg",
+            "description": ""
+          },
+          "gt0095": {
+            "id": "gt0095",
+            "text": "Korrigera LDL för Simvastatin 20mg",
+            "description": ""
+          },
+          "gt0096": {
+            "id": "gt0096",
+            "text": "Korrigera LDL för Simvastatin 40mg",
+            "description": ""
+          },
+          "gt0097": {
+            "id": "gt0097",
+            "text": "Korrigera LDL för Simvastatin 80mg",
+            "description": ""
+          },
+          "gt0098": {
+            "id": "gt0098",
+            "text": "Korrigera LDL för Ezetimibe 10mg",
+            "description": ""
+          },
+          "gt0099": {
+            "id": "gt0099",
+            "text": "Korrigera LDL för Pravastatin/Ezetimibe 10/10mg",
+            "description": ""
+          },
+          "gt0100": {
+            "id": "gt0100",
+            "text": "Korrigera LDL för Pravastatin/Ezetimibe 20/10mg",
+            "description": ""
+          },
+          "gt0101": {
+            "id": "gt0101",
+            "text": "Korrigera LDL för Pravastatin/Ezetimibe 40/10mg",
+            "description": ""
+          },
+          "gt0102": {
+            "id": "gt0102",
+            "text": "Korrigera LDL för Simvastatin/Ezetimibe 10/10mg",
+            "description": ""
+          },
+          "gt0103": {
+            "id": "gt0103",
+            "text": "Korrigera LDL för Simvastatin/Ezetimibe 20/10mg",
+            "description": ""
+          },
+          "gt0104": {
+            "id": "gt0104",
+            "text": "Korrigera LDL för Simvastatin/Ezetimibe 40/10mg",
+            "description": ""
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "text": "Korrigera LDL för Simvastatin/Ezetimibe 80/10mg",
+            "description": ""
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "text": "Korrigera LDL för Atorvastatin/Ezetimibe 10/10mg",
+            "description": ""
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "Korrigera LDL för Atorvastatin/Ezetimibe 20/10mg",
+            "description": ""
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "Korrigera LDL för Atorvastatin/Ezetimibe 40/10mg",
+            "description": ""
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "text": "Korrigera LDL för Atorvastatin/Ezetimibe 80/10mg",
+            "description": ""
+          },
+          "gt0110": {
+            "id": "gt0110",
+            "text": "Korrigera LDL för Rosuvastatin/Ezetimibe 10/10mg",
+            "description": ""
+          },
+          "gt0111": {
+            "id": "gt0111",
+            "text": "Korrigera LDL för Rosuvastatin/Ezetimibe 20/10mg",
+            "description": ""
+          },
+          "gt0112": {
+            "id": "gt0112",
+            "text": "Korrigera LDL för Rosuvastatin/Ezetimibe 40/10mg",
+            "description": ""
+          }
+        }
+      }
+    },
+    "term_bindings": {
+      "NPU": {
+        "id": "NPU",
+        "bindings": {
+          "gt0006": {
+            "codes": [
+              "NPU::NPU01568",
+              "NPU::NPU10171",
+              "NPU::SWE05408",
+              "NPU::JOK02835"
+            ]
+          }
+        }
+      },
+      "ATC": {
+        "id": "ATC",
+        "bindings": {
+          "gt0011": {
+            "codes": [
+              "ATC::C10AA05"
+            ]
+          },
+          "gt0016": {
+            "codes": [
+              "ATC::C10AA04"
+            ]
+          },
+          "gt0021": {
+            "codes": [
+              "ATC::C10AA03"
+            ]
+          },
+          "gt0026": {
+            "codes": [
+              "ATC::C10AA07"
+            ]
+          },
+          "gt0031": {
+            "codes": [
+              "ATC::C10AA01"
+            ]
+          },
+          "gt0036": {
+            "codes": [
+              "ATC::C10AX09"
+            ]
+          },
+          "gt0042": {
+            "codes": [
+              "ATC::C10BA11"
+            ]
+          },
+          "gt0048": {
+            "codes": [
+              "ATC::C10BA02"
+            ]
+          },
+          "gt0054": {
+            "codes": [
+              "ATC::C10BA05"
+            ]
+          },
+          "gt0060": {
+            "codes": [
+              "ATC::C10BA06"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

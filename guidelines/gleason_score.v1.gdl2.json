@@ -1,0 +1,427 @@
+{
+  "id": "gleason_score.v1",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2021-08-02",
+      "name": "Mouna Ghannam",
+      "organisation": "Cambio CDS",
+      "email": "mouna.ghannam@cambio.se"
+    },
+    "other_contributors": [
+      "Sayeeda S Farruque",
+      "Dennis Forslund",
+      "Daniel Keszthelyi"
+    ],
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "To stage prostate cancer based on biopsy findings.\n",
+        "keywords": [
+          "Gleason",
+          "score",
+          "prostate",
+          "cancer"
+        ],
+        "use": "To be used to stage prostate cancer based on biopsy findings.\n\nThe score contains 3 sections which are primary, secondary and tertiary sections that relate to grades. Each grade is scored from 1 to 5 with a total score made up of summing the primary and secondary graded sections for a maximum score of 10 and a minimum of 2. The Tertiary or minor grade score is reported but doesn't affect the total score.\n\nPrimary grade\nThe dominant pattern of the tumor (>50% of total pattern seen)\n\nSecondary grade\nThe highest grade pattern seen after the primary pattern\n\nTertiary grade\nSmall component of a third (generally more aggressive) pattern\n\nGrading System:\n\nGleason Score Prognostic Grade Group\n- Gleason score ≤ 6: I\n- Gleason score 3 + 4 = 7: II\n- Gleason score 4 + 3 = 7: III\n- Gleason score 8: IV\n- Gleason score 9-10: V\n\n",
+        "misuse": "Not to be used for diagnostic purposes without also considering other evidence.",
+        "copyright": "Cambio CDS"
+      }
+    },
+    "other_details": {
+      "references": "Pierorazio PM, Walsh PC, Partin AW, Epstein JI. Prognostic Gleason grade grouping: data based on the modified Gleason scoring system. BJU Int. 2013 May;111(5):753-60. doi: 10.1111/j.1464-410X.2012.11611.x. Epub 2013 Mar 6. PMID: 23464824; PMCID: PMC3978145.\n\nCancercentrum. Nationellt vårdprogram - Prostatacancer. 2017-02-28. Available from: https://www.cancercentrum.se/samverkan/cancerdiagnoser/prostata/vardprogram/"
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.gleason.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.gleason.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0072": {
+            "id": "gt0072",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0007]"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0008]"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0009]"
+          }
+        }
+      },
+      "gt0006": {
+        "id": "gt0006",
+        "model_id": "openEHR-EHR-OBSERVATION.gleason.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.gleason.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0075": {
+            "id": "gt0075",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]"
+          }
+        }
+      },
+      "gt0009": {
+        "id": "gt0009",
+        "model_id": "openEHR-EHR-EVALUATION.gleason_score_interpretation.v0",
+        "template_id": "openEHR-EHR-EVALUATION.gleason_score_interpretation.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0076": {
+            "id": "gt0076",
+            "path": "/data[at0001]/items[at0021]"
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "path": "/data[at0001]/items[at0022]"
+          }
+        }
+      }
+    },
+    "rules": {
+      "gt0057": {
+        "id": "gt0057",
+        "priority": 12,
+        "when": [
+          "$gt0072|Primary grade|!=null",
+          "$gt0073|Secondary grade|!=null"
+        ],
+        "then": [
+          "$gt0075|Gleason Score|.magnitude=$gt0072.value+$gt0073.value"
+        ]
+      },
+      "gt0058": {
+        "id": "gt0058",
+        "priority": 11,
+        "when": [
+          "$gt0075|Gleason Score|<6",
+          "$gt0075|Gleason Score|>0"
+        ],
+        "then": [
+          "$gt0015|Prognostic grading group text|=$gt0016.term"
+        ]
+      },
+      "gt0059": {
+        "id": "gt0059",
+        "priority": 10,
+        "when": [
+          "$gt0075|Gleason Score|==6"
+        ],
+        "then": [
+          "$gt0015|Prognostic grading group text|=$gt0054.term"
+        ]
+      },
+      "gt0061": {
+        "id": "gt0061",
+        "priority": 9,
+        "when": [
+          "$gt0075|Gleason Score|==7",
+          "$gt0072|Primary grade|==3|local::at0013|Recognizable glands, but cells are darker.|",
+          "$gt0073|Secondary grade|==4|local::at0020|Few recognizable glands|"
+        ],
+        "then": [
+          "$gt0015|Prognostic grading group text|=$gt0017.term"
+        ]
+      },
+      "gt0062": {
+        "id": "gt0062",
+        "priority": 8,
+        "when": [
+          "$gt0075|Gleason Score|==7",
+          "$gt0072|Primary grade|==4|local::at0014|Few recognizable glands.|",
+          "$gt0073|Secondary grade|==3|local::at0019|Recognizable glands, but cells are darker.|"
+        ],
+        "then": [
+          "$gt0015|Prognostic grading group text|=$gt0018.term"
+        ]
+      },
+      "gt0063": {
+        "id": "gt0063",
+        "priority": 7,
+        "when": [
+          "$gt0075|Gleason Score|==8"
+        ],
+        "then": [
+          "$gt0015|Prognostic grading group text|=$gt0019.term"
+        ]
+      },
+      "gt0064": {
+        "id": "gt0064",
+        "priority": 6,
+        "when": [
+          "$gt0075|Gleason Score|>=9",
+          "$gt0075|Gleason Score|<=10"
+        ],
+        "then": [
+          "$gt0015|Prognostic grading group text|=$gt0020.term"
+        ]
+      },
+      "gt0065": {
+        "id": "gt0065",
+        "priority": 5,
+        "when": [
+          "(fired($gt0058))||((fired($gt0059))||((fired($gt0061))||((fired($gt0062))||((fired($gt0063))||(fired($gt0064))))))"
+        ],
+        "then": [
+          "$gt0076|Prognostic grade group|=$gt0015"
+        ]
+      },
+      "gt0066": {
+        "id": "gt0066",
+        "priority": 4,
+        "when": [
+          "$gt0074|Tertiary grade|==1|local::at0023|Closely resembles normal prostate.|"
+        ],
+        "then": [
+          "$gt0077|Tertiary grade score|=local::at0023|1|"
+        ]
+      },
+      "gt0067": {
+        "id": "gt0067",
+        "priority": 3,
+        "when": [
+          "$gt0074|Tertiary grade|==2|local::at0024|Increased stroma with well-formed glands|"
+        ],
+        "then": [
+          "$gt0077|Tertiary grade score|=local::at0024|2|"
+        ]
+      },
+      "gt0068": {
+        "id": "gt0068",
+        "priority": 2,
+        "when": [
+          "$gt0074|Tertiary grade|==3|local::at0025|Recognizable glands, but cells are darker.|"
+        ],
+        "then": [
+          "$gt0077|Tertiary grade score|=local::at0025|3|"
+        ]
+      },
+      "gt0069": {
+        "id": "gt0069",
+        "priority": 1,
+        "when": [
+          "$gt0074|Tertiary grade|==4|local::at0026|Few recognizable glands.|"
+        ],
+        "then": [
+          "$gt0077|Tertiary grade score|=local::at0026|4|"
+        ]
+      },
+      "gt0070": {
+        "id": "gt0070",
+        "priority": 1,
+        "when": [
+          "$gt0074|Tertiary grade|==5|local::at0027|Few or no recognizable glands.|"
+        ],
+        "then": [
+          "$gt0077|Tertiary grade score|=local::at0027|5|"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Gleason score for prostate cancer",
+            "description": "A score that provides prognostic information on prostate cancer based on microscopic appearance, it is the standard staging criteria for prostate cancer.\n"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Prognostic grading group text",
+            "description": "local term"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Grade I - Unlikely severe cancer is present, consider close monitoring",
+            "description": "Prognostic grading group text interpretation"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "Grade II - 90.6 and 93.6% remission of tumor within 2 years of diagnosis",
+            "description": "Prognostic grading group text interpretation"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Grade III - < 90.6% remission of tumor within 2 years of diagnosis",
+            "description": "Prognostic grading group text interpretation"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "Grade IV - 70.9 - 73.7% remission of tumor within 2 years of diagnosis",
+            "description": "Prognostic grading group text interpretation"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "Grade V - 66.7 - 58.5% remission of tumor within 2 years of diagnosis",
+            "description": "Prognostic grading group text interpretation"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Tertiary grade score text",
+            "description": "local term"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Tertiary Grade score 1",
+            "description": "Tertiary grade score interpretation text"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Tertiary Grade score 2",
+            "description": "Tertiary grade score interpretation text"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Tertiary grade score 3",
+            "description": "Tertiary grade score interpretation text"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Tertiary grade score 4",
+            "description": "Tertiary grade score interpretation text"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Tertiary grade score 5",
+            "description": "Tertiary grade score interpretation text"
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "Primary",
+            "description": "*"
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "Secondary",
+            "description": "*"
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "Tertiary",
+            "description": "*"
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Gleason Score",
+            "description": "Only the Primary and Secondary grades are summed for the score. They way they are scored also matters which is reflected in the interpretation model. The range is from 2 to 10."
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "Tertiary",
+            "description": "*"
+          },
+          "gt0052": {
+            "id": "gt0052",
+            "text": "Prognostic grade group",
+            "description": "*"
+          },
+          "gt0053": {
+            "id": "gt0053",
+            "text": "Tertiary grade score",
+            "description": "*"
+          },
+          "gt0054": {
+            "id": "gt0054",
+            "text": "Grade I - 97.1 and 98.8% remission of tumor within 2 years of diagnosis",
+            "description": "97.1 and 98.8% remission of tumor within 2 years of diagnosis"
+          },
+          "gt0057": {
+            "id": "gt0057",
+            "text": "Calculate total score"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "Score < 6"
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "text": "Score = 6"
+          },
+          "gt0061": {
+            "id": "gt0061",
+            "text": "Score = 7 (3+4)"
+          },
+          "gt0062": {
+            "id": "gt0062",
+            "text": "Score = 7 (4+3)"
+          },
+          "gt0063": {
+            "id": "gt0063",
+            "text": "Score = 8"
+          },
+          "gt0064": {
+            "id": "gt0064",
+            "text": "Score between 9 and 10"
+          },
+          "gt0065": {
+            "id": "gt0065",
+            "text": "Interpretation of total score"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "Teriatry 1"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "Tertiary 2"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "Tertiatry 3"
+          },
+          "gt0069": {
+            "id": "gt0069",
+            "text": "Tertiatry 4"
+          },
+          "gt0070": {
+            "id": "gt0070",
+            "text": "Tertiary 5"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "Primary grade",
+            "description": "*"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "Secondary grade",
+            "description": "*"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "Tertiary grade",
+            "description": "*"
+          },
+          "gt0075": {
+            "id": "gt0075",
+            "text": "Gleason Score",
+            "description": "Only the Primary and Secondary grades are summed for the score. They way they are scored also matters which is reflected in the interpretation model. The range is from 2 to 10."
+          },
+          "gt0076": {
+            "id": "gt0076",
+            "text": "Prognostic grade group",
+            "description": "*"
+          },
+          "gt0077": {
+            "id": "gt0077",
+            "text": "Tertiary grade score",
+            "description": "*"
+          }
+        }
+      }
+    }
+  }
+}

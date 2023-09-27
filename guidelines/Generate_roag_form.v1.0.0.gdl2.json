@@ -1,0 +1,925 @@
+{
+  "id": "Generate_roag_form.v1.0.0",
+  "concept": "gt0001",
+  "gdl_version": "2.0",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2020-11-26",
+      "name": "Cambio CDS"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "sv": {
+        "id": "sv",
+        "purpose": "Syftet med ROAG är att:\n*  Identifiera problem i munhålan\n*  Tydliggöra individuellt behov av munvårdsåtgärder\n*  Ge stöd för dokumentation\n*  Fungera som beslutsunderlag för konsult eller remiss till läkare/tandvård\n*  Utvärdera insatta åtgärder",
+        "keywords": [
+          "munhälsa",
+          "roag-j",
+          "senior alert",
+          "munvårdsåtgärd",
+          "roag"
+        ],
+        "use": "Med hjälp av ROAG-J kan munhälsoproblem inom vård- och omsorg identifieras med god systematik. En stor fördel med instrumentet är att det skapas ett gemensamt språk för alla berörda.\nBedömning göras:\n*  Vid inskrivning eller första kontakt med vård och omsorg\n*  I samband med övriga riskbedömningar i Senior alert\n*  Fortlöpande hos de som är i risk för att utveckla problem eller som har ohälsa i munnen; grad två eller tre inom något områdei ROAG\n*  När en person ändrar sitt ätbeteende, exempelvis inte vill äta eller reagerar onormalt på kall eller varm mat och dryck\nOmråden som bedömas är:  Röst, Läppar, Munslemhinna, Tunga, Tandkött, Tänder, Proteser, Saliv, Sväljning och gradering göras enligt följande,\nGrad 1 –Friskt eller normalt tillstånd\nGrad 2 –Måttliga förändringar/avvikelser som kan åtgärdas av vårdpersonal\nGrad 3 –Svårare förändringar/avvikelser som kräver konsultation/ remiss till tandvård\nVid en eller flera 2:or ska åtgärder göras av personal på enheten. Om bedömningen även visar 3:or påbörjar personalen åtgärder och ska dessutom kontakta tandläkare.",
+        "misuse": "ROAG-J är inte ett instrument för att diagnostisera utan för att vård-och omsorgspersonal ska uppmärksamma och åtgärda ohälsa i munnen.",
+        "copyright": "© Cambio Healthcare Systems"
+      },
+      "en": {
+        "id": "en",
+        "purpose": "To assess oral health status by evaluating nine different different areas: voice, lips, oral mucosa, tongue, gums, teeth, saliva, swallowing, and presence of any prosthesis or implants.\nSpecifically, ROAG aims to:\n* Identify problems in the oral cavity\n* Clarify individual need for oral care measures\n* Support documentation\n* Act as a decision basis for consultation or referral to a dentist / dental care\n* Evaluate action taken",
+        "keywords": [
+          "oral health",
+          "oral health measures",
+          "roag",
+          "roag-j",
+          "senior alert"
+        ],
+        "use": "Assessment is performed:\n* Upon enrollment or first contact with care\n* In connection with other risk assessments in Senior alert\n* Continuously in those at risk of developing problems or having ill health; grade 2 or 3 in any area of ​​the ROAG\n* When a person changes their eating behavior, for example, does not want to eat or reacts abnormally to cold or hot food and drink\nAreas assessed are: Voice, Lips, Oral mucosa, Tongue, Gums, Teeth, Prosthesis, Saliva, Swallowing and grading is done as follows,\nGrade 1 - Healthy or normal condition\nGrade 2 - Moderate changes / deviations that can be addressed by healthcare professionals\nGrade 3 - More difficult changes / deviations that require consultation / referral to dental care",
+        "misuse": "ROAG-J is not a diagnostic tool, but directs healthcare professionals to pay attention to and correct oral health problems.",
+        "copyright": "© Cambio Healthcare Systems"
+      }
+    },
+    "other_details": {
+      "references": "1. Eilers J, Berger AM, Petersen, MC. Development, testing and application of the oral assessment guide. Oncol Nurs Forum 1988; 15: 325-330. \n2. Nordvall D, Andersson P, Gahnberg L, Hägglin C. Riskbedömning med ROAG-J i kvalitetsregistret Senior alert-Effekter på munhälsan ur ett longitudinellt perspektiv."
+    }
+  },
+  "definition": {
+    "templates": {
+      "gt2000": {
+        "id": "gt2000",
+        "model_id": "generic_model",
+        "name": "roagQuestionnaire",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "roagQuestionnaire",
+          "text": "{$gt5001.term}",
+          "resources": [
+            {
+              "uiResourceType": "InputSelect",
+              "name": "voice",
+              "id": "voice",
+              "required": true,
+              "text": "{$gt4101.term}",
+              "display": "button",
+              "magnitudeTemplate": "Grad {magnitude}",
+              "options": [
+                {
+                  "value": "0|local::at0013|Ej aktuellt att bedöma|",
+                  "text": "{$gt4102.term}",
+                  "magnitude": 0
+                },
+                {
+                  "value": "1|local::at0014|Normal|",
+                  "text": "{$gt4103.term}",
+                  "magnitude": 1
+                },
+                {
+                  "value": "2|local::at0015|Torr, hes, smackande|",
+                  "text": "{$gt4104.term}",
+                  "magnitude": 2
+                },
+                {
+                  "value": "3|local::at0016|Svårt att tala|",
+                  "text": "{$gt4105.term}",
+                  "magnitude": 3
+                }
+              ]
+            },
+            {
+              "uiResourceType": "InputSelect",
+              "name": "lips",
+              "id": "lips",
+              "required": true,
+              "text": "{$gt4106.term}",
+              "display": "button",
+              "magnitudeTemplate": "Grad {magnitude}",
+              "options": [
+                {
+                  "value": "1|local::at0017|Lena, ljusröda, fuktiga|",
+                  "text": "{$gt4107.term}",
+                  "magnitude": 1
+                },
+                {
+                  "value": "2|local::at0018|Torra, spruckna, sår i mungiporna|",
+                  "text": "{$gt4108.term}",
+                  "magnitude": 2
+                },
+                {
+                  "value": "3|local::at0019|Såriga, blödande|",
+                  "text": "{$gt4109.term}",
+                  "magnitude": 3
+                }
+              ]
+            },
+            {
+              "uiResourceType": "InputSelect",
+              "name": "mucousMembrane",
+              "id": "mucousMembrane",
+              "required": true,
+              "text": "{$gt4110.term}",
+              "display": "button",
+              "magnitudeTemplate": "Grad {magnitude}",
+              "options": [
+                {
+                  "value": "1|local::at0020|Ljusröda, fuktiga|",
+                  "text": "{$gt4111.term}",
+                  "magnitude": 1
+                },
+                {
+                  "value": "2|local::at0021|Röda, torra eller områden med färgförändring eller beläggning|",
+                  "text": "{$gt4112.term}",
+                  "magnitude": 2
+                },
+                {
+                  "value": "3|local::at0022|Sår, med eller utan blödning, blåsor|",
+                  "text": "{$gt4113.term}",
+                  "magnitude": 3
+                }
+              ]
+            },
+            {
+              "uiResourceType": "InputSelect",
+              "name": "tongue",
+              "id": "tongue",
+              "required": true,
+              "text": "{$gt4114.term}",
+              "display": "button",
+              "magnitudeTemplate": "Grad {magnitude}",
+              "options": [
+                {
+                  "value": "1|local::at0023|Ljusröd, fuktig med papiller|",
+                  "text": "{$gt4115.term}",
+                  "magnitude": 1
+                },
+                {
+                  "value": "2|local::at0024|Inga papiller, röd torr, beläggning|",
+                  "text": "{$gt4116.term}",
+                  "magnitude": 2
+                },
+                {
+                  "value": "3|local::at0025|Sår med eller utan blödning, blåsor|",
+                  "text": "{$gt4117.term}",
+                  "magnitude": 3
+                }
+              ]
+            },
+            {
+              "uiResourceType": "InputSelect",
+              "name": "gums",
+              "id": "gums",
+              "required": true,
+              "text": "{$gt4118.term}",
+              "display": "button",
+              "magnitudeTemplate": "Grad {magnitude}",
+              "options": [
+                {
+                  "value": "0|local::at0026|Har inget tandkött, har endast munslemhinna|",
+                  "text": "{$gt4119.term}",
+                  "magnitude": 0
+                },
+                {
+                  "value": "1|local::at0027|Ljusrött och fast|",
+                  "text": "{$gt4120.term}",
+                  "magnitude": 1
+                },
+                {
+                  "value": "2|local::at0028|Svullet, rodnat|",
+                  "text": "{$gt4121.term}",
+                  "magnitude": 2
+                },
+                {
+                  "value": "3|local::at0029|Spontan blödning|",
+                  "text": "{$gt4122.term}",
+                  "magnitude": 3
+                }
+              ]
+            },
+            {
+              "uiResourceType": "InputSelect",
+              "name": "teethDentures",
+              "id": "teethDentures",
+              "required": true,
+              "text": "{$gt4123.term}",
+              "display": "button",
+              "magnitudeTemplate": "Grad {magnitude}",
+              "options": [
+                {
+                  "value": "0|local::at0030|Har inga egna tänder|",
+                  "text": "{$gt4124.term}",
+                  "magnitude": 0
+                },
+                {
+                  "value": "1|local::at0031|Rena, ingen synlig beläggning eller matrester|",
+                  "text": "{$gt4125.term}",
+                  "magnitude": 1
+                },
+                {
+                  "value": "2|local::at0032|Beläggning eller matrester lokalt|",
+                  "text": "{$gt4126.term}",
+                  "magnitude": 2
+                },
+                {
+                  "value": "3|local::at0033|Beläggning, matrester generellt eller trasiga tänder|",
+                  "text": "{$gt4127.term}",
+                  "magnitude": 3
+                }
+              ]
+            },
+            {
+              "uiResourceType": "InputSelect",
+              "name": "prosthesis",
+              "id": "prosthesis",
+              "required": true,
+              "text": "{$gt4128.term}",
+              "display": "button",
+              "magnitudeTemplate": "Grad {magnitude}",
+              "options": [
+                {
+                  "value": "0|local::at0034|Har ingen protes|",
+                  "text": "{$gt4129.term}",
+                  "magnitude": 0
+                },
+                {
+                  "value": "1|local::at0035|Ren och fungerar|",
+                  "text": "{$gt4130.term}",
+                  "magnitude": 1
+                },
+                {
+                  "value": "2|local::at0036|Beläggning eller matrester|",
+                  "text": "{$gt4131.term}",
+                  "magnitude": 2
+                },
+                {
+                  "value": "3|local::at0037|Används ej eller dåligt fungerande|",
+                  "text": "{$gt4132.term}",
+                  "magnitude": 3
+                }
+              ]
+            },
+            {
+              "uiResourceType": "InputSelect",
+              "name": "saliva",
+              "id": "saliva",
+              "required": true,
+              "text": "{$gt4133.term}",
+              "display": "button",
+              "magnitudeTemplate": "Grad {magnitude}",
+              "options": [
+                {
+                  "value": "1|local::at0038|Glider lätt|",
+                  "text": "{$gt4134.term}",
+                  "magnitude": 1
+                },
+                {
+                  "value": "2|local::at0039|Glider trögt|",
+                  "text": "{$gt4135.term}",
+                  "magnitude": 2
+                },
+                {
+                  "value": "3|local::at0040|Glider inte alls|",
+                  "text": "{$gt4136.term}",
+                  "magnitude": 3
+                }
+              ]
+            },
+            {
+              "uiResourceType": "InputSelect",
+              "name": "swallowing",
+              "id": "swallowing",
+              "required": true,
+              "text": "{$gt4137.term}",
+              "display": "button",
+              "magnitudeTemplate": "Grad {magnitude}",
+              "options": [
+                {
+                  "value": "0|local::at0041|Ej aktuellt att bedöma|",
+                  "text": "{$gt4138.term}",
+                  "magnitude": 0
+                },
+                {
+                  "value": "1|local::at0042|Obehindrad sväljning|",
+                  "text": "{$gt4139.term}",
+                  "magnitude": 1
+                },
+                {
+                  "value": "2|local::at0043|Obetydliga sväljproblem|",
+                  "text": "{$gt4140.term}",
+                  "magnitude": 2
+                },
+                {
+                  "value": "3|local::at0044|Uttalade sväljproblem|",
+                  "text": "{$gt4141.term}",
+                  "magnitude": 3
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "gt2001": {
+        "id": "gt2001",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "name": "roagCauses",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "roagCauses",
+          "resources": [
+            {
+              "uiResourceType": "Group",
+              "id": "causes",
+              "text": "{$gt4146.term}",
+              "resources": [
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "painInTheOralCavityDuringOrBetweenMeals",
+                  "id": "painInTheOralCavityDuringOrBetweenMeals",
+                  "text": "{$gt4147.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "impairedSensoryCapacityInTheOralCavity",
+                  "id": "impairedSensoryCapacityInTheOralCavity",
+                  "text": "{$gt4148.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "impairedMouthAndFacialMuscles",
+                  "id": "impairedMouthAndFacialMuscles",
+                  "text": "{$gt4149.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "impairedFunctionInHandOrArmOrImpairedGeneralConditionThatWorsensOralHygiene",
+                  "id": "impairedFunctionInHandOrArmOrImpairedGeneralConditionThatWorsensOralHygiene",
+                  "text": "{$gt4150.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "impairedAbilityToUnderstandInformationAndInstruction",
+                  "id": "impairedAbilityToUnderstandInformationAndInstruction",
+                  "text": "{$gt4151.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "shortIntervalsBetweenMeals",
+                  "id": "shortIntervalsBetweenMeals",
+                  "text": "{$gt4152.term}",
+                  "initialValue": false
+                },
+                {
+                  "uiResourceType": "InputBoolean",
+                  "name": "otherCause",
+                  "id": "otherCause",
+                  "text": "{$gt4153.term}",
+                  "initialValue": false
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "rules": {
+      "gt3000": {
+        "id": "gt3000",
+        "priority": 1,
+        "then": [
+          "use_template($gt2000|roagQuestionnaire|)",
+          "use_template($gt2001|roagCauses|)"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "sv": {
+        "id": "sv",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generate ROAG Form",
+            "description": "ROAG (Revised Oral Assessment Guide) är ett standardiserat enkelt riskbedömningsinstrument för att förbättra munhälsan hos äldre. Bedömningen tar bara 3-4 minuter att utföra. ROAG beskriver tillståndet inom nio områden i munnen, från friskt till sjukt (gradering 1-3). Områden bedömas är:  Röst, Läppar, Munslemhinna, Tunga, Tandkött, Tänder, Proteser, Saliv, Sväljning. Vid en eller flera 2:or ska åtgärder göras av personal på enheten. Om bedömningen även visar 3:or påbörjar personalen åtgärder och ska dessutom kontakta tandläkare."
+          },
+          "gt5001": {
+            "id": "gt5001",
+            "text": "Riskbedömning (Revised Oral Assessment Guide - Jönköping)",
+            "description": ""
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "Röst",
+            "description": ""
+          },
+          "gt4102": {
+            "id": "gt4102",
+            "text": "Ej aktuellt att bedöma",
+            "description": ""
+          },
+          "gt4103": {
+            "id": "gt4103",
+            "text": "Normal",
+            "description": ""
+          },
+          "gt4104": {
+            "id": "gt4104",
+            "text": "Torr, hes, smackande",
+            "description": ""
+          },
+          "gt4105": {
+            "id": "gt4105",
+            "text": "Svårt att tala",
+            "description": ""
+          },
+          "gt4106": {
+            "id": "gt4106",
+            "text": "Läppar",
+            "description": ""
+          },
+          "gt4107": {
+            "id": "gt4107",
+            "text": "Lena, ljusröda, fuktiga",
+            "description": ""
+          },
+          "gt4108": {
+            "id": "gt4108",
+            "text": "Torra, spruckna, sår i mungiporna",
+            "description": ""
+          },
+          "gt4109": {
+            "id": "gt4109",
+            "text": "Såriga, blödande",
+            "description": ""
+          },
+          "gt4110": {
+            "id": "gt4110",
+            "text": "Munslemhinnor",
+            "description": ""
+          },
+          "gt4111": {
+            "id": "gt4111",
+            "text": "Ljusröda, fuktiga",
+            "description": ""
+          },
+          "gt4112": {
+            "id": "gt4112",
+            "text": "Röda, torra eller områden med färgförändring eller beläggning",
+            "description": ""
+          },
+          "gt4113": {
+            "id": "gt4113",
+            "text": "Sår, med eller utan blödning, blåsor",
+            "description": ""
+          },
+          "gt4114": {
+            "id": "gt4114",
+            "text": "Tunga",
+            "description": ""
+          },
+          "gt4115": {
+            "id": "gt4115",
+            "text": "Ljusröd, fuktig med papiller",
+            "description": ""
+          },
+          "gt4116": {
+            "id": "gt4116",
+            "text": "Inga papiller, röd torr, beläggning",
+            "description": ""
+          },
+          "gt4117": {
+            "id": "gt4117",
+            "text": "Sår med eller utan blödning, blåsor",
+            "description": ""
+          },
+          "gt4118": {
+            "id": "gt4118",
+            "text": "Tandkött",
+            "description": ""
+          },
+          "gt4119": {
+            "id": "gt4119",
+            "text": "Har inget tandkött, har endast munslemhinna",
+            "description": ""
+          },
+          "gt4120": {
+            "id": "gt4120",
+            "text": "Ljusrött och fast",
+            "description": ""
+          },
+          "gt4121": {
+            "id": "gt4121",
+            "text": "Svullet, rodnat",
+            "description": ""
+          },
+          "gt4122": {
+            "id": "gt4122",
+            "text": "Spontan blödning",
+            "description": ""
+          },
+          "gt4123": {
+            "id": "gt4123",
+            "text": "Tänder",
+            "description": ""
+          },
+          "gt4124": {
+            "id": "gt4124",
+            "text": "Har inga egna tänder",
+            "description": ""
+          },
+          "gt4125": {
+            "id": "gt4125",
+            "text": "Rena, ingen synlig beläggning eller matrester",
+            "description": ""
+          },
+          "gt4126": {
+            "id": "gt4126",
+            "text": "Beläggning eller matrester lokalt",
+            "description": ""
+          },
+          "gt4127": {
+            "id": "gt4127",
+            "text": "Beläggning, matrester generellt eller trasiga tänder",
+            "description": ""
+          },
+          "gt4128": {
+            "id": "gt4128",
+            "text": "Protes",
+            "description": ""
+          },
+          "gt4129": {
+            "id": "gt4129",
+            "text": "Har ingen protes",
+            "description": ""
+          },
+          "gt4130": {
+            "id": "gt4130",
+            "text": "Ren och fungerar",
+            "description": ""
+          },
+          "gt4131": {
+            "id": "gt4131",
+            "text": "Beläggning eller matrester",
+            "description": ""
+          },
+          "gt4132": {
+            "id": "gt4132",
+            "text": "Används ej eller dåligt fungerande",
+            "description": ""
+          },
+          "gt4133": {
+            "id": "gt4133",
+            "text": "Saliv",
+            "description": ""
+          },
+          "gt4134": {
+            "id": "gt4134",
+            "text": "Glider lätt",
+            "description": ""
+          },
+          "gt4135": {
+            "id": "gt4135",
+            "text": "Glider trögt",
+            "description": ""
+          },
+          "gt4136": {
+            "id": "gt4136",
+            "text": "Glider inte alls",
+            "description": ""
+          },
+          "gt4137": {
+            "id": "gt4137",
+            "text": "Sväljning",
+            "description": ""
+          },
+          "gt4138": {
+            "id": "gt4138",
+            "text": "Ej aktuellt att bedöma",
+            "description": ""
+          },
+          "gt4139": {
+            "id": "gt4139",
+            "text": "Obehindrad sväljning",
+            "description": ""
+          },
+          "gt4140": {
+            "id": "gt4140",
+            "text": "Obetydliga sväljproblem",
+            "description": ""
+          },
+          "gt4141": {
+            "id": "gt4141",
+            "text": "Uttalade sväljproblem",
+            "description": ""
+          },
+          "gt4146": {
+            "id": "gt4146",
+            "text": "Orsaker",
+            "description": ""
+          },
+          "gt4147": {
+            "id": "gt4147",
+            "text": "Har ont i munnen vid eller mellan måltid",
+            "description": ""
+          },
+          "gt4148": {
+            "id": "gt4148",
+            "text": "Nedsatt känsel i munnen",
+            "description": ""
+          },
+          "gt4149": {
+            "id": "gt4149",
+            "text": "Nedsatt funktion i mun och ansiktsmuskulatur",
+            "description": ""
+          },
+          "gt4150": {
+            "id": "gt4150",
+            "text": "Nedsatt funktion i hand eller arm eller nedsatt allmäntillstånd som försvårar munvård",
+            "description": ""
+          },
+          "gt4151": {
+            "id": "gt4151",
+            "text": "Nedsatt förmåga att förstå information och instruktion",
+            "description": ""
+          },
+          "gt4152": {
+            "id": "gt4152",
+            "text": "Korta intervaller mellan måltider",
+            "description": ""
+          },
+          "gt4153": {
+            "id": "gt4153",
+            "text": "Annan orsak",
+            "description": ""
+          }
+        }
+      },
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generate ROAG Form",
+            "description": "ROAG is an acronym for Revised Oral Assessment Guide. It is a standardized risk assessment tool for improving oral health in the elderly. ROAG is used to document oral health in nine areas: voice, lips, oral mucosa, tongue, gums, teeth, saliva, swallowing, and presence of any prosthesis or implants. The assessment takes only 3-4 minutes to complete and grading is assigned from healthy to sick (grading 1-3). If the ROAG assessment shows at least a grade 2, certain care measures are instituted by staff of the unit. With at least a grade 3, a referral is made to a dental specialist in addition to the local care measures."
+          },
+          "gt5001": {
+            "id": "gt5001",
+            "text": "Risk Assessment (ROAG-J)",
+            "description": ""
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "Voice",
+            "description": ""
+          },
+          "gt4102": {
+            "id": "gt4102",
+            "text": "Not relevant for assessment",
+            "description": ""
+          },
+          "gt4103": {
+            "id": "gt4103",
+            "text": "Normal",
+            "description": ""
+          },
+          "gt4104": {
+            "id": "gt4104",
+            "text": "Deep or rasping",
+            "description": ""
+          },
+          "gt4105": {
+            "id": "gt4105",
+            "text": "Difficulty talking or painful",
+            "description": ""
+          },
+          "gt4106": {
+            "id": "gt4106",
+            "text": "Lips",
+            "description": ""
+          },
+          "gt4107": {
+            "id": "gt4107",
+            "text": "Smooth and pink",
+            "description": ""
+          },
+          "gt4108": {
+            "id": "gt4108",
+            "text": "Dry or cracked, and/or angular cheilitis",
+            "description": ""
+          },
+          "gt4109": {
+            "id": "gt4109",
+            "text": "Ulcerated or bleeding",
+            "description": ""
+          },
+          "gt4110": {
+            "id": "gt4110",
+            "text": "Mucous Membrane",
+            "description": ""
+          },
+          "gt4111": {
+            "id": "gt4111",
+            "text": "Pink and moist",
+            "description": ""
+          },
+          "gt4112": {
+            "id": "gt4112",
+            "text": "Dry and/or change in colour, red, blue-red or white",
+            "description": ""
+          },
+          "gt4113": {
+            "id": "gt4113",
+            "text": "Very red, or thick, white coating or blisters /ulceration with or without bleeding",
+            "description": ""
+          },
+          "gt4114": {
+            "id": "gt4114",
+            "text": "Tongue",
+            "description": ""
+          },
+          "gt4115": {
+            "id": "gt4115",
+            "text": "Pink, moist,  papillae present",
+            "description": ""
+          },
+          "gt4116": {
+            "id": "gt4116",
+            "text": "Dry, no papillae present or change in colour (red or white)",
+            "description": ""
+          },
+          "gt4117": {
+            "id": "gt4117",
+            "text": "Very thick white coating; blisters or ulceration",
+            "description": ""
+          },
+          "gt4118": {
+            "id": "gt4118",
+            "text": "Gums",
+            "description": ""
+          },
+          "gt4119": {
+            "id": "gt4119",
+            "text": "No gums present, only mucous membrane",
+            "description": ""
+          },
+          "gt4120": {
+            "id": "gt4120",
+            "text": "Pink and firm",
+            "description": ""
+          },
+          "gt4121": {
+            "id": "gt4121",
+            "text": "Oedematous and/or red",
+            "description": ""
+          },
+          "gt4122": {
+            "id": "gt4122",
+            "text": "Bleeding easily under finger pressure",
+            "description": ""
+          },
+          "gt4123": {
+            "id": "gt4123",
+            "text": "Teeth/dentures",
+            "description": ""
+          },
+          "gt4124": {
+            "id": "gt4124",
+            "text": "No teeth",
+            "description": ""
+          },
+          "gt4125": {
+            "id": "gt4125",
+            "text": "Clean, no debris",
+            "description": ""
+          },
+          "gt4126": {
+            "id": "gt4126",
+            "text": "Plaque or debris in local areas",
+            "description": ""
+          },
+          "gt4127": {
+            "id": "gt4127",
+            "text": "Plaque or debris generalised",
+            "description": ""
+          },
+          "gt4128": {
+            "id": "gt4128",
+            "text": "Prosthesis",
+            "description": ""
+          },
+          "gt4129": {
+            "id": "gt4129",
+            "text": "Has no prosthesis",
+            "description": ""
+          },
+          "gt4130": {
+            "id": "gt4130",
+            "text": "Clean and functions properly",
+            "description": ""
+          },
+          "gt4131": {
+            "id": "gt4131",
+            "text": "Plaque or debris",
+            "description": ""
+          },
+          "gt4132": {
+            "id": "gt4132",
+            "text": "Not used or malfunctioning",
+            "description": ""
+          },
+          "gt4133": {
+            "id": "gt4133",
+            "text": "Saliva",
+            "description": ""
+          },
+          "gt4134": {
+            "id": "gt4134",
+            "text": "No friction",
+            "description": ""
+          },
+          "gt4135": {
+            "id": "gt4135",
+            "text": "Slightly increased friction",
+            "description": ""
+          },
+          "gt4136": {
+            "id": "gt4136",
+            "text": "Significantly increased friction",
+            "description": ""
+          },
+          "gt4137": {
+            "id": "gt4137",
+            "text": "Swallowing",
+            "description": ""
+          },
+          "gt4138": {
+            "id": "gt4138",
+            "text": "Not relevant for assessment",
+            "description": ""
+          },
+          "gt4139": {
+            "id": "gt4139",
+            "text": "Normal swallow",
+            "description": ""
+          },
+          "gt4140": {
+            "id": "gt4140",
+            "text": "Some pain or difficulty on swallowing",
+            "description": ""
+          },
+          "gt4141": {
+            "id": "gt4141",
+            "text": "Unable to swallow",
+            "description": ""
+          },
+          "gt4146": {
+            "id": "gt4146",
+            "text": "Causes",
+            "description": ""
+          },
+          "gt4147": {
+            "id": "gt4147",
+            "text": "Pain in the oral cavity during or between meals",
+            "description": ""
+          },
+          "gt4148": {
+            "id": "gt4148",
+            "text": "Impaired sensory capacity in the oral cavity",
+            "description": ""
+          },
+          "gt4149": {
+            "id": "gt4149",
+            "text": "Impaired mouth and facial muscles",
+            "description": ""
+          },
+          "gt4150": {
+            "id": "gt4150",
+            "text": "Impaired function in hand or arm or impaired general condition that worsens oral hygiene",
+            "description": ""
+          },
+          "gt4151": {
+            "id": "gt4151",
+            "text": "Impaired ability to understand information and instruction",
+            "description": ""
+          },
+          "gt4152": {
+            "id": "gt4152",
+            "text": "Short intervals between meals",
+            "description": ""
+          },
+          "gt4153": {
+            "id": "gt4153",
+            "text": "Other cause",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

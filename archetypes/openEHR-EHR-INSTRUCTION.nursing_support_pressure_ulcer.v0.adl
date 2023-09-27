@@ -1,0 +1,1079 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-INSTRUCTION.nursing_support_pressure_ulcer.v0
+
+concept
+	[at0000]	-- Nursing support pressure ulcer
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"06CC604C2C510316D9FA56DDC3FFA88C">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {	-- Nursing support pressure ulcer
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] occurrences matches {0..1} matches {	-- Current Activity
+				description matches {
+					ITEM_TREE[at0002] matches {	-- *Tree(en)
+						items cardinality matches {0..*; unordered} matches {
+							CLUSTER[at0005] occurrences matches {0..1} matches {	-- Goal
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0014] occurrences matches {0..1} matches {	-- No Pressure Ulcer During Care
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {	-- No Pressure Ulcer During Care Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {	-- No Deteriorating Pressure Ulcer During Care
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0017] occurrences matches {0..1} matches {	-- No Deteriorating Pressure Ulcer During Care Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {	-- Improving Pressure Ulcer During Care
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- Improving Pressure Ulcer During Care Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0020] occurrences matches {0..1} matches {	-- No New Pressure Ulcer During Care
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {	-- No New Pressure Ulcer During Care Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0006] occurrences matches {0..1} matches {	-- Adaptation of surroundings
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- Bed Chair Posturing
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {	-- Bed Chair Posturing Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0024] occurrences matches {0..1} matches {	-- Weight Bearing Aids
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {	-- Weight Bearing Aids Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {	-- Reduce Shearing
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {	-- Reduce Shearing Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {	-- Other Adaptation Measures
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0029] occurrences matches {0..1} matches {	-- Other Adaptation Measures Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0007] occurrences matches {0..1} matches {	-- Repositioning
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0030] occurrences matches {0..1} matches {	-- Regular Repositioning
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0031] occurrences matches {0..1} matches {	-- Regular Repositioning Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0032] occurrences matches {0..1} matches {	-- Movement Training
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {	-- Movement Training Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {	-- Prescribe Ambulatory Aid
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0035] occurrences matches {0..1} matches {	-- Prescribe Ambulatory Aid Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0036] occurrences matches {0..1} matches {	-- Other Ambulatory Measures
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0037] occurrences matches {0..1} matches {	-- Other Ambulatory Measures Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0008] occurrences matches {0..1} matches {	-- Skin
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0038] occurrences matches {0..1} matches {	-- Skin Assessment
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0039] occurrences matches {0..1} matches {	-- Skin Assessment Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0040] occurrences matches {0..1} matches {	-- Skin Care
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0041] occurrences matches {0..1} matches {	-- Skin Care Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0042] occurrences matches {0..1} matches {	-- Other Skin Measures
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {	-- Other Skin Measures Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0009] occurrences matches {0..1} matches {	-- Nutritional management
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0044] occurrences matches {0..1} matches {	-- Snack
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {	-- Snack Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0046] occurrences matches {0..1} matches {	-- Enriched Diet
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {	-- Enriched Diet Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0048] occurrences matches {0..1} matches {	-- Consistency Adapted Diet
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0049] occurrences matches {0..1} matches {	-- Consistency Adapted Diet Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0050] occurrences matches {0..1} matches {	-- Nutritional Drink
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0051] occurrences matches {0..1} matches {	-- Nutritional Drink Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0052] occurrences matches {0..1} matches {	-- Religion Adapted Diet
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0053] occurrences matches {0..1} matches {	-- Religion Adapted Diet Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0054] occurrences matches {0..1} matches {	-- Night Fast
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0055] occurrences matches {0..1} matches {	-- Night Fast Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0056] occurrences matches {0..1} matches {	-- Enteral Nutrition
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0057] occurrences matches {0..1} matches {	-- Enteral Nutrition Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0058] occurrences matches {0..1} matches {	-- Parenteral Nutrition
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0059] occurrences matches {0..1} matches {	-- Parenteral Nutrition Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0060] occurrences matches {0..1} matches {	-- Other Nutritional Measures
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0061] occurrences matches {0..1} matches {	-- Other Nutritional Measures Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0010] occurrences matches {0..1} matches {	-- Pain relief
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0062] occurrences matches {0..1} matches {	-- Pain Assessment
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0063] occurrences matches {0..1} matches {	-- Pain Assessment Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0064] occurrences matches {0..1} matches {	-- Non Pharmacologic Pain Relief
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0065] occurrences matches {0..1} matches {	-- Non Pharmacologic Pain Relief Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0066] occurrences matches {0..1} matches {	-- Pharmacologic Pain Relief
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0067] occurrences matches {0..1} matches {	-- Pharmacologic Pain Relief Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0068] occurrences matches {0..1} matches {	-- Other Pain Relief
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0069] occurrences matches {0..1} matches {	-- Other Pain Relief Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0011] occurrences matches {0..1} matches {	-- Education
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0070] occurrences matches {0..1} matches {	-- Pressure Ulcer Education
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0071] occurrences matches {0..1} matches {	-- Pressure Ulcer Education Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0012] occurrences matches {0..1} matches {	-- Participation
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0072] occurrences matches {0..1} matches {	-- Patient Participation
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0073] occurrences matches {0..1} matches {	-- Patient Participation Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0074] occurrences matches {0..1} matches {	-- Other Participation
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0075] occurrences matches {0..1} matches {	-- Other Participation Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0013] occurrences matches {0..1} matches {	-- Coordination
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0076] occurrences matches {0..1} matches {	-- Contact With
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0077] occurrences matches {0..1} matches {	-- Contact With Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Nursing support pressure ulcer">
+					description = <"*unknown(en)">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"*Current Activity(en)">
+				>
+				["at0002"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0005"] = <
+					text = <"Goal">
+					description = <"**(en)">
+				>
+				["at0006"] = <
+					text = <"Adaptation of surroundings">
+					description = <"**(en)">
+				>
+				["at0007"] = <
+					text = <"Repositioning">
+					description = <"**(en)">
+				>
+				["at0008"] = <
+					text = <"Skin">
+					description = <"**(en)">
+				>
+				["at0009"] = <
+					text = <"Nutritional management">
+					description = <"**(en)">
+				>
+				["at0010"] = <
+					text = <"Pain relief">
+					description = <"**(en)">
+				>
+				["at0011"] = <
+					text = <"Education">
+					description = <"**(en)">
+				>
+				["at0012"] = <
+					text = <"Participation">
+					description = <"**(en)">
+				>
+				["at0013"] = <
+					text = <"Coordination">
+					description = <"**(en)">
+				>
+				["at0014"] = <
+					text = <"No pressure ulcer during care">
+					description = <"**(en)">
+				>
+				["at0015"] = <
+					text = <"No pressure ulcer during care description">
+					description = <"**(en)">
+				>
+				["at0016"] = <
+					text = <"No deteriorating pressure ulcer during care">
+					description = <"**(en)">
+				>
+				["at0017"] = <
+					text = <"No deteriorating pressure ulcer during care description">
+					description = <"**(en)">
+				>
+				["at0018"] = <
+					text = <"Improving pressure ulcer during care">
+					description = <"**(en)">
+				>
+				["at0019"] = <
+					text = <"Improving pressure ulcer during care description">
+					description = <"**(en)">
+				>
+				["at0020"] = <
+					text = <"No new pressure ulcer during care">
+					description = <"**(en)">
+				>
+				["at0021"] = <
+					text = <"No new pressure ulcer during care description">
+					description = <"**(en)">
+				>
+				["at0022"] = <
+					text = <"Bed chair posturing">
+					description = <"**(en)">
+				>
+				["at0023"] = <
+					text = <"Bed chair posturing description">
+					description = <"**(en)">
+				>
+				["at0024"] = <
+					text = <"Weight bearing aids">
+					description = <"**(en)">
+				>
+				["at0025"] = <
+					text = <"Weight bearing aids description">
+					description = <"**(en)">
+				>
+				["at0026"] = <
+					text = <"Reduce shearing">
+					description = <"**(en)">
+				>
+				["at0027"] = <
+					text = <"Reduce shearing description">
+					description = <"**(en)">
+				>
+				["at0028"] = <
+					text = <"Other adaptation measures">
+					description = <"**(en)">
+				>
+				["at0029"] = <
+					text = <"Other adaptation measures description">
+					description = <"**(en)">
+				>
+				["at0030"] = <
+					text = <"Regular repositioning">
+					description = <"**(en)">
+				>
+				["at0031"] = <
+					text = <"Regular repositioning description">
+					description = <"**(en)">
+				>
+				["at0032"] = <
+					text = <"Movement training">
+					description = <"**(en)">
+				>
+				["at0033"] = <
+					text = <"Movement training description">
+					description = <"**(en)">
+				>
+				["at0034"] = <
+					text = <"Prescribe ambulatory aid">
+					description = <"**(en)">
+				>
+				["at0035"] = <
+					text = <"Prescribe ambulatory aid description">
+					description = <"**(en)">
+				>
+				["at0036"] = <
+					text = <"Other ambulatory measures">
+					description = <"**(en)">
+				>
+				["at0037"] = <
+					text = <"Other ambulatory measures description">
+					description = <"**(en)">
+				>
+				["at0038"] = <
+					text = <"Skin assessment">
+					description = <"**(en)">
+				>
+				["at0039"] = <
+					text = <"Skin assessment description">
+					description = <"**(en)">
+				>
+				["at0040"] = <
+					text = <"Skin care">
+					description = <"**(en)">
+				>
+				["at0041"] = <
+					text = <"Skin care description">
+					description = <"**(en)">
+				>
+				["at0042"] = <
+					text = <"Other skin measures">
+					description = <"**(en)">
+				>
+				["at0043"] = <
+					text = <"Other skin measures description">
+					description = <"**(en)">
+				>
+				["at0044"] = <
+					text = <"Snack">
+					description = <"**(en)">
+				>
+				["at0045"] = <
+					text = <"Snack description">
+					description = <"**(en)">
+				>
+				["at0046"] = <
+					text = <"Enriched diet">
+					description = <"**(en)">
+				>
+				["at0047"] = <
+					text = <"Enriched diet description">
+					description = <"**(en)">
+				>
+				["at0048"] = <
+					text = <"Consistency adapted diet">
+					description = <"**(en)">
+				>
+				["at0049"] = <
+					text = <"Consistency adapted diet description">
+					description = <"**(en)">
+				>
+				["at0050"] = <
+					text = <"Nutritional drink">
+					description = <"**(en)">
+				>
+				["at0051"] = <
+					text = <"Nutritional drink description">
+					description = <"**(en)">
+				>
+				["at0052"] = <
+					text = <"Religion adapted diet">
+					description = <"**(en)">
+				>
+				["at0053"] = <
+					text = <"Religion adapted diet description">
+					description = <"**(en)">
+				>
+				["at0054"] = <
+					text = <"Night fast">
+					description = <"**(en)">
+				>
+				["at0055"] = <
+					text = <"Night fast description">
+					description = <"**(en)">
+				>
+				["at0056"] = <
+					text = <"Enteral nutrition">
+					description = <"**(en)">
+				>
+				["at0057"] = <
+					text = <"Enteral nutrition description">
+					description = <"**(en)">
+				>
+				["at0058"] = <
+					text = <"Parenteral nutrition">
+					description = <"**(en)">
+				>
+				["at0059"] = <
+					text = <"Parenteral nutrition description">
+					description = <"**(en)">
+				>
+				["at0060"] = <
+					text = <"Other nutritional measures">
+					description = <"**(en)">
+				>
+				["at0061"] = <
+					text = <"Other nutritional measures description">
+					description = <"**(en)">
+				>
+				["at0062"] = <
+					text = <"Pain assessment">
+					description = <"**(en)">
+				>
+				["at0063"] = <
+					text = <"Pain assessment description">
+					description = <"**(en)">
+				>
+				["at0064"] = <
+					text = <"Non pharmacologic pain relief">
+					description = <"**(en)">
+				>
+				["at0065"] = <
+					text = <"Non pharmacologic pain relief description">
+					description = <"**(en)">
+				>
+				["at0066"] = <
+					text = <"Pharmacologic pain relief">
+					description = <"**(en)">
+				>
+				["at0067"] = <
+					text = <"Pharmacologic pain relief description">
+					description = <"**(en)">
+				>
+				["at0068"] = <
+					text = <"Other pain relief">
+					description = <"**(en)">
+				>
+				["at0069"] = <
+					text = <"Other pain relief description">
+					description = <"**(en)">
+				>
+				["at0070"] = <
+					text = <"Pressure ulcer education">
+					description = <"**(en)">
+				>
+				["at0071"] = <
+					text = <"Pressure ulcer education description">
+					description = <"**(en)">
+				>
+				["at0072"] = <
+					text = <"Patient participation">
+					description = <"**(en)">
+				>
+				["at0073"] = <
+					text = <"Patient participation description">
+					description = <"**(en)">
+				>
+				["at0074"] = <
+					text = <"Other participation">
+					description = <"**(en)">
+				>
+				["at0075"] = <
+					text = <"Other participation description">
+					description = <"**(en)">
+				>
+				["at0076"] = <
+					text = <"Contact with">
+					description = <"**(en)">
+				>
+				["at0077"] = <
+					text = <"Contact with description">
+					description = <"**(en)">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vårdprevention - trycksår">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Current Activity">
+					description = <"Current Activity">
+				>
+				["at0002"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Mål">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Omgivningsanpassning">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Lägesändring">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Huden">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Nutritionsbehandling">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Smärtlindring">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Information/undervisning">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Delaktighet">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Samordning">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Inga trycksår ska uppkomma under vårdtiden">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Inga trycksår ska uppkomma under vårdtiden beskrivning">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Trycksåret ska inte försämras under vårdtiden">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Trycksåret ska inte försämras under vårdtiden besrivning">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Trycksåret ska förbättras under vårdtiden">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Trycksåret ska förbättras under vårdtiden beskrivning">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Inga nya trycksår ska uppkomma under vårdtiden">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Inga nya trycksår ska uppkomma under vårdtiden beskrivning">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Kroppsposition i säng/stol">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Kroppsposition i säng/stol beskrivning">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Bruk av avlastande hjälpmedel">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Bruk av avlastande hjälpmedel beskrivning">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Minska skjuveffekt">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Minska skjuveffekt beskrivning">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Andra åtgärder - omgivningsanpassning">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Andra åtgärder - omgivningsanpassning beskrivning">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Regelbundna lägesändringar">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Regelbundna lägesändringar beskrivning">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Förflyttningsträning - ändra kroppsställning">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Förflyttningsträning - ändra kroppsställning beskrivning">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Hjälpmedelsförskrivning">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Hjälpmedelsförskrivning beskrivning">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Andra åtgärder - lägesändring">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Andra åtgärder - lägesändring beskrivning">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Bedömning av huden">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Bedömning av huden beskrivning">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Hudvård">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Hudvård beskrivning">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Annan åtgärd - trycksår">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Annan åtgärd - trycksår beskrivning">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"Mellanmål">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"Mellanmål beskrivning">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Berikning av kost, protein- och energirik kost">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Berikning av kost, protein- och energirik kost beskrivning">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Konsistensanpassad kost">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Konsistensanpassad kost beskrivning">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Näringsdryck">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Näringsdryck beskrivning">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Anpassa maten efter kulturella och religiösa behov">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Anpassa maten efter kulturella och religiösa behov beskrivning">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Nattfasta max 11 timmar">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Nattfasta max 11 timmar beskrivning">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Enteral näringstillförsel">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Enteral näringstillförsel beskrivning">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"Parenteral näringstillförsel">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Parenteral näringstillförsel beskrivning">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Annan åtgärd - nutritionsbehandling">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Annan åtgärd - nutritionsbehandling beskrivning">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Bedömning av smärta">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Bedömning av smärta beskrivning">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Smärtreducerande behandling - icke farmakologisk">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Smärtreducerande behandling - icke farmakologisk beskrivning">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Ordination av läkemedel">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"Ordination av läkemedel beskrivning">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Annan åtgärd - smärtlindring">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Annan åtgärd - smärtlindring beskrivning">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Information och undervisning om hälsoproblem - trycksår">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Information och undervisning om hälsoproblem - trycksår beskrivning">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Patienten är delaktig vid upprättande av vårdplan">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Patienten är delaktig vid upprättande av vårdplan beskrivning">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Annan åtgärd - delaktighet">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Annan åtgärd - delaktighet beskrivning">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Kontakt med">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Kontakt med beskrivning">
+					description = <"*">
+				>
+			>
+		>
+	>

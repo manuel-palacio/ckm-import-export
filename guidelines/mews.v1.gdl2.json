@@ -1,0 +1,262 @@
+{
+  "id": "mews.v1",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2021-07-29",
+      "name": "Mouna Ghannam",
+      "organisation": "Cambio CDS",
+      "email": "mouna.ghannam@cambio.se"
+    },
+    "other_contributors": [
+      "Konstantinos Kalliamvakos"
+    ],
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "To calculate a score based on categorising physiological readings and observations, as a simple method to support objective assessment of the degree of illness in an unwell patient.",
+        "keywords": [
+          "MEWS",
+          "modified",
+          "early",
+          "warning",
+          "score"
+        ],
+        "use": "Use to calculate a composite score to support assessment of the degree of illness in an unwell patients.\nCan be used on all hospitalized patients to allow for the early detection of clinical deterioration and potential need for higher level of care.",
+        "misuse": "",
+        "copyright": "CDS Cambio"
+      }
+    },
+    "other_details": {
+      "references": "Modified Early Warning Scale, MEWS. Capio S:t Görans Sjukhus. Version 4.0. 2011-09-05\n\nSubbe CP, Kruger M, Rutherford P, Gemmel L. Validation of a modified Early Warning Score in medical admissions. QJM. 2001 Oct;94(10):521-6. doi: 10.1093/qjmed/94.10.521. PMID: 11588210.\n\n\n"
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.mews.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.mews.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0037": {
+            "id": "gt0037",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0004]"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0009]"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0014]"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0019]"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0023]"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]"
+          }
+        }
+      },
+      "gt0009": {
+        "id": "gt0009",
+        "model_id": "openEHR-EHR-OBSERVATION.mews.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.mews.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0043": {
+            "id": "gt0043",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0032]"
+          }
+        }
+      },
+      "gt0011": {
+        "id": "gt0011",
+        "model_id": "openEHR-EHR-EVALUATION.mew_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.mew_assessment.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0045": {
+            "id": "gt0045",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
+      }
+    },
+    "rules": {
+      "gt0013": {
+        "id": "gt0013",
+        "priority": 3,
+        "when": [
+          "$gt0037|Respiratory Rate|!=null",
+          "$gt0038|Heart Rate|!=null",
+          "$gt0039|Systolic Blood Pressure|!=null",
+          "$gt0040|Temperature|!=null",
+          "$gt0041|Level of consciousness|!=null",
+          "$gt0042|Urine output/24 hr|!=null"
+        ],
+        "then": [
+          "$gt0043|MEW score|.magnitude=$gt0037.value+$gt0038.value+$gt0039.value+$gt0040.value+$gt0041.value+$gt0042.value"
+        ]
+      },
+      "gt0014": {
+        "id": "gt0014",
+        "priority": 2,
+        "when": [
+          "$gt0043|MEW score|>=5"
+        ],
+        "then": [
+          "$gt0015|interpretation text|=$gt0016.term"
+        ]
+      },
+      "gt0035": {
+        "id": "gt0035",
+        "priority": 1,
+        "when": [
+          "fired($gt0014)"
+        ],
+        "then": [
+          "$gt0045|Interpretation of total score|=$gt0015"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Modified early warning score (MEWS)",
+            "description": "MEWS acts as a 'track and trigger' system (reaction system) that is used to provide an objective indication of the degree of disease in a patient, so that actions can be put in at the right time. The MEWS score must always lead to a decision to continue treatment plan. With MEWS-measurements and clear action plans, the possibility increases of both detecting and treating failing patients in time."
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Respiratory Rate",
+            "description": "*"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Heart Rate",
+            "description": "*"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Systolic Blood Pressure",
+            "description": "*"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Temperature",
+            "description": "*"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Level of consciousness",
+            "description": "*"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Urine output/24 hr",
+            "description": "*"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "Interpretation",
+            "description": ""
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "MEW score",
+            "description": "*"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "total score calculation"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "If total score>or = 5"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "interpretation text",
+            "description": "local term"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Increased likelihood of death or admission to an intensive care unit",
+            "description": "Output interpretation"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Assessment"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "Interpretation of total score",
+            "description": "*"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "Respiratory Rate",
+            "description": "*"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "Heart Rate",
+            "description": "*"
+          },
+          "gt0039": {
+            "id": "gt0039",
+            "text": "Systolic Blood Pressure",
+            "description": "*"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "Temperature",
+            "description": "*"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "Level of consciousness",
+            "description": "*"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "Urine output/24 hr",
+            "description": "*"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "MEW score",
+            "description": "*"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "Interpretation of total score",
+            "description": "*"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "Interpretation of total score",
+            "description": "*"
+          }
+        }
+      }
+    }
+  }
+}

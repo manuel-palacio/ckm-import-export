@@ -1,0 +1,1239 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.nursing_support_pressure_ulcer.v0
+
+concept
+	[at0000]	-- Nursing support pressure ulcer
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Eneimi Allwell-Brown">
+		["email"] = <"models@cambiocds.com">
+		["organisation"] = <"Cambio Healthcare Systems">
+		["date"] = <"2020-10-02">
+	>
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"*(en)">
+			use = <"*(en)">
+			misuse = <"*(en)">
+			copyright = <"Cambio CDS">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"74D9E523D335CB723C2FCCF82332383F">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Nursing support pressure ulcer
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0005] occurrences matches {0..1} matches {	-- Modified Norton Scale
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Mental status
+												value matches {
+													1|[local::at0036], 	-- No contact
+													2|[local::at0035], 	-- Cannot answer adequately
+													3|[local::at0034], 	-- Occasionally confused
+													4|[local::at0025]  	-- Fully orientated
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {	-- Physical activity
+												value matches {
+													1|[local::at0039], 	-- Bedridden
+													2|[local::at0038], 	-- Chairbound
+													3|[local::at0037], 	-- Walks with help
+													4|[local::at0026]  	-- Ambulant
+												}
+											}
+											ELEMENT[at0010] occurrences matches {0..1} matches {	-- Mobility
+												value matches {
+													1|[local::at0042], 	-- Immobile
+													2|[local::at0041], 	-- Very limited
+													3|[local::at0040], 	-- Slightly limited
+													4|[local::at0027]  	-- Full
+												}
+											}
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Food intake
+												value matches {
+													1|[local::at0045], 	-- Less than ½ portion
+													2|[local::at0044], 	-- ½ portion
+													3|[local::at0043], 	-- ¾ portion
+													4|[local::at0028]  	-- Normal portion
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Fluid intake
+												value matches {
+													1|[local::at0048], 	-- Less than 500 ml/d
+													2|[local::at0047], 	-- 500-700 ml/d
+													3|[local::at0046], 	-- 700-1000 ml/d
+													4|[local::at0029]  	-- More than 1000 ml/d
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- Incontinence
+												value matches {
+													1|[local::at0051], 	-- Doubly
+													2|[local::at0050], 	-- Usually urine
+													3|[local::at0049], 	-- Occasional
+													4|[local::at0030]  	-- Not
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- General condition
+												value matches {
+													1|[local::at0054], 	-- Very bad
+													2|[local::at0053], 	-- Poor
+													3|[local::at0052], 	-- Fair
+													4|[local::at0031]  	-- Good
+												}
+											}
+											ELEMENT[at0057] occurrences matches {0..1} matches {	-- MNS score
+												value matches {
+													DV_COUNT matches {*}
+												}
+											}
+											ELEMENT[at0058] occurrences matches {0..1} matches {	-- MNS interpretation
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0059, 	-- Low risk for pressure ulcer.
+															at0060]	-- Increased risk for pressure ulcer.
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0006] occurrences matches {0..1} matches {	-- Causes
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Reduced food intake
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0017] occurrences matches {0..1} matches {	-- Reduced sensation
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0018] occurrences matches {0..1} matches {	-- Reduced skin elasticity
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0019] occurrences matches {0..1} matches {	-- Skin exposed to pressure
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0020] occurrences matches {0..1} matches {	-- Shearing
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- Increased friction
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Mattress/cushion accumulating moisture
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- Additional factors
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- Other causes
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {	-- Date of next assessment
+										value matches {
+											DV_DATE matches {
+												value matches {yyyy-mm-dd}
+											}
+										}
+									}
+									ELEMENT[at0032] occurrences matches {0..1} matches {	-- Manually activate careplan
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0090, 	-- Yes
+													at0091]	-- No
+												}
+											}
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {	-- Reason for manually activating careplan
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									CLUSTER[at0061] occurrences matches {0..1} matches {	-- Pressure ulcer grade
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0062] occurrences matches {0..1} matches {	-- Front
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0066] occurrences matches {0..1} matches {	-- Right ear
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0067] occurrences matches {0..1} matches {	-- Left ear
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0068] occurrences matches {0..1} matches {	-- Right shoulder
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0069] occurrences matches {0..1} matches {	-- Left shoulder
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0070] occurrences matches {0..1} matches {	-- Right iliac crest
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0071] occurrences matches {0..1} matches {	-- Left iliac crest
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0072] occurrences matches {0..1} matches {	-- Right ankle
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0073] occurrences matches {0..1} matches {	-- Left ankle
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0074] occurrences matches {0..1} matches {	-- Other
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0063] occurrences matches {0..1} matches {	-- Back
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0075] occurrences matches {0..1} matches {	-- Back of the head
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0076] occurrences matches {0..1} matches {	-- Right elbow
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0077] occurrences matches {0..1} matches {	-- Left elbow
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0078] occurrences matches {0..1} matches {	-- Lower back/ sacrum
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0079] occurrences matches {0..1} matches {	-- Right ischial tuberosity
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0080] occurrences matches {0..1} matches {	-- Left ischial tuberosity
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0081] occurrences matches {0..1} matches {	-- Right heel
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+													ELEMENT[at0082] occurrences matches {0..1} matches {	-- Left heel
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0083, 	-- Grade 1
+																	at0084, 	-- Grade 2
+																	at0085, 	-- Grade 3
+																	at0086, 	-- Grade 4
+																	at0087, 	-- Non-classifiable
+																	at0088, 	-- Suspicious
+																	at0089]	-- Risk area
+																}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {	-- Increased pressure ulcer risk
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0065] occurrences matches {0..1} matches {	-- Other information
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Nursing support pressure ulcer">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Modified Norton Scale">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Causes">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Mental status">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Physical activity">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Mobility">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Food intake">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Fluid intake">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Incontinence">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"General condition">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Date of next assessment">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Reduced food intake">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Reduced sensation">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Reduced skin elasticity">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Skin exposed to pressure">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Shearing">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Increased friction">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Mattress/cushion accumulating moisture">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Additional factors">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Other causes">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Fully orientated">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Ambulant">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Full">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Normal portion">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"More than 1000 ml/d">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Not">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Good">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Manually activate careplan">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Reason for manually activating careplan">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Occasionally confused">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Cannot answer adequately">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"No contact">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Walks with help">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Chairbound">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Bedridden">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Slightly limited">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Very limited">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Immobile">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"¾ portion">
+					description = <"**(en)">
+				>
+				["at0044"] = <
+					text = <"½ portion">
+					description = <"**(en)">
+				>
+				["at0045"] = <
+					text = <"Less than ½ portion">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"700-1000 ml/d">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"500-700 ml/d">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Less than 500 ml/d">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Occasional">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Usually urine">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Doubly">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Fair">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Poor">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Very bad">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"MNS score">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"MNS interpretation">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Low risk for pressure ulcer.">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Increased risk for pressure ulcer.">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Pressure ulcer grade">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Front">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Back">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Increased pressure ulcer risk">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Other information">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Right ear">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"Left ear">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Right shoulder">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Left shoulder">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Right iliac crest">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Left iliac crest">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Right ankle">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Left ankle">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Other">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Back of the head">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Right elbow">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Left elbow">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"Lower back/ sacrum">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"Right ischial tuberosity">
+					description = <"*">
+				>
+				["at0080"] = <
+					text = <"Left ischial tuberosity">
+					description = <"*">
+				>
+				["at0081"] = <
+					text = <"Right heel">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"Left heel">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Grade 1">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Grade 2">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"Grade 3">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"Grade 4">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Non-classifiable">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Suspicious">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Risk area">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Yes">
+					description = <"*">
+				>
+				["at0091"] = <
+					text = <"No">
+					description = <"*">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vårdprevention - trycksår">
+					description = <"*">
+				>
+				["at0001"] = <
+					text = <"*Event Series(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"**(en)">
+				>
+				["at0003"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0005"] = <
+					text = <"Modifierad Nortonskala">
+					description = <"**(en)">
+				>
+				["at0006"] = <
+					text = <"Orsaker">
+					description = <"**(en)">
+				>
+				["at0008"] = <
+					text = <"Psykisk status">
+					description = <"**(en)">
+				>
+				["at0009"] = <
+					text = <"Fysisk aktivitet">
+					description = <"**(en)">
+				>
+				["at0010"] = <
+					text = <"Rörelseförmåga">
+					description = <"**(en)">
+				>
+				["at0011"] = <
+					text = <"Födointag">
+					description = <"**(en)">
+				>
+				["at0012"] = <
+					text = <"Vätskeintag">
+					description = <"**(en)">
+				>
+				["at0013"] = <
+					text = <"Inkontinens">
+					description = <"**(en)">
+				>
+				["at0014"] = <
+					text = <"Allmäntillstånd">
+					description = <"**(en)">
+				>
+				["at0015"] = <
+					text = <"Nästa riskbedömningstillfälle">
+					description = <"**(en)">
+				>
+				["at0016"] = <
+					text = <"Nedsatt födointag">
+					description = <"**(en)">
+				>
+				["at0017"] = <
+					text = <"Nedsatt känsel">
+					description = <"**(en)">
+				>
+				["at0018"] = <
+					text = <"Nedsatt hudelasticitet">
+					description = <"**(en)">
+				>
+				["at0019"] = <
+					text = <"Huden utsätts för ökat tryck">
+					description = <"**(en)">
+				>
+				["at0020"] = <
+					text = <"Skjuvkraft">
+					description = <"**(en)">
+				>
+				["at0021"] = <
+					text = <"Ökad friktion">
+					description = <"**(en)">
+				>
+				["at0022"] = <
+					text = <"Madrass eller sittdyna som ackumulerar värme/fukt">
+					description = <"**(en)">
+				>
+				["at0023"] = <
+					text = <"Yttre faktorer">
+					description = <"**(en)">
+				>
+				["at0024"] = <
+					text = <"Annan orsak">
+					description = <"**(en)">
+				>
+				["at0025"] = <
+					text = <"Helt orienterad">
+					description = <"**(en)">
+				>
+				["at0026"] = <
+					text = <"Går själv med eller utan hjälpmedel">
+					description = <"**(en)">
+				>
+				["at0027"] = <
+					text = <"Full rörlighet">
+					description = <"**(en)">
+				>
+				["at0028"] = <
+					text = <"Normal portion">
+					description = <"**(en)">
+				>
+				["at0029"] = <
+					text = <"Mer än 1000 ml/dygn">
+					description = <"**(en)">
+				>
+				["at0030"] = <
+					text = <"Nej">
+					description = <"**(en)">
+				>
+				["at0031"] = <
+					text = <"Gott">
+					description = <"**(en)">
+				>
+				["at0032"] = <
+					text = <"Skapa vårdplan">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Anledning till att skapa vårdplan">
+					description = <"**(en)">
+				>
+				["at0034"] = <
+					text = <"Stundtals förvirrad">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"Svarar ej adekvat på tilltal">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Okontaktbar">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Går med hjälp av personal">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Rullstolsburen hela dagen">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Sängliggande">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Något begränsad">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Mycket begränsad">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Orörlig">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"¾ portion">
+					description = <"***(en)(en)">
+				>
+				["at0044"] = <
+					text = <"½ portion">
+					description = <"***(en)(en)">
+				>
+				["at0045"] = <
+					text = <"Mindre än ½ portion">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Mellan 700-1000 ml/dygn">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Mellan 500-700 ml/dygn">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Mindre än 500 ml/dygn">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Tillfälligt men ej vanligt">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Urin eller tarminkontinens (KAD)">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Urin och tarminkontinens">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Ganska gott">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Dåligt">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"Mycket dåligt">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"MNS poäng">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"MNS bedömning">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Låg risk för tryckskada.">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Ökad risk för tryckskada.">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Trycksår kategori">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Framsida">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Baksida">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Generell ökad risk för trycksår för hela kroppen">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Övrig information">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Öra höger">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"Öra vänster">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"Skuldra höger">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"Skuldra vänster">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"Höftbenskam höger">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"Höftbenskam vänster">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"Fotknöl höger">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"Fotknöl vänster">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"Annat">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"Bakhuvud">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"Armbåge höger">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"Armbåge vänster">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"Ryggslut/ sacrum">
+					description = <"**(en)">
+				>
+				["at0079"] = <
+					text = <"Sittbensknöl höger">
+					description = <"*">
+				>
+				["at0080"] = <
+					text = <"Sittbensknöl vänster">
+					description = <"*">
+				>
+				["at0081"] = <
+					text = <"Häl höger">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"Häl vänster">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"Kategori 1">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"Kategori 2">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"Kategori 3">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"Kategori 4">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"Icke klassificerbart trycksår">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"Misstänkt djup hudskada">
+					description = <"*">
+				>
+				["at0089"] = <
+					text = <"Riskområde">
+					description = <"*">
+				>
+				["at0090"] = <
+					text = <"Ja">
+					description = <"*">
+				>
+				["at0091"] = <
+					text = <"Nej">
+					description = <"*">
+				>
+			>
+		>
+	>

@@ -1,0 +1,125 @@
+archetype (adl_version=1.4; uid=282c81a4-5d70-4df2-a2f0-43b9e19f7e3d)
+	openEHR-EHR-OBSERVATION.nihss_issue.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2021-08-23">
+		["name"] = <"Konstantinos Kalliamvakos">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"konstantinos.kalliamvakos@cambio.se">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the results for each component parameter and their total sum for the NIHSS.">
+			keywords = <"national","institute","health","NIH","stroke","scale","NIHSS","consciousness">
+			copyright = <"© Cambio CDS">
+			use = <"Use to record the results for each component parameter and their total sum for the NIHSS.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["references"] = <"Lyden P, Brott T, Tilley B, Welch KM, Mascha EJ, Levine S, Haley EC, Grotta J, Marler J. Improved reliability of the NIH Stroke Scale using video training. NINDS TPA Stroke Study Group. Stroke. 1994 Nov;25(11):2220-6. doi: 10.1161/01.str.25.11.2220. PMID: 7974549.">
+		["current_contact"] = <"Konstantinos Kalliamvakos, Cambio CDS<konstantinos.kalliamvakos@cambio.se>">
+		["build_uid"] = <"9ff87e30-ad17-30b3-b83f-34d158ab92b3">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- NIH Stroke Scale (NIHSS)
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- 1a. LOC Responsiveness
+										value matches {
+											0|[local::at0005],
+											1|[local::at0006],
+											2|[local::at0007],
+											3|[local::at0008]
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0009] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"NIH Stroke Scale (NIHSS)">
+					description = <"An assessment scale used to quantify the neurological severity of stroke in patients.">
+					comment = <"Original version, c 1994">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"1a. LOC Responsiveness">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Alert">
+					description = <"Keenly responsive.">
+				>
+				["at0006"] = <
+					text = <"Not alert; but arousable by minor stimulation to obey, answer, or respond">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Not alert">
+					description = <"Requires repeated stimulation to attend, or is obtunded and requires strong or painful stimulation  to make movements (not stereotyped).">
+				>
+				["at0008"] = <
+					text = <"Responds only with reflex motor or autonomic effects or totally unresponsive, flaccid, and areflexic">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0010"] = <
+					text = <"Extension">
+					description = <"">
+				>
+			>
+		>
+	>

@@ -1,0 +1,234 @@
+archetype (adl_version=1.4; uid=7c9ac718-4a11-499e-9089-6df99ff6a1f1)
+	openEHR-EHR-OBSERVATION.test_rules_input.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2023-09-06">
+		["name"] = <"Konstantinos Kalliamvakos">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"konstantinos.kalliamvakos@gmail.com">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"112fa163e1add2b9297aca2d63657589">
+		["build_uid"] = <"f7f00dd0-c7bb-39ff-839e-911e531d2ce1">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- test_rules_input
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Text element
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Terminology element
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Coded text element
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0006,    -- coded text selection 1
+													at0007,    -- coded text selection 2
+													at0008]    -- coded text selection 3
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Quantity element
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::124]>
+												list = <
+													["1"] = <
+														units = <"kg">
+													>
+													["2"] = <
+														units = <"g">
+														precision = <|3|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Proportion element
+										value matches {
+											DV_PROPORTION matches {*}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Count element
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- DateTime element
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Time element
+										value matches {
+											DV_TIME matches {*}
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Date element
+										value matches {
+											DV_DATE matches {*}
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Ordinal element
+										value matches {
+											0|[local::at0017],
+											1|[local::at0018],
+											2|[local::at0019]
+										}
+									}
+									ELEMENT[at0020] occurrences matches {0..1} matches {    -- Boolean element
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {    -- Duration element
+										value matches {
+											DV_DURATION matches {*}
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Identifier element
+										value matches {
+											DV_IDENTIFIER matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"test_rules_input">
+					description = <"test_rules_input">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Text element">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Coded text element">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"coded text selection 1">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"coded text selection 2">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"coded text selection 3">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Quantity element">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Proportion element">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Count element">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"DateTime element">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Time element">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Date element">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Ordinal element">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"ordinal element selection 0">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"ordinal element selection 1">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"ordinal element selection 2">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Boolean element">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Duration element">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Identifier element">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Terminology element">
+					description = <"">
+				>
+			>
+		>
+	>

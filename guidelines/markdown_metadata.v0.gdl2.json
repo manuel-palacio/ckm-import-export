@@ -1,0 +1,44 @@
+{
+  "id": "markdown_metadata.v0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2023-05-12",
+      "name": "Konstantinos Kalliamvakos",
+      "organisation": "Cambio CDS",
+      "email": "konstantinos.kalliamvakos@cambio.se"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "en": {
+        "id": "en",
+        "purpose": "# Heading 1\n## Heading 2\n### Heading 3\n\n* list item 1\n* list item 2\n* list item 3",
+        "use": "# Heading 1\n## Heading 2\n### Heading 3\n\n* list item 1\n* list item 2\n* list item 3",
+        "misuse": "# Heading 1\n## Heading 2\n### Heading 3\n\n* list item 1\n* list item 2\n* list item 3",
+        "copyright": "Cambio CDS"
+      }
+    },
+    "other_details": {
+      "references": "# Heading 1\n## Heading 2\n### Heading 3\n\n* list item 1\n* list item 2\n* list item 3"
+    }
+  },
+  "definition": {},
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "test markdown text in medata",
+            "description": "# Heading 1\n## Heading 2\n### Heading 3\n\n* list item 1\n* list item 2\n* list item 3"
+          }
+        }
+      }
+    }
+  }
+}

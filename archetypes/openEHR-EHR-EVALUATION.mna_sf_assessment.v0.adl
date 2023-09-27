@@ -1,0 +1,139 @@
+archetype (adl_version=1.4; uid=e52c2f61-1dd7-401e-b59b-5ec49ad8a492)
+	openEHR-EHR-EVALUATION.mna_sf_assessment.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2021-12-13">
+		["name"] = <"Konstantinos Kalliamvakos">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"konstantinos.kalliamvakos@cambio.se">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the assessment of the MNA-SF score">
+			keywords = <"MNA, mini, nutritional, assessment, elderly, nutrition, malnutrition", ...>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"d3647c42ba09619d9aa5d289dcdf1dec">
+		["build_uid"] = <"99a68917-1572-3d50-81bb-bb6380894b7b">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Mini Nutritional Assessment-Short Form (MNA-SF) Assessment
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Interpretation
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Normal nutritional status
+									at0004,    -- At risk of malnutrition
+									at0005]    -- Malnourished
+								}
+							}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Date of next assessment
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mini Nutritional Assessment-Short Form (MNA-SF) Assessment">
+					description = <"Assessment of the MNA-SF score">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Interpretation">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Normal nutritional status">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"At risk of malnutrition">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Malnourished">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Date of next assessment">
+					description = <"">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Mini Nutritional Assessment-Short Form (MNA-SF) Assessment (en)">
+					description = <"*Assessment of the MNA-SF score (en)">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Bedömning">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Normal nutritionsstatus">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Risk för undernäring">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Näringsbrist">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Nästa riskbedömningstillfälle">
+					description = <"">
+				>
+			>
+		>
+	>

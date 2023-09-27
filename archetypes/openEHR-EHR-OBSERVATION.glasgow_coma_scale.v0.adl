@@ -1,0 +1,375 @@
+archetype (adl_version=1.4; uid=5f0af014-fa13-4c59-b020-e5c40c37afef)
+	openEHR-EHR-OBSERVATION.glasgow_coma_scale.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2022-11-15">
+		["name"] = <"Rashmi Damodaran">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"rashmi.damodaran@cambio.se">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"d588dd43d445f95b613d6f42ef5ef7de">
+		["build_uid"] = <"d2a657c6-9844-3902-b860-2fa4d4b2c8f8">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Glasgow Coma Scale
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Best eye response (E)
+										value matches {
+											1|[local::at0013],
+											2|[local::at0014],
+											3|[local::at0015],
+											4|[local::at0016]
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Best verbal response (V)
+										value matches {
+											1|[local::at0017],
+											2|[local::at0018],
+											3|[local::at0019],
+											4|[local::at0020],
+											5|[local::at0027]
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Best motor response (M)
+										value matches {
+											1|[local::at0021],
+											2|[local::at0022],
+											3|[local::at0023],
+											4|[local::at0024],
+											5|[local::at0025],
+											6|[local::at0026]
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- GCS Total score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|3..15|}
+											}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Quick selection
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0028,    -- GCS: 15 - RLS 1
+													at0029,    -- GCS: 14 - DISORIENTED/CONFUSED
+													at0030]    -- GCS: 14 - EYES OPEN WITH SOUND
+												}
+											}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Comments
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0010] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0011] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Glasgow Coma Scale">
+					description = <"Glasgow Coma Scale">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Best eye response (E)">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Best verbal response (V)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Best motor response (M)">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"GCS Total score">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Quick selection">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0011"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+				["at0012"] = <
+					text = <"Comments">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"None">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"To  pressure">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"To sound">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Spontaneous">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"None">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Sounds">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Words">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Confused">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"None">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Extension">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Abnormal flexion">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Normal flexion">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"localising">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Obeys commands">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Oriented">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"GCS: 15 - RLS 1">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"GCS: 14 - DISORIENTED/CONFUSED">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"GCS: 14 - EYES OPEN WITH SOUND">
+					description = <"">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"Glasgow Coma Scale">
+					description = <"*Glasgow Coma Scale (en)">
+				>
+				["at0001"] = <
+					text = <"Händelseförlopp">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Tidpunkt">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Träd">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Svar på tilltal (V)">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Motorisk reaktion (M)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Ögonöppning (E)">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"GCS Total poäng">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Snabbval">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0011"] = <
+					text = <"Extension">
+					description = <"Ytterligare information som krävs för att fånga lokalt innehåll eller för att anpassa sig till andra referensmodeller/formalismer. ">
+					comment = <"Till exempel: lokala informationskrav eller ytterligare metadata för att anpassas till FHIR- eller CIMI-ekvivalenter.">
+				>
+				["at0012"] = <
+					text = <"Kommentar">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Ingen ögonöppning vid smärtstimulering">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Ögonen öppnas efter smärtstimulering">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Ögonen öppnas vid tilltal">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Ögonen hålls spontant öppna">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Ingen reaktion på tilltal">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Reagerar på tilltal med oartikulerat ljud">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Reagerar på tilltal med enstaka ord">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Desorienterad/konfusorisk">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Ingen reaktion vid smärtstimulering">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Extension i armbågen vid smärtstimulering">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Flexion i armbågen vid smärtstimulering">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Drar undan armen vid smärtstimulering av fingernagelbädd">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Lokaliserar smärta">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Lyder uppmaning adekvat">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Fullt orienterad">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"GCS: 15 - RLS 1">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"GCS: 14 - DESORIENTERAD/KONFUSORISK">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"GCS: 14 - ÖGONEN ÖPPNAS VID TILLTAL">
+					description = <"">
+				>
+			>
+		>
+	>

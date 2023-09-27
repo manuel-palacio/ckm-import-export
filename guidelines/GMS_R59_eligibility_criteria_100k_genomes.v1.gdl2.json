@@ -1,0 +1,152 @@
+{
+  "id": "GMS_R59_eligibility_criteria_100k_genomes.v1",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2022-02-17",
+      "name": "Rashmi Damodaran"
+    },
+    "lifecycle_state": "Not set",
+    "details": {
+      "en": {
+        "id": "en",
+        "keywords": [
+          "GMS",
+          "R59",
+          "syndromic",
+          "epilepsy"
+        ]
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.ni_100k_genomes_project.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.ni_100k_genomes_project.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0032]/items[at0195]/items[at0211]/items[at0239]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0032]/items[at0195]/items[at0211]/items[at0240]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0032]/items[at0195]/items[at0211]/items[at0241]"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0032]/items[at0195]/items[at0211]/items[at0242]"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0032]/items[at0195]/items[at0211]/items[at0243]"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0032]/items[at0195]/items[at0211]/items[at0244]"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0032]/items[at0195]/items[at0211]/items[at0245]"
+          }
+        }
+      },
+      "gt0013": {
+        "id": "gt0013",
+        "model_id": "openEHR-EHR-OBSERVATION.ni_100k_genomes_project.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.ni_100k_genomes_project.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0055]"
+          }
+        }
+      }
+    },
+    "default_actions": [
+      "$gt0014|Assessment|=local::at0057|Insufficient criteria for whole genome sequencing|"
+    ],
+    "rules": {
+      "gt0015": {
+        "id": "gt0015",
+        "priority": 1,
+        "when": [
+          "$gt0003|Unexplained epilepsy with clinical suspicion of a monogenic cause|==local::at0008|Yes|",
+          "(($gt0004|Onset under 2 years|==local::at0008|Yes|)||($gt0005|Clinical features suggestive of specific genetic epilepsy, for example Dravet syndrome|==local::at0008|Yes|)||($gt0006|Intellectual disability|==local::at0008|Yes|)||($gt0007|Autism spectrum disorder|==local::at0008|Yes|)||($gt0008|Structural abnormality (e.g. dysmorphism, congenital malformation)|==local::at0008|Yes|)||($gt0009|Unexplained cognitive/memory decline|==local::at0008|Yes|))"
+        ],
+        "then": [
+          "$gt0014|Assessment|=local::at0056|Criteria met for whole genome sequencing|"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "GMS R59 epilepsy eligibility criteria"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Unexplained epilepsy with clinical suspicion of a monogenic cause",
+            "description": "*"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Onset under 2 years",
+            "description": "*"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Clinical features suggestive of specific genetic epilepsy, for example Dravet syndrome",
+            "description": "*"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Intellectual disability",
+            "description": "*"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Autism spectrum disorder",
+            "description": "*"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Structural abnormality (e.g. dysmorphism, congenital malformation)",
+            "description": "*"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "Unexplained cognitive/memory decline",
+            "description": "*"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Assessment",
+            "description": "*"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "Criteria met"
+          }
+        }
+      }
+    }
+  }
+}

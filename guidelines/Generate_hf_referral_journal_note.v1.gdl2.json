@@ -1,0 +1,980 @@
+{
+  "id": "Generate_hf_referral_journal_note.v1",
+  "concept": "gt0001",
+  "gdl_version": "2.0",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2020-12-09",
+      "name": "Cambio CDS"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "sv": {
+        "id": "sv",
+        "keywords": [
+          "hjärtsvikt",
+          "remiss"
+        ]
+      },
+      "en": {
+        "id": "en",
+        "keywords": [
+          "heart failure",
+          "referral"
+        ]
+      }
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt1000": {
+        "id": "gt1000",
+        "model_id": "openEHR-EHR-EVALUATION.svf_heart_failure_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.svf_heart_failure_assessment.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt1001": {
+            "id": "gt1001",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "path": "/data[at0001]/items[at0005]/items[at0007]"
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "path": "/data[at0001]/items[at0005]/items[at0008]"
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "path": "/data[at0001]/items[at0005]/items[at0009]"
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "path": "/data[at0001]/items[at0005]/items[at0010]"
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "path": "/data[at0001]/items[at0005]/items[at0011]"
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "path": "/data[at0001]/items[at0012]/items[at0013]"
+          }
+        }
+      },
+      "gt1017": {
+        "id": "gt1017",
+        "model_id": "openEHR-EHR-EVALUATION.referral_decision_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.referral_decision_review.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt1008": {
+            "id": "gt1008",
+            "path": "/data[at0001]/items[at0002]"
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "path": "/data[at0001]/items[at0006]"
+          },
+          "gt1010": {
+            "id": "gt1010",
+            "path": "/data[at0001]/items[at0010]"
+          },
+          "gt1011": {
+            "id": "gt1011",
+            "path": "/data[at0001]/items[at0015]"
+          },
+          "gt1012": {
+            "id": "gt1012",
+            "path": "/data[at0001]/items[at0020]"
+          },
+          "gt1013": {
+            "id": "gt1013",
+            "path": "/data[at0001]/items[at0016]"
+          },
+          "gt1014": {
+            "id": "gt1014",
+            "path": "/data[at0001]/items[at0018]"
+          }
+        }
+      },
+      "gt1015": {
+        "id": "gt1015",
+        "model_id": "openEHR-EHR-EVALUATION.referral_decision_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.referral_decision_review.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt1016": {
+            "id": "gt1016",
+            "path": "/data[at0001]/items[at0019]"
+          }
+        }
+      }
+    },
+    "templates": {
+      "gt2001": {
+        "id": "gt2001",
+        "name": "hfJournalNote",
+        "model_id": "generic_model",
+        "object": {
+          "journalNote": [
+            "{$gt2000}"
+          ]
+        }
+      },
+      "gt2000": {
+        "id": "gt2000",
+        "model_id": "generic_model",
+        "object": {
+          "action": "create",
+          "model": "org.hl7.fhir.r4.model.QuestionnaireResponse",
+          "data": {
+            "resourceType": "QuestionnaireResponse",
+            "id": "svfHeartFailure-journalNote",
+            "status": "completed",
+            "authored": "{$gt4101}",
+            "item": [
+              {
+                "linkId": "doesThePatientHaveHeartFailureInPalliativeCare",
+                "text": "{$gt1001.term}",
+                "answer": [
+                  {
+                    "valueCoding": {
+                      "code": "{$gt1101}",
+                      "display": "{$gt1201}",
+                      "system": "{$gt1301}"
+                    }
+                  }
+                ]
+              },
+              {
+                "linkId": "investigation",
+                "text": "{$gt4100.term}",
+                "item": [
+                  {
+                    "linkId": "ejectionFractionLessThan40Percent",
+                    "text": "{$gt1002.term}",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "{$gt1102}",
+                          "display": "{$gt1202}",
+                          "system": "{$gt1302}"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "nYHAClassIIIV",
+                    "text": "{$gt1003.term}",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "{$gt1103}",
+                          "display": "{$gt1203}",
+                          "system": "{$gt1303}"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "sinusRythm",
+                    "text": "{$gt1004.term}",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "{$gt1104}",
+                          "display": "{$gt1204}",
+                          "system": "{$gt1304}"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "atrialFibrillation",
+                    "text": "{$gt1005.term}",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "{$gt1105}",
+                          "display": "{$gt1205}",
+                          "system": "{$gt1305}"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "qRSWidthEqualOrGreaterThan130Ms",
+                    "text": "{$gt1006.term}",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "{$gt1106}",
+                          "display": "{$gt1206}",
+                          "system": "{$gt1306}"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "linkId": "result",
+                "text": "{$gt2003.term}",
+                "item": [
+                  {
+                    "linkId": "recommendations",
+                    "text": "{$gt1007.term}",
+                    "answer": [
+                      {
+                        "valueString": "{$gt1007}"
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "doYouWantToSendAReferralToAHeartFailureClinicForAssessmentOfAppropriateTreatment",
+                    "text": "{$gt1008.term}",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "{$gt1108}",
+                          "display": "{$gt1208}",
+                          "system": "{$gt1308}"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "decisionDelayed",
+                    "text": "{$gt1016.term}",
+                    "answer": [
+                      {
+                        "valueQuantity": {
+                          "value": "{$gt1109}",
+                          "unit": "{$gt1209}",
+                          "code": "{$gt1409}",
+                          "system": "{$gt1309}"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "reasonForPostponedDecision",
+                    "text": "{$gt1010.term}",
+                    "answer": [
+                      {
+                        "valueCoding": {
+                          "code": "{$gt1110}",
+                          "display": "{$gt1210}",
+                          "system": "{$gt1310}"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "pleaseSpecifyTheReason",
+                    "text": "{$gt1011.term}",
+                    "answer": [
+                      {
+                        "valueString": "{$gt1011}"
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "additionalInformation",
+                    "text": "{$gt1012.term}",
+                    "answer": [
+                      {
+                        "valueString": "{$gt1012}"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "pre_conditions": [
+      "$gt1001!=null",
+      "($gt1001|Does the patient have heart failure in palliative care?|.code=='at0003')||(($gt1001|Does the patient have heart failure in palliative care?|.code=='at0004')&&(($gt1008|Do you want to send a referral to a Cardiologist|.code=='at0003'&&$gt1013|Is interpreter needed?|.code=='at0003'&&$gt1014|Language|!=null)||($gt1008|Do you want to send a referral to a Cardiologist|.code=='at0003'&&$gt1013|Is interpreter needed?|.code!=null&&$gt1013|is interpreter needed?|.code=='at0004')||($gt1008|Do you want to send a referral to a Cardiologist|.code=='at0004')||($gt1008|Do you want to send a referral to a Cardiologist|.code=='at0005'&&$gt1009|Postpone decision for|!=null&&$gt1010|Reason for postpone decision|.code!=null&&$gt1010|Reason for postpone decision|.code!='at0014')||($gt1008|Do you want to send a referral to a Cardiologist|.code=='at0005'&&$gt1009|Postpone decision for|!=null&&$gt1010|Reason for postpone decision|.code=='at0014'&&$gt1011|Please specify|!=null)))"
+    ],
+    "default_actions": [
+      "$gt4101|Authored on|=$currentDateTime"
+    ],
+    "rules": {
+      "gt3000": {
+        "id": "gt3000",
+        "priority": 14,
+        "when": [
+          "$gt1001|Does the patient have heart failure in palliative care?|!=null"
+        ],
+        "then": [
+          "$gt1101|Local variable: Does the patient have heart failure in palliative care? code|=$gt1001.code",
+          "$gt1201|Local variable: Does the patient have heart failure in palliative care? display|=$gt1001.value",
+          "$gt1301|Local variable: valueCoding system|='local'"
+        ]
+      },
+      "gt3001": {
+        "id": "gt3001",
+        "priority": 13,
+        "when": [
+          "$gt1001|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt1002|Ejektionsfraktion (EF) <40 %|!=null"
+        ],
+        "then": [
+          "$gt1102|Local variable: Ejection fraction (EF) <40 % code|=$gt1002.code",
+          "$gt1202|Local variable: Ejection fraction (EF) <40 % display|=$gt1002.value",
+          "$gt1302|Local variable: Ejection fraction (EF) <40 % valueCoding.system|='local'"
+        ]
+      },
+      "gt3002": {
+        "id": "gt3002",
+        "priority": 12,
+        "when": [
+          "$gt1001|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt1003|NYHA class II-IV|!=null"
+        ],
+        "then": [
+          "$gt1103|Local variable: NYHA class II-IV code|=$gt1003.code",
+          "$gt1203|Local variable: NYHA class II-IV display|=$gt1003.value",
+          "$gt1303|Local variable: NYHA class II-IV valueCoding.system|='local'"
+        ]
+      },
+      "gt3004": {
+        "id": "gt3004",
+        "priority": 11,
+        "when": [
+          "$gt1001|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt1004|Sinus Rythm|!=null"
+        ],
+        "then": [
+          "$gt1104|Local variable: Sinus Rythm code |=$gt1004.code",
+          "$gt1204|Local variable: Sinus Rythm display|=$gt1004.value",
+          "$gt1304|Local variable: Sinus Rythm valueCoding.system|='local'"
+        ]
+      },
+      "gt3006": {
+        "id": "gt3006",
+        "priority": 10,
+        "when": [
+          "$gt1001|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt1004|Sinus Rythm|.code=='at0004'",
+          "$gt1005|Atrial Fibrillation|!=null"
+        ],
+        "then": [
+          "$gt1105|Local variable: Atrial Fibrillation code|=$gt1005.code",
+          "$gt1205|Local variable: Atrial Fibrillation display|=$gt1005.value",
+          "$gt1305|Local variable: Atrial Fibrillation valueCoding.system|='local'"
+        ]
+      },
+      "gt3008": {
+        "id": "gt3008",
+        "priority": 9,
+        "when": [
+          "$gt1001|Does the patient have heart failure in palliative care?|.code=='at0004'",
+          "$gt1002|Ejektionsfraktion (EF) <40 %|.code=='at0003'",
+          "$gt1006|QRS width >= 130 ms|!=null"
+        ],
+        "then": [
+          "$gt1106|Local variable: QRS width >= 130 ms code|=$gt1006.code",
+          "$gt1206|Local variable: QRS width >= 130 ms display|=$gt1006.value",
+          "$gt1306|Local variable: QRS width >= 130 ms valueCoding.system|='local'"
+        ]
+      },
+      "gt3011": {
+        "id": "gt3011",
+        "priority": 8,
+        "when": [
+          "$gt1008|Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?|!=null"
+        ],
+        "then": [
+          "$gt1108|Local variable: Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment? code|=$gt1008.code",
+          "$gt1208|Local variable: Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment? display|=$gt1008.value",
+          "$gt1308|Local variable: Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment? valueCoding.system|='local'"
+        ]
+      },
+      "gt3012": {
+        "id": "gt3012",
+        "priority": 7,
+        "when": [
+          "$gt1009|Postpone decision for|!=null",
+          "$gt1009|Postpone decision for|.code=='at0007'"
+        ],
+        "then": [
+          "$gt1016|Decision delayed|=1,d"
+        ]
+      },
+      "gt3013": {
+        "id": "gt3013",
+        "priority": 6,
+        "when": [
+          "$gt1009|Postpone decision for|!=null",
+          "$gt1009|Postpone decision for|.code=='at0008'"
+        ],
+        "then": [
+          "$gt1016|Decision delayed|=7,d"
+        ]
+      },
+      "gt3014": {
+        "id": "gt3014",
+        "priority": 5,
+        "when": [
+          "$gt1009|Postpone decision for|!=null",
+          "$gt1009|Postpone decision for|.code=='at0009'"
+        ],
+        "then": [
+          "$gt1016|Decision delayed|=30,d"
+        ]
+      },
+      "gt3015": {
+        "id": "gt3015",
+        "priority": 4,
+        "when": [
+          "$gt1016|Decision delayed|!=null"
+        ],
+        "then": [
+          "$gt1109|Local variable: Decision delayed value|=$gt1016.magnitude",
+          "$gt1209|Local variable: Decision delayed unit|=$gt1016.unit",
+          "$gt1409|Local variable: Decision delayed code|=$gt1016.unit",
+          "$gt1309|Local variable: Decision delayed valueQuantity.system|='http://unitsofmeasure.org/'"
+        ]
+      },
+      "gt3018": {
+        "id": "gt3018",
+        "priority": 3,
+        "when": [
+          "$gt1010|Reason for postponed decision|!=null"
+        ],
+        "then": [
+          "$gt1110|Local variable: Reason for postponed decision code|=$gt1010.code",
+          "$gt1210|Local variable: Reason for postponed decision display|=$gt1010.value",
+          "$gt1310|Local variable: Reason for postponed decision valueCoding.system|='local'"
+        ]
+      },
+      "gt3023": {
+        "id": "gt3023",
+        "priority": 2,
+        "when": [
+        ],
+        "then": [
+          "use_template($gt2000)"
+        ]
+      },
+      "gt3024": {
+        "id": "gt3024",
+        "priority": 1,
+        "when": [
+          "$gt2000!=null"
+        ],
+        "then": [
+          "use_template($gt2001)"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "sv": {
+        "id": "sv",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generate journal note",
+            "description": ""
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Har patienten hjärtsvikt i palliativt skede?",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Ejektionsfraktion (EF) < 40 %",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "NYHA klass II-IV",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "Sinusrytm",
+            "description": ""
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "Förmaksflimmer",
+            "description": ""
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "QRS bredd >= 130 ms",
+            "description": ""
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "Rekommendationer",
+            "description": ""
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "Vill du skicka en remiss till hjärtsviktsmottagning för bedömning om lämplig behandling?",
+            "description": ""
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "Skjut upp beslutet i",
+            "description": ""
+          },
+          "gt1010": {
+            "id": "gt1010",
+            "text": "Orsak till uppskjutet beslut",
+            "description": ""
+          },
+          "gt1011": {
+            "id": "gt1011",
+            "text": "Specificera orsak",
+            "description": ""
+          },
+          "gt1012": {
+            "id": "gt1012",
+            "text": "Kompletterande information",
+            "description": ""
+          },
+          "gt1013": {
+            "id": "gt1013",
+            "text": "Tolkbehov?",
+            "description": ""
+          },
+          "gt1014": {
+            "id": "gt1014",
+            "text": "Språk",
+            "description": ""
+          },
+          "gt1016": {
+            "id": "gt1016",
+            "text": "Beslutet uppskjutet",
+            "description": ""
+          },
+          "gt2000": {
+            "id": "gt2000",
+            "text": "Journal note template",
+            "description": ""
+          },
+          "gt1101": {
+            "id": "gt1101",
+            "text": "Lokal variabel: Har patienten hjärtsvikt i palliativt skede? kod",
+            "description": ""
+          },
+          "gt1201": {
+            "id": "gt1201",
+            "text": "Lokal variabel: Har patienten hjärtsvikt i palliativt skede? display",
+            "description": ""
+          },
+          "gt1301": {
+            "id": "gt1301",
+            "text": "Lokal variabel: Har patienten hjärtsvikt i palliativt skede? systemet",
+            "description": ""
+          },
+          "gt1102": {
+            "id": "gt1102",
+            "text": "Lokal variabel: Ejektionsfraktion (EF) <40 % kod",
+            "description": ""
+          },
+          "gt1202": {
+            "id": "gt1202",
+            "text": "Lokal variabel: Ejektionsfraktion (EF) <40 % display",
+            "description": ""
+          },
+          "gt1302": {
+            "id": "gt1302",
+            "text": "Lokal variabel: Ejektionsfraktion (EF) <40 % systemet",
+            "description": ""
+          },
+          "gt1103": {
+            "id": "gt1103",
+            "text": "Lokal variabel: NYHA klass II kod",
+            "description": ""
+          },
+          "gt1203": {
+            "id": "gt1203",
+            "text": "Lokal variabel: NYHA klass II-IV display",
+            "description": ""
+          },
+          "gt1303": {
+            "id": "gt1303",
+            "text": "Lokal variabel: NYHA klass II-IV systemet",
+            "description": ""
+          },
+          "gt1104": {
+            "id": "gt1104",
+            "text": "Lokal variabel: Sinusrytm kod",
+            "description": ""
+          },
+          "gt1204": {
+            "id": "gt1104",
+            "text": "Lokal variabel: Sinusrytm display",
+            "description": ""
+          },
+          "gt1304": {
+            "id": "gt1104",
+            "text": "Lokal variabel: Sinusrytm systemet",
+            "description": ""
+          },
+          "gt1105": {
+            "id": "gt1105",
+            "text": "Lokal variabel: Förmaksflimmer kod",
+            "description": ""
+          },
+          "gt1205": {
+            "id": "gt1205",
+            "text": "Lokal variabel: Förmaksflimmer display",
+            "description": ""
+          },
+          "gt1305": {
+            "id": "gt1305",
+            "text": "Lokal variabel: Förmaksflimmer systemet",
+            "description": ""
+          },
+          "gt1106": {
+            "id": "gt1106",
+            "text": "Lokal variabel: QRS bredd >= 130 ms kod",
+            "description": ""
+          },
+          "gt1206": {
+            "id": "gt1206",
+            "text": "Lokal variabel: QRS bredd >= 130 ms display",
+            "description": ""
+          },
+          "gt1306": {
+            "id": "gt1306",
+            "text": "Lokal variabel: QRS bredd >= 130 ms systemet",
+            "description": ""
+          },
+          "gt1108": {
+            "id": "gt1108",
+            "text": "Lokal variabel: Vill du skicka en remiss till hjärtsviktsmottagning för bedömning om lämplig behandling? kod",
+            "description": ""
+          },
+          "gt1208": {
+            "id": "gt1208",
+            "text": "Lokal variabel: Vill du skicka en remiss till hjärtsviktsmottagning för bedömning om lämplig behandling? display",
+            "description": ""
+          },
+          "gt1308": {
+            "id": "gt1308",
+            "text": "Lokal variabel: Vill du skicka en remiss till hjärtsviktsmottagning för bedömning om lämplig behandling? systemet",
+            "description": ""
+          },
+          "gt1109": {
+            "id": "gt1109",
+            "text": "Lokal variabel: Beslutet uppskjutet value",
+            "description": ""
+          },
+          "gt1209": {
+            "id": "gt1209",
+            "text": "Lokal variabel: Beslutet uppskjutet unit",
+            "description": ""
+          },
+          "gt1309": {
+            "id": "gt1309",
+            "text": "Lokal variabel: Beslutet uppskjutet systemet",
+            "description": ""
+          },
+          "gt1409": {
+            "id": "gt1409",
+            "text": "Lokal variabel: Beslutet uppskjutet kod",
+            "description": ""
+          },
+          "gt1110": {
+            "id": "gt1110",
+            "text": "Lokal variabel: Orsak till uppskjutet beslut kod",
+            "description": ""
+          },
+          "gt1210": {
+            "id": "gt1210",
+            "text": "Lokal variabel: Orsak till uppskjutet beslut display",
+            "description": ""
+          },
+          "gt1310": {
+            "id": "gt1310",
+            "text": "Lokal variabel: Orsak till uppskjutet beslut systemet",
+            "description": ""
+          },
+          "gt2003": {
+            "id": "gt2003",
+            "text": "Resultat",
+            "description": ""
+          },
+          "gt4100": {
+            "id": "gt4100",
+            "text": "Undersökning",
+            "description": ""
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "Författad",
+            "description": ""
+          }
+        }
+      },
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Generate journal note",
+            "description": ""
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Does the patient have heart failure in palliative care?",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Ejection Fraction (EF) % < 40",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "NYHA class II-IV",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "Sinus Rythm",
+            "description": ""
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "Atrial Fibrillation",
+            "description": ""
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "QRS width >= 130 ms",
+            "description": ""
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "Recommendations",
+            "description": ""
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment?",
+            "description": ""
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "Postpone decision for",
+            "description": ""
+          },
+          "gt1010": {
+            "id": "gt1010",
+            "text": "Reason for postponed decision",
+            "description": ""
+          },
+          "gt1011": {
+            "id": "gt1011",
+            "text": "Please specify the reason",
+            "description": ""
+          },
+          "gt1012": {
+            "id": "gt1012",
+            "text": "Additional information",
+            "description": ""
+          },
+          "gt1013": {
+            "id": "gt1013",
+            "text": "Is interpreter needed?",
+            "description": ""
+          },
+          "gt1014": {
+            "id": "gt1014",
+            "text": "Language",
+            "description": ""
+          },
+          "gt1016": {
+            "id": "gt1016",
+            "text": "Decision delayed",
+            "description": ""
+          },
+          "gt2000": {
+            "id": "gt2000",
+            "text": "Generate Journal note template",
+            "description": ""
+          },
+          "gt1101": {
+            "id": "gt1101",
+            "text": "Local variable: Does the patient have heart failure in palliative care? code",
+            "description": ""
+          },
+          "gt1201": {
+            "id": "gt1201",
+            "text": "Local variable: Does the patient have heart failure in palliative care? display",
+            "description": ""
+          },
+          "gt1301": {
+            "id": "gt1301",
+            "text": "Local variable: valueCoding system",
+            "description": ""
+          },
+          "gt1102": {
+            "id": "gt1102",
+            "text": "Local variable: Ejection fraction (EF) <40 % code",
+            "description": ""
+          },
+          "gt1202": {
+            "id": "gt1202",
+            "text": "Local variable: Ejection fraction (EF) <40 % display",
+            "description": ""
+          },
+          "gt1302": {
+            "id": "gt1302",
+            "text": "Local variable: Ejection fraction (EF) <40 % valueCoding system",
+            "description": ""
+          },
+          "gt1103": {
+            "id": "gt1103",
+            "text": "Local variable: NYHA class II-IV code",
+            "description": ""
+          },
+          "gt1203": {
+            "id": "gt1203",
+            "text": "Local variable: NYHA class II-IV display",
+            "description": ""
+          },
+          "gt1303": {
+            "id": "gt1303",
+            "text": "Local variable: NYHA class II-IV valueCoding system",
+            "description": ""
+          },
+          "gt1104": {
+            "id": "gt1104",
+            "text": "Local variable: Sinus Rythm code",
+            "description": ""
+          },
+          "gt1204": {
+            "id": "gt1104",
+            "text": "Local variable: Sinus Rythm display",
+            "description": ""
+          },
+          "gt1304": {
+            "id": "gt1104",
+            "text": "Local variable: Sinus Rythm valueCoding system",
+            "description": ""
+          },
+          "gt1105": {
+            "id": "gt1105",
+            "text": "Local variable: Atrial Fibrillation code",
+            "description": ""
+          },
+          "gt1205": {
+            "id": "gt1205",
+            "text": "Local variable: Atrial Fibrillation display",
+            "description": ""
+          },
+          "gt1305": {
+            "id": "gt1305",
+            "text": "Local variable: Atrial Fibrillation valueCoding system",
+            "description": ""
+          },
+          "gt1106": {
+            "id": "gt1106",
+            "text": "Local variable: QRS width >= 130 ms code",
+            "description": ""
+          },
+          "gt1206": {
+            "id": "gt1206",
+            "text": "Local variable: QRS width >= 130 ms display",
+            "description": ""
+          },
+          "gt1306": {
+            "id": "gt1306",
+            "text": "Local variable: QRS width >= 130 ms valueCoding system",
+            "description": ""
+          },
+          "gt1108": {
+            "id": "gt1108",
+            "text": "Local variable: Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment? code",
+            "description": ""
+          },
+          "gt1208": {
+            "id": "gt1208",
+            "text": "Local variable: Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment? display",
+            "description": ""
+          },
+          "gt1308": {
+            "id": "gt1308",
+            "text": "Local variable: Do you want to send a referral to a heart failure clinic for assessment of appropriate treatment? valueCoding system",
+            "description": ""
+          },
+          "gt1109": {
+            "id": "gt1109",
+            "text": "Local variable: Decision delayed value",
+            "description": ""
+          },
+          "gt1209": {
+            "id": "gt1209",
+            "text": "|Local variable: Decision delayed unit",
+            "description": ""
+          },
+          "gt1309": {
+            "id": "gt1309",
+            "text": "Local variable: Decision delayed valueCoding system",
+            "description": ""
+          },
+          "gt1409": {
+            "id": "gt1409",
+            "text": "Local variable: Decision delayed code",
+            "description": ""
+          },
+          "gt1110": {
+            "id": "gt1110",
+            "text": "Local variable: Reason for postponed decision code",
+            "description": ""
+          },
+          "gt1210": {
+            "id": "gt1210",
+            "text": "Local variable: Reason for postponed decision display",
+            "description": ""
+          },
+          "gt1310": {
+            "id": "gt1310",
+            "text": "Local variable: Reason for postponed decision valueCoding system",
+            "description": ""
+          },
+          "gt2001": {
+            "id": "gt2001",
+            "text": "Journal note output instruction",
+            "description": ""
+          },
+          "gt2003": {
+            "id": "gt2003",
+            "text": "Results",
+            "description": ""
+          },
+          "gt4100": {
+            "id": "gt4100",
+            "text": "Investigation",
+            "description": ""
+          },
+          "gt4101": {
+            "id": "gt4101",
+            "text": "Authored on",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

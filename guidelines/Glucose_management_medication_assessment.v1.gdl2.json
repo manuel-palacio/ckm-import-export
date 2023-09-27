@@ -1,0 +1,392 @@
+{
+  "id": "Glucose_management_medication_assessment.v1",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2022-10-20",
+      "name": "Konstantinos Kalliamvakos",
+      "organisation": "Cambio CDS",
+      "email": "konstantinos.kalliamvakos@cambio.se"
+    },
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "misuse": "Not for making a diagnosis of type 2 diabetes."
+      }
+    },
+    "other_details": {
+      "references": "Snorgaard OD, Drivsholm TO, Breum L. Farmakologisk behandling af type 2 diabetes—mål og algoritmer—2018.\n\nSnorgaard O, Mølsted S, Dolsø M, Poulsen GM, Drivsholm TB, Glenner M, Lose H, Schack-Nielsen L. Forløbsprogram for Type 2 Diabetes: Hospitaler, almen praksis og kommunerne i Region Hoevdstaden."
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "template_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "type": "INPUT",
+        "elements": {
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070]"
+          }
+        },
+        "predicates": [
+          "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070] is_a local::gt0006|Sulfonylurea substance|"
+        ]
+      },
+      "gt0007": {
+        "id": "gt0007",
+        "model_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "template_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "type": "INPUT",
+        "elements": {
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070]"
+          }
+        },
+        "predicates": [
+          "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070] is_a local::gt0011|Metformin substance|"
+        ]
+      },
+      "gt0012": {
+        "id": "gt0012",
+        "model_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "template_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "type": "INPUT",
+        "elements": {
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070]"
+          }
+        },
+        "predicates": [
+          "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070] is_a local::gt0016|Insulin substance|"
+        ]
+      },
+      "gt0017": {
+        "id": "gt0017",
+        "model_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "template_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "type": "INPUT",
+        "elements": {
+          "gt0019": {
+            "id": "gt0019",
+            "path": "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070]"
+          }
+        },
+        "predicates": [
+          "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070] is_a local::gt0021|SGLT2-inhibitor substance|"
+        ]
+      },
+      "gt0022": {
+        "id": "gt0022",
+        "model_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "template_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "type": "INPUT",
+        "elements": {
+          "gt0024": {
+            "id": "gt0024",
+            "path": "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070]"
+          }
+        },
+        "predicates": [
+          "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070] is_a local::gt0026|GLP1-RA substance|"
+        ]
+      },
+      "gt0027": {
+        "id": "gt0027",
+        "model_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "template_id": "openEHR-EHR-INSTRUCTION.medication_order.v3",
+        "type": "INPUT",
+        "elements": {
+          "gt0029": {
+            "id": "gt0029",
+            "path": "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070]"
+          }
+        },
+        "predicates": [
+          "/items[openEHR-EHR-INSTRUCTION.medication_order.v3]/activities[at0001]/description[at0002]/items[at0070] is_a local::gt0031|DPP4-inhibitor substance|"
+        ]
+      },
+      "gt0032": {
+        "id": "gt0032",
+        "model_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "template_id": "openEHR-EHR-EVALUATION.glucose_management_review.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0033": {
+            "id": "gt0033",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0010]/items[at0011]"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0010]/items[at0012]"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0010]/items[at0013]"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0010]/items[at0014]"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0010]/items[at0015]"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "path": "/items[openEHR-EHR-EVALUATION.glucose_management_review.v0]/data[at0001]/items[at0010]/items[at0016]"
+          }
+        }
+      }
+    },
+    "default_actions": [
+      "$gt0033|Sulfonylurea|=local::at0022|No|",
+      "$gt0034|Metformin|=local::at0022|No|",
+      "$gt0035|Insulin|=local::at0022|No|",
+      "$gt0036|SGLT2-inhibitor|=local::at0022|No|",
+      "$gt0037|GLP1-RA|=local::at0022|No|",
+      "$gt0038|DPP4-inhibitor|=local::at0022|No|"
+    ],
+    "rules": {
+      "gt0046": {
+        "id": "gt0046",
+        "priority": 6,
+        "when": [
+          "$gt0004|sulfonylurea-coding|!=null"
+        ],
+        "then": [
+          "$gt0033|Sulfonylurea|=local::at0021|Yes|"
+        ]
+      },
+      "gt0047": {
+        "id": "gt0047",
+        "priority": 5,
+        "when": [
+          "$gt0009|metformin-coding|!=null"
+        ],
+        "then": [
+          "$gt0034|Metformin|=local::at0021|Yes|"
+        ]
+      },
+      "gt0048": {
+        "id": "gt0048",
+        "priority": 4,
+        "when": [
+          "$gt0014|insulin-coding|!=null"
+        ],
+        "then": [
+          "$gt0035|Insulin|=local::at0021|Yes|"
+        ]
+      },
+      "gt0049": {
+        "id": "gt0049",
+        "priority": 3,
+        "when": [
+          "$gt0019|sglt2-inhibitor-coding|!=null"
+        ],
+        "then": [
+          "$gt0036|SGLT2-inhibitor|=local::at0021|Yes|"
+        ]
+      },
+      "gt0050": {
+        "id": "gt0050",
+        "priority": 2,
+        "when": [
+          "$gt0024|glp1-ra-coding|!=null"
+        ],
+        "then": [
+          "$gt0037|GLP1-RA|=local::at0021|Yes|"
+        ]
+      },
+      "gt0051": {
+        "id": "gt0051",
+        "priority": 1,
+        "when": [
+          "$gt0029|dpp4-inhibitor-coding|!=null"
+        ],
+        "then": [
+          "$gt0038|DPP4-inhibitor|=local::at0021|Yes|"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "Glucose management medication review"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "sulfonylurea-coding",
+            "description": ""
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "Sulfonylurea substance",
+            "description": ""
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "metformin-coding",
+            "description": ""
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Metformin substance",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "insulin-coding",
+            "description": ""
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Insulin substance",
+            "description": ""
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "sglt2-inhibitor-coding",
+            "description": ""
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "SGLT2-inhibitor substance",
+            "description": ""
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "glp1-ra-coding",
+            "description": ""
+          },
+          "gt0026": {
+            "id": "gt0026",
+            "text": "GLP1-RA substance",
+            "description": ""
+          },
+          "gt0029": {
+            "id": "gt0029",
+            "text": "dpp4-inhibitor-coding",
+            "description": ""
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "DPP4-inhibitor substance",
+            "description": ""
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "Sulfonylurea",
+            "description": "*"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "Metformin",
+            "description": "*"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "Insulin",
+            "description": "*"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "SGLT2-inhibitor",
+            "description": "*"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "GLP1-RA",
+            "description": "*"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "DPP4-inhibitor",
+            "description": "*"
+          },
+          "gt0046": {
+            "id": "gt0046",
+            "text": "Set Sulfonylurea to yes",
+            "description": "*"
+          },
+          "gt0047": {
+            "id": "gt0047",
+            "text": "Set Metformin to yes",
+            "description": "*"
+          },
+          "gt0048": {
+            "id": "gt0048",
+            "text": "Set Insulin to yes",
+            "description": "*"
+          },
+          "gt0049": {
+            "id": "gt0049",
+            "text": "Set SGLT2-inhibitor to yes",
+            "description": "*"
+          },
+          "gt0050": {
+            "id": "gt0050",
+            "text": "Set GLP1-RA to yes",
+            "description": "*"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "Set DPP4-inhibitor to yes",
+            "description": "*"
+          }
+        }
+      }
+    },
+    "term_bindings": {
+      "ATC": {
+        "id": "ATC",
+        "bindings": {
+          "gt0006": {
+            "codes": [
+              "ATC::A10BB"
+            ]
+          },
+          "gt0011": {
+            "codes": [
+              "ATC::A10BA02"
+            ]
+          },
+          "gt0016": {
+            "codes": [
+              "ATC::A10A"
+            ]
+          },
+          "gt0021": {
+            "codes": [
+              "ATC::A10BK"
+            ]
+          },
+          "gt0026": {
+            "codes": [
+              "ATC::A10BJ"
+            ]
+          },
+          "gt0031": {
+            "codes": [
+              "ATC::A10BH"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

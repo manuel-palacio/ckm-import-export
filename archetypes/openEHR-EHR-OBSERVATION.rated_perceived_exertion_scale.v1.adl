@@ -1,0 +1,302 @@
+archetype (adl_version=1.4; uid=ab8a56f7-0075-3729-8a8b-fa3c52c6ebb9)
+	openEHR-EHR-OBSERVATION.rated_perceived_exertion_scale.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+				["name"] = <"Dennis Forslund">
+				["organisation"] = <"Cambio Healthcare Systems">
+				["email"] = <"models@cambiocds.com">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2017-08-12">
+		["name"] = <"Syeeda S Farruque">
+		["organisation"] = <"Cambio CDS">
+		["email"] = <"models@cambiocds.com">
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Hager Saleh, hagerasaleh@yahoo.com", ...>
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			purpose = <"*Use to record the results of each component parameter for Rated Perceived Exertion (RPE) Scale. 
+ (en)">
+			keywords = <"*rated perceived exertion, RPE, exercise, scale, activity (en)", ...>
+			copyright = <"*© Cambio CDS (en)">
+			use = <"*Use to record the results of each component parameter for Rated Perceived Exertion (RPE) Scale. 
+ (en)">
+			misuse = <"Instrumentet bör endast användas för skattning av fysisk ansträngning. Om mer allvarliga symtom än snabbt övergående trötthet och andfåddhet uppkommer, bör individen söka vård.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Use to record the results of each component parameter for Rated Perceived Exertion (RPE) Scale. 
+">
+			keywords = <"rated perceived exertion, RPE, exercise, scale, activity", ...>
+			copyright = <"© Cambio CDS">
+			use = <"Use to record the results of each component parameter for Rated Perceived Exertion (RPE) Scale. 
+">
+			misuse = <"This tool should only be used as a guide to exercise exertion. If symptoms seem more serious than tiredness or shortness of breath which recovers in a short space of time, the user should seek professional help from a clinician.">
+		>
+	>
+	other_details = <
+		["references"] = <"1: Rated Perceived Exertion Scale, the Cleveland Clinic website, published 3rd March 2017. Accessed at:
+https://my.clevelandclinic.org/health/articles/rpe-scale-heart-health?view=print">
+		["MD5-CAM-1.0.1"] = <"8523EFEB27694CA3F17F3D54BA9C42E7">
+		["build_uid"] = <"bcedb41a-c979-3c0a-98ab-378a2e658b4f">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Rated Perceived Exertion (RPE) Scale.
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- RPE scale level
+										value matches {
+											0|[local::at0005],
+											1|[local::at0006],
+											2|[local::at0016],
+											4|[local::at0007],
+											6|[local::at0008],
+											8|[local::at0009],
+											10|[local::at0010],
+											12|[local::at0011],
+											14|[local::at0012],
+											16|[local::at0013],
+											18|[local::at0014],
+											20|[local::at0015]
+										}
+									}
+									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Final score
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::380]>
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..10.0|>
+														precision = <|1|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0020] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0021] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Rated Perceived Exertion (RPE) Scale.">
+					description = <"A scale to measure exercise intensity. The RPE scale runs from 0 – 10 according to the perceived difficulty of the activity. The user should take into account feeling heavy, the amount of tiredness in legs and overall, and whether they are short of breath.">
+					comment = <"Original version c 2017.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"RPE scale level">
+					description = <"As there is a decimal score (0.5) in this tool, the scores are multiplied by 2 and require being halved before issuing the final score.">
+				>
+				["at0005"] = <
+					text = <"Nothing at all">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Just noticeable">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Light">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Moderate">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Somewhat heavy">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Heavy">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Heavy">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Very heavy">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Very heavy">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Very heavy">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Very, very heavy">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Very light">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Final score">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Comment">
+					description = <"Any comments regarding the tool">
+				>
+				["at0020"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0021"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"local information requirements; or additional metadata to align with FHIR.">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Rated Perceived Exertion (RPE) Scale. (en)">
+					description = <"*A scale to measure exercise intensity. The RPE scale runs from 0 – 10 according to the perceived difficulty of the activity. The user should take into account feeling heavy, the amount of tiredness in legs and overall, and whether they are short of breath. (en)">
+				>
+				["at0001"] = <
+					text = <"*Event Series(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"*Any event(en)">
+					description = <"*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time. (en)">
+				>
+				["at0003"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0004"] = <
+					text = <"RPE-nivå">
+					description = <"På grund av programrestriktioner, är poängen dubbla I arketypen, och halveras sedan i guideline.">
+				>
+				["at0005"] = <
+					text = <"Ingen ansträngning alls">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Extremt lätt">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Lätt">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Något ansträngande">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Ansträngande">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Mycket ansträngande">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Mycket ansträngande">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Extremt ansträngande">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Extremt ansträngande">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Extremt ansträngande">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Maximal ansträngning">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Mycket lätt">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Resultat">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Kommentar">
+					description = <"Ev. kommentar kring instrumentet.">
+				>
+				["at0020"] = <
+					text = <"*Item tree (en)">
+					description = <"@ internal @">
+				>
+				["at0021"] = <
+					text = <"*Extension (en)">
+					description = <"*Additional information required to extend the model with local content or to align with other reference models or formalisms. (en)">
+					comment = <"*local information requirements; or additional metadata to align with FHIR. (en)">
+				>
+			>
+		>
+	>

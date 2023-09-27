@@ -1,0 +1,81 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.avpu_assessment.v0
+
+concept
+	[at0000]	-- AVPU (Alert, Verbal, Painful, Unresponsive) scale
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Maryam Razavi">
+		["email"] = <"maryam.razavi@cambio.se">
+		["organisation"] = <"Cambio CDS">
+		["date"] = <"2021-09-09">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the result of the AVPU assessment.">
+			use = <"Use to record the result of the AVPU assessment.">
+			keywords = <"alertness", "verbal", "pain", "stimulation", "awareness">
+			misuse = <"">
+			copyright = <"© Cambio CDS">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"Kelly CA, Upex A, Bateman DN. Comparison of consciousness level assessment in the poisoned patient using the alert/verbal/painful/unresponsive scale and the Glasgow Coma Scale. Ann Emerg Med. 2004 Aug;44(2):108-13. doi: 10.1016/j.annemergmed.2004.03.028. PMID: 15278081.
+
+McNarry AF, Goldhill DR. Simple bedside assessment of level of consciousness: comparison of two simple assessment scales with the Glasgow Coma scale. Anaesthesia. 2004 Jan;59(1):34-7. doi: 10.1111/j.1365-2044.2004.03526.x. PMID: 14687096.
+
+Raman S, Sreenivas V, Puliyel JM, Kumar N. Comparison of alert verbal painful unresponsiveness scale and the Glasgow Coma Score. Indian Pediatr. 2011 Apr;48(4):331-2. PMID: 21532107.
+">
+		["current_contact"] = <"Maryam Razavi, Cambio CDS<maryam.razavi2009@gmail.com>">
+		["MD5-CAM-1.0.1"] = <"034EEED2BBFB60CA7789BD1948BA0B02">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- AVPU (Alert, Verbal, Painful, Unresponsive) scale
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Interpretation
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"AVPU (Alert, Verbal, Painful, Unresponsive) scale">
+					description = <"A scale used to assess the level of awareness of the patient in terms of alertness, verbal or pain stimulation.">
+					comment = <"Original version, c 2004">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Interpretation">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Comment">
+					description = <"*">
+				>
+			>
+		>
+	>

@@ -1,0 +1,3087 @@
+{
+  "id": "Glucose_management_prescription_questionnaire.v1.0.0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2019-11-29",
+      "name": "Eneimi Allwell-Brown",
+      "organisation": "Cambio CDS",
+      "email": "eneim.allwell-brown@cambio.se"
+    },
+    "lifecycle_state": "Initial",
+    "details": {
+      "en": {
+        "id": "en",
+        "copyright": "Cambio CDS"
+      }
+    },
+    "other_details": {}
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0002": {
+        "id": "gt0002",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0003": {
+            "id": "gt0003",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0005]"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0016]"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0004]"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0013]"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0012]"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0026]/items[at0037]"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0015]"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0006]"
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0017]/items[at0020]"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0017]/items[at0019]"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0017]/items[at0018]"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0032]"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0034]"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0030]"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0035]"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0031]"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0036]"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0040]"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0028]/items[at0070]"
+          }
+        }
+      },
+      "gt0050": {
+        "id": "gt0050",
+        "model_id": "openEHR-EHR-EVALUATION.glucose_management_assessment.v0",
+        "template_id": "openEHR-EHR-EVALUATION.glucose_management_assessment.v0",
+        "type": "INPUT",
+        "elements": {
+          "gt0051": {
+            "id": "gt0051",
+            "path": "/data[at0001]/items[at0002]"
+          }
+        }
+      },
+      "gt0062": {
+        "id": "gt0062",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0063": {
+            "id": "gt0063",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0123]"
+          }
+        }
+      },
+      "gt0064": {
+        "id": "gt0064",
+        "model_id": "openEHR-EHR-EVALUATION.glucose_management_assessment.v1",
+        "template_id": "openEHR-EHR-EVALUATION.glucose_management_assessment.v1",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0065": {
+            "id": "gt0065",
+            "path": "/data[at0001]/items[at0012]"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "path": "/data[at0001]/items[at0021]"
+          }
+        }
+      }
+    },
+    "templates": {
+      "gt2200": {
+        "id": "gt2200",
+        "name": "hba1c-firstMedication",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "hba1c-firstMedication",
+          "text": "{$gt2201.term}",
+          "information": "{$gt2202.term}",
+          "resources": [
+            "{$gt9000}",
+            "{$gt0045}"
+          ]
+        }
+      },
+      "gt9000": {
+        "id": "gt9000",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "InputSelect",
+          "name": "hba1c-first-choice",
+          "text": "{$gt2203.term}",
+          "required": true,
+          "display": "dropdown",
+          "options": [
+            "{$gt9900.all}"
+          ],
+          "initialValue": "{$gt9003}"
+        }
+      },
+      "gt9900": {
+        "id": "gt9900",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "value": "{$gt9001}",
+          "text": "{$gt9002}"
+        }
+      },
+      "gt0045": {
+        "id": "gt0045",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Display",
+          "id": "hba1c-firstChoiceDrug",
+          "text": "{$gt1000}"
+        }
+      },
+      "gt0020": {
+        "id": "gt0020",
+        "name": "hba1c-otherMedications",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "hba1c-otherMedications",
+          "text": "{$gt2207.term}",
+          "information": "{$gt2208.term}",
+          "resources": [
+            "{$gt9100}",
+            "{$gt0046}"
+          ]
+        }
+      },
+      "gt9100": {
+        "id": "gt9100",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "InputSelect",
+          "name": "hba1c-other-choice",
+          "text": "{$gt2209.term}",
+          "required": "{$gt2001}",
+          "display": "dropdown",
+          "options": [
+            "{$gt9910.all}"
+          ],
+          "initialValue": "{$gt9103}"
+        }
+      },
+      "gt9910": {
+        "id": "gt9910",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "value": "{$gt9001}",
+          "text": "{$gt9002}"
+        }
+      },
+      "gt0046": {
+        "id": "gt0046",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Display",
+          "id": "hba1c-otherDrugs",
+          "text": "{$gt0047}"
+        }
+      },
+      "gt2100": {
+        "id": "gt2100",
+        "name": "hba1c-recommendationNotes",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Group",
+          "id": "hba1c-recommendationNotes",
+          "text": "{$gt2210.term}",
+          "resources": [
+            {
+              "uiResourceType": "Display",
+              "id": "hba1c-recommendation-notes",
+              "text": "{$gt2101}"
+            }
+          ]
+        }
+      },
+      "gt7000": {
+        "id": "gt7000",
+        "name": "hba1cFollowRecommendation",
+        "model_id": "generic_model",
+        "template_id": "generic_model",
+        "object": {
+          "uiResourceType": "Form",
+          "id": "hba1cFollowRecommendation",
+          "text": "{$gt1001.term}",
+          "resources": [
+            {
+              "id": "hba1c-follow-recommendation",
+              "name": "hba1c-follow-recommendation",
+              "text": "{$gt1002.term}",
+              "uiResourceType": "InputSelect",
+              "required": true,
+              "display": "button",
+              "options": [
+                {
+                  "value": "local::at0008|Yes|",
+                  "text": "{$gt1005.term}"
+                },
+                {
+                  "value": "local::at0009|No|",
+                  "text": "{$gt1006.term}"
+                }
+              ],
+              "initialValue": "local::at0008|Yes|"
+            },
+            {
+              "id": "hba1c-reason-for-deviating",
+              "name": "hba1c-reason-for-deviating",
+              "text": "{$gt1003.term}",
+              "uiResourceType": "InputText",
+              "required": true,
+              "showWhen": [
+                {
+                  "path": "uiInput.formResponses.hba1cFollowRecommendation.values.hba1c-follow-recommendation",
+                  "has": {
+                    "value": "local::at0009|No|"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "hba1c-suppress-recommendation",
+              "name": "hba1c-suppress-recommendation",
+              "text": "{$gt1004.term}",
+              "uiResourceType": "InputSelect",
+              "display": "button",
+              "required": true,
+              "showWhen": [
+                {
+                  "path": "uiInput.formResponses.hba1cFollowRecommendation.values.hba1c-follow-recommendation",
+                  "has": {
+                    "value": "local::at0009|No|"
+                  }
+                }
+              ],
+              "options": [
+                {
+                  "value": "local::at0008|Yes|",
+                  "text": "{$gt1005.term}"
+                },
+                {
+                  "value": "local::at0009|No|",
+                  "text": "{$gt1006.term}"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "default_actions": [
+      "$gt2001|otherMedications-required-property|=false",
+      "$gt2101|recommendation-notes display|=''",
+      "$gt0047|otherDrugs display|=''"
+    ],
+    "pre_conditions": [
+      "$gt0006|LADA|==true||$gt0004|Pancreatitis-induced diabetes|==true||$gt0008|Type-2 diabetes|==true||$gt0007|Steroid-induced diabetes|==true",
+      "$gt0063|hba1c-target|!=null",
+      "$gt0051|hba1c-assessment|!=null",
+      "$gt0051|hba1c-assessment|.code!='at0005'",
+      "$gt0051|hba1c-assessment|.code!='at0006'"
+    ],
+    "rules": {
+      "gt0088": {
+        "id": "gt0088",
+        "priority": 165,
+        "when": [
+          "$gt0006|LADA|==true",
+          "$gt0009|BMI <25|!=true",
+          "$gt0014|Insulin|==true",
+          "$gt0018|Metformin|==true"
+        ],
+        "then": [
+          "$gt1000|first-choice-medication-name display|=$gt2275.term",
+          "use_template($gt0045)",
+          "$gt2101|recommendation-notes display|=$gt2276.term"
+        ]
+      },
+      "gt0089": {
+        "id": "gt0089",
+        "priority": 164,
+        "when": [
+          "$gt0006|LADA|==true",
+          "$gt0009|BMI <25|!=true",
+          "$gt0014|Insulin|==false",
+          "$gt0018|Metformin|==true"
+        ],
+        "then": [
+          "$gt1000|first-choice-medication-name display|=$gt2273.term",
+          "$gt2001|otherMedications-required-property|=true",
+          "use_template($gt0045)",
+          "$gt2101|recommendation-notes display|=$gt2274.term",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='1. Insulin'))"
+        ]
+      },
+      "gt0090": {
+        "id": "gt0090",
+        "priority": 163,
+        "when": [
+          "$gt0006|LADA|==true",
+          "$gt0009|BMI <25|!=true",
+          "$gt0014|Insulin|==true",
+          "$gt0018|Metformin|==false"
+        ],
+        "then": [
+          "$gt1000|first-choice-medication-name display|=$gt2271.term",
+          "$gt2001|otherMedications-required-property|=true",
+          "use_template($gt0045)",
+          "$gt2101|recommendation-notes display|=$gt2272.term",
+          "use_template($gt9910($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))"
+        ]
+      },
+      "gt0091": {
+        "id": "gt0091",
+        "priority": 162,
+        "when": [
+          "($gt0006|LADA|==true&&$gt0009|BMI <25|==true)||$gt0004|Pancreatitis-induced diabetes|==true",
+          "$gt0014|Insulin|==true"
+        ],
+        "then": [
+          "$gt1000|first-choice-medication-name display|=$gt2211.term",
+          "$gt2001|otherMedications-required-property|=true",
+          "use_template($gt0045)",
+          "$gt2101|recommendation-notes display|=$gt2265.term",
+          "use_template($gt9910($gt9001='ATC::A10AB|Hurtigvirkende insulin|';$gt9002='2. Hurtigvirkende insulin'))"
+        ]
+      },
+      "gt0092": {
+        "id": "gt0092",
+        "priority": 161,
+        "when": [
+          "$gt0007|Steroid-induced diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0014|Insulin|==true"
+        ],
+        "then": [
+          "$gt1000|first-choice-medication-name display|=$gt2211.term",
+          "$gt2001|otherMedications-required-property|=true",
+          "use_template($gt0045)",
+          "$gt2101|recommendation-notes display|=$gt2266.term",
+          "use_template($gt9910($gt9001='ATC::A10BA02|Metformin|';$gt9002='2. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10AE|Langtidsvirkende insulin|';$gt9002='3. Langtidsvirkende insulin'))"
+        ]
+      },
+      "gt0093": {
+        "id": "gt0093",
+        "priority": 160,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "($gt0010|eGFR category|==local::at0007|<15|)||($gt0010|eGFR category|==local::at0008|15-29|)",
+          "($gt0005|Heart failure|==true&&$gt0003|Cardiovascular disease|==true)||($gt0005|Heart failure|==false&&$gt0003|Cardiovascular disease|==true)||($gt0005|Heart failure|==true&&$gt0003|Cardiovascular disease|==false)||($gt0005|Heart failure|==false&&$gt0003|Cardiovascular disease|==false&&$gt0012|Promote weight loss|==false&&$gt0011|Prescribe low cost|==false)||($gt0005|Heart failure|==false&&$gt0003|Cardiovascular disease|==false&&$gt0012|Promote weight loss|==true&&$gt0011|Prescribe low cost|==true)||($gt0005|Heart failure|==false&&$gt0003|Cardiovascular disease|==false&&$gt0012|Promote weight loss|==true&&$gt0011|Prescribe low cost|==false)",
+          "$gt0017|GLP1-RA|==true"
+        ],
+        "then": [
+          "$gt1000|first-choice-medication-name display|=$gt2261.term",
+          "$gt2001|otherMedications-required-property|=true",
+          "use_template($gt0045)"
+        ]
+      },
+      "gt0094": {
+        "id": "gt0094",
+        "priority": 159,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "($gt0010|eGFR category|==local::at0007|<15|)||($gt0010|eGFR category|==local::at0008|15-29|)",
+          "$gt0005|Heart failure|!=true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==true",
+          "$gt0019|DPP4-inhibitor|==true"
+        ],
+        "then": [
+          "$gt1000|first-choice-medication-name display|=$gt2262.term",
+          "$gt2001|otherMedications-required-property|=true",
+          "use_template($gt0045)"
+        ]
+      },
+      "gt0095": {
+        "id": "gt0095",
+        "priority": 158,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|!=local::at0007|<15|",
+          "$gt0010|eGFR category|!=local::at0008|15-29|",
+          "$gt0018|Metformin|==true"
+        ],
+        "then": [
+          "$gt1000|first-choice-medication-name display|=$gt2212.term",
+          "$gt2001|otherMedications-required-property|=true",
+          "use_template($gt0045)"
+        ]
+      },
+      "gt0096": {
+        "id": "gt0096",
+        "priority": 157,
+        "when": [
+          "$gt0006|LADA|==true",
+          "$gt0009|BMI <25|!=true",
+          "$gt0014|Insulin|!=true",
+          "$gt0018|Metformin|!=true"
+        ],
+        "then": [
+          "$gt2001|otherMedications-required-property|=true",
+          "$gt2101|recommendation-notes display|=$gt2278.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10A|Insulin|'",
+          "$gt9103|initialValue-other-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10A|Insulin|';$gt9002='1. Insulin'))",
+          "use_template($gt9910($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))"
+        ]
+      },
+      "gt0097": {
+        "id": "gt0097",
+        "priority": 156,
+        "when": [
+          "$gt0014|Insulin|!=true",
+          "($gt0006|LADA|==true&&$gt0009|BMI <25|==true)||$gt0004|Pancreatitis-induced diabetes|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2213.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10AE|Langtidsvirkende insulin|'",
+          "use_template($gt9900($gt9001='ATC::A10AE|Langtidsvirkende insulin|';$gt9002='1. Langtidsvirkende insulin'))",
+          "use_template($gt9910($gt9001='ATC::A10AB|Hurtigvirkende insulin|';$gt9002='2. Hurtigvirkende insulin'))"
+        ]
+      },
+      "gt0098": {
+        "id": "gt0098",
+        "priority": 155,
+        "when": [
+          "$gt0014|Insulin|!=true",
+          "$gt0007|Steroid-induced diabetes|==true",
+          "($gt0006|LADA|!=true)",
+          "$gt0004|Pancreatitis-induced diabetes|!=true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2214.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10AB|Hurtigvirkende insulin|'",
+          "use_template($gt9900($gt9001='ATC::A10AB|Hurtigvirkende insulin|';$gt9002='1. Hurtigvirkende insulin'))",
+          "use_template($gt9910($gt9001='ATC::A10BA02|Metformin|';$gt9002='2. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10AE|Langtidsvirkende insulin|';$gt9002='3. Langtidsvirkende insulin'))"
+        ]
+      },
+      "gt0099": {
+        "id": "gt0099",
+        "priority": 154,
+        "when": [
+          "$gt0018|Metformin|!=true",
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "($gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|)||($gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|)||($gt0010|eGFR category|==local::at0011|>90 without albuminuria|)"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2215.term"
+        ]
+      },
+      "gt60001": {
+        "id": "gt60001",
+        "priority": 84,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0007|<15|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt60002": {
+        "id": "gt60002",
+        "priority": 83,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0007|<15|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt60003": {
+        "id": "gt60003",
+        "priority": 82,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0007|<15|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt60004": {
+        "id": "gt60004",
+        "priority": 81,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0007|<15|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt60005": {
+        "id": "gt60005",
+        "priority": 80,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0007|<15|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt60006": {
+        "id": "gt60006",
+        "priority": 79,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0007|<15|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt60007": {
+        "id": "gt60007",
+        "priority": 78,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0007|<15|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2264.term + $gt2220.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BH|DPP-4 inhibitor|'",
+          "use_template($gt9900($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='1. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='2. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt60008": {
+        "id": "gt60008",
+        "priority": 77,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0008|15-29|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt60009": {
+        "id": "gt60009",
+        "priority": 76,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0008|15-29|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt600010": {
+        "id": "gt600010",
+        "priority": 75,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0008|15-29|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt600011": {
+        "id": "gt600011",
+        "priority": 74,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0008|15-29|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt600012": {
+        "id": "gt600012",
+        "priority": 73,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0008|15-29|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt600013": {
+        "id": "gt600013",
+        "priority": 72,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0008|15-29|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2264.term + $gt2220.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BH|DPP-4 inhibitor|'",
+          "use_template($gt9900($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='1. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='2. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt600014": {
+        "id": "gt600014",
+        "priority": 71,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0008|15-29|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2263.term + $gt2219.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BJ|GLP-1 RA|'",
+          "use_template($gt9900($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='1. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='2. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))"
+        ]
+      },
+      "gt600015": {
+        "id": "gt600015",
+        "priority": 70,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2223.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600016": {
+        "id": "gt600016",
+        "priority": 69,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2223.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600017": {
+        "id": "gt600017",
+        "priority": 68,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2229.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))"
+        ]
+      },
+      "gt600018": {
+        "id": "gt600018",
+        "priority": 67,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2223.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600019": {
+        "id": "gt600019",
+        "priority": 66,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2223.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600020": {
+        "id": "gt600020",
+        "priority": 65,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2229.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))"
+        ]
+      },
+      "gt600021": {
+        "id": "gt600021",
+        "priority": 64,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0012|Promote weight loss|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600022": {
+        "id": "gt600022",
+        "priority": 63,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0012|Promote weight loss|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600023": {
+        "id": "gt600023",
+        "priority": 62,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2226.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600024": {
+        "id": "gt600024",
+        "priority": 61,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2230.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='3. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600025": {
+        "id": "gt600025",
+        "priority": 60,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0009|30-59 OR 60-89 with albuminuria|",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2231.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600026": {
+        "id": "gt600026",
+        "priority": 59,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2226.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600027": {
+        "id": "gt600027",
+        "priority": 58,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2228.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600028": {
+        "id": "gt600028",
+        "priority": 57,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600029": {
+        "id": "gt600029",
+        "priority": 56,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2231.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600030": {
+        "id": "gt600030",
+        "priority": 55,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2229.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))"
+        ]
+      },
+      "gt600031": {
+        "id": "gt600031",
+        "priority": 54,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2237.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='3. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600032": {
+        "id": "gt600032",
+        "priority": 53,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2238.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600033": {
+        "id": "gt600033",
+        "priority": 52,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600034": {
+        "id": "gt600034",
+        "priority": 51,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2247.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))"
+        ]
+      },
+      "gt600035": {
+        "id": "gt600035",
+        "priority": 50,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2279.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='3. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='4. GLP-1 analogue'))"
+        ]
+      },
+      "gt600036": {
+        "id": "gt600036",
+        "priority": 49,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2226.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600037": {
+        "id": "gt600037",
+        "priority": 48,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0012|Promote weight loss|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2243.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600038": {
+        "id": "gt600038",
+        "priority": 47,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2244.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='3. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600039": {
+        "id": "gt600039",
+        "priority": 46,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2245.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='2. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='3. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600040": {
+        "id": "gt600040",
+        "priority": 45,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2246.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600041": {
+        "id": "gt600041",
+        "priority": 44,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2269.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))"
+        ]
+      },
+      "gt600042": {
+        "id": "gt600042",
+        "priority": 43,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2270.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600043": {
+        "id": "gt600043",
+        "priority": 42,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0010|60-89 without albuminuria OR >90 with albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2269.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))"
+        ]
+      },
+      "gt600044": {
+        "id": "gt600044",
+        "priority": 41,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2247.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))"
+        ]
+      },
+      "gt600045": {
+        "id": "gt600045",
+        "priority": 40,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2248.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600046": {
+        "id": "gt600046",
+        "priority": 39,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2249.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600047": {
+        "id": "gt600047",
+        "priority": 38,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2250.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600048": {
+        "id": "gt600048",
+        "priority": 37,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2251.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))"
+        ]
+      },
+      "gt600049": {
+        "id": "gt600049",
+        "priority": 36,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2252.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='3. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))"
+        ]
+      },
+      "gt600050": {
+        "id": "gt600050",
+        "priority": 35,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==true",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2253.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600051": {
+        "id": "gt600051",
+        "priority": 34,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2227.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600052": {
+        "id": "gt600052",
+        "priority": 33,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2226.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600053": {
+        "id": "gt600053",
+        "priority": 32,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==true",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2279.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='3. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='4. GLP-1 analogue'))"
+        ]
+      },
+      "gt600054": {
+        "id": "gt600054",
+        "priority": 31,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0012|Promote weight loss|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2257.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600055": {
+        "id": "gt600055",
+        "priority": 30,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2258.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='3. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='4. GLP-1 analogue'))"
+        ]
+      },
+      "gt600056": {
+        "id": "gt600056",
+        "priority": 29,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2259.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='2. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='3. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt600057": {
+        "id": "gt600057",
+        "priority": 28,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==false",
+          "$gt0012|Promote weight loss|==false",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2260.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='3. Sulfonylurea'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='3. Insulin'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='4. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='4. GLP-1 analogue'))"
+        ]
+      },
+      "gt600058": {
+        "id": "gt600058",
+        "priority": 27,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==true"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2267.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BH|DPP-4 inhibitor|';$gt9002='3. DPP-4 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BB|Sulfonylurea|';$gt9002='4. Sulfonylurea'))"
+        ]
+      },
+      "gt600059": {
+        "id": "gt600059",
+        "priority": 26,
+        "when": [
+          "$gt0008|Type-2 diabetes|==true",
+          "$gt0006|LADA|!=true",
+          "$gt0007|Steroid-induced diabetes|!=true",
+          "$gt0004|Pancreatitis-induced diabetes|!=true",
+          "$gt0010|eGFR category|==local::at0011|>90 without albuminuria|",
+          "$gt0005|Heart failure|==false",
+          "$gt0003|Cardiovascular disease|==false",
+          "$gt0013|Avoid hypoglycemia|==true",
+          "$gt0012|Promote weight loss|==true",
+          "$gt0011|Prescribe low cost|==false"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2101 + $gt2268.term",
+          "$gt9003|initialValue-first-choice-medication|='ATC::A10BA02|Metformin|'",
+          "use_template($gt9900($gt9001='ATC::A10BA02|Metformin|';$gt9002='1. Metformin'))",
+          "use_template($gt9910($gt9001='ATC::A10BK|SGLT2 inhibitor|';$gt9002='2. SGLT2 inhibitor'))",
+          "use_template($gt9910($gt9001='ATC::A10BJ|GLP-1 RA|';$gt9002='3. GLP-1 analogue'))",
+          "use_template($gt9910($gt9001='ATC::A10A|Insulin|';$gt9002='4. Insulin'))"
+        ]
+      },
+      "gt0141": {
+        "id": "gt0141",
+        "priority": 14,
+        "when": [
+          "$gt2101|recommendation-notes display|!=''",
+          "$gt0010|egfr-category|!=null",
+          "$gt0021|acr|!=null||$gt0023|calculated-acr|!=null",
+          "$gt0009|bmi-category|!=null"
+        ],
+        "then": [
+          "use_template($gt7000|hba1cFollowRecommendation|)"
+        ]
+      },
+      "gt0142": {
+        "id": "gt0142",
+        "priority": 13,
+        "when": [
+          "$gt0016|sulfonylurea|==true"
+        ],
+        "then": [
+          "$gt0047|otherDrugs display|=$gt0047 + $gt2216.term + 'Sulfonylurea' + $gt2217.term"
+        ]
+      },
+      "gt0143": {
+        "id": "gt0143",
+        "priority": 12,
+        "when": [
+          "$gt0015|sglt2-inhibitor|==true"
+        ],
+        "then": [
+          "$gt0047|otherDrugs display|=$gt0047 + $gt2216.term + 'SGLT2-inhibitor' + $gt2217.term"
+        ]
+      },
+      "gt0144": {
+        "id": "gt0144",
+        "priority": 11,
+        "when": [
+          "!fired($gt0093)",
+          "$gt0017|glp1-ra|==true"
+        ],
+        "then": [
+          "$gt0047|otherDrugs display|=$gt0047 + $gt2216.term + 'GLP1 receptor agonist' + $gt2217.term"
+        ]
+      },
+      "gt0145": {
+        "id": "gt0145",
+        "priority": 10,
+        "when": [
+          "!fired($gt0094)",
+          "$gt0019|dpp4-inhibitor|==true"
+        ],
+        "then": [
+          "$gt0047|otherDrugs display|=$gt0047 + $gt2216.term + 'DPP4-inhibitor' + $gt2217.term"
+        ]
+      },
+      "gt0146": {
+        "id": "gt0146",
+        "priority": 9,
+        "when": [
+          "!fired($gt0091)",
+          "!fired($gt0092)",
+          "$gt0014|insulin|==true"
+        ],
+        "then": [
+          "$gt0047|otherDrugs display|=$gt0047 + $gt2216.term + 'Insulin' + $gt2217.term"
+        ]
+      },
+      "gt0147": {
+        "id": "gt0147",
+        "priority": 8,
+        "when": [
+          "!fired($gt0095)",
+          "$gt0018|Metformin|==true"
+        ],
+        "then": [
+          "$gt0047|otherDrugs display|=$gt0047 + $gt2216.term + 'Metformin' + $gt2217.term"
+        ]
+      },
+      "gt0148": {
+        "id": "gt0148",
+        "priority": 7,
+        "when": [
+          "$gt0047|otherDrugs display|!=''"
+        ],
+        "then": [
+          "use_template($gt0046|otherDrugs|)"
+        ]
+      },
+      "gt0149": {
+        "id": "gt0149",
+        "priority": 6,
+        "when": [
+          "$gt2101|recommendation-notes display|==''"
+        ],
+        "then": [
+          "$gt2101|recommendation-notes display|=$gt2218.term"
+        ]
+      },
+      "gt0150": {
+        "id": "gt0150",
+        "priority": 5,
+        "when": [
+          "$gt2101|recommendation-notes display|!=null",
+          "$gt0010|egfr-category|!=null",
+          "$gt0021|acr|!=null||$gt0023|calculated-acr|!=null",
+          "$gt0009|bmi-category|!=null"
+        ],
+        "then": [
+          "use_template($gt2100|hba1c-recommendationNotes|)"
+        ]
+      },
+      "gt0151": {
+        "id": "gt0151",
+        "priority": 4,
+        "when": [
+          "!fired($gt0088)",
+          "!fired($gt0089)",
+          "!fired($gt0090)",
+          "!fired($gt0091)",
+          "!fired($gt0092)",
+          "!fired($gt0093)",
+          "!fired($gt0094)",
+          "!fired($gt0095)",
+          "$gt9900|firstChoiceMedications|!=null"
+        ],
+        "then": [
+          "use_template($gt9000|firstMedication-template|)"
+        ]
+      },
+      "gt0152": {
+        "id": "gt0152",
+        "priority": 3,
+        "when": [
+          "$gt9910|supplementaryChoiceMedications|!=null"
+        ],
+        "then": [
+          "use_template($gt9100|supplementaryMedication-template|)"
+        ]
+      },
+      "gt0153": {
+        "id": "gt0153",
+        "priority": 2,
+        "when": [
+          "$gt9000|firstMedication-template|!=null||$gt0045|firstMedication-display|!=null",
+          "$gt0010|egfr-category|!=null",
+          "$gt0021|acr|!=null||$gt0023|calculated-acr|!=null",
+          "$gt0009|bmi-category|!=null"
+        ],
+        "then": [
+          "use_template($gt2200|hba1c-firstMedication|)"
+        ]
+      },
+      "gt0154": {
+        "id": "gt0154",
+        "priority": 1,
+        "when": [
+          "$gt9100|supplementaryMedication-template|!=null||$gt0046|otherDrugs-display|!=null",
+          "$gt0010|egfr-category|!=null",
+          "$gt0021|acr|!=null||$gt0023|calculated-acr|!=null",
+          "$gt0009|bmi-category|!=null"
+        ],
+        "then": [
+          "use_template($gt0020|hba1c-otherMedications|)"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Cardiovascular disease",
+            "description": "Does patient have cardiovascular disease?"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Pancreatitis-induced diabetes",
+            "description": "Does patient have secondary diabetes (pancreatitis-induced)?"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Heart failure",
+            "description": "Does patient have heart failure (LVEF <45%)?"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "LADA",
+            "description": "Does patient have latent autoimmune diabetes of adults (LADA)?"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Steroid-induced diabetes",
+            "description": "Does patient have steroid-induced diabetes?"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Type-2 diabetes",
+            "description": "Does patient have type-2 diabetes?"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "BMI <25 kg/m2",
+            "description": "Is the patient's BMI less than 25 kg/m2?"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "eGFR category",
+            "description": "Select the patients renal function category based on eGFR (mL/min/1.73m2) and presence or absence of albuminuria."
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Prescribe low cost",
+            "description": "Is prescribing low cost medication a priority?"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Promote weight loss",
+            "description": "Is promoting weight loss a priority?"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Avoid hypoglycemia",
+            "description": "Is avoiding hypoglycemia a priority?"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Insulin",
+            "description": "*"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "SGLT2-inhibitor",
+            "description": "*"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Sulfonylurea",
+            "description": "*"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "GLP1-RA",
+            "description": "*"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Metformin",
+            "description": "*"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "DPP4-inhibitor",
+            "description": "*"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "medication-recommendation-template"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "hba1c-assessment"
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Action",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Follow recommendation",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "Reason for deviating",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "Suppress this recommendation for the next 6 months",
+            "description": ""
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "Yes",
+            "description": ""
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "No",
+            "description": ""
+          },
+          "gt2201": {
+            "id": "gt2201",
+            "text": "Single drug therapy",
+            "description": "*"
+          },
+          "gt2202": {
+            "id": "gt2202",
+            "text": "Single drug therapy is recommended for newly diagnosed diabetes.\n\nThe listed medication is the guideline mandated first choice.\n\nConsider multi-drug therapy only after 2-3 months of 'failed' monotherapy.",
+            "description": "*"
+          },
+          "gt2203": {
+            "id": "gt2203",
+            "text": "Select 1st choice medication",
+            "description": "*"
+          },
+          "gt2204": {
+            "id": "gt2204",
+            "text": "1. Insulin (long-acting)",
+            "description": "*"
+          },
+          "gt2205": {
+            "id": "gt2205",
+            "text": "1. Insulin (rapid-acting)",
+            "description": "*"
+          },
+          "gt2206": {
+            "id": "gt2206",
+            "text": "1. Insulin (combined long-acting and rapid-acting)"
+          },
+          "gt2207": {
+            "id": "gt2207",
+            "text": "Multi-drug therapy",
+            "description": "*"
+          },
+          "gt2208": {
+            "id": "gt2208",
+            "text": "Dual therapy is recommended after 2-3 months of single drug therapy and persistently high HbA1c.\n\nTriple therapy is recommended after 2-3 months of dual therapy and persistently high HbA1c.\n\nQuad therapy may be considered after 2-3 months of 'failed' triple therapy.\n\nSee **Guidance** section below for medication alternatives.",
+            "description": "*"
+          },
+          "gt2209": {
+            "id": "gt2209",
+            "text": "Select a supplementary medication",
+            "description": "*"
+          },
+          "gt2210": {
+            "id": "gt2210",
+            "text": "Guidance"
+          },
+          "gt2211": {
+            "id": "gt2211",
+            "text": "**Single therapy:** Insulin is preferred 1st choice.\n\n*An active prescription for Insulin medication was detected.*",
+            "description": "*"
+          },
+          "gt2212": {
+            "id": "gt2212",
+            "text": "* **Single therapy:** Metformin is preferred 1st choice.\n* ***In case of severe hypoglycaemia with symptoms and / or acute conditions Insulin treatment is started primarily.** Switch to or supplement with Metformin when conditions have stabilized.*\n\n*An active prescription for Metformin medication was detected.*",
+            "description": "*"
+          },
+          "gt2213": {
+            "id": "gt2213",
+            "text": "* **Single therapy:** Long-acting (basal) insulin is preferred 1st choice.\n* **Double therapy:** Fast-acting insulin may be added.\n"
+          },
+          "gt2214": {
+            "id": "gt2214",
+            "text": "* **Single therapy:** Rapid-acting (mealtime) insulin is preferred 1st choice.\n* **Double therapy:** Metformin may be added.\n* **Triple therapy:** Long-acting insulin may be added.\n",
+            "description": "*"
+          },
+          "gt2215": {
+            "id": "gt2215",
+            "text": "* **Single therapy:** Metformin is preferred 1st choice.\n* ***In case of severe hypoglycaemia with symptoms and / or acute conditions Insulin treatment is started primarily.** Switch to or supplement with Metformin when conditions have stabilized.*\n",
+            "description": "*"
+          },
+          "gt2216": {
+            "id": "gt2216",
+            "text": "*An active prescription for ",
+            "description": "*"
+          },
+          "gt2217": {
+            "id": "gt2217",
+            "text": " medication was detected.*\n\n"
+          },
+          "gt2218": {
+            "id": "gt2218",
+            "text": "No recommendation",
+            "description": "*"
+          },
+          "gt2219": {
+            "id": "gt2219",
+            "text": "* DPP-4 inhibitor is an alternative to GLP-1 analogue.\n* **Double therapy:** Insulin may be added.\n",
+            "description": "*"
+          },
+          "gt2220": {
+            "id": "gt2220",
+            "text": "* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* **Double therapy:** Insulin may be added.\n"
+          },
+          "gt2221": {
+            "id": "gt2221",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* DPP-4 inhibitor is an alternative to GLP-1 analogue.\n* **Triple therapy:** Insulin may be added.\n",
+            "description": "*"
+          },
+          "gt2222": {
+            "id": "gt2222",
+            "text": "* **Double therapy:** DPP-4 inhibitor may be added.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* **Triple therapy:** Insulin may be added.\n",
+            "description": "*"
+          },
+          "gt2223": {
+            "id": "gt2223",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2224": {
+            "id": "gt2224",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2225": {
+            "id": "gt2225",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2226": {
+            "id": "gt2226",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2227": {
+            "id": "gt2227",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2228": {
+            "id": "gt2228",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* DPP-4 inhibitor is an alternative to GLP-1 analogue.\n* Insulin can be used as a 4th choice alternative.\n"
+          },
+          "gt2229": {
+            "id": "gt2229",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2230": {
+            "id": "gt2230",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2231": {
+            "id": "gt2231",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2232": {
+            "id": "gt2232",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n"
+          },
+          "gt2233": {
+            "id": "gt2233",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* DPP-4 inhibitor is an alternative to GLP-1 analogue.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2234": {
+            "id": "gt2234",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2235": {
+            "id": "gt2235",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* Insulin can be used as a 4th choice alternative.\n"
+          },
+          "gt2236": {
+            "id": "gt2236",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2237": {
+            "id": "gt2237",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2238": {
+            "id": "gt2238",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2239": {
+            "id": "gt2239",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n"
+          },
+          "gt2240": {
+            "id": "gt2240",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2241": {
+            "id": "gt2241",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* SGLT2 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2242": {
+            "id": "gt2242",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n"
+          },
+          "gt2243": {
+            "id": "gt2243",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2244": {
+            "id": "gt2244",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2245": {
+            "id": "gt2245",
+            "text": "* **Double therapy:** Sulfonylurea may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n"
+          },
+          "gt2246": {
+            "id": "gt2246",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2247": {
+            "id": "gt2247",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2248": {
+            "id": "gt2248",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2249": {
+            "id": "gt2249",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n"
+          },
+          "gt2250": {
+            "id": "gt2250",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2251": {
+            "id": "gt2251",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2252": {
+            "id": "gt2252",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n"
+          },
+          "gt2253": {
+            "id": "gt2253",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2254": {
+            "id": "gt2254",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2255": {
+            "id": "gt2255",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n* Insulin is an alternative to Sulfonylurea.\n"
+          },
+          "gt2256": {
+            "id": "gt2256",
+            "text": "* **Double therapy:** GLP-1 analogue may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* SGLT2 inhibitor can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2257": {
+            "id": "gt2257",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2258": {
+            "id": "gt2258",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n"
+          },
+          "gt2259": {
+            "id": "gt2259",
+            "text": "* **Double therapy:** Sulfonylurea may be added.\n* **Triple therapy:** SGLT2 inhibitor may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2260": {
+            "id": "gt2260",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* DPP-4 inhibitor can be used as a 4th choice alternative.\n* GLP-1 analogue is an alternative to DPP-4 inhibitor.\n",
+            "description": "*"
+          },
+          "gt2261": {
+            "id": "gt2261",
+            "text": "* **Single therapy:** GLP-1 analogue is preferred 1st choice.\n\n*An active prescription for GLP-1 analogue medication was detected.*",
+            "description": "*"
+          },
+          "gt2262": {
+            "id": "gt2262",
+            "text": "* **Single therapy:** DPP-4 inhibitor is preferred 1st choice.\n\n*An active prescription for DPP-4 inhibitor medication was detected.*",
+            "description": "*"
+          },
+          "gt2263": {
+            "id": "gt2263",
+            "text": "* **Single therapy:** GLP-1 analogue is preferred 1st choice.\n"
+          },
+          "gt2264": {
+            "id": "gt2264",
+            "text": "* **Single therapy:** DPP-4 inhibitor is preferred 1st choice.\n",
+            "description": "*"
+          },
+          "gt2265": {
+            "id": "gt2265",
+            "text": "* **Double therapy:** Fast-acting insulin may be added.\n"
+          },
+          "gt2266": {
+            "id": "gt2266",
+            "text": "* **Double therapy:** Metformin may be added.\n* **Triple therapy:** Long-acting insulin may be added.\n",
+            "description": "*"
+          },
+          "gt2267": {
+            "id": "gt2267",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n* Sulfonylurea can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2268": {
+            "id": "gt2268",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n* Insulin can be used as a 4th choice alternative.\n",
+            "description": "*"
+          },
+          "gt2269": {
+            "id": "gt2269",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** GLP-1 analogue may be added.\n",
+            "description": "*"
+          },
+          "gt2270": {
+            "id": "gt2270",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** DPP-4 inhibitor may be added.\n",
+            "description": "*"
+          },
+          "gt2271": {
+            "id": "gt2271",
+            "text": "Insulin + Metformin is the preferred choice for LADA with BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2272": {
+            "id": "gt2272",
+            "text": "* Metformin should be added.\n"
+          },
+          "gt2273": {
+            "id": "gt2273",
+            "text": "Insulin + Metformin is the preferred choice for LADA with BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2274": {
+            "id": "gt2274",
+            "text": "* Insulin should be added.\n"
+          },
+          "gt2275": {
+            "id": "gt2275",
+            "text": "Insulin + Metformin is the preferred choice for LADA with BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2276": {
+            "id": "gt2276",
+            "text": "No additional recommendation.",
+            "description": "*"
+          },
+          "gt2278": {
+            "id": "gt2278",
+            "text": "Insulin + Metformin is the preferred choice for LADA with BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2279": {
+            "id": "gt2279",
+            "text": "* **Double therapy:** SGLT2 inhibitor may be added.\n* **Triple therapy:** Sulfonylurea may be added.\n* Insulin is an alternative to Sulfonylurea.\n* GLP-1 analogue can be used as a 4th choice alternative.\n",
+            "description": "*"
+          }
+        }
+      },
+      "da": {
+        "id": "da",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001"
+          },
+          "gt0003": {
+            "id": "gt0003",
+            "text": "Cardiovascular disease",
+            "description": "Does patient have cardiovascular disease?"
+          },
+          "gt0004": {
+            "id": "gt0004",
+            "text": "Pancreatitis-induced diabetes",
+            "description": "Does patient have secondary diabetes (pancreatitis-induced)?"
+          },
+          "gt0005": {
+            "id": "gt0005",
+            "text": "Heart failure",
+            "description": "Does patient have heart failure (LVEF <45%)?"
+          },
+          "gt0006": {
+            "id": "gt0006",
+            "text": "LADA",
+            "description": "Does patient have latent autoimmune diabetes of adults (LADA)?"
+          },
+          "gt0007": {
+            "id": "gt0007",
+            "text": "Steroid-induced diabetes",
+            "description": "Does patient have steroid-induced diabetes?"
+          },
+          "gt0008": {
+            "id": "gt0008",
+            "text": "Type-2 diabetes",
+            "description": "Does patient have type-2 diabetes?"
+          },
+          "gt0009": {
+            "id": "gt0009",
+            "text": "BMI <25 kg/m2",
+            "description": "Is the patient's BMI less than 25 kg/m2?"
+          },
+          "gt0010": {
+            "id": "gt0010",
+            "text": "eGFR category",
+            "description": "Select the patients renal function category based on eGFR (mL/min/1.73m2) and presence or absence of albuminuria."
+          },
+          "gt0011": {
+            "id": "gt0011",
+            "text": "Prescribe low cost",
+            "description": "Is prescribing low cost medication a priority?"
+          },
+          "gt0012": {
+            "id": "gt0012",
+            "text": "Promote weight loss",
+            "description": "Is promoting weight loss a priority?"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "Avoid hypoglycemia",
+            "description": "Is avoiding hypoglycemia a priority?"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "Insulin",
+            "description": "*"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "SGLT2-inhibitor",
+            "description": "*"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "Sulfonylurea",
+            "description": "*"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "GLP1-RA",
+            "description": "*"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "Metformin",
+            "description": "*"
+          },
+          "gt0019": {
+            "id": "gt0019",
+            "text": "DPP4-inhibitor",
+            "description": "*"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "medication-recommendation-template"
+          },
+          "gt0051": {
+            "id": "gt0051",
+            "text": "hba1c-assessment"
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "Handling",
+            "description": ""
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "Følg anbefaling",
+            "description": ""
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "Årsag til ikke at følge anbefaling",
+            "description": ""
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "Udsæt denne anbefaling de næste 6 måneder",
+            "description": ""
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "Ja",
+            "description": ""
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "Nej",
+            "description": ""
+          },
+          "gt2201": {
+            "id": "gt2201",
+            "text": "1-stof behandling",
+            "description": "*"
+          },
+          "gt2202": {
+            "id": "gt2202",
+            "text": "1-stof behandling er anbefalet til nydiagnostiseret diabetes.\n\nDen angivne behandling er førstevalg ifølge behandlingsvejledningen.\n\nOvervej flerstofbehandling efter 2-3 måneder med utilstrækkelig 1-stof behandling.",
+            "description": "*"
+          },
+          "gt2203": {
+            "id": "gt2203",
+            "text": "Vælg førstevalgsbehandling",
+            "description": "*"
+          },
+          "gt2204": {
+            "id": "gt2204",
+            "text": "1. Insulin (langtidsvirkende)",
+            "description": "*"
+          },
+          "gt2205": {
+            "id": "gt2205",
+            "text": "1. Insulin (hurtigvirkende)",
+            "description": "*"
+          },
+          "gt2206": {
+            "id": "gt2206",
+            "text": "1. Insulin (kombineret langtidsvirkende og hurtigvirkende)"
+          },
+          "gt2207": {
+            "id": "gt2207",
+            "text": "Flerstof-behandling",
+            "description": "*"
+          },
+          "gt2208": {
+            "id": "gt2208",
+            "text": "2-stof behandling er anbefalet ved vedvarende høj HbA1c efter 2-3 måneders 1-stof behandling.\n\n3-stof behandling er anbefalet ved vedvarende høj HbA1c efter 2-3 måneders 2-stof behandling.\n\n4-stof behandling er anbefalet ved vedvarende høj HbA1c efter 2-3 måneders 3-stof behandling.\n\nSe vejledningssektion nedenfor mhp. alternativ medicin.",
+            "description": "*"
+          },
+          "gt2209": {
+            "id": "gt2209",
+            "text": "Vælg eventuelt supplerende behandling",
+            "description": "*"
+          },
+          "gt2210": {
+            "id": "gt2210",
+            "text": "Vejledning"
+          },
+          "gt2211": {
+            "id": "gt2211",
+            "text": "**1-stof behandling:** Insulin er anbefalet første valg.\n\n*En aktiv recept for Insulin blev fundet.*",
+            "description": "*"
+          },
+          "gt2212": {
+            "id": "gt2212",
+            "text": "* **1-stof behandling:** Metformin er anbefalet første valg.\n* ***Ved svær hyperglykæmi med symptomer og/eller akutte tilstande startes Insulinbehandling primært.** Skift til eller suppler med Metformin når tilstande er stabiliseret.*\n\n*En aktiv recept for Metformin blev fundet.*",
+            "description": "*"
+          },
+          "gt2213": {
+            "id": "gt2213",
+            "text": "* **1-stof behandling:** Langtidsvirkende insulin.\n* **2-stof behandling:** Hurtigvirkende insulin kan tillægges.\n"
+          },
+          "gt2214": {
+            "id": "gt2214",
+            "text": "* **1-stof behandling:** Hurtigvirkende insulin er anbefalet første valg.\n* **2-stof behandling:** Metformin kan tillægges.\n* **3-stof behandling:** Langtidsvirkende insulin kan tillægges.\n",
+            "description": "*"
+          },
+          "gt2215": {
+            "id": "gt2215",
+            "text": "* **1-stof behandling:** Metformin er anbefalet første valg.\n* ***Ved svær hyperglykæmi med symptomer og/eller akutte tilstande startes Insulinbehandling primært.** Skift til eller suppler med Metformin når tilstande er stabiliseret.*\n",
+            "description": "*"
+          },
+          "gt2216": {
+            "id": "gt2216",
+            "text": "*En aktiv recept for ",
+            "description": "*"
+          },
+          "gt2217": {
+            "id": "gt2217",
+            "text": " behandling blev fundet.*\n\n"
+          },
+          "gt2218": {
+            "id": "gt2218",
+            "text": "Ingen anbefaling",
+            "description": "*"
+          },
+          "gt2219": {
+            "id": "gt2219",
+            "text": "* DPP-4 inhibitor er et alternativ til GLP-1 analogue.\n* **2-stof behandling:** Insulin kan tillægges.\n* **ADVARSEL:** DPP4-inhibitor må ikke benyttes sammen med GLP-1 analogue behandling.\n",
+            "description": "*"
+          },
+          "gt2220": {
+            "id": "gt2220",
+            "text": "* GLP-1 analogue er et alternativ til DPP-4 inhibitor.\n* **2-stof behandling:** Insulin kan tillægges.\n* **ADVARSEL:** GLP-1 analogue må ikke benyttes sammen med DPP4-inhibitor behandling.\n"
+          },
+          "gt2221": {
+            "id": "gt2221",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* DPP-4 inhibitor er et alternativ til GLP-1 analogue.\n* **3-stof behandling:** Insulin kan tillægges.\n",
+            "description": "*"
+          },
+          "gt2222": {
+            "id": "gt2222",
+            "text": "* **2-stof behandling:** DPP-4 inhibitor kan tillægges.\n* GLP-1 analogue er et alternativ til DPP-4 inhibitor.\n* **3-stof behandling:** Insulin kan tillægges.\n",
+            "description": "*"
+          },
+          "gt2223": {
+            "id": "gt2223",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* DPP-4 inhibitor kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2224": {
+            "id": "gt2224",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* **3-stof behandling:** SGLT2 inhibitor kan tillægges.\n* DPP-4 inhibitor kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2225": {
+            "id": "gt2225",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* **3-stof behandling:** SGLT2 inhibitor kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2226": {
+            "id": "gt2226",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n* Insulin er et alternativ til Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2227": {
+            "id": "gt2227",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2228": {
+            "id": "gt2228",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* DPP-4 inhibitor er et alternativ til GLP-1 analogue.\n* Insulin kan bruges som en fjerde valg alternativ.\n"
+          },
+          "gt2229": {
+            "id": "gt2229",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2230": {
+            "id": "gt2230",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** Sulfonylurea kan tillægges.\n* Insulin er et alternativ til Sulfonylurea.\n* DPP-4 inhibitor kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2231": {
+            "id": "gt2231",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n* GLP-1 analogue er et alternativ til DPP-4 inhibitor.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2232": {
+            "id": "gt2232",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n* Insulin er et alternativ til Sulfonylurea.\n"
+          },
+          "gt2233": {
+            "id": "gt2233",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* DPP-4 inhibitor er et alternativ til GLP-1 analogue.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2234": {
+            "id": "gt2234",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2235": {
+            "id": "gt2235",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n* GLP-1 analogue er et alternativ til DPP-4 inhibitor.\n* Insulin kan bruges som en fjerde valg alternativ.\n"
+          },
+          "gt2236": {
+            "id": "gt2236",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2237": {
+            "id": "gt2237",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** Sulfonylurea kan tillægges.\n* DPP-4 inhibitor kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2238": {
+            "id": "gt2238",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 analogue kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n* Insulin er et alternativ til Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2239": {
+            "id": "gt2239",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* **3-stof behandling:** SGLT2 inhibitor kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n"
+          },
+          "gt2240": {
+            "id": "gt2240",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* **3-stof behandling:** SGLT2 inhibitor kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2241": {
+            "id": "gt2241",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* **3-stof behandling:** Sulfonylurea kan tillægges.\n* Insulin er et alternativ til Sulfonylurea.\n* SGLT2 inhibitor kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2242": {
+            "id": "gt2242",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* **3-stof behandling:** SGLT2 inhibitor kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n* Insulin er et alternativ til Sulfonylurea.\n"
+          },
+          "gt2243": {
+            "id": "gt2243",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2244": {
+            "id": "gt2244",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** Sulfonylurea kan tillægges.\n* DPP-4 inhibitor kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2245": {
+            "id": "gt2245",
+            "text": "* **2-stof behandling:** Sulfonylurea kan tillægges.\n* **3-stof behandling:** SGLT2 inhibitor kan tillægges.\n* DPP-4 inhibitor kan bruges som en fjerde valg alternativ.\n"
+          },
+          "gt2246": {
+            "id": "gt2246",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n* Insulin er et alternativ til Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2247": {
+            "id": "gt2247",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2248": {
+            "id": "gt2248",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2249": {
+            "id": "gt2249",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n"
+          },
+          "gt2250": {
+            "id": "gt2250",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n* GLP-1 analogue er et alternativ til DPP-4 inhibitor.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2251": {
+            "id": "gt2251",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2252": {
+            "id": "gt2252",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** Sulfonylurea kan tillægges.\n* DPP-4 inhibitor kan bruges som en fjerde valg alternativ.\n"
+          },
+          "gt2253": {
+            "id": "gt2253",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n* Insulin er et alternativ til Sulfonylurea.\n",
+            "description": "*"
+          },
+          "gt2254": {
+            "id": "gt2254",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* **3-stof behandling:** SGLT2 inhibitor kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2255": {
+            "id": "gt2255",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* **3-stof behandling:** SGLT2 inhibitor kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n* Insulin er et alternativ til Sulfonylurea.\n"
+          },
+          "gt2256": {
+            "id": "gt2256",
+            "text": "* **2-stof behandling:** GLP-1 analogue kan tillægges.\n* **3-stof behandling:** Sulfonylurea kan tillægges.\n* Insulin er et alternativ til Sulfonylurea.\n* SGLT2 inhibitor kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2257": {
+            "id": "gt2257",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2258": {
+            "id": "gt2258",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** Sulfonylurea kan tillægges.\n* DPP-4 inhibitor kan bruges som en fjerde valg alternativ.\n* GLP-1 analogue er et alternativ til DPP-4 inhibitor.\n"
+          },
+          "gt2259": {
+            "id": "gt2259",
+            "text": "* **2-stof behandling:** Sulfonylurea kan tillægges.\n* **3-stof behandling:** SGLT2 inhibitor kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2260": {
+            "id": "gt2260",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** Sulfonylurea kan tillægges.\n* Insulin er et alternativ til Sulfonylurea.\n* DPP-4 inhibitor kan bruges som en fjerde valg alternativ.\n* GLP-1 analogue er et alternativ til DPP-4 inhibitor.\n",
+            "description": "*"
+          },
+          "gt2261": {
+            "id": "gt2261",
+            "text": "* **1-stof behandling:** GLP-1 analogue er anbefalet første valg.\n\n*En aktiv recept for GLP-1 analogue behandling blev fundet.*",
+            "description": "*"
+          },
+          "gt2262": {
+            "id": "gt2262",
+            "text": "* **1-stof behandling:** DPP-4 inhibitor er anbefalet første valg.\n\n*En aktiv recept for DPP-4 inhibitor behandling blev fundet.*",
+            "description": "*"
+          },
+          "gt2263": {
+            "id": "gt2263",
+            "text": "* **1-stof behandling:** GLP-1 analogue er anbefalet første valg.\n"
+          },
+          "gt2264": {
+            "id": "gt2264",
+            "text": "* **1-stof behandling:** DPP-4 inhibitor er anbefalet første valg.\n",
+            "description": "*"
+          },
+          "gt2265": {
+            "id": "gt2265",
+            "text": "* **2-stof behandling:** Hurtigvirkende insulin kan tillægges.\n"
+          },
+          "gt2266": {
+            "id": "gt2266",
+            "text": "* **2-stof behandling:** Metformin kan tillægges.\n* **3-stof behandling:** Langtidsvirkende insulin kan tillægges.\n",
+            "description": "*"
+          },
+          "gt2267": {
+            "id": "gt2267",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n* Sulfonylurea kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2268": {
+            "id": "gt2268",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n* Insulin kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          },
+          "gt2269": {
+            "id": "gt2269",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** GLP-1 analogue kan tillægges.\n",
+            "description": "*"
+          },
+          "gt2270": {
+            "id": "gt2270",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** DPP-4 inhibitor kan tillægges.\n",
+            "description": "*"
+          },
+          "gt2271": {
+            "id": "gt2271",
+            "text": "Insulin + Metformin er anbefalet valg til LADA med BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2272": {
+            "id": "gt2272",
+            "text": "* Metformin skal tillægges.\n"
+          },
+          "gt2273": {
+            "id": "gt2273",
+            "text": "Insulin + Metformin er anbefalet valg til LADA med BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2274": {
+            "id": "gt2274",
+            "text": "* Insulin skal tillægges.\n"
+          },
+          "gt2275": {
+            "id": "gt2275",
+            "text": "Insulin + Metformin er anbefalet valg til LADA med BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2276": {
+            "id": "gt2276",
+            "text": "Ingen yderligere anbefaling.",
+            "description": "*"
+          },
+          "gt2278": {
+            "id": "gt2278",
+            "text": "Insulin + Metformin er anbefalet valg til LADA med BMI >= 25.\n\n",
+            "description": "*"
+          },
+          "gt2279": {
+            "id": "gt2279",
+            "text": "* **2-stof behandling:** SGLT2 inhibitor kan tillægges.\n* **3-stof behandling:** Sulfonylurea kan tillægges.\n* Insulin er et alternativ til Sulfonylurea.\n* GLP-1 analogue kan bruges som en fjerde valg alternativ.\n",
+            "description": "*"
+          }
+        }
+      }
+    }
+  }
+}

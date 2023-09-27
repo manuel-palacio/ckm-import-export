@@ -1,0 +1,1432 @@
+{
+  "id": "T2D_prescribing_medication_review.v1.0.0",
+  "gdl_version": "2.0",
+  "concept": "gt0001",
+  "language": {
+    "original_language": "ISO_639-1::en"
+  },
+  "description": {
+    "original_author": {
+      "date": "2019-10-16",
+      "name": "Eneimi Allwell-Brown",
+      "organisation": "Cambio Healthcare Systems",
+      "email": "eneimi.allwell-brown@cambio.se"
+    },
+    "lifecycle_state": "Author draft",
+    "details": {
+      "en": {
+        "id": "en",
+        "misuse": "Not for making a diagnosis of type 2 diabetes."
+      }
+    },
+    "other_details": {
+      "references": "Snorgaard OD, Drivsholm TO, Breum L. Farmakologisk behandling af type 2 diabetes—mål og algoritmer—2018.\n\nSnorgaard O, Mølsted S, Dolsø M, Poulsen GM, Drivsholm TB, Glenner M, Lose H, Schack-Nielsen L. Forløbsprogram for Type 2 Diabetes: Hospitaler, almen praksis og kommunerne i Region Hoevdstaden."
+    }
+  },
+  "definition": {
+    "data_bindings": {
+      "gt0039": {
+        "id": "gt0039",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v1",
+        "type": "INPUT",
+        "elements": {
+          "gt0020": {
+            "id": "gt0020",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0030]"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0031]"
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0032]"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0034]"
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0035]"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0036]"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0080]"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0081]"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0082]"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0083]"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0084]"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0085]"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0086]"
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0087]"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0106]"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0107]"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0108]"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0109]"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0110]"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0111]"
+          }
+        }
+      },
+      "gt0030": {
+        "id": "gt0030",
+        "model_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "template_id": "openEHR-EHR-OBSERVATION.type_2_diabetes_prescribing_review.v0",
+        "type": "OUTPUT",
+        "elements": {
+          "gt0013": {
+            "id": "gt0013",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0030]"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0031]"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0032]"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0034]"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0035]"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0036]"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0080]"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0081]"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0082]"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0083]"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0084]"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0085]"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0086]"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0087]"
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0106]"
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0107]"
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0108]"
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0109]"
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0110]"
+          },
+          "gt0110": {
+            "id": "gt0110",
+            "path": "/data[at0001]/events[at0002]/data[at0003]/items[at0029]/items[at0111]"
+          }
+        }
+      }
+    },
+    "default_actions": [
+    ],
+    "rules": {
+      "gt1001": {
+        "id": "gt1001",
+        "priority": 40,
+        "when": [
+          "$gt0020|sulfonylurea|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0013|Sulfonylurea|=true"
+        ]
+      },
+      "gt1002": {
+        "id": "gt1002",
+        "priority": 39,
+        "when": [
+          "$gt0020|sulfonylurea|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0013|Sulfonylurea|=false"
+        ]
+      },
+      "gt1003": {
+        "id": "gt1003",
+        "priority": 38,
+        "when": [
+          "$gt0021|metformin|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0014|Metformin|=true"
+        ]
+      },
+      "gt1004": {
+        "id": "gt1004",
+        "priority": 37,
+        "when": [
+          "$gt0021|metformin|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0014|Metformin|=false"
+        ]
+      },
+      "gt1005": {
+        "id": "gt1005",
+        "priority": 36,
+        "when": [
+          "$gt0022|insulin|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0015|Insulin|=true"
+        ]
+      },
+      "gt1006": {
+        "id": "gt1006",
+        "priority": 35,
+        "when": [
+          "$gt0022|insulin|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0015|Insulin|=false"
+        ]
+      },
+      "gt1007": {
+        "id": "gt1007",
+        "priority": 34,
+        "when": [
+          "$gt0023|sglt2-inhibitor|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0016|SGLT2-inhibitor|=true"
+        ]
+      },
+      "gt1008": {
+        "id": "gt1008",
+        "priority": 33,
+        "when": [
+          "$gt0023|sglt2-inhibitor|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0016|SGLT2-inhibitor|=false"
+        ]
+      },
+      "gt1009": {
+        "id": "gt1009",
+        "priority": 32,
+        "when": [
+          "$gt0024|glp1-ra|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0017|GLP1-RA|=true"
+        ]
+      },
+      "gt1010": {
+        "id": "gt1010",
+        "priority": 31,
+        "when": [
+          "$gt0024|glp1-ra|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0017|GLP1-RA|=false"
+        ]
+      },
+      "gt1011": {
+        "id": "gt1011",
+        "priority": 30,
+        "when": [
+          "$gt0025|dpp4-inhibitor|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0018|DPP4-inhibitor|=true"
+        ]
+      },
+      "gt1012": {
+        "id": "gt1012",
+        "priority": 29,
+        "when": [
+          "$gt0025|dpp4-inhibitor|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0018|DPP4-inhibitor|=false"
+        ]
+      },
+      "gt1013": {
+        "id": "gt1013",
+        "priority": 28,
+        "when": [
+          "$gt0040|ace-inhibitor-arb|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0031|ACE-I/ARB|=true"
+        ]
+      },
+      "gt1014": {
+        "id": "gt1014",
+        "priority": 27,
+        "when": [
+          "$gt0040|ace-inhibitor-arb|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0031|ACE-I/ARB|=false"
+        ]
+      },
+      "gt1015": {
+        "id": "gt1015",
+        "priority": 26,
+        "when": [
+          "$gt0041|furosemide|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0032|Furosemide|=true"
+        ]
+      },
+      "gt1016": {
+        "id": "gt1016",
+        "priority": 25,
+        "when": [
+          "$gt0041|furosemide|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0032|Furosemide|=false"
+        ]
+      },
+      "gt1017": {
+        "id": "gt1017",
+        "priority": 24,
+        "when": [
+          "$gt0042|calcium-blocker|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0033|CCB|=true"
+        ]
+      },
+      "gt1018": {
+        "id": "gt1018",
+        "priority": 23,
+        "when": [
+          "$gt0042|calcium-blocker|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0033|CCB|=false"
+        ]
+      },
+      "gt1019": {
+        "id": "gt1019",
+        "priority": 22,
+        "when": [
+          "$gt0043|thiazide-diuretic|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0034|Thiazide diuretic|=true"
+        ]
+      },
+      "gt1020": {
+        "id": "gt1020",
+        "priority": 21,
+        "when": [
+          "$gt0043|thiazide-diuretic|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0034|Thiazide diuretic|=false"
+        ]
+      },
+      "gt1021": {
+        "id": "gt1021",
+        "priority": 20,
+        "when": [
+          "$gt0044|spironolactone|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0035|Spironolactone|=true"
+        ]
+      },
+      "gt1022": {
+        "id": "gt1022",
+        "priority": 19,
+        "when": [
+          "$gt0044|spironolactone|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0035|Spironolactone|=false"
+        ]
+      },
+      "gt1023": {
+        "id": "gt1023",
+        "priority": 18,
+        "when": [
+          "$gt0045|beta-blocker|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0036|Beta blocker|=true"
+        ]
+      },
+      "gt1024": {
+        "id": "gt1024",
+        "priority": 17,
+        "when": [
+          "$gt0045|beta-blocker|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0036|Beta blocker|=false"
+        ]
+      },
+      "gt1025": {
+        "id": "gt1025",
+        "priority": 16,
+        "when": [
+          "$gt0058|alpha-blocker|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0037|Alpha blocker|=true"
+        ]
+      },
+      "gt1026": {
+        "id": "gt1026",
+        "priority": 15,
+        "when": [
+          "$gt0058|alpha-blocker|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0037|Alpha blocker|=false"
+        ]
+      },
+      "gt1027": {
+        "id": "gt1027",
+        "priority": 14,
+        "when": [
+          "$gt0059|moxonidine|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0038|Moxonidine|=true"
+        ]
+      },
+      "gt1028": {
+        "id": "gt1028",
+        "priority": 13,
+        "when": [
+          "$gt0059|moxonidine|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0038|Moxonidine|=false"
+        ]
+      },
+      "gt1029": {
+        "id": "gt1029",
+        "priority": 12,
+        "when": [
+          "$gt0066|simvastatin|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0105|Simvastatin|=true"
+        ]
+      },
+      "gt1030": {
+        "id": "gt1030",
+        "priority": 11,
+        "when": [
+          "$gt0066|simvastatin|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0105|Simvastatin|=false"
+        ]
+      },
+      "gt1031": {
+        "id": "gt1031",
+        "priority": 10,
+        "when": [
+          "$gt0067|atorvastatin|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0106|Atorvastatin|=true"
+        ]
+      },
+      "gt1032": {
+        "id": "gt1032",
+        "priority": 9,
+        "when": [
+          "$gt0067|atorvastatin|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0106|Atorvastatin|=false"
+        ]
+      },
+      "gt1033": {
+        "id": "gt1033",
+        "priority": 8,
+        "when": [
+          "$gt0068|rosuvastatin|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0107|Rosuvastatin|=true"
+        ]
+      },
+      "gt1034": {
+        "id": "gt1034",
+        "priority": 7,
+        "when": [
+          "$gt0068|rosuvastatin|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0107|Rosuvastatin|=false"
+        ]
+      },
+      "gt1035": {
+        "id": "gt1035",
+        "priority": 6,
+        "when": [
+          "$gt0072|pravastatin|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0108|Pravastatin|=true"
+        ]
+      },
+      "gt1036": {
+        "id": "gt1036",
+        "priority": 5,
+        "when": [
+          "$gt0072|pravastatin|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0108|Pravastatin|=false"
+        ]
+      },
+      "gt1037": {
+        "id": "gt1037",
+        "priority": 4,
+        "when": [
+          "$gt0073|fluvastatin|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0109|Fluvastatin|=true"
+        ]
+      },
+      "gt1038": {
+        "id": "gt1038",
+        "priority": 3,
+        "when": [
+          "$gt0073|fluvastatin|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0109|Fluvastatin|=false"
+        ]
+      },
+      "gt1039": {
+        "id": "gt1039",
+        "priority": 2,
+        "when": [
+          "$gt0074|ezetimibe|==local::at0115|Yes|"
+        ],
+        "then": [
+          "$gt0110|Ezetimibe|=true"
+        ]
+      },
+      "gt1040": {
+        "id": "gt1040",
+        "priority": 1,
+        "when": [
+          "$gt0074|ezetimibe|==local::at0116|No|"
+        ],
+        "then": [
+          "$gt0110|Ezetimibe|=false"
+        ]
+      }
+    }
+  },
+  "ontology": {
+    "term_definitions": {
+      "en": {
+        "id": "en",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "T2D_prescribing_medication_review.v1.0.0"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "sulfonylurea",
+            "description": ""
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "metformin",
+            "description": ""
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "insulin",
+            "description": ""
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "sglt2i",
+            "description": ""
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "glp1ra",
+            "description": "description gt0017"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "dpp4i",
+            "description": ""
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "sulfonylurea-userInput",
+            "description": ""
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "metformin-userInput",
+            "description": ""
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "text": "insulin-userInput",
+            "description": "description gt0022"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "sgl2ti-userInput",
+            "description": ""
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "glp1ra-userInput",
+            "description": ""
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "dpp4i-userInput",
+            "description": ""
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "acei-arb",
+            "description": ""
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "furosemide",
+            "description": "description gt0032"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "ccb",
+            "description": "*"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "thiazide",
+            "description": "*"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "spironolactone",
+            "description": "*"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "beta-blocker",
+            "description": "*"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "alpha-blocker",
+            "description": "*"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "moxonidine",
+            "description": "*"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "acei-arb-userInput",
+            "description": "description gt0040"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "furosemide-userInput",
+            "description": "description gt0041"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "ccb-userInput",
+            "description": "description gt0042"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "thiazide-userInput",
+            "description": "description gt0043"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "spironolactone-userInput",
+            "description": "description gt0044"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "beta-blocker-userInput",
+            "description": "description gt0045"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "alpha-blocker-userInput",
+            "description": "description gt0058"
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "text": "moxonidine-userInput",
+            "description": "description gt0059"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "simvastatin-userInput",
+            "description": "description gt0066"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "atorvastatin-userInput",
+            "description": "description gt0067"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "rosuvastatin-userInput",
+            "description": "description gt0068"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "pravastatin-userInput",
+            "description": "description gt0072"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "fluvastatin-userInput",
+            "description": "description gt0073"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "ezetimibe-userInput",
+            "description": "description gt0074"
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "text": "simvastatin",
+            "description": "description gt0105"
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "text": "atorvastatin",
+            "description": "description gt0106"
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "rosuvastatin",
+            "description": "description gt0107"
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "pravastatin",
+            "description": "description gt0108"
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "text": "fluvastatin",
+            "description": "description gt0109"
+          },
+          "gt0110": {
+            "id": "gt0110",
+            "text": "ezetimibe",
+            "description": "description gt0110"
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "term gt1001",
+            "description": "description gt1001"
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "term gt1002",
+            "description": "description gt1002"
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "term gt1003",
+            "description": "description gt1003"
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "term gt1004",
+            "description": "description gt1004"
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "term gt1005",
+            "description": "description gt1005"
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "term gt1006",
+            "description": "description gt1006"
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "term gt1007",
+            "description": "description gt1007"
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "term gt1008",
+            "description": "description gt1008"
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "term gt1009",
+            "description": "description gt1009"
+          },
+          "gt1010": {
+            "id": "gt1010",
+            "text": "term gt1010",
+            "description": "description gt1010"
+          },
+          "gt1011": {
+            "id": "gt1011",
+            "text": "term gt1011",
+            "description": "description gt1011"
+          },
+          "gt1012": {
+            "id": "gt1012",
+            "text": "term gt1012",
+            "description": "description gt1012"
+          },
+          "gt1013": {
+            "id": "gt1013",
+            "text": "term gt1013",
+            "description": "description gt1013"
+          },
+          "gt1014": {
+            "id": "gt1014",
+            "text": "term gt1014",
+            "description": "description gt1014"
+          },
+          "gt1015": {
+            "id": "gt1015",
+            "text": "term gt1015",
+            "description": "description gt1015"
+          },
+          "gt1016": {
+            "id": "gt1016",
+            "text": "term gt1016",
+            "description": "description gt1016"
+          },
+          "gt1017": {
+            "id": "gt1017",
+            "text": "term gt1017",
+            "description": "description gt1017"
+          },
+          "gt1018": {
+            "id": "gt1018",
+            "text": "term gt1018",
+            "description": "description gt1018"
+          },
+          "gt1019": {
+            "id": "gt1019",
+            "text": "term gt1019",
+            "description": "description gt1019"
+          },
+          "gt1020": {
+            "id": "gt1020",
+            "text": "term gt1020",
+            "description": "description gt1020"
+          },
+          "gt1021": {
+            "id": "gt1021",
+            "text": "term gt1021",
+            "description": "description gt1021"
+          },
+          "gt1022": {
+            "id": "gt1022",
+            "text": "term gt1022",
+            "description": "description gt1022"
+          },
+          "gt1023": {
+            "id": "gt1023",
+            "text": "term gt1023",
+            "description": "description gt1023"
+          },
+          "gt1024": {
+            "id": "gt1024",
+            "text": "term gt1024",
+            "description": "description gt1024"
+          },
+          "gt1025": {
+            "id": "gt1025",
+            "text": "term gt1025",
+            "description": "description gt1025"
+          },
+          "gt1026": {
+            "id": "gt1026",
+            "text": "term gt1026",
+            "description": "description gt1026"
+          },
+          "gt1027": {
+            "id": "gt1027",
+            "text": "term gt1027",
+            "description": "description gt1027"
+          },
+          "gt1028": {
+            "id": "gt1028",
+            "text": "term gt1028",
+            "description": "description gt1028"
+          },
+          "gt1029": {
+            "id": "gt1029",
+            "text": "term gt1029",
+            "description": "description gt1029"
+          },
+          "gt1030": {
+            "id": "gt1030",
+            "text": "term gt1030",
+            "description": "description gt1030"
+          },
+          "gt1031": {
+            "id": "gt1031",
+            "text": "term gt1031",
+            "description": "description gt1031"
+          },
+          "gt1032": {
+            "id": "gt1032",
+            "text": "term gt1032",
+            "description": "description gt1032"
+          },
+          "gt1033": {
+            "id": "gt1033",
+            "text": "term gt1033",
+            "description": "description gt1033"
+          },
+          "gt1034": {
+            "id": "gt1034",
+            "text": "term gt1034",
+            "description": "description gt1034"
+          },
+          "gt1035": {
+            "id": "gt1035",
+            "text": "term gt1035",
+            "description": "description gt1035"
+          },
+          "gt1036": {
+            "id": "gt1036",
+            "text": "term gt1036",
+            "description": "description gt1036"
+          },
+          "gt1037": {
+            "id": "gt1037",
+            "text": "term gt1037",
+            "description": "description gt1037"
+          },
+          "gt1038": {
+            "id": "gt1038",
+            "text": "term gt1038",
+            "description": "description gt1038"
+          },
+          "gt1039": {
+            "id": "gt1039",
+            "text": "term gt1039",
+            "description": "description gt1039"
+          },
+          "gt1040": {
+            "id": "gt1040",
+            "text": "term gt1040",
+            "description": "description gt1040"
+          }
+        }
+      },
+      "da": {
+        "id": "da",
+        "terms": {
+          "gt0001": {
+            "id": "gt0001",
+            "text": "T2D_prescribing_medication_review.v1.0.0"
+          },
+          "gt0013": {
+            "id": "gt0013",
+            "text": "term gt0013",
+            "description": "description gt0013"
+          },
+          "gt0014": {
+            "id": "gt0014",
+            "text": "term gt0014",
+            "description": "description gt0014"
+          },
+          "gt0015": {
+            "id": "gt0015",
+            "text": "term gt0015",
+            "description": "description gt0015"
+          },
+          "gt0016": {
+            "id": "gt0016",
+            "text": "term gt0016",
+            "description": "description gt0016"
+          },
+          "gt0017": {
+            "id": "gt0017",
+            "text": "term gt0017",
+            "description": "description gt0017"
+          },
+          "gt0018": {
+            "id": "gt0018",
+            "text": "term gt0018",
+            "description": "description gt0018"
+          },
+          "gt0020": {
+            "id": "gt0020",
+            "text": "term gt0020",
+            "description": "description gt0020"
+          },
+          "gt0021": {
+            "id": "gt0021",
+            "text": "term gt0021",
+            "description": "description gt0021"
+          },
+          "gt0022": {
+            "id": "gt0022",
+            "text": "term gt0022",
+            "description": "description gt0022"
+          },
+          "gt0023": {
+            "id": "gt0023",
+            "text": "term gt0023",
+            "description": "description gt0023"
+          },
+          "gt0024": {
+            "id": "gt0024",
+            "text": "term gt0024",
+            "description": "description gt0024"
+          },
+          "gt0025": {
+            "id": "gt0025",
+            "text": "term gt0025",
+            "description": "description gt0025"
+          },
+          "gt0031": {
+            "id": "gt0031",
+            "text": "term gt0031",
+            "description": "description gt0031"
+          },
+          "gt0032": {
+            "id": "gt0032",
+            "text": "term gt0032",
+            "description": "description gt0032"
+          },
+          "gt0033": {
+            "id": "gt0033",
+            "text": "term gt0033",
+            "description": "description gt0033"
+          },
+          "gt0034": {
+            "id": "gt0034",
+            "text": "term gt0034",
+            "description": "description gt0034"
+          },
+          "gt0035": {
+            "id": "gt0035",
+            "text": "term gt0035",
+            "description": "description gt0035"
+          },
+          "gt0036": {
+            "id": "gt0036",
+            "text": "term gt0036",
+            "description": "description gt0036"
+          },
+          "gt0037": {
+            "id": "gt0037",
+            "text": "term gt0037",
+            "description": "description gt0037"
+          },
+          "gt0038": {
+            "id": "gt0038",
+            "text": "term gt0038",
+            "description": "description gt0038"
+          },
+          "gt0040": {
+            "id": "gt0040",
+            "text": "term gt0040",
+            "description": "description gt0040"
+          },
+          "gt0041": {
+            "id": "gt0041",
+            "text": "term gt0041",
+            "description": "description gt0041"
+          },
+          "gt0042": {
+            "id": "gt0042",
+            "text": "term gt0042",
+            "description": "description gt0042"
+          },
+          "gt0043": {
+            "id": "gt0043",
+            "text": "term gt0043",
+            "description": "description gt0043"
+          },
+          "gt0044": {
+            "id": "gt0044",
+            "text": "term gt0044",
+            "description": "description gt0044"
+          },
+          "gt0045": {
+            "id": "gt0045",
+            "text": "term gt0045",
+            "description": "description gt0045"
+          },
+          "gt0058": {
+            "id": "gt0058",
+            "text": "term gt0058",
+            "description": "description gt0058"
+          },
+          "gt0059": {
+            "id": "gt0059",
+            "text": "term gt0059",
+            "description": "description gt0059"
+          },
+          "gt0066": {
+            "id": "gt0066",
+            "text": "term gt0066",
+            "description": "description gt0066"
+          },
+          "gt0067": {
+            "id": "gt0067",
+            "text": "term gt0067",
+            "description": "description gt0067"
+          },
+          "gt0068": {
+            "id": "gt0068",
+            "text": "term gt0068",
+            "description": "description gt0068"
+          },
+          "gt0072": {
+            "id": "gt0072",
+            "text": "term gt0072",
+            "description": "description gt0072"
+          },
+          "gt0073": {
+            "id": "gt0073",
+            "text": "term gt0073",
+            "description": "description gt0073"
+          },
+          "gt0074": {
+            "id": "gt0074",
+            "text": "term gt0074",
+            "description": "description gt0074"
+          },
+          "gt0105": {
+            "id": "gt0105",
+            "text": "term gt0105",
+            "description": "description gt0105"
+          },
+          "gt0106": {
+            "id": "gt0106",
+            "text": "term gt0106",
+            "description": "description gt0106"
+          },
+          "gt0107": {
+            "id": "gt0107",
+            "text": "term gt0107",
+            "description": "description gt0107"
+          },
+          "gt0108": {
+            "id": "gt0108",
+            "text": "term gt0108",
+            "description": "description gt0108"
+          },
+          "gt0109": {
+            "id": "gt0109",
+            "text": "term gt0109",
+            "description": "description gt0109"
+          },
+          "gt0110": {
+            "id": "gt0110",
+            "text": "term gt0110",
+            "description": "description gt0110"
+          },
+          "gt1001": {
+            "id": "gt1001",
+            "text": "term gt1001",
+            "description": "description gt1001"
+          },
+          "gt1002": {
+            "id": "gt1002",
+            "text": "term gt1002",
+            "description": "description gt1002"
+          },
+          "gt1003": {
+            "id": "gt1003",
+            "text": "term gt1003",
+            "description": "description gt1003"
+          },
+          "gt1004": {
+            "id": "gt1004",
+            "text": "term gt1004",
+            "description": "description gt1004"
+          },
+          "gt1005": {
+            "id": "gt1005",
+            "text": "term gt1005",
+            "description": "description gt1005"
+          },
+          "gt1006": {
+            "id": "gt1006",
+            "text": "term gt1006",
+            "description": "description gt1006"
+          },
+          "gt1007": {
+            "id": "gt1007",
+            "text": "term gt1007",
+            "description": "description gt1007"
+          },
+          "gt1008": {
+            "id": "gt1008",
+            "text": "term gt1008",
+            "description": "description gt1008"
+          },
+          "gt1009": {
+            "id": "gt1009",
+            "text": "term gt1009",
+            "description": "description gt1009"
+          },
+          "gt1010": {
+            "id": "gt1010",
+            "text": "term gt1010",
+            "description": "description gt1010"
+          },
+          "gt1011": {
+            "id": "gt1011",
+            "text": "term gt1011",
+            "description": "description gt1011"
+          },
+          "gt1012": {
+            "id": "gt1012",
+            "text": "term gt1012",
+            "description": "description gt1012"
+          },
+          "gt1013": {
+            "id": "gt1013",
+            "text": "term gt1013",
+            "description": "description gt1013"
+          },
+          "gt1014": {
+            "id": "gt1014",
+            "text": "term gt1014",
+            "description": "description gt1014"
+          },
+          "gt1015": {
+            "id": "gt1015",
+            "text": "term gt1015",
+            "description": "description gt1015"
+          },
+          "gt1016": {
+            "id": "gt1016",
+            "text": "term gt1016",
+            "description": "description gt1016"
+          },
+          "gt1017": {
+            "id": "gt1017",
+            "text": "term gt1017",
+            "description": "description gt1017"
+          },
+          "gt1018": {
+            "id": "gt1018",
+            "text": "term gt1018",
+            "description": "description gt1018"
+          },
+          "gt1019": {
+            "id": "gt1019",
+            "text": "term gt1019",
+            "description": "description gt1019"
+          },
+          "gt1020": {
+            "id": "gt1020",
+            "text": "term gt1020",
+            "description": "description gt1020"
+          },
+          "gt1021": {
+            "id": "gt1021",
+            "text": "term gt1021",
+            "description": "description gt1021"
+          },
+          "gt1022": {
+            "id": "gt1022",
+            "text": "term gt1022",
+            "description": "description gt1022"
+          },
+          "gt1023": {
+            "id": "gt1023",
+            "text": "term gt1023",
+            "description": "description gt1023"
+          },
+          "gt1024": {
+            "id": "gt1024",
+            "text": "term gt1024",
+            "description": "description gt1024"
+          },
+          "gt1025": {
+            "id": "gt1025",
+            "text": "term gt1025",
+            "description": "description gt1025"
+          },
+          "gt1026": {
+            "id": "gt1026",
+            "text": "term gt1026",
+            "description": "description gt1026"
+          },
+          "gt1027": {
+            "id": "gt1027",
+            "text": "term gt1027",
+            "description": "description gt1027"
+          },
+          "gt1028": {
+            "id": "gt1028",
+            "text": "term gt1028",
+            "description": "description gt1028"
+          },
+          "gt1029": {
+            "id": "gt1029",
+            "text": "term gt1029",
+            "description": "description gt1029"
+          },
+          "gt1030": {
+            "id": "gt1030",
+            "text": "term gt1030",
+            "description": "description gt1030"
+          },
+          "gt1031": {
+            "id": "gt1031",
+            "text": "term gt1031",
+            "description": "description gt1031"
+          },
+          "gt1032": {
+            "id": "gt1032",
+            "text": "term gt1032",
+            "description": "description gt1032"
+          },
+          "gt1033": {
+            "id": "gt1033",
+            "text": "term gt1033",
+            "description": "description gt1033"
+          },
+          "gt1034": {
+            "id": "gt1034",
+            "text": "term gt1034",
+            "description": "description gt1034"
+          },
+          "gt1035": {
+            "id": "gt1035",
+            "text": "term gt1035",
+            "description": "description gt1035"
+          },
+          "gt1036": {
+            "id": "gt1036",
+            "text": "term gt1036",
+            "description": "description gt1036"
+          },
+          "gt1037": {
+            "id": "gt1037",
+            "text": "term gt1037",
+            "description": "description gt1037"
+          },
+          "gt1038": {
+            "id": "gt1038",
+            "text": "term gt1038",
+            "description": "description gt1038"
+          },
+          "gt1039": {
+            "id": "gt1039",
+            "text": "term gt1039",
+            "description": "description gt1039"
+          },
+          "gt1040": {
+            "id": "gt1040",
+            "text": "term gt1040",
+            "description": "description gt1040"
+          }
+        }
+      }
+    }
+  }
+}
