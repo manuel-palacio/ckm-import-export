@@ -1,0 +1,88 @@
+archetype (adl_version=1.4; uid=0a20c7af-39b3-4fcc-9b02-7766eaffdbad)
+	openEHR-EHR-EVALUATION.prostate_cancer_risk_group.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2023-04-06">
+		["name"] = <"Rong Chen">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"c5dc4c3cdc3f9698184661fcbbc5accc">
+		["build_uid"] = <"5deef17f-559d-3474-a59f-c92b0ba1c4e5">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Prostate cancer risk group
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Risk group
+						value matches {
+							1|[local::at0003],
+							2|[local::at0004],
+							3|[local::at0005],
+							4|[local::at0006],
+							5|[local::at0007]
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Prostate cancer risk group">
+					description = <"Prostate cancer risk group">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Risk group">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Very low risk">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"low risk">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Intermediate risk">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"High risk">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Very high risk">
+					description = <"">
+				>
+			>
+		>
+	>

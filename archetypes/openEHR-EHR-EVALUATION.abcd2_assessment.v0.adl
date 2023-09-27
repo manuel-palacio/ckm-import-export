@@ -1,0 +1,134 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.abcd2_assessment.v0
+
+concept
+	[at0000]	-- ABCD² Score assessment
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the results of the ABCD² score assessment.">
+			use = <"">
+			keywords = <"ABCD", "ABCD2", "score", "assessesment", "stroke", "risk">
+			misuse = <"">
+			copyright = <"© Cambio CDS">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"156FAF6157797C4C63F9ED5A8DF7D429">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- ABCD² Score assessment
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Risk assessment
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003, 	-- Low risk
+									at0004, 	-- Moderate risk
+									at0005]	-- High risk
+								}
+							}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- 2-day stroke risk
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::507]>
+								list = <
+									["1"] = <
+										units = <"%">
+										magnitude = <|>=0.0|>
+										precision = <|1|>
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- 7-day stroke risk
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::507]>
+								list = <
+									["1"] = <
+										units = <"%">
+										magnitude = <|>=0.0|>
+										precision = <|1|>
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- 90-day stroke risk
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::507]>
+								list = <
+									["1"] = <
+										units = <"%">
+										magnitude = <|>=0.0|>
+										precision = <|1|>
+									>
+								>
+							>
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"ABCD² Score assessment">
+					description = <"Assessment of score generated in accordance with the ABCD2 Score for TIA.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Risk assessment">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Low risk">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Moderate risk">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"High risk">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"2-day stroke risk">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"7-day stroke risk">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"90-day stroke risk">
+					description = <"*">
+				>
+			>
+		>
+	>

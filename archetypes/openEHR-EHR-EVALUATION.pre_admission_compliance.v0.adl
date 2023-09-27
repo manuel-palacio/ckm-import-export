@@ -1,0 +1,178 @@
+archetype (adl_version=1.4; uid=ce576ef6-503d-4bb2-afb3-5d5f10d7addf)
+	openEHR-EHR-EVALUATION.pre_admission_compliance.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2023-04-02">
+		["name"] = <"Rong Chen">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["build_uid"] = <"9a3b8ee6-69a1-390e-940b-80dc75163342">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Pre_admission_compliance
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Preoperative nutritional status assessment
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Compliant
+									at0004,    -- Non-compliant
+									at0005]    -- Missing
+								}
+							}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Preoperative nutritional treatment
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Compliant
+									at0004,    -- Non-compliant
+									at0005]    -- Missing
+								}
+							}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Anemia management
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Compliant
+									at0004,    -- Non-compliant
+									at0005]    -- Missing
+								}
+							}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Smoker
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Compliant
+									at0004,    -- Non-compliant
+									at0005]    -- Missing
+								}
+							}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Alcohol usage
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Compliant
+									at0004,    -- Non-compliant
+									at0005]    -- Missing
+								}
+							}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Preadmission patient education
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Compliant
+									at0004,    -- Non-compliant
+									at0005]    -- Missing
+								}
+							}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Pulmonary rehabilitation and pre-habilitation
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Compliant
+									at0004,    -- Non-compliant
+									at0005]    -- Missing
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pre_admission_compliance">
+					description = <"Pre_admission_compliance">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Preoperative nutritional status assessment">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Compliant">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Non-compliant">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Missing">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Preoperative nutritional treatment">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Anemia management">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Smoker">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Alcohol usage">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Preadmission patient education">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Pulmonary rehabilitation and pre-habilitation">
+					description = <"">
+				>
+			>
+		>
+	>

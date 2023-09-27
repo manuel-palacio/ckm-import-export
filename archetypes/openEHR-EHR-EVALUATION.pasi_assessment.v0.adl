@@ -1,0 +1,86 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.pasi_assessment.v0
+
+concept
+	[at0000]	-- Psoriasis Area Severity Index (PASI) 
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Maryam Razavi">
+		["email"] = <"maryam.razavi@cambio.se">
+		["organisation"] = <"Cambio CDS">
+		["date"] = <"2021-10-05">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the result of the PASI assessment.">
+			use = <"Use to record the result of the PASI assessment.">
+			misuse = <"">
+			copyright = <"© Cambio CDS">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"Fredriksson T, Pettersson U. Severe psoriasis--oral therapy with a new retinoid. Dermatologica. 1978;157(4):238-44.
+
+Langley RG, Ellis CN. Evaluating psoriasis with Psoriasis Area and Severity Index, Psoriasis Global Assessment, and Lattice System Physician's Global Assessment. J Am Acad Dermatol. 2004;51(4):563-9.
+
+Schmitt J, Wozel G. The Psoriasis area and severity index is the adequate criterion to define severity in chronic plaque-type psoriasis. Clinical and Laboratory Investigations. 2005; 210: 194-199. 
+
+Feldman SR, Krueger GG. Psoriasis assessment tools in clinical trials. Ann Rheum Dis. 2005; 64: 65-68.
+
+Berth-Jones J, Grotzinger K, Rainville C et al.  A study examining inter- and intrarater reliability of three scales for measuring severity of psoriasis: Psoriasis Area and Severity Index, Physicians Global Assessment and Lattice System Physicians Global Assessment. Clinical and Laboratory Investigations. 2006; 155: 707-713.
+
+Spuls PI, Lecluse LLA, Poulsen MNF et al. How Good are Clinical Severity and Outcome Measures for Psoriasis?: Quantitative Evaluation in a Systematic Review. Journal of Investigative Dermatology. 2010; 130 (4): 933-943.
+
+Puzenat E, Bronsard V, Gourraud PA et al. What are the best outcome measures for assessing plaque psoriasis severity? A systematic review of the literature. European Academy of Dermatology and Venereology. 2010; 24: 10-16.
+
+Simpson MJ, Chow C, Morgenstem H et al. Comparison of 3 methods for measuring psoriasis severity in clinical studies (Part 2 of 2): use of quality of life to assess construct validity of LS-PGA, PASI and Static Physician’s Global assessment. European Academy of Dermatology and Venereology. 2015; 29: 1415-1420.
+
+Mrowietz U, Kragballe K, Reich K, et al. Definition of treatment goals for moderate to severe psoriasis: a European consensus. Arch Dermatol Res. 2011;303(1):1-10.
+
+Australiasian College of Dermatologists. The Australasian College of Dermatologist Consensus Statement. Treatment goals for psoriasis 2017. https://www.dermcoll.edu.au/wp-content/uploads/ACD-Consensus-Statement-Treatment-goals-for-psoriasis-March-2017.pdf. Accessed March 19, 2019.
+
+Elmets CA, Leonardi CL, Davis DMR, et al. Joint AAD-NPF guidelines of care for the management and treatment of psoriasis with awareness and attention to comorbidities. J Am Acad Dermatol. 2019;80(4):1073-1113.">
+		["current_contact"] = <"Maryam Razavi, Cambio CDS<maryam.razavi2009@gmail.com>">
+		["MD5-CAM-1.0.1"] = <"C91BC7EFE46AE90C510868B962600735">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Psoriasis Area Severity Index (PASI) 
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Interpretation
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Psoriasis Area Severity Index (PASI) ">
+					description = <"unknown">
+					comment = <"An index used to express the severity of psoriasis . ">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Interpretation">
+					description = <"*">
+				>
+			>
+		>
+	>
