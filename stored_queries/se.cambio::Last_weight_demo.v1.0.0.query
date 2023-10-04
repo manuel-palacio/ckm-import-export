@@ -1,0 +1,1 @@
+{"name":"se.cambio::Last_weight_demo","version":"1.0.0","type":"AQL","q":"SELECT   a/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value as T0_weight FROM   EHR e[ehr_id/value=$ehr_id] CONTAINS COMPOSITION c CONTAINS (     OBSERVATION a[openEHR-EHR-OBSERVATION.body_weight.v2]   ) ORDER BY   c/context/start_time/value DESC LIMIT   1","query_parameters":{"ehr_id":""}}
